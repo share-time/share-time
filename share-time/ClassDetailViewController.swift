@@ -10,6 +10,10 @@ import UIKit
 
 class ClassDetailViewController: UIViewController {
 
+    @IBOutlet weak var classNameLabel: UILabel!
+    @IBOutlet weak var createGroupButton: UIButton!
+    @IBOutlet weak var studyGroupTableView: UITableView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 

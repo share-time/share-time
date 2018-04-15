@@ -1,0 +1,6 @@
+framework module Pods_share_timeUITests {
+  umbrella header "Pods-share-timeUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}

@@ -10,6 +10,10 @@ import UIKit
 
 class AddStudyGroupViewController: UIViewController {
 
+    @IBOutlet weak var groupNameLabel: UILabel!
+    @IBOutlet weak var memberSearchBar: UITextField!
+    @IBOutlet weak var groupMemberLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 

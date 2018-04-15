@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4E1DAE25259F11E514246437 /* Pods_share_time.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB0B32FD4E359D86F70E22A2 /* Pods_share_time.framework */; };
 		5A254ADB2082F04E00767CB7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A254ADA2082F04E00767CB7 /* AppDelegate.swift */; };
 		5A254ADD2082F04E00767CB7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A254ADC2082F04E00767CB7 /* ViewController.swift */; };
 		5A254AE02082F04E00767CB7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5A254ADE2082F04E00767CB7 /* Main.storyboard */; };
@@ -14,6 +15,12 @@
 		5A254AE52082F04E00767CB7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5A254AE32082F04E00767CB7 /* LaunchScreen.storyboard */; };
 		5A254AF02082F04E00767CB7 /* share_timeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A254AEF2082F04E00767CB7 /* share_timeTests.swift */; };
 		5A254AFB2082F04E00767CB7 /* share_timeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A254AFA2082F04E00767CB7 /* share_timeUITests.swift */; };
+		5AFE25A62082F4FE00EED7F9 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AFE25A52082F4FE00EED7F9 /* LoginViewController.swift */; };
+		5AFE25A82082F5E900EED7F9 /* FindClassViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AFE25A72082F5E900EED7F9 /* FindClassViewController.swift */; };
+		5AFE25AA2082F68100EED7F9 /* ClassDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AFE25A92082F68100EED7F9 /* ClassDetailViewController.swift */; };
+		5AFE25AC2082F79C00EED7F9 /* AddStudyGroupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AFE25AB2082F79C00EED7F9 /* AddStudyGroupViewController.swift */; };
+		9C5B2CFC14D21876B393D021 /* Pods_share_timeUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B66399DE5602F7E34C871587 /* Pods_share_timeUITests.framework */; };
+		C2F27EF9AFB11FFEE3BC3B96 /* Pods_share_timeTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C0516E5E82CDECB8882F6A59 /* Pods_share_timeTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,6 +41,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1D584195F00E2A4D3C99DAFB /* Pods-share-timeUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-share-timeUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-share-timeUITests/Pods-share-timeUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		5A254AD72082F04E00767CB7 /* share-time.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "share-time.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5A254ADA2082F04E00767CB7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5A254ADC2082F04E00767CB7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -47,6 +55,18 @@
 		5A254AF62082F04E00767CB7 /* share-timeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "share-timeUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5A254AFA2082F04E00767CB7 /* share_timeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = share_timeUITests.swift; sourceTree = "<group>"; };
 		5A254AFC2082F04E00767CB7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5AFE25A52082F4FE00EED7F9 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		5AFE25A72082F5E900EED7F9 /* FindClassViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindClassViewController.swift; sourceTree = "<group>"; };
+		5AFE25A92082F68100EED7F9 /* ClassDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassDetailViewController.swift; sourceTree = "<group>"; };
+		5AFE25AB2082F79C00EED7F9 /* AddStudyGroupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddStudyGroupViewController.swift; sourceTree = "<group>"; };
+		5C5482A52A6A5B9A661E81D7 /* Pods-share-time.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-share-time.release.xcconfig"; path = "Pods/Target Support Files/Pods-share-time/Pods-share-time.release.xcconfig"; sourceTree = "<group>"; };
+		67513358329D0E17CC4439B8 /* Pods-share-timeTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-share-timeTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-share-timeTests/Pods-share-timeTests.release.xcconfig"; sourceTree = "<group>"; };
+		69D4E1F4917B9F8942861F63 /* Pods-share-timeUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-share-timeUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-share-timeUITests/Pods-share-timeUITests.release.xcconfig"; sourceTree = "<group>"; };
+		7D5F04D6D9C88821909F4745 /* Pods-share-timeTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-share-timeTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-share-timeTests/Pods-share-timeTests.debug.xcconfig"; sourceTree = "<group>"; };
+		B66399DE5602F7E34C871587 /* Pods_share_timeUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_share_timeUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C0516E5E82CDECB8882F6A59 /* Pods_share_timeTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_share_timeTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C3C42CF6DA0392FD0C771A9F /* Pods-share-time.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-share-time.debug.xcconfig"; path = "Pods/Target Support Files/Pods-share-time/Pods-share-time.debug.xcconfig"; sourceTree = "<group>"; };
+		DB0B32FD4E359D86F70E22A2 /* Pods_share_time.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_share_time.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +74,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4E1DAE25259F11E514246437 /* Pods_share_time.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -61,6 +82,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C2F27EF9AFB11FFEE3BC3B96 /* Pods_share_timeTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -68,12 +90,26 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9C5B2CFC14D21876B393D021 /* Pods_share_timeUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1150E15EA05C8F4DB2B685AD /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				C3C42CF6DA0392FD0C771A9F /* Pods-share-time.debug.xcconfig */,
+				5C5482A52A6A5B9A661E81D7 /* Pods-share-time.release.xcconfig */,
+				7D5F04D6D9C88821909F4745 /* Pods-share-timeTests.debug.xcconfig */,
+				67513358329D0E17CC4439B8 /* Pods-share-timeTests.release.xcconfig */,
+				1D584195F00E2A4D3C99DAFB /* Pods-share-timeUITests.debug.xcconfig */,
+				69D4E1F4917B9F8942861F63 /* Pods-share-timeUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		5A254ACE2082F04E00767CB7 = {
 			isa = PBXGroup;
 			children = (
@@ -81,6 +117,8 @@
 				5A254AEE2082F04E00767CB7 /* share-timeTests */,
 				5A254AF92082F04E00767CB7 /* share-timeUITests */,
 				5A254AD82082F04E00767CB7 /* Products */,
+				1150E15EA05C8F4DB2B685AD /* Pods */,
+				69EF7E70EDC221FFF232DD0B /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -100,6 +138,10 @@
 				5A254ADA2082F04E00767CB7 /* AppDelegate.swift */,
 				5A254ADC2082F04E00767CB7 /* ViewController.swift */,
 				5A254ADE2082F04E00767CB7 /* Main.storyboard */,
+				5AFE25AB2082F79C00EED7F9 /* AddStudyGroupViewController.swift */,
+				5AFE25A92082F68100EED7F9 /* ClassDetailViewController.swift */,
+				5AFE25A72082F5E900EED7F9 /* FindClassViewController.swift */,
+				5AFE25A52082F4FE00EED7F9 /* LoginViewController.swift */,
 				5A254AE12082F04E00767CB7 /* Assets.xcassets */,
 				5A254AE32082F04E00767CB7 /* LaunchScreen.storyboard */,
 				5A254AE62082F04E00767CB7 /* Info.plist */,
@@ -125,6 +167,16 @@
 			path = "share-timeUITests";
 			sourceTree = "<group>";
 		};
+		69EF7E70EDC221FFF232DD0B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				DB0B32FD4E359D86F70E22A2 /* Pods_share_time.framework */,
+				C0516E5E82CDECB8882F6A59 /* Pods_share_timeTests.framework */,
+				B66399DE5602F7E34C871587 /* Pods_share_timeUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -132,9 +184,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 5A254AFF2082F04E00767CB7 /* Build configuration list for PBXNativeTarget "share-time" */;
 			buildPhases = (
+				894826BCE06A042ABB940395 /* [CP] Check Pods Manifest.lock */,
 				5A254AD32082F04E00767CB7 /* Sources */,
 				5A254AD42082F04E00767CB7 /* Frameworks */,
 				5A254AD52082F04E00767CB7 /* Resources */,
+				9913918F4293A6A725DF3F37 /* [CP] Embed Pods Frameworks */,
+				46C4E85FAA021975984F8745 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -149,9 +204,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 5A254B022082F04E00767CB7 /* Build configuration list for PBXNativeTarget "share-timeTests" */;
 			buildPhases = (
+				825EC3221DC18C300AA0012F /* [CP] Check Pods Manifest.lock */,
 				5A254AE72082F04E00767CB7 /* Sources */,
 				5A254AE82082F04E00767CB7 /* Frameworks */,
 				5A254AE92082F04E00767CB7 /* Resources */,
+				503197386CA0E779891BBEBA /* [CP] Embed Pods Frameworks */,
+				2C12CD2573BEB4CBD0C069A1 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -167,9 +225,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 5A254B052082F04E00767CB7 /* Build configuration list for PBXNativeTarget "share-timeUITests" */;
 			buildPhases = (
+				710DD6A7EEF22442B66B9573 /* [CP] Check Pods Manifest.lock */,
 				5A254AF22082F04E00767CB7 /* Sources */,
 				5A254AF32082F04E00767CB7 /* Frameworks */,
 				5A254AF42082F04E00767CB7 /* Resources */,
+				EC20F24300455625B4238215 /* [CP] Embed Pods Frameworks */,
+				D1E6E9FACD948F14D2F4A0C0 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -254,12 +315,168 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		2C12CD2573BEB4CBD0C069A1 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-share-timeTests/Pods-share-timeTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		46C4E85FAA021975984F8745 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-share-time/Pods-share-time-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		503197386CA0E779891BBEBA /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-share-timeTests/Pods-share-timeTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		710DD6A7EEF22442B66B9573 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-share-timeUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		825EC3221DC18C300AA0012F /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-share-timeTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		894826BCE06A042ABB940395 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-share-time-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9913918F4293A6A725DF3F37 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-share-time/Pods-share-time-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Bolts/Bolts.framework",
+				"${BUILT_PRODUCTS_DIR}/Parse/Parse.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Bolts.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Parse.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-share-time/Pods-share-time-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D1E6E9FACD948F14D2F4A0C0 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-share-timeUITests/Pods-share-timeUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EC20F24300455625B4238215 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-share-timeUITests/Pods-share-timeUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		5A254AD32082F04E00767CB7 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5AFE25AA2082F68100EED7F9 /* ClassDetailViewController.swift in Sources */,
+				5AFE25A62082F4FE00EED7F9 /* LoginViewController.swift in Sources */,
 				5A254ADD2082F04E00767CB7 /* ViewController.swift in Sources */,
+				5AFE25A82082F5E900EED7F9 /* FindClassViewController.swift in Sources */,
+				5AFE25AC2082F79C00EED7F9 /* AddStudyGroupViewController.swift in Sources */,
 				5A254ADB2082F04E00767CB7 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -424,6 +641,7 @@
 		};
 		5A254B002082F04E00767CB7 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C3C42CF6DA0392FD0C771A9F /* Pods-share-time.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -438,6 +656,7 @@
 		};
 		5A254B012082F04E00767CB7 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5C5482A52A6A5B9A661E81D7 /* Pods-share-time.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -452,6 +671,7 @@
 		};
 		5A254B032082F04E00767CB7 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7D5F04D6D9C88821909F4745 /* Pods-share-timeTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -468,6 +688,7 @@
 		};
 		5A254B042082F04E00767CB7 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 67513358329D0E17CC4439B8 /* Pods-share-timeTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -484,6 +705,7 @@
 		};
 		5A254B062082F04E00767CB7 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1D584195F00E2A4D3C99DAFB /* Pods-share-timeUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -499,6 +721,7 @@
 		};
 		5A254B072082F04E00767CB7 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 69D4E1F4917B9F8942861F63 /* Pods-share-timeUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;

@@ -10,6 +10,12 @@ import UIKit
 
 class FindClassViewController: UIViewController {
 
+    @IBOutlet weak var classCell: UITableViewCell!
+    @IBOutlet weak var classSearchBar: UITextField!
+    @IBOutlet weak var className: UILabel!
+    @IBOutlet weak var classTableView: UITableView!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
