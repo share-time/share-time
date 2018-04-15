@@ -1,21 +1,21 @@
 //
-//  FindClassViewController.swift
+//  MainPageViewController.swift
 //  share-time
 //
-//  Created by Godwin Pang on 4/14/18.
+//  Created by Guanxin Li on 4/14/18.
 //  Copyright © 2018 share-time. All rights reserved.
 //
 
 import UIKit
 
-class FindClassViewController: UIViewController {
-
-    @IBOutlet weak var classCell: UITableViewCell!
-    @IBOutlet weak var classSearchBar: UITextField!
-    @IBOutlet weak var className: UILabel!
-    @IBOutlet weak var classTableView: UITableView!
-    
-    
+class MainPageViewController: UIViewController {
+    @IBOutlet weak var personalImage: UIImageView!
+    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var whatsUpLabel: UILabel!
+    @IBOutlet weak var emailLabel: UILabel!
+    @IBOutlet weak var backDropImage: UIImageView!
+    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var studyTritonImage: UIImageView!
     override func viewDidLoad() {
         super.viewDidLoad()
 

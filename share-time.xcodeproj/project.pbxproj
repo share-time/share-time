@@ -19,6 +19,11 @@
 		5AFE25A82082F5E900EED7F9 /* FindClassViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AFE25A72082F5E900EED7F9 /* FindClassViewController.swift */; };
 		5AFE25AA2082F68100EED7F9 /* ClassDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AFE25A92082F68100EED7F9 /* ClassDetailViewController.swift */; };
 		5AFE25AC2082F79C00EED7F9 /* AddStudyGroupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AFE25AB2082F79C00EED7F9 /* AddStudyGroupViewController.swift */; };
+		70CE5AD6208300810023F3D7 /* MainPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70CE5AD5208300810023F3D7 /* MainPageViewController.swift */; };
+		70CE5AD8208309300023F3D7 /* StudyGroupCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70CE5AD7208309300023F3D7 /* StudyGroupCell.swift */; };
+		70CE5ADA20830A2F0023F3D7 /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70CE5AD920830A2F0023F3D7 /* ChatViewController.swift */; };
+		70CE5ADC20830B6E0023F3D7 /* ChatCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70CE5ADB20830B6E0023F3D7 /* ChatCell.swift */; };
+		70CE5ADF20830EEB0023F3D7 /* ClassCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70CE5ADE20830EEB0023F3D7 /* ClassCell.swift */; };
 		9C5B2CFC14D21876B393D021 /* Pods_share_timeUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B66399DE5602F7E34C871587 /* Pods_share_timeUITests.framework */; };
 		C2F27EF9AFB11FFEE3BC3B96 /* Pods_share_timeTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C0516E5E82CDECB8882F6A59 /* Pods_share_timeTests.framework */; };
 /* End PBXBuildFile section */
@@ -62,6 +67,11 @@
 		5C5482A52A6A5B9A661E81D7 /* Pods-share-time.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-share-time.release.xcconfig"; path = "Pods/Target Support Files/Pods-share-time/Pods-share-time.release.xcconfig"; sourceTree = "<group>"; };
 		67513358329D0E17CC4439B8 /* Pods-share-timeTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-share-timeTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-share-timeTests/Pods-share-timeTests.release.xcconfig"; sourceTree = "<group>"; };
 		69D4E1F4917B9F8942861F63 /* Pods-share-timeUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-share-timeUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-share-timeUITests/Pods-share-timeUITests.release.xcconfig"; sourceTree = "<group>"; };
+		70CE5AD5208300810023F3D7 /* MainPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPageViewController.swift; sourceTree = "<group>"; };
+		70CE5AD7208309300023F3D7 /* StudyGroupCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudyGroupCell.swift; sourceTree = "<group>"; };
+		70CE5AD920830A2F0023F3D7 /* ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
+		70CE5ADB20830B6E0023F3D7 /* ChatCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatCell.swift; sourceTree = "<group>"; };
+		70CE5ADE20830EEB0023F3D7 /* ClassCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassCell.swift; sourceTree = "<group>"; };
 		7D5F04D6D9C88821909F4745 /* Pods-share-timeTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-share-timeTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-share-timeTests/Pods-share-timeTests.debug.xcconfig"; sourceTree = "<group>"; };
 		B66399DE5602F7E34C871587 /* Pods_share_timeUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_share_timeUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C0516E5E82CDECB8882F6A59 /* Pods_share_timeTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_share_timeTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -135,13 +145,11 @@
 		5A254AD92082F04E00767CB7 /* share-time */ = {
 			isa = PBXGroup;
 			children = (
+				70CE5ADD20830B770023F3D7 /* Cell */,
+				70CE5AD4208300150023F3D7 /* View Controllers */,
 				5A254ADA2082F04E00767CB7 /* AppDelegate.swift */,
 				5A254ADC2082F04E00767CB7 /* ViewController.swift */,
 				5A254ADE2082F04E00767CB7 /* Main.storyboard */,
-				5AFE25AB2082F79C00EED7F9 /* AddStudyGroupViewController.swift */,
-				5AFE25A92082F68100EED7F9 /* ClassDetailViewController.swift */,
-				5AFE25A72082F5E900EED7F9 /* FindClassViewController.swift */,
-				5AFE25A52082F4FE00EED7F9 /* LoginViewController.swift */,
 				5A254AE12082F04E00767CB7 /* Assets.xcassets */,
 				5A254AE32082F04E00767CB7 /* LaunchScreen.storyboard */,
 				5A254AE62082F04E00767CB7 /* Info.plist */,
@@ -175,6 +183,29 @@
 				B66399DE5602F7E34C871587 /* Pods_share_timeUITests.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		70CE5AD4208300150023F3D7 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				5AFE25A52082F4FE00EED7F9 /* LoginViewController.swift */,
+				5AFE25A72082F5E900EED7F9 /* FindClassViewController.swift */,
+				5AFE25A92082F68100EED7F9 /* ClassDetailViewController.swift */,
+				5AFE25AB2082F79C00EED7F9 /* AddStudyGroupViewController.swift */,
+				70CE5AD5208300810023F3D7 /* MainPageViewController.swift */,
+				70CE5AD920830A2F0023F3D7 /* ChatViewController.swift */,
+			);
+			path = "View Controllers";
+			sourceTree = "<group>";
+		};
+		70CE5ADD20830B770023F3D7 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				70CE5AD7208309300023F3D7 /* StudyGroupCell.swift */,
+				70CE5ADB20830B6E0023F3D7 /* ChatCell.swift */,
+				70CE5ADE20830EEB0023F3D7 /* ClassCell.swift */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -473,10 +504,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				5AFE25AA2082F68100EED7F9 /* ClassDetailViewController.swift in Sources */,
+				70CE5AD6208300810023F3D7 /* MainPageViewController.swift in Sources */,
 				5AFE25A62082F4FE00EED7F9 /* LoginViewController.swift in Sources */,
+				70CE5ADF20830EEB0023F3D7 /* ClassCell.swift in Sources */,
+				70CE5ADC20830B6E0023F3D7 /* ChatCell.swift in Sources */,
 				5A254ADD2082F04E00767CB7 /* ViewController.swift in Sources */,
 				5AFE25A82082F5E900EED7F9 /* FindClassViewController.swift in Sources */,
+				70CE5AD8208309300023F3D7 /* StudyGroupCell.swift in Sources */,
 				5AFE25AC2082F79C00EED7F9 /* AddStudyGroupViewController.swift in Sources */,
+				70CE5ADA20830A2F0023F3D7 /* ChatViewController.swift in Sources */,
 				5A254ADB2082F04E00767CB7 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
