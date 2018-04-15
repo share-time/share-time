@@ -1,0 +1,41 @@
+dd any changes and updates.
+
+1. Jiayi Wang
+[]Login Page
+  -App Icon (placeholder as for now)
+  -Name, password(should be shown as ***)
+  -Enter button, which leads to Main Page
+  -Sign-up button on the bottom of the page, leads to sign-up page
+
+[]Signup Page
+  -Name
+  -Email
+  -Password(enter twice for verification, check if matches)
+  -Successfully sign-up notice, lead directly to Main Page
+  -Need to store the username, email, password as PFObjects into MangoDB
+
+[]Profile Page
+  -Different parts refering to the wireframe pdf
+
+2. Godwin Pang
+[]SearchClass Page
+  -A search bar on the top of the page, fetch related class name from db
+ according to what the user entered
+
+[]DetailedClass Page
+  -A list of study groups that had been already created. 
+  -A button to create new study groups
+
+[]CreateStudyGroup Page
+  -Search ppl by name? email?
+
+
+3.Guanxin Li
+[]Main Page
+ -Brief personal info
+ -List of Study Groups that the user is in
+ -Tab bar
+
+[]Chat Page
+ -Should allow everyone in this class to chat altogether...
+ -Refer to Parse...
