@@ -26,6 +26,7 @@
 		70CE5ADF20830EEB0023F3D7 /* ClassCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70CE5ADE20830EEB0023F3D7 /* ClassCell.swift */; };
 		9C5B2CFC14D21876B393D021 /* Pods_share_timeUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B66399DE5602F7E34C871587 /* Pods_share_timeUITests.framework */; };
 		C2F27EF9AFB11FFEE3BC3B96 /* Pods_share_timeTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C0516E5E82CDECB8882F6A59 /* Pods_share_timeTests.framework */; };
+		C68E4B852083178F0073F695 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C68E4B842083178F0073F695 /* SignUpViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -76,6 +77,7 @@
 		B66399DE5602F7E34C871587 /* Pods_share_timeUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_share_timeUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C0516E5E82CDECB8882F6A59 /* Pods_share_timeTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_share_timeTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C3C42CF6DA0392FD0C771A9F /* Pods-share-time.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-share-time.debug.xcconfig"; path = "Pods/Target Support Files/Pods-share-time/Pods-share-time.debug.xcconfig"; sourceTree = "<group>"; };
+		C68E4B842083178F0073F695 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		DB0B32FD4E359D86F70E22A2 /* Pods_share_time.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_share_time.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -189,6 +191,7 @@
 			isa = PBXGroup;
 			children = (
 				5AFE25A52082F4FE00EED7F9 /* LoginViewController.swift */,
+				C68E4B842083178F0073F695 /* SignUpViewController.swift */,
 				5AFE25A72082F5E900EED7F9 /* FindClassViewController.swift */,
 				5AFE25A92082F68100EED7F9 /* ClassDetailViewController.swift */,
 				5AFE25AB2082F79C00EED7F9 /* AddStudyGroupViewController.swift */,
@@ -509,6 +512,7 @@
 				70CE5ADF20830EEB0023F3D7 /* ClassCell.swift in Sources */,
 				70CE5ADC20830B6E0023F3D7 /* ChatCell.swift in Sources */,
 				5A254ADD2082F04E00767CB7 /* ViewController.swift in Sources */,
+				C68E4B852083178F0073F695 /* SignUpViewController.swift in Sources */,
 				5AFE25A82082F5E900EED7F9 /* FindClassViewController.swift in Sources */,
 				70CE5AD8208309300023F3D7 /* StudyGroupCell.swift in Sources */,
 				5AFE25AC2082F79C00EED7F9 /* AddStudyGroupViewController.swift in Sources */,

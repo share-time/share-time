@@ -1,20 +1,21 @@
 //
-//  LoginViewController.swift
+//  SignUpViewController.swift
 //  share-time
 //
-//  Created by Godwin Pang on 4/14/18.
+//  Created by Jiayi Wang on 4/14/18.
 //  Copyright © 2018 share-time. All rights reserved.
 //
 
 import UIKit
 
-class LoginViewController: UIViewController {
-    @IBOutlet weak var username: UITextField!
-    
-    @IBOutlet weak var userSignup: UIButton!
-    @IBAction func userLogin(_ sender: Any) {
+class SignUpViewController: UIViewController {
+
+    @IBAction func signUpButton(_ sender: Any) {
     }
-    @IBOutlet weak var password: UITextField!
+    @IBOutlet weak var pwdConfirm: UITextField!
+    @IBOutlet weak var userPassword: UITextField!
+    @IBOutlet weak var username: UITextField!
+    @IBOutlet weak var userEmail: UITextField!
     override func viewDidLoad() {
         super.viewDidLoad()
 
