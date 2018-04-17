@@ -10,7 +10,6 @@ import UIKit
 
 class FindClassViewController: UIViewController {
 
-    @IBOutlet weak var classCell: UITableViewCell!
     @IBOutlet weak var classSearchBar: UITextField!
     @IBOutlet weak var classTableView: UITableView!
     

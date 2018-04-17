@@ -15,6 +15,13 @@ class LoginViewController: UIViewController {
     @IBAction func userLogin(_ sender: Any) {
     }
     @IBOutlet weak var password: UITextField!
+    
+    let signUpUsernameErrorAlertController = UIAlertController(title: "Username Required", message: "Please enter username", preferredStyle: .alert)
+    let signUpPasswordErrorAlertController = UIAlertController(title: "Password Required", message: "Please enter password", preferredStyle: .alert)
+    let OKAction = UIAlertAction(title: "OK", style: .default) { (action) in
+        //does nothing -> dismisses alert view
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
