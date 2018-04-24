@@ -58,7 +58,8 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Sign up"/>
                                 <connections>
-                                    <segue destination="KFt-uC-aDe" kind="show" id="s9b-ZE-6HV"/>
+                                    <action selector="onSignup:" destination="BYZ-38-t0r" eventType="touchUpInside" id="MLr-DH-bzo"/>
+                                    <segue destination="KFt-uC-aDe" kind="show" identifier="toSignUpSegue" id="s9b-ZE-6HV"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U1K-Pi-Vnh">
@@ -66,8 +67,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Login"/>
                                 <connections>
-                                    <action selector="userLogin:" destination="BYZ-38-t0r" eventType="touchUpInside" id="BeM-5C-YV4"/>
-                                    <segue destination="WKt-di-6Gd" kind="show" id="988-4Z-TwU"/>
+                                    <action selector="onLogin:" destination="BYZ-38-t0r" eventType="touchUpInside" id="tLg-zc-caI"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -75,14 +75,14 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
-                        <outlet property="password" destination="Eo7-q9-FJG" id="clD-xt-ozh"/>
-                        <outlet property="userSignup" destination="GPp-tq-g9z" id="ByR-tv-H0Y"/>
-                        <outlet property="username" destination="5kZ-F5-khJ" id="nQl-zu-hTW"/>
+                        <outlet property="passwordField" destination="Eo7-q9-FJG" id="aEJ-ad-CDw"/>
+                        <outlet property="usernameField" destination="5kZ-F5-khJ" id="NFR-Ph-6lQ"/>
+                        <segue destination="WKt-di-6Gd" kind="presentation" identifier="loginSegue" id="NAf-Lz-Bv4"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2135.1999999999998" y="27.436281859070466"/>
+            <point key="canvasLocation" x="-2167" y="-15"/>
         </scene>
         <!--Sign Up View Controller-->
         <scene sceneID="mFH-ks-uTt">
