@@ -7,18 +7,24 @@
 //
 
 import UIKit
+import Parse
 
 class SignUpViewController: UIViewController {
-
-    @IBAction func signUpButton(_ sender: Any) {
+    let signUpUsernameErrorAlertController = UIAlertController(title: "Username Required", message: "Please enter username", preferredStyle: .alert)
+    let signUpPasswordErrorAlertController = UIAlertController(title: "Password Required", message: "Please enter password", preferredStyle: .alert)
+    let OKAction = UIAlertAction(title: "OK", style: .default) { (action) in
+        //does nothing -> dismisses alert view
     }
-    @IBOutlet weak var pwdConfirm: UITextField!
-    @IBOutlet weak var userPassword: UITextField!
-    @IBOutlet weak var username: UITextField!
-    @IBOutlet weak var userEmail: UITextField!
+    
+    @IBOutlet weak var emailField: UITextField!
+    @IBOutlet weak var usernameField: UITextField!
+    @IBOutlet weak var passwordField: UITextField!
+    @IBOutlet weak var confirmField: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        signUpUsernameErrorAlertController.addAction(OKAction)
+        signUpPasswordErrorAlertController.addAction(OKAction)
         // Do any additional setup after loading the view.
     }
 
@@ -27,15 +33,26 @@ class SignUpViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    @IBAction func onSignUp(_ sender: Any) {
+        let newUser = PFUser()
+        // set user properties
+        newUser.username = usernameField.text
+        newUser.password = passwordField.text
+        
+        if (usernameField.text?.isEmpty)!{
+            present(signUpUsernameErrorAlertController, animated: true)
+        } else if (passwordField.text?.isEmpty)!{
+            present(signUpPasswordErrorAlertController, animated: true)
+        } else {
+            newUser.signUpInBackground { (success: Bool, error: Error?) in
+                if let error = error {
+                    let signUpErrorAlertController = UIAlertController(title: "Signup Failed", message: "\(error.localizedDescription)", preferredStyle: .alert)
+                    signUpErrorAlertController.addAction(self.OKAction)
+                    self.present(signUpErrorAlertController, animated: true)
+                } else {
+                    self.performSegue(withIdentifier: "toLoginSegue", sender: nil)
+                }
+            }
+        }
     }
-    */
-
 }
