@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -230,9 +230,11 @@
                                                         <segue destination="4Fk-RM-atx" kind="show" id="rF6-s3-p9P"/>
                                                     </connections>
                                                 </button>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="ClassName" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y1k-gL-CAy">
-                                                    <rect key="frame" x="24" y="11" width="87" height="21"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CSE100 " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y1k-gL-CAy">
+                                                    <rect key="frame" x="8" y="8" width="65" height="21"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="21" id="Csg-Ik-HQj"/>
+                                                    </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -245,6 +247,11 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstItem="Y1k-gL-CAy" firstAttribute="leading" secondItem="eU1-lg-ZVg" secondAttribute="leading" constant="8" id="1i2-ub-1sq"/>
+                                                <constraint firstItem="Y1k-gL-CAy" firstAttribute="top" secondItem="eU1-lg-ZVg" secondAttribute="top" constant="8" id="Vx4-sR-vAW"/>
+                                                <constraint firstAttribute="bottom" secondItem="Y1k-gL-CAy" secondAttribute="bottom" constant="10" id="td5-A7-W4I"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="groupNameLabel" destination="Y1k-gL-CAy" id="Qp2-Ne-ba5"/>
@@ -275,7 +282,7 @@
                         <outlet property="nameLabel" destination="MTM-Mt-0we" id="n9a-rP-awA"/>
                         <outlet property="personalImage" destination="blo-cI-haa" id="yj0-qA-gWG"/>
                         <outlet property="studyTritonImage" destination="WI9-xw-0bs" id="3x7-iv-RtV"/>
-                        <outlet property="tableView" destination="beQ-is-O4u" id="ia0-UP-Vhw"/>
+                        <outlet property="tableView" destination="beQ-is-O4u" id="RHy-Zt-yXm"/>
                         <outlet property="whatsUpLabel" destination="k8U-ft-SvI" id="E0y-sf-yCB"/>
                     </connections>
                 </viewController>
