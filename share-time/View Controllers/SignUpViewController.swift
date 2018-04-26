@@ -12,6 +12,8 @@ import Parse
 class SignUpViewController: UIViewController {
     let signUpUsernameErrorAlertController = UIAlertController(title: "Username Required", message: "Please enter username", preferredStyle: .alert)
     let signUpPasswordErrorAlertController = UIAlertController(title: "Password Required", message: "Please enter password", preferredStyle: .alert)
+    let signUpEmailErrorAlertController = UIAlertController(title: "Email Required", message: "Please enter password", preferredStyle: .alert)
+    let signUpConfirmErrorAlertController = UIAlertController(title: "Confirm Password Failed", message: "Please enter again", preferredStyle: .alert)
     let OKAction = UIAlertAction(title: "OK", style: .default) { (action) in
         //does nothing -> dismisses alert view
     }
@@ -25,6 +27,8 @@ class SignUpViewController: UIViewController {
         super.viewDidLoad()
         signUpUsernameErrorAlertController.addAction(OKAction)
         signUpPasswordErrorAlertController.addAction(OKAction)
+        signUpEmailErrorAlertController.addAction(OKAction)
+        signUpConfirmErrorAlertController.addAction(OKAction)
         // Do any additional setup after loading the view.
     }
 
@@ -38,11 +42,16 @@ class SignUpViewController: UIViewController {
         // set user properties
         newUser.username = usernameField.text
         newUser.password = passwordField.text
+        newUser.email = emailField.text
         
         if (usernameField.text?.isEmpty)!{
             present(signUpUsernameErrorAlertController, animated: true)
         } else if (passwordField.text?.isEmpty)!{
             present(signUpPasswordErrorAlertController, animated: true)
+        } else if(passwordField.text != confirmField.text){
+            present(signUpConfirmErrorAlertController, animated: true)
+        } else if(emailField.text?.isEmpty)!{
+            present(signUpEmailErrorAlertController, animated: true)
         } else {
             newUser.signUpInBackground { (success: Bool, error: Error?) in
                 if let error = error {
