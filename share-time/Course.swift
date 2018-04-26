@@ -6,4 +6,14 @@
 //  Copyright © 2018 share-time. All rights reserved.
 //
 
-import Foundation
+import UIKit
+import Parse
+
+class Course: PFObject, PFSubclassing {
+    @NSManaged var studyGroups : [StudyGroup]
+
+    /* Needed to implement PFSubclassing interface */
+    class func parseClassName() -> String {
+        return "Course"
+    }
+}

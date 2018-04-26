@@ -9,13 +9,14 @@
 /* Begin PBXBuildFile section */
 		4E1DAE25259F11E514246437 /* Pods_share_time.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB0B32FD4E359D86F70E22A2 /* Pods_share_time.framework */; };
 		5A254ADB2082F04E00767CB7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A254ADA2082F04E00767CB7 /* AppDelegate.swift */; };
-		5A254ADD2082F04E00767CB7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A254ADC2082F04E00767CB7 /* ViewController.swift */; };
 		5A254AE02082F04E00767CB7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5A254ADE2082F04E00767CB7 /* Main.storyboard */; };
 		5A254AE22082F04E00767CB7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5A254AE12082F04E00767CB7 /* Assets.xcassets */; };
 		5A254AE52082F04E00767CB7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5A254AE32082F04E00767CB7 /* LaunchScreen.storyboard */; };
 		5A254AF02082F04E00767CB7 /* share_timeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A254AEF2082F04E00767CB7 /* share_timeTests.swift */; };
 		5A254AFB2082F04E00767CB7 /* share_timeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A254AFA2082F04E00767CB7 /* share_timeUITests.swift */; };
 		5A8FF2BF20859C02004957DE /* PublicStudyGroupCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A8FF2BE20859C02004957DE /* PublicStudyGroupCell.swift */; };
+		5AEE747920915F70006A2689 /* StudyGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AEE747820915F70006A2689 /* StudyGroup.swift */; };
+		5AEE747B209162B7006A2689 /* Course.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AEE747A209162B7006A2689 /* Course.swift */; };
 		5AFE25A62082F4FE00EED7F9 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AFE25A52082F4FE00EED7F9 /* LoginViewController.swift */; };
 		5AFE25A82082F5E900EED7F9 /* FindClassViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AFE25A72082F5E900EED7F9 /* FindClassViewController.swift */; };
 		5AFE25AA2082F68100EED7F9 /* ClassDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AFE25A92082F68100EED7F9 /* ClassDetailViewController.swift */; };
@@ -51,7 +52,6 @@
 		1D584195F00E2A4D3C99DAFB /* Pods-share-timeUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-share-timeUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-share-timeUITests/Pods-share-timeUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		5A254AD72082F04E00767CB7 /* share-time.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "share-time.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5A254ADA2082F04E00767CB7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		5A254ADC2082F04E00767CB7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		5A254ADF2082F04E00767CB7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		5A254AE12082F04E00767CB7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5A254AE42082F04E00767CB7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -63,6 +63,8 @@
 		5A254AFA2082F04E00767CB7 /* share_timeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = share_timeUITests.swift; sourceTree = "<group>"; };
 		5A254AFC2082F04E00767CB7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5A8FF2BE20859C02004957DE /* PublicStudyGroupCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PublicStudyGroupCell.swift; sourceTree = "<group>"; };
+		5AEE747820915F70006A2689 /* StudyGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = StudyGroup.swift; path = "share-time/StudyGroup.swift"; sourceTree = SOURCE_ROOT; };
+		5AEE747A209162B7006A2689 /* Course.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Course.swift; path = "share-time/Course.swift"; sourceTree = SOURCE_ROOT; };
 		5AFE25A52082F4FE00EED7F9 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		5AFE25A72082F5E900EED7F9 /* FindClassViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindClassViewController.swift; sourceTree = "<group>"; };
 		5AFE25A92082F68100EED7F9 /* ClassDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassDetailViewController.swift; sourceTree = "<group>"; };
@@ -152,11 +154,12 @@
 				70CE5ADD20830B770023F3D7 /* Cell */,
 				70CE5AD4208300150023F3D7 /* View Controllers */,
 				5A254ADA2082F04E00767CB7 /* AppDelegate.swift */,
-				5A254ADC2082F04E00767CB7 /* ViewController.swift */,
 				5A254ADE2082F04E00767CB7 /* Main.storyboard */,
 				5A254AE12082F04E00767CB7 /* Assets.xcassets */,
 				5A254AE32082F04E00767CB7 /* LaunchScreen.storyboard */,
 				5A254AE62082F04E00767CB7 /* Info.plist */,
+				5AEE747820915F70006A2689 /* StudyGroup.swift */,
+				5AEE747A209162B7006A2689 /* Course.swift */,
 			);
 			path = "share-time";
 			sourceTree = "<group>";
@@ -514,9 +517,10 @@
 				5AFE25A62082F4FE00EED7F9 /* LoginViewController.swift in Sources */,
 				70CE5ADF20830EEB0023F3D7 /* ClassCell.swift in Sources */,
 				70CE5ADC20830B6E0023F3D7 /* ChatCell.swift in Sources */,
-				5A254ADD2082F04E00767CB7 /* ViewController.swift in Sources */,
 				C68E4B852083178F0073F695 /* SignUpViewController.swift in Sources */,
 				5A8FF2BF20859C02004957DE /* PublicStudyGroupCell.swift in Sources */,
+				5AEE747920915F70006A2689 /* StudyGroup.swift in Sources */,
+				5AEE747B209162B7006A2689 /* Course.swift in Sources */,
 				5AFE25A82082F5E900EED7F9 /* FindClassViewController.swift in Sources */,
 				70CE5AD8208309300023F3D7 /* StudyGroupCell.swift in Sources */,
 				5AFE25AC2082F79C00EED7F9 /* AddStudyGroupViewController.swift in Sources */,
