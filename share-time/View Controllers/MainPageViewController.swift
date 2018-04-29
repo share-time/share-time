@@ -23,7 +23,8 @@ class MainPageViewController: UIViewController,UITableViewDelegate, UITableViewD
         tableView.dataSource = self
         tableView.delegate = self
         tableView.rowHeight = UITableViewAutomaticDimension
-        tableView.estimatedRowHeight = 50
+        self.tableView.rowHeight = UITableViewAutomaticDimension
+        self.tableView.rowHeight = 125
         // Do any additional setup after loading the view.
     }
 

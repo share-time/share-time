@@ -22,8 +22,6 @@ class FindClassViewController: UIViewController, UITableViewDelegate, UITableVie
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        classTableView.estimatedRowHeight = 85.0
-        classTableView.rowHeight = UITableViewAutomaticDimension
         classTableView.dataSource = self
         classTableView.delegate = self
         classTableView.rowHeight = UITableViewAutomaticDimension
