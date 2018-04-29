@@ -22,8 +22,6 @@ class FindClassViewController: UIViewController, UITableViewDelegate, UITableVie
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        classTableView.estimatedRowHeight = 85.0
-        classTableView.rowHeight = UITableViewAutomaticDimension
         classTableView.dataSource = self
         classTableView.delegate = self
         classTableView.rowHeight = UITableViewAutomaticDimension
@@ -57,19 +55,6 @@ class FindClassViewController: UIViewController, UITableViewDelegate, UITableVie
             return 0
         }
     }
-    /*
-    func updateSearchResults(for searchController: UISearchController) {
-        if let searchText = searchController.searchBar.text {
-            searchedCourses = searchText.isEmpty ? courses: courses.filter( { (data: String) -> Bool in
-                return data.lowercased().contains(searchText.lowercased())
-            })
-            dump(courses)
-            print("HJIOOFDSUHFSDIUHWEFKJHSDFKJHSDFKJH")
-            dump(searchedCourses)
-            classTableView.reloadData()
-        }
-    }
-    */
     
     func filterContentForSearchText(_ searchText: String, scope: String = "All") {
         searchedCourses = courses.filter({( data : String) -> Bool in
@@ -87,8 +72,16 @@ class FindClassViewController: UIViewController, UITableViewDelegate, UITableVie
         let cell = tableView.dequeueReusableCell(withIdentifier: "ClassCell", for: indexPath) as! ClassCell
         
         cell.classnameLabel.text = searchedCourses[indexPath.row]
-        print(cell.classnameLabel.text)
         return cell
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let cell = sender as! UITableViewCell
+        if let indexPath = classTableView.indexPath(for: cell){
+            let courseName = searchedCourses![indexPath.row]
+            let classDetailViewController = segue.destination as! ClassDetailViewController
+            classDetailViewController.courseName = courseName
+        }
     }
 }
 
