@@ -9,8 +9,11 @@
 import UIKit
 
 class StudyGroupCell: UITableViewCell {
-    @IBOutlet weak var profNameButton: UILabel!
-    @IBOutlet weak var groupNameLabel: UILabel!
+
+    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var memberNumLabel: UILabel!
+    @IBOutlet weak var professorLabel: UILabel!
+    @IBOutlet weak var classLabel: UILabel!
     @IBAction func onEnterGroupButton(_ sender: Any) {
     }
     override func awakeFromNib() {
