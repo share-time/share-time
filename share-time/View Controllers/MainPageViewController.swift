@@ -24,14 +24,10 @@ class MainPageViewController: UIViewController,UITableViewDelegate, UITableViewD
         tableView.dataSource = self
         tableView.delegate = self
         tableView.rowHeight = UITableViewAutomaticDimension
-<<<<<<< HEAD
         self.tableView.rowHeight = UITableViewAutomaticDimension
         self.tableView.rowHeight = 125
-=======
-        tableView.estimatedRowHeight = 50
         emailLabel.text = user?.email
         nameLabel.text = user?.username
->>>>>>> e26e2c3bf4be613478c5559c33e6467ab68cdc34
         // Do any additional setup after loading the view.
     }
 
