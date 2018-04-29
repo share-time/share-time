@@ -202,13 +202,6 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="What's up" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k8U-ft-SvI">
-                                <rect key="frame" x="94" y="149" width="77" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="beQ-is-O4u">
                                 <rect key="frame" x="0.0" y="183" width="375" height="484"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -283,7 +276,6 @@
                         <outlet property="personalImage" destination="blo-cI-haa" id="yj0-qA-gWG"/>
                         <outlet property="studyTritonImage" destination="WI9-xw-0bs" id="3x7-iv-RtV"/>
                         <outlet property="tableView" destination="beQ-is-O4u" id="RHy-Zt-yXm"/>
-                        <outlet property="whatsUpLabel" destination="k8U-ft-SvI" id="E0y-sf-yCB"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4FA-CM-e8L" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -293,7 +285,7 @@
         <!--Chat View Controller-->
         <scene sceneID="hjd-bY-P99">
             <objects>
-                <viewController id="4Fk-RM-atx" customClass="ChatViewController" customModule="share_time" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ChatViewController" id="4Fk-RM-atx" customClass="ChatViewController" customModule="share_time" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="XOt-Ne-GNb">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

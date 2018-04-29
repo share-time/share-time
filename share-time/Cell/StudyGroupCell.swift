@@ -7,14 +7,17 @@
 //
 
 import UIKit
+import Parse
 
 class StudyGroupCell: UITableViewCell {
     @IBOutlet weak var profNameButton: UILabel!
     @IBOutlet weak var groupNameLabel: UILabel!
     @IBAction func onEnterGroupButton(_ sender: Any) {
     }
+
     override func awakeFromNib() {
         super.awakeFromNib()
+        
         // Initialization code
     }
 
