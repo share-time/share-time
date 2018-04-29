@@ -12,19 +12,26 @@ import Parse
 class MainPageViewController: UIViewController,UITableViewDelegate, UITableViewDataSource {
     @IBOutlet weak var personalImage: UIImageView!
     @IBOutlet weak var tableView: UITableView!
-    @IBOutlet weak var whatsUpLabel: UILabel!
     @IBOutlet weak var emailLabel: UILabel!
     @IBOutlet weak var backDropImage: UIImageView!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var studyTritonImage: UIImageView!
-
+    let user = PFUser.current()
+    var studyGroups: [PFObject] = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.dataSource = self
         tableView.delegate = self
         tableView.rowHeight = UITableViewAutomaticDimension
+<<<<<<< HEAD
         self.tableView.rowHeight = UITableViewAutomaticDimension
         self.tableView.rowHeight = 125
+=======
+        tableView.estimatedRowHeight = 50
+        emailLabel.text = user?.email
+        nameLabel.text = user?.username
+>>>>>>> e26e2c3bf4be613478c5559c33e6467ab68cdc34
         // Do any additional setup after loading the view.
     }
 
@@ -35,12 +42,16 @@ class MainPageViewController: UIViewController,UITableViewDelegate, UITableViewD
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int)
         -> Int {
-            return 10
+            if let studyGroups = user?["study Groups"] as? [PFObject] {
+                return studyGroups.count
+            } else {
+                return 10
+            }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "StudyGroupCell", for: indexPath) as! StudyGroupCell
-        
+        cell.studyGroup = (studyGroups[indexPath.row] as PFObject!) as! StudyGroup!
         return cell
     }
 
