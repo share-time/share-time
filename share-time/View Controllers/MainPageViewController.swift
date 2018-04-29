@@ -17,7 +17,7 @@ class MainPageViewController: UIViewController,UITableViewDelegate, UITableViewD
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var studyTritonImage: UIImageView!
     let user = PFUser.current()
-    var studyGroups: [PFObject] = []
+    var studyGroups: [StudyGroup] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -47,7 +47,11 @@ class MainPageViewController: UIViewController,UITableViewDelegate, UITableViewD
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "StudyGroupCell", for: indexPath) as! StudyGroupCell
-        cell.studyGroup = (studyGroups[indexPath.row] as PFObject!) as! StudyGroup!
+        if studyGroups.count == 0 {
+            return cell
+        }
+        print("The number of row is" + String(indexPath.row))
+        cell.studyGroup = studyGroups[indexPath.row] 
         return cell
     }
 
