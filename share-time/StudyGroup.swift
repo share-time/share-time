@@ -10,6 +10,7 @@ import UIKit
 import Parse
 
 class StudyGroup: PFObject, PFSubclassing {
+    @NSManaged var name : [String]
     @NSManaged var members : [PFUser]
     @NSManaged var messages: [PFObject]
     @NSManaged var course: String

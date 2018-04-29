@@ -27,9 +27,9 @@ class FindClassViewController: UIViewController, UITableViewDelegate, UITableVie
         classTableView.delegate = self
         classTableView.rowHeight = UITableViewAutomaticDimension
         classTableView.estimatedRowHeight = 100
-        
+        classTableView.estimatedRowHeight = 85.0
+        classTableView.rowHeight = UITableViewAutomaticDimension
         searchController = UISearchController(searchResultsController: nil)
-        
         searchController.searchResultsUpdater = self
         searchController.dimsBackgroundDuringPresentation = false
         searchController.searchBar.sizeToFit()

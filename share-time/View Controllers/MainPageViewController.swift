@@ -46,8 +46,7 @@ class MainPageViewController: UIViewController,UITableViewDelegate, UITableViewD
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "StudyGroupCell", for: indexPath) as! StudyGroupCell
-        let studyGroup = studyGroups[indexPath.row]
-        //cell.groupNameLabel = studyGroup[""]
+        cell.studyGroup = (studyGroups[indexPath.row] as PFObject!) as! StudyGroup!
         return cell
     }
 

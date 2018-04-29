@@ -25,10 +25,9 @@ class ChatViewController: UIViewController, UITableViewDelegate, UITableViewData
         self.refresher = UIRefreshControl()
         self.refresher.tintColor = UIColor.darkText
         self.refresher.addTarget(self, action: #selector(refreshControlAction(_:)), for: .valueChanged)
-        //tableView.rowHeight = UITableViewAutomaticDimension
-        //tableView.estimatedRowHeight = 100
+        tableView.rowHeight = UITableViewAutomaticDimension
+        tableView.estimatedRowHeight = 100
         tableView.insertSubview(refresher, at: 0)
-        tableView.rowHeight = 100
         tableView.separatorStyle = .none
         Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(ChatViewController.onTimer), userInfo: nil, repeats: true)
     }
