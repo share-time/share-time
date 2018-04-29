@@ -8,6 +8,8 @@
 
 import UIKit
 import Parse
+import AlamofireImage
+import PKHUD
 
 class ChatViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
@@ -20,8 +22,9 @@ class ChatViewController: UIViewController, UITableViewDelegate, UITableViewData
         super.viewDidLoad()
         tableView.dataSource = self
         tableView.delegate = self
-        tableView.rowHeight = UITableViewAutomaticDimension
-        tableView.estimatedRowHeight = 200
+        //tableView.rowHeight = UITableViewAutomaticDimension
+        //tableView.estimatedRowHeight = 200
+        tableView.rowHeight = 200
         tableView.separatorStyle = .none
         Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(ChatViewController.onTimer), userInfo: nil, repeats: true)
     }

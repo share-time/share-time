@@ -7,6 +7,8 @@ target 'share-time' do
 
   # Pods for share-time
   pod 'Parse'
+  pod 'PKHUD', '~> 5.0'
+  pod 'AlamofireImage'
 
   target 'share-timeTests' do
     inherit! :search_paths

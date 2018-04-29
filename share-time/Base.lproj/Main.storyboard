@@ -6,7 +6,10 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+<<<<<<< HEAD
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+=======
+>>>>>>> 40c0f3dfa0f0e4dee69d8426c184493c93ba4596
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>

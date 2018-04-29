@@ -15,6 +15,8 @@
 		5A254AF02082F04E00767CB7 /* share_timeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A254AEF2082F04E00767CB7 /* share_timeTests.swift */; };
 		5A254AFB2082F04E00767CB7 /* share_timeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A254AFA2082F04E00767CB7 /* share_timeUITests.swift */; };
 		5A8FF2BF20859C02004957DE /* PublicStudyGroupCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A8FF2BE20859C02004957DE /* PublicStudyGroupCell.swift */; };
+		5AEE747920915F70006A2689 /* StudyGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AEE747820915F70006A2689 /* StudyGroup.swift */; };
+		5AEE747B209162B7006A2689 /* Course.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AEE747A209162B7006A2689 /* Course.swift */; };
 		5AFE25A62082F4FE00EED7F9 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AFE25A52082F4FE00EED7F9 /* LoginViewController.swift */; };
 		5AFE25A82082F5E900EED7F9 /* FindClassViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AFE25A72082F5E900EED7F9 /* FindClassViewController.swift */; };
 		5AFE25AA2082F68100EED7F9 /* ClassDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AFE25A92082F68100EED7F9 /* ClassDetailViewController.swift */; };
@@ -61,6 +63,8 @@
 		5A254AFA2082F04E00767CB7 /* share_timeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = share_timeUITests.swift; sourceTree = "<group>"; };
 		5A254AFC2082F04E00767CB7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5A8FF2BE20859C02004957DE /* PublicStudyGroupCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PublicStudyGroupCell.swift; sourceTree = "<group>"; };
+		5AEE747820915F70006A2689 /* StudyGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = StudyGroup.swift; path = "share-time/StudyGroup.swift"; sourceTree = SOURCE_ROOT; };
+		5AEE747A209162B7006A2689 /* Course.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Course.swift; path = "share-time/Course.swift"; sourceTree = SOURCE_ROOT; };
 		5AFE25A52082F4FE00EED7F9 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		5AFE25A72082F5E900EED7F9 /* FindClassViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindClassViewController.swift; sourceTree = "<group>"; };
 		5AFE25A92082F68100EED7F9 /* ClassDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassDetailViewController.swift; sourceTree = "<group>"; };
@@ -154,6 +158,8 @@
 				5A254AE12082F04E00767CB7 /* Assets.xcassets */,
 				5A254AE32082F04E00767CB7 /* LaunchScreen.storyboard */,
 				5A254AE62082F04E00767CB7 /* Info.plist */,
+				5AEE747820915F70006A2689 /* StudyGroup.swift */,
+				5AEE747A209162B7006A2689 /* Course.swift */,
 			);
 			path = "share-time";
 			sourceTree = "<group>";
@@ -456,12 +462,18 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-share-time/Pods-share-time-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/AlamofireImage/AlamofireImage.framework",
 				"${BUILT_PRODUCTS_DIR}/Bolts/Bolts.framework",
+				"${BUILT_PRODUCTS_DIR}/PKHUD/PKHUD.framework",
 				"${BUILT_PRODUCTS_DIR}/Parse/Parse.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Bolts.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PKHUD.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Parse.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -513,6 +525,8 @@
 				70CE5ADC20830B6E0023F3D7 /* ChatCell.swift in Sources */,
 				C68E4B852083178F0073F695 /* SignUpViewController.swift in Sources */,
 				5A8FF2BF20859C02004957DE /* PublicStudyGroupCell.swift in Sources */,
+				5AEE747920915F70006A2689 /* StudyGroup.swift in Sources */,
+				5AEE747B209162B7006A2689 /* Course.swift in Sources */,
 				5AFE25A82082F5E900EED7F9 /* FindClassViewController.swift in Sources */,
 				70CE5AD8208309300023F3D7 /* StudyGroupCell.swift in Sources */,
 				5AFE25AC2082F79C00EED7F9 /* AddStudyGroupViewController.swift in Sources */,
