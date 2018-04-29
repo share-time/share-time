@@ -13,18 +13,21 @@ import PKHUD
 
 class ChatViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
-    
     @IBOutlet weak var sendButton: UIButton!
     @IBOutlet weak var messageTextField: UITextField!
     @IBOutlet weak var tableView: UITableView!
     var chatMessage: [PFObject]? = []
+    var refresher: UIRefreshControl!
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.dataSource = self
         tableView.delegate = self
-        //tableView.rowHeight = UITableViewAutomaticDimension
-        //tableView.estimatedRowHeight = 200
-        tableView.rowHeight = 200
+        self.refresher = UIRefreshControl()
+        self.refresher.tintColor = UIColor.darkText
+        self.refresher.addTarget(self, action: #selector(refreshControlAction(_:)), for: .valueChanged)
+        tableView.rowHeight = UITableViewAutomaticDimension
+        tableView.estimatedRowHeight = 100
+        tableView.insertSubview(refresher, at: 0)
         tableView.separatorStyle = .none
         Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(ChatViewController.onTimer), userInfo: nil, repeats: true)
     }
@@ -83,4 +86,11 @@ class ChatViewController: UIViewController, UITableViewDelegate, UITableViewData
             }
         }
     }
+    
+    @objc func refreshControlAction(_ refreshControl: UIRefreshControl) {
+        onTimer()
+        // Tell the refreshControl to stop spinning
+        refresher.endRefreshing()
+    }
+
 }
