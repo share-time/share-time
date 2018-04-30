@@ -10,6 +10,11 @@ import UIKit
 
 class PublicStudyGroupCell: UITableViewCell {
 
+    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var profLabel: UILabel!
+    @IBOutlet weak var memberCountLabel: UILabel!
+    
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

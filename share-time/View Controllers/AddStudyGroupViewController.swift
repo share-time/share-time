@@ -9,10 +9,14 @@
 import UIKit
 
 class AddStudyGroupViewController: UIViewController {
-
+    @IBOutlet weak var courseLabel: UILabel!
+    @IBOutlet weak var profTextField: UITextField!
+    @IBOutlet weak var studyGroupNameTextField: UITextField!
+    @IBOutlet weak var profLabel: UILabel!
     @IBOutlet weak var groupNameLabel: UILabel!
     @IBOutlet weak var memberSearchBar: UITextField!
-    @IBOutlet weak var groupMemberLabel: UILabel!
+    @IBAction func onAddButton(_ sender: Any) {
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
