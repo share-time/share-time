@@ -14,7 +14,8 @@ class ClassDetailViewController: UIViewController, UITableViewDelegate, UITableV
     @IBOutlet weak var classNameLabel: UILabel!
     @IBOutlet weak var createGroupButton: UIButton!
     @IBOutlet weak var studyGroupTableView: UITableView!
-    
+    @IBAction func onAddGroupButton(_ sender: Any) {
+    }
     var courseName: String!
     var course: PFObject!
     

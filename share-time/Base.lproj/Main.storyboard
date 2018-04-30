@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -15,7 +15,7 @@
         <!--Login View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="LoginViewController" customModule="share_time" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LoginViewController" id="BYZ-38-t0r" customClass="LoginViewController" customModule="share_time" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -175,6 +175,25 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Have an account?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MBX-gW-sAE">
+                                <rect key="frame" x="33" y="628" width="137" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="here directly!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4v5-Xd-hnG">
+                                <rect key="frame" x="233" y="628" width="101" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mju-LB-Dne">
+                                <rect key="frame" x="178" y="623.5" width="47" height="30"/>
+                                <state key="normal" title="Sign In"/>
+                                <connections>
+                                    <segue destination="BYZ-38-t0r" kind="show" id="7OT-j5-epj"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -183,6 +202,8 @@
                             <constraint firstItem="oQ4-09-ffz" firstAttribute="centerY" secondItem="3W3-bk-oN4" secondAttribute="centerY" multiplier="0.6" id="2Vs-Lu-2AS"/>
                             <constraint firstItem="YUQ-BD-Uoh" firstAttribute="centerX" secondItem="3W3-bk-oN4" secondAttribute="centerX" id="5DC-xq-5rB"/>
                             <constraint firstItem="fFR-3s-NZ2" firstAttribute="centerX" secondItem="3W3-bk-oN4" secondAttribute="centerX" id="5V5-SI-KoX"/>
+                            <constraint firstItem="QCv-Mu-Tkk" firstAttribute="bottom" secondItem="4v5-Xd-hnG" secondAttribute="bottom" constant="18" id="658-N0-VIk"/>
+                            <constraint firstItem="Mju-LB-Dne" firstAttribute="centerY" secondItem="MBX-gW-sAE" secondAttribute="centerY" id="6w5-PQ-Iyp"/>
                             <constraint firstItem="N16-q8-WEF" firstAttribute="centerY" secondItem="3W3-bk-oN4" secondAttribute="centerY" multiplier="1.35" id="7MJ-vz-FbZ"/>
                             <constraint firstItem="YUQ-BD-Uoh" firstAttribute="centerY" secondItem="3W3-bk-oN4" secondAttribute="centerY" multiplier="1.1" id="89B-tb-Ac6"/>
                             <constraint firstItem="YUQ-BD-Uoh" firstAttribute="leading" relation="lessThanOrEqual" secondItem="QCv-Mu-Tkk" secondAttribute="leading" constant="61" id="8fx-cv-fb7"/>
@@ -195,7 +216,10 @@
                             <constraint firstItem="N16-q8-WEF" firstAttribute="centerX" secondItem="3W3-bk-oN4" secondAttribute="centerX" id="HUi-5d-ajb"/>
                             <constraint firstItem="YUQ-BD-Uoh" firstAttribute="leading" secondItem="c3h-c6-bnM" secondAttribute="leading" id="Iu6-pX-3KL"/>
                             <constraint firstItem="oQ4-09-ffz" firstAttribute="top" secondItem="agc-WB-GZ9" secondAttribute="bottom" constant="5" id="LO5-Aa-DiP"/>
+                            <constraint firstItem="Mju-LB-Dne" firstAttribute="leading" secondItem="MBX-gW-sAE" secondAttribute="trailing" constant="8" id="LcQ-k4-ymC"/>
                             <constraint firstItem="agc-WB-GZ9" firstAttribute="centerX" secondItem="3W3-bk-oN4" secondAttribute="centerX" multiplier="0.45" id="Qx5-BX-EaC"/>
+                            <constraint firstItem="MBX-gW-sAE" firstAttribute="leading" secondItem="QCv-Mu-Tkk" secondAttribute="leading" constant="33" id="Sgy-JS-gME"/>
+                            <constraint firstItem="QCv-Mu-Tkk" firstAttribute="trailing" secondItem="4v5-Xd-hnG" secondAttribute="trailing" constant="41" id="TYB-ik-217"/>
                             <constraint firstItem="LHI-nl-Jg2" firstAttribute="centerY" secondItem="3W3-bk-oN4" secondAttribute="centerY" multiplier="1.8" id="U62-tf-epn"/>
                             <constraint firstItem="mNX-Bn-bsg" firstAttribute="centerX" secondItem="3W3-bk-oN4" secondAttribute="centerX" id="VQz-ba-cOC"/>
                             <constraint firstItem="N16-q8-WEF" firstAttribute="leading" relation="lessThanOrEqual" secondItem="QCv-Mu-Tkk" secondAttribute="leading" constant="61" id="VWJ-mk-vPz"/>
@@ -206,10 +230,13 @@
                             <constraint firstItem="N16-q8-WEF" firstAttribute="leading" secondItem="T2C-ke-8qi" secondAttribute="leading" id="dh0-kN-RmG"/>
                             <constraint firstItem="c3h-c6-bnM" firstAttribute="centerX" secondItem="3W3-bk-oN4" secondAttribute="centerX" multiplier="0.54" id="fQf-I8-3VM"/>
                             <constraint firstItem="fFR-3s-NZ2" firstAttribute="centerY" secondItem="3W3-bk-oN4" secondAttribute="centerY" multiplier="0.3" id="ivo-ze-02k"/>
+                            <constraint firstItem="4v5-Xd-hnG" firstAttribute="centerY" secondItem="MBX-gW-sAE" secondAttribute="centerY" id="jPb-YN-t8k"/>
                             <constraint firstItem="T2C-ke-8qi" firstAttribute="centerY" secondItem="3W3-bk-oN4" secondAttribute="centerY" multiplier="1.25" id="k9X-bA-1BI"/>
                             <constraint firstItem="QCv-Mu-Tkk" firstAttribute="trailing" relation="lessThanOrEqual" secondItem="YUQ-BD-Uoh" secondAttribute="trailing" constant="61" id="mFi-LX-zmI"/>
                             <constraint firstItem="mNX-Bn-bsg" firstAttribute="leading" relation="lessThanOrEqual" secondItem="QCv-Mu-Tkk" secondAttribute="leading" constant="61" id="nfy-4F-eA0"/>
+                            <constraint firstItem="Mju-LB-Dne" firstAttribute="leading" secondItem="MBX-gW-sAE" secondAttribute="trailing" constant="8" id="nqS-Av-bpJ"/>
                             <constraint firstItem="QCv-Mu-Tkk" firstAttribute="trailing" relation="lessThanOrEqual" secondItem="oQ4-09-ffz" secondAttribute="trailing" constant="61" id="qpZ-RT-o5b"/>
+                            <constraint firstItem="4v5-Xd-hnG" firstAttribute="leading" secondItem="Mju-LB-Dne" secondAttribute="trailing" constant="8" id="rbl-98-ZVT"/>
                             <constraint firstItem="eU6-D5-nRS" firstAttribute="centerX" secondItem="3W3-bk-oN4" secondAttribute="centerX" multiplier="0.54" id="wgi-0m-Sao"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="QCv-Mu-Tkk"/>
@@ -224,9 +251,9 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="noe-zv-dp4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1575.2" y="975.56221889055485"/>
+            <point key="canvasLocation" x="-1474" y="755"/>
         </scene>
-        <!--Main Page View Controller-->
+        <!--Home Page-->
         <scene sceneID="3Tr-Mf-m05">
             <objects>
                 <viewController id="Ba1-hu-HZg" customClass="MainPageViewController" customModule="share_time" customModuleProvider="target" sceneMemberID="viewController">
@@ -351,7 +378,19 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="p0D-aU-eTQ"/>
                     </view>
-                    <navigationItem key="navigationItem" id="gd0-y2-GaL"/>
+                    <navigationItem key="navigationItem" title="Home Page" id="gd0-y2-GaL">
+                        <barButtonItem key="rightBarButtonItem" title="Log out" style="plain" id="V8C-ey-r3O">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="GYv-Zb-h0A">
+                                <rect key="frame" x="276" y="7" width="83" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Log out"/>
+                            </button>
+                            <connections>
+                                <action selector="onLogOff:" destination="Ba1-hu-HZg" id="K2P-oj-Vqr"/>
+                                <segue destination="BYZ-38-t0r" kind="presentation" identifier="logoutSegue" id="1XJ-mv-ecO"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="backDropImage" destination="okt-Tq-c4f" id="SML-n9-RYh"/>
                         <outlet property="emailLabel" destination="RCd-Sp-2kH" id="BxD-qy-deO"/>
@@ -437,7 +476,15 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="HHO-us-6hF"/>
                     </view>
-                    <navigationItem key="navigationItem" id="nuQ-r7-SVh"/>
+                    <navigationItem key="navigationItem" id="nuQ-r7-SVh">
+                        <barButtonItem key="rightBarButtonItem" style="plain" id="iH8-wc-XeQ">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="ZQH-nM-r7Z">
+                                <rect key="frame" x="276" y="7" width="83" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Log out"/>
+                            </button>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="messageTextField" destination="FgE-od-Wft" id="G90-F5-gnR"/>
                         <outlet property="sendButton" destination="skN-eu-o7a" id="Zkw-KA-oRD"/>
@@ -483,6 +530,7 @@
                                                 </label>
                                             </subviews>
                                             <constraints>
+                                                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="91u-7s-xEE" secondAttribute="trailing" constant="20" id="79L-SV-yke"/>
                                                 <constraint firstItem="91u-7s-xEE" firstAttribute="leading" secondItem="z4j-dk-arL" secondAttribute="leading" constant="15" id="9j8-21-CVw"/>
                                                 <constraint firstAttribute="bottom" secondItem="91u-7s-xEE" secondAttribute="bottom" constant="12" id="M2N-27-ljM"/>
                                                 <constraint firstItem="91u-7s-xEE" firstAttribute="top" secondItem="z4j-dk-arL" secondAttribute="top" constant="8" id="hD6-Hw-Zos"/>
@@ -499,7 +547,15 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <viewLayoutGuide key="safeArea" id="Ni3-LF-iLP"/>
                     </view>
-                    <navigationItem key="navigationItem" id="sid-eG-IDC"/>
+                    <navigationItem key="navigationItem" id="sid-eG-IDC">
+                        <barButtonItem key="rightBarButtonItem" style="plain" id="Ia0-js-Ryp">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="EXs-vM-ZwY">
+                                <rect key="frame" x="276" y="7" width="83" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Log out"/>
+                            </button>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="classTableView" destination="XZp-hg-9Z3" id="rMt-gM-jiq"/>
                     </connections>
@@ -582,6 +638,7 @@
                                 <rect key="frame" x="275" y="82" width="74" height="30"/>
                                 <state key="normal" title="Add Group"/>
                                 <connections>
+                                    <action selector="onAddGroupButton:" destination="VBZ-wc-Cxe" eventType="touchUpInside" id="8jw-pn-I9d"/>
                                     <segue destination="SNw-SO-4Kv" kind="show" id="91C-pq-bTS"/>
                                 </connections>
                             </button>
@@ -764,4 +821,7 @@
             <point key="canvasLocation" x="-572.79999999999995" y="976.91154422788611"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="1XJ-mv-ecO"/>
+    </inferredMetricsTieBreakers>
 </document>
