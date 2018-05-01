@@ -32,7 +32,7 @@ class AddStudyGroupViewController: UIViewController {
         courseLabel.text = course.object(forKey: "courseName") as? String
         // Do any additional setup after loading the view.
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -57,6 +57,11 @@ class AddStudyGroupViewController: UIViewController {
             newStudyGroup.saveInBackground{(success, error) in
                 if success {
                     print("study group called \(newStudyGroup["name"]) created")
+                    if var arrStudyGroups = self.course["studyGroups"] as? [PFObject]{
+                        arrStudyGroups.append(newStudyGroup)
+                        self.course["studyGroups"] = arrStudyGroups
+                    }
+                    self.performSegue(withIdentifier: "createStudyGroupSegue", sender: nil)
                 } else if let error = error {
                     print("Problem creating new study group: \(error.localizedDescription)")
                 }
@@ -64,5 +69,11 @@ class AddStudyGroupViewController: UIViewController {
         }
     }
     
-
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let classDetailViewController = segue.destination as! ClassDetailViewController
+        classDetailViewController.course = course
+        classDetailViewController.courseName = course.object(forKey: "courseName") as? String
+    }
+    
+    
 }

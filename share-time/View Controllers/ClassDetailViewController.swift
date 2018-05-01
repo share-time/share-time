@@ -17,7 +17,7 @@ class ClassDetailViewController: UIViewController, UITableViewDelegate, UITableV
 
     var courseName: String!
     var course: PFObject!
-    var studyGroups: [StudyGroup]? = []
+    var studyGroups: [PFObject]? = []
     
     override func viewDidLoad() {
         
@@ -26,6 +26,7 @@ class ClassDetailViewController: UIViewController, UITableViewDelegate, UITableV
         query.findObjectsInBackground{ (findCourse: [PFObject]?, error: Error?) -> Void in
             if findCourse?.count != 0 {
                 self.course = findCourse![0] as? Course
+                self.studyGroups = findCourse![0]["studyGroups"] as? [PFObject]
             } else {
                 let newCourse = PFObject(className: "Course")
                 newCourse["courseName"] = self.courseName
@@ -67,9 +68,9 @@ class ClassDetailViewController: UIViewController, UITableViewDelegate, UITableV
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "PublicStudyGroupCell", for: indexPath) as! PublicStudyGroupCell
         let cellStudyGroup = studyGroups![indexPath.row]
-        cell.nameLabel.text = cellStudyGroup.name
-        cell.profLabel.text = cellStudyGroup.professor
-        cell.memberCountLabel.text = String(cellStudyGroup.members.count)
+        cell.nameLabel.text = cellStudyGroup["name"] as? String
+        cell.profLabel.text = cellStudyGroup["professor"] as? String
+        cell.memberCountLabel.text = String((cellStudyGroup["members"] as AnyObject).count)
         return cell
     }
     
