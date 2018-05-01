@@ -31,6 +31,10 @@ class MainPageViewController: UIViewController,UITableViewDelegate, UITableViewD
         self.tableView.rowHeight = 125
         emailLabel.text = user?.email
         nameLabel.text = user?.username
+        let userIconBaseURLString = "http://api.adorable.io/avatars/285/"
+        let usrPathUrlString = user?.username
+        let iconURL = URL(string: userIconBaseURLString + usrPathUrlString! + ".png")!
+        personalImage.af_setImage(withURL: iconURL)
         // Do any additional setup after loading the view.
     }
 
