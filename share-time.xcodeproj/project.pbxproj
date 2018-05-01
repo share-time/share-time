@@ -21,6 +21,7 @@
 		5AFE25A82082F5E900EED7F9 /* FindClassViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AFE25A72082F5E900EED7F9 /* FindClassViewController.swift */; };
 		5AFE25AA2082F68100EED7F9 /* ClassDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AFE25A92082F68100EED7F9 /* ClassDetailViewController.swift */; };
 		5AFE25AC2082F79C00EED7F9 /* AddStudyGroupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AFE25AB2082F79C00EED7F9 /* AddStudyGroupViewController.swift */; };
+		705BAB41209808DC0047F91D /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 705BAB40209808DC0047F91D /* ProfileViewController.swift */; };
 		70CE5AD6208300810023F3D7 /* MainPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70CE5AD5208300810023F3D7 /* MainPageViewController.swift */; };
 		70CE5AD8208309300023F3D7 /* StudyGroupCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70CE5AD7208309300023F3D7 /* StudyGroupCell.swift */; };
 		70CE5ADA20830A2F0023F3D7 /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70CE5AD920830A2F0023F3D7 /* ChatViewController.swift */; };
@@ -72,6 +73,7 @@
 		5C5482A52A6A5B9A661E81D7 /* Pods-share-time.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-share-time.release.xcconfig"; path = "Pods/Target Support Files/Pods-share-time/Pods-share-time.release.xcconfig"; sourceTree = "<group>"; };
 		67513358329D0E17CC4439B8 /* Pods-share-timeTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-share-timeTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-share-timeTests/Pods-share-timeTests.release.xcconfig"; sourceTree = "<group>"; };
 		69D4E1F4917B9F8942861F63 /* Pods-share-timeUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-share-timeUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-share-timeUITests/Pods-share-timeUITests.release.xcconfig"; sourceTree = "<group>"; };
+		705BAB40209808DC0047F91D /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		70CE5AD5208300810023F3D7 /* MainPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPageViewController.swift; sourceTree = "<group>"; };
 		70CE5AD7208309300023F3D7 /* StudyGroupCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudyGroupCell.swift; sourceTree = "<group>"; };
 		70CE5AD920830A2F0023F3D7 /* ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
@@ -202,6 +204,7 @@
 				5AFE25AB2082F79C00EED7F9 /* AddStudyGroupViewController.swift */,
 				70CE5AD5208300810023F3D7 /* MainPageViewController.swift */,
 				70CE5AD920830A2F0023F3D7 /* ChatViewController.swift */,
+				705BAB40209808DC0047F91D /* ProfileViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -530,6 +533,7 @@
 				5AFE25A82082F5E900EED7F9 /* FindClassViewController.swift in Sources */,
 				70CE5AD8208309300023F3D7 /* StudyGroupCell.swift in Sources */,
 				5AFE25AC2082F79C00EED7F9 /* AddStudyGroupViewController.swift in Sources */,
+				705BAB41209808DC0047F91D /* ProfileViewController.swift in Sources */,
 				70CE5ADA20830A2F0023F3D7 /* ChatViewController.swift in Sources */,
 				5A254ADB2082F04E00767CB7 /* AppDelegate.swift in Sources */,
 			);

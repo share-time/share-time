@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -253,6 +253,33 @@
             </objects>
             <point key="canvasLocation" x="-1474" y="755"/>
         </scene>
+        <!--Profile-->
+        <scene sceneID="NWN-8D-SdB">
+            <objects>
+                <viewController id="fkh-l9-k67" customClass="ProfileViewController" customModule="share_time" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="6gU-c4-6Ia">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Oo4-sF-lZ0">
+                                <rect key="frame" x="161" y="367" width="52" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Log out"/>
+                                <connections>
+                                    <action selector="onLogoutButton:" destination="fkh-l9-k67" eventType="touchUpInside" id="kix-ht-G12"/>
+                                    <segue destination="BYZ-38-t0r" kind="presentation" identifier="logoutSegue" id="Zvn-UC-xck"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="RFa-FL-800"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Profile" id="q63-JX-4nA"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="sS1-Ou-WdU" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1306" y="-749"/>
+        </scene>
         <!--Home Page-->
         <scene sceneID="3Tr-Mf-m05">
             <objects>
@@ -378,19 +405,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="p0D-aU-eTQ"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Home Page" id="gd0-y2-GaL">
-                        <barButtonItem key="rightBarButtonItem" title="Log out" style="plain" id="V8C-ey-r3O">
-                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="GYv-Zb-h0A">
-                                <rect key="frame" x="276" y="7" width="83" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Log out"/>
-                            </button>
-                            <connections>
-                                <action selector="onLogOff:" destination="Ba1-hu-HZg" id="K2P-oj-Vqr"/>
-                                <segue destination="BYZ-38-t0r" kind="presentation" identifier="logoutSegue" id="1XJ-mv-ecO"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="Home Page" id="gd0-y2-GaL"/>
                     <connections>
                         <outlet property="backDropImage" destination="okt-Tq-c4f" id="SML-n9-RYh"/>
                         <outlet property="emailLabel" destination="RCd-Sp-2kH" id="BxD-qy-deO"/>
@@ -476,15 +491,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="HHO-us-6hF"/>
                     </view>
-                    <navigationItem key="navigationItem" id="nuQ-r7-SVh">
-                        <barButtonItem key="rightBarButtonItem" style="plain" id="iH8-wc-XeQ">
-                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="ZQH-nM-r7Z">
-                                <rect key="frame" x="276" y="7" width="83" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Log out"/>
-                            </button>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" id="nuQ-r7-SVh"/>
                     <connections>
                         <outlet property="messageTextField" destination="FgE-od-Wft" id="G90-F5-gnR"/>
                         <outlet property="sendButton" destination="skN-eu-o7a" id="Zkw-KA-oRD"/>
@@ -547,15 +554,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <viewLayoutGuide key="safeArea" id="Ni3-LF-iLP"/>
                     </view>
-                    <navigationItem key="navigationItem" id="sid-eG-IDC">
-                        <barButtonItem key="rightBarButtonItem" style="plain" id="Ia0-js-Ryp">
-                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="EXs-vM-ZwY">
-                                <rect key="frame" x="276" y="7" width="83" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Log out"/>
-                            </button>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" id="sid-eG-IDC"/>
                     <connections>
                         <outlet property="classTableView" destination="XZp-hg-9Z3" id="rMt-gM-jiq"/>
                     </connections>
@@ -794,6 +793,7 @@
                     <connections>
                         <segue destination="4Lw-80-SUx" kind="relationship" relationship="viewControllers" id="dwC-ou-SbE"/>
                         <segue destination="Eaz-Cp-U5y" kind="relationship" relationship="viewControllers" id="I77-yU-9b5"/>
+                        <segue destination="fkh-l9-k67" kind="relationship" relationship="viewControllers" id="Zm7-A3-dLP"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rgv-Pt-5py" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -821,6 +821,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="1XJ-mv-ecO"/>
+        <segue reference="Zvn-UC-xck"/>
     </inferredMetricsTieBreakers>
 </document>

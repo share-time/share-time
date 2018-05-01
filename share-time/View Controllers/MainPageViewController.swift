@@ -19,11 +19,7 @@ class MainPageViewController: UIViewController,UITableViewDelegate, UITableViewD
     let user = PFUser.current()
     var studyGroups: [StudyGroup] = []
     
-    @IBAction func onLogOff(_ sender: UIButton) {
-        print("on sending logout")
-        PFUser.logOutInBackground()
-        self.performSegue(withIdentifier: "logoutSegue", sender: nil)
-    }
+
     
     
     override func viewDidLoad() {
