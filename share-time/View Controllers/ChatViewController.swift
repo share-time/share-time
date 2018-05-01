@@ -13,6 +13,7 @@ import PKHUD
 
 class ChatViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
+    @IBOutlet weak var userIconImage: UIImageView!
     @IBOutlet weak var sendButton: UIButton!
     @IBOutlet weak var messageTextField: UITextField!
     @IBOutlet weak var tableView: UITableView!
