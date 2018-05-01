@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Parse
 
 class AddStudyGroupViewController: UIViewController {
     @IBOutlet weak var courseLabel: UILabel!
@@ -15,12 +16,20 @@ class AddStudyGroupViewController: UIViewController {
     @IBOutlet weak var profLabel: UILabel!
     @IBOutlet weak var groupNameLabel: UILabel!
     @IBOutlet weak var memberSearchBar: UITextField!
-    @IBAction func onAddButton(_ sender: Any) {
+    
+    let profTextFieldErrorAlertController = UIAlertController(title: "Professor Name Required", message: "Please enter name of professor", preferredStyle: .alert)
+    let studyGroupNameTextFieldErrorAlertController = UIAlertController(title: "Study Group Name required", message: "Please enter name of study group", preferredStyle: .alert)
+    let OKAction = UIAlertAction(title: "OK", style: .default) { (action) in
+        //does nothing -> dismisses alert view
     }
+    
+    var course: PFObject!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        profTextFieldErrorAlertController.addAction(OKAction)
+        studyGroupNameTextFieldErrorAlertController.addAction(OKAction)
+        courseLabel.text = course.object(forKey: "courseName") as? String
         // Do any additional setup after loading the view.
     }
 
@@ -29,7 +38,31 @@ class AddStudyGroupViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
+    @IBAction func onAddButton(_ sender: Any) {
+        let profName = profTextField.text ?? ""
+        let studyGroupName = studyGroupNameTextField.text ?? ""
+        
+        if(profTextField.text?.isEmpty)!{
+            present(profTextFieldErrorAlertController, animated: true)
+        } else if (studyGroupNameTextField.text?.isEmpty)!{
+            present(studyGroupNameTextFieldErrorAlertController, animated: true)
+        } else {
+            let newStudyGroup = PFObject(className: "StudyGroup")
+            newStudyGroup["name"] = studyGroupName
+            newStudyGroup["members"] = []
+            newStudyGroup["messages"] = []
+            newStudyGroup["course"] = courseLabel.text
+            newStudyGroup["professor"] = profName
+            
+            newStudyGroup.saveInBackground{(success, error) in
+                if success {
+                    print("study group called \(newStudyGroup["name"]) created")
+                } else if let error = error {
+                    print("Problem creating new study group: \(error.localizedDescription)")
+                }
+            }
+        }
+    }
     
 
 }

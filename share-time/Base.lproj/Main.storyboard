@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -638,8 +638,7 @@
                                 <rect key="frame" x="275" y="82" width="74" height="30"/>
                                 <state key="normal" title="Add Group"/>
                                 <connections>
-                                    <action selector="onAddGroupButton:" destination="VBZ-wc-Cxe" eventType="touchUpInside" id="8jw-pn-I9d"/>
-                                    <segue destination="SNw-SO-4Kv" kind="show" id="91C-pq-bTS"/>
+                                    <segue destination="SNw-SO-4Kv" kind="show" identifier="addGroupSegue" id="QtS-5H-LwC"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -658,7 +657,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TO1-JG-dg1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="893.60000000000002" y="975.56221889055485"/>
+            <point key="canvasLocation" x="929" y="976"/>
         </scene>
         <!--Add Study Group View Controller-->
         <scene sceneID="dhv-eC-FO7">

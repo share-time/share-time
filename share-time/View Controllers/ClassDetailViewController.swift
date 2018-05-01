@@ -14,10 +14,10 @@ class ClassDetailViewController: UIViewController, UITableViewDelegate, UITableV
     @IBOutlet weak var classNameLabel: UILabel!
     @IBOutlet weak var createGroupButton: UIButton!
     @IBOutlet weak var studyGroupTableView: UITableView!
-    @IBAction func onAddGroupButton(_ sender: Any) {
-    }
+
     var courseName: String!
     var course: PFObject!
+    var studyGroups: [StudyGroup]? = []
     
     override func viewDidLoad() {
         
@@ -32,7 +32,7 @@ class ClassDetailViewController: UIViewController, UITableViewDelegate, UITableV
                 newCourse["studyGroups"] = [] as? [StudyGroup]
                 newCourse.saveInBackground{(success, error) in
                     if success {
-                        print("study group called \(newCourse["courseName"]) created")
+                        print("class called \(newCourse["courseName"]) created")
                         self.course = newCourse
                     } else if let error = error {
                         print("Problem creating new study group: \(error.localizedDescription)")
@@ -53,14 +53,24 @@ class ClassDetailViewController: UIViewController, UITableViewDelegate, UITableV
         // Dispose of any resources that can be recreated.
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if (segue.identifier == "addGroupSegue"){
+            let addStudyGroupViewController = segue.destination as! AddStudyGroupViewController
+            addStudyGroupViewController.course = self.course
+        }
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return (course["studyGroups"] as? [StudyGroup])!.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "ClassCell", for: indexPath) as! ClassCell
-        
+        let cell = tableView.dequeueReusableCell(withIdentifier: "PublicStudyGroupCell", for: indexPath) as! PublicStudyGroupCell
+        let cellStudyGroup = studyGroups![indexPath.row]
+        cell.nameLabel.text = cellStudyGroup.name
+        cell.profLabel.text = cellStudyGroup.professor
+        cell.memberCountLabel.text = String(cellStudyGroup.members.count)
         return cell
     }
-
+    
 }
