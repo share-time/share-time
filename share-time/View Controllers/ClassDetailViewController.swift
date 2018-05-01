@@ -26,7 +26,9 @@ class ClassDetailViewController: UIViewController, UITableViewDelegate, UITableV
         query.findObjectsInBackground{ (findCourse: [PFObject]?, error: Error?) -> Void in
             if findCourse?.count != 0 {
                 self.course = findCourse![0] as? Course
-                self.studyGroups = findCourse![0]["studyGroups"] as? [PFObject]
+                print(self.course)
+                //print(self.course.object(forKey: "studyGroups") as? [PFObject]!)
+                self.studyGroups = self.course.object(forKey: "studyGroups") as? [PFObject]
             } else {
                 let newCourse = PFObject(className: "Course")
                 newCourse["courseName"] = self.courseName
@@ -43,7 +45,7 @@ class ClassDetailViewController: UIViewController, UITableViewDelegate, UITableV
         }
         classNameLabel.text = courseName
         
-        print(course)
+        print(studyGroups!)
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
