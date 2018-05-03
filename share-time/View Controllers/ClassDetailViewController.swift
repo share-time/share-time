@@ -21,6 +21,7 @@ class ClassDetailViewController: UIViewController, UITableViewDelegate, UITableV
     
     override func viewDidLoad() {
         
+        /*
         let query = PFQuery(className: "Course")
         query.whereKey("courseName", equalTo: courseName)
         query.findObjectsInBackground{ (findCourse: [PFObject]?, error: Error?) -> Void in
@@ -43,6 +44,7 @@ class ClassDetailViewController: UIViewController, UITableViewDelegate, UITableV
                 }
             }
         }
+        */
         classNameLabel.text = courseName
         
         print(studyGroups!)
