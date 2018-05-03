@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -416,8 +416,12 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="okt-Tq-c4f">
                                 <rect key="frame" x="0.0" y="20" width="375" height="164"/>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="blo-cI-haa">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="blo-cI-haa">
                                 <rect key="frame" x="16" y="84" width="70" height="86"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="86" id="gN9-s0-lhB"/>
+                                    <constraint firstAttribute="width" constant="70" id="oMg-l8-lYr"/>
+                                </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MTM-Mt-0we">
                                 <rect key="frame" x="94" y="94" width="45" height="21"/>
@@ -520,13 +524,17 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="okt-Tq-c4f" firstAttribute="leading" secondItem="p0D-aU-eTQ" secondAttribute="leading" id="BMa-fa-h7o"/>
                             <constraint firstItem="blo-cI-haa" firstAttribute="width" relation="lessThanOrEqual" secondItem="okt-Tq-c4f" secondAttribute="width" multiplier="0.25" id="KAN-5D-jQW"/>
                             <constraint firstItem="RCd-Sp-2kH" firstAttribute="leading" secondItem="blo-cI-haa" secondAttribute="trailing" constant="8" id="RAP-Eq-eho"/>
+                            <constraint firstItem="blo-cI-haa" firstAttribute="top" secondItem="p0D-aU-eTQ" secondAttribute="top" constant="20" id="TcJ-QR-Vmi"/>
                             <constraint firstItem="MTM-Mt-0we" firstAttribute="leading" secondItem="blo-cI-haa" secondAttribute="trailing" constant="8" id="VNi-6n-cIT"/>
+                            <constraint firstItem="okt-Tq-c4f" firstAttribute="trailing" secondItem="p0D-aU-eTQ" secondAttribute="trailing" id="YqN-Uc-YA1"/>
                             <constraint firstItem="MTM-Mt-0we" firstAttribute="top" relation="greaterThanOrEqual" secondItem="p0D-aU-eTQ" secondAttribute="top" constant="30" id="cl8-Fn-HXa"/>
                             <constraint firstItem="blo-cI-haa" firstAttribute="leading" secondItem="p0D-aU-eTQ" secondAttribute="leading" constant="16" id="lgr-HD-dug"/>
                             <constraint firstItem="WI9-xw-0bs" firstAttribute="leading" secondItem="RCd-Sp-2kH" secondAttribute="trailing" constant="10" id="pFF-aS-G3H"/>
                             <constraint firstItem="RCd-Sp-2kH" firstAttribute="top" secondItem="MTM-Mt-0we" secondAttribute="bottom" constant="10" id="yaC-8C-bjn"/>
+                            <constraint firstItem="okt-Tq-c4f" firstAttribute="top" secondItem="Hzv-HN-4Tr" secondAttribute="top" id="yr3-ag-SVX"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="p0D-aU-eTQ"/>
                     </view>
