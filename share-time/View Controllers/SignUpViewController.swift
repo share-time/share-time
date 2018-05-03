@@ -43,6 +43,7 @@ class SignUpViewController: UIViewController {
         newUser.username = usernameField.text
         newUser.password = passwordField.text
         newUser.email = emailField.text
+        newUser["studyGroups"] = [] as! [PFObject]
         if (emailField.text?.isEmpty)!{
             present(signUpEmailErrorAlertController, animated: true)
         } else if (usernameField.text?.isEmpty)!{

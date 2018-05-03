@@ -17,9 +17,7 @@ class MainPageViewController: UIViewController,UITableViewDelegate, UITableViewD
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var studyTritonImage: UIImageView!
     let user = PFUser.current()
-    var studyGroups: [StudyGroup] = []
-    
-
+    var studyGroups: [PFObject] = []
     
     
     override func viewDidLoad() {
@@ -27,15 +25,19 @@ class MainPageViewController: UIViewController,UITableViewDelegate, UITableViewD
         tableView.dataSource = self
         tableView.delegate = self
         tableView.rowHeight = UITableViewAutomaticDimension
-        self.tableView.rowHeight = UITableViewAutomaticDimension
-        self.tableView.rowHeight = 125
+        tableView.rowHeight = 125
         emailLabel.text = user?.email
         nameLabel.text = user?.username
         let userIconBaseURLString = "http://api.adorable.io/avatars/285/"
         let usrPathUrlString = user?.username
         let iconURL = URL(string: userIconBaseURLString + usrPathUrlString! + ".png")!
         personalImage.af_setImage(withURL: iconURL)
+        self.studyGroups = (user!.object(forKey: "studyGroups") as? [PFObject])!
         // Do any additional setup after loading the view.
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        self.tableView.reloadData()
     }
 
     override func didReceiveMemoryWarning() {
@@ -45,20 +47,34 @@ class MainPageViewController: UIViewController,UITableViewDelegate, UITableViewD
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int)
         -> Int {
-            if let studyGroups = user?["study Groups"] as? [PFObject] {
+            print(studyGroups)
+            //print(studyGroups.count)
+            return studyGroups.count
+            /*
+            if let studyGroups = user?["studyGroups"] as? [PFObject] {
                 return studyGroups.count
             } else {
                 return 10
             }
+             */
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "StudyGroupCell", for: indexPath) as! StudyGroupCell
-        if studyGroups.count == 0 {
-            return cell
-        }
         print("The number of row is" + String(indexPath.row))
-        cell.studyGroup = studyGroups[indexPath.row] 
+        let studyGroup = studyGroups[indexPath.row]
+        let studyGroupID = studyGroups[indexPath.row].objectId
+        print(studyGroupID)
+        let query = PFQuery(className: "StudyGroups")
+        query.whereKey("objectId", equalTo: studyGroupID!)
+        query.findObjectsInBackground{ (findStudyGroup: [PFObject]?, error: Error?) -> Void in
+            if findStudyGroup!.count == 0 {
+                cell.studyGroup = findStudyGroup![0]
+            } else {
+                print("please don't print")
+            }
+        }
+
         return cell
     }
 

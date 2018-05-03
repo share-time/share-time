@@ -62,9 +62,10 @@ class AddStudyGroupViewController: UIViewController {
     }
     
     func createStudyGroup(studyGroupName: String, profName: String){
+        let user = PFUser.current()
         let newStudyGroup = PFObject(className: "StudyGroup")
         newStudyGroup["name"] = studyGroupName
-        newStudyGroup["members"] = []
+        newStudyGroup["members"] = [user]
         newStudyGroup["messages"] = []
         newStudyGroup["course"] = courseLabel.text
         newStudyGroup["professor"] = profName
@@ -72,6 +73,7 @@ class AddStudyGroupViewController: UIViewController {
         newStudyGroup.saveInBackground{(success, error) in
             if success {
                 print("study group called \(newStudyGroup["name"]) created")
+                user!.add(newStudyGroup, forKey: "studyGroups")
                 if let navController = self.navigationController {
                     navController.popViewController(animated: true)
                 }

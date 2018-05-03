@@ -1,4 +1,5 @@
 import UIKit
+import Parse
 
 class StudyGroupCell: UITableViewCell {
 
@@ -9,18 +10,19 @@ class StudyGroupCell: UITableViewCell {
     @IBAction func onEnterGroupButton(_ sender: Any) {
     }
     
-    var studyGroup: StudyGroup! {
+    var studyGroup: PFObject! {
         didSet {
-            self.nameLabel.text = studyGroup.name
-            self.memberNumLabel.text = String(studyGroup.members.count)
-            self.classLabel.text = studyGroup.course
-            self.professorLabel.text = studyGroup.professor
+            self.nameLabel.text = studyGroup.object(forKey: "name") as? String
+            let members = studyGroup.object(forKey: "members") as? [PFObject]
+            self.memberNumLabel.text = String(describing: members?.count)
+            self.classLabel.text = studyGroup.object(forKey: "course") as? String
+            self.professorLabel.text = studyGroup.object(forKey: "professor") as? String
         }
     }
     
+    
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
     }
     
     override func setSelected(_ selected: Bool, animated: Bool) {
