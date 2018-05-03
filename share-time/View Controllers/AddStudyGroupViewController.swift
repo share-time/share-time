@@ -18,7 +18,8 @@ class AddStudyGroupViewController: UIViewController {
     @IBOutlet weak var memberSearchBar: UITextField!
     
     let profTextFieldErrorAlertController = UIAlertController(title: "Professor Name Required", message: "Please enter name of professor", preferredStyle: .alert)
-    let studyGroupNameTextFieldErrorAlertController = UIAlertController(title: "Study Group Name required", message: "Please enter name of study group", preferredStyle: .alert)
+    let studyGroupNameTextFieldErrorAlertController = UIAlertController(title: "Study Group Name Required", message: "Please enter name of study group", preferredStyle: .alert)
+    let studyGroupNameDuplicateErrorAlertController = UIAlertController(title: "Study Group with that name already exists!", message: "Please enter another name for your study group", preferredStyle: .alert)
     let OKAction = UIAlertAction(title: "OK", style: .default) { (action) in
         //does nothing -> dismisses alert view
     }
@@ -29,6 +30,7 @@ class AddStudyGroupViewController: UIViewController {
         super.viewDidLoad()
         profTextFieldErrorAlertController.addAction(OKAction)
         studyGroupNameTextFieldErrorAlertController.addAction(OKAction)
+        studyGroupNameDuplicateErrorAlertController.addAction(OKAction)
         courseLabel.text = courseName
         // Do any additional setup after loading the view.
     }
@@ -47,22 +49,34 @@ class AddStudyGroupViewController: UIViewController {
         } else if (studyGroupNameTextField.text?.isEmpty)!{
             present(studyGroupNameTextFieldErrorAlertController, animated: true)
         } else {
-            let newStudyGroup = PFObject(className: "StudyGroup")
-            newStudyGroup["name"] = studyGroupName
-            newStudyGroup["members"] = []
-            newStudyGroup["messages"] = []
-            newStudyGroup["course"] = courseLabel.text
-            newStudyGroup["professor"] = profName
-            
-            newStudyGroup.saveInBackground{(success, error) in
-                if success {
-                    print("study group called \(newStudyGroup["name"]) created")
-                    if let navController = self.navigationController {
-                        navController.popViewController(animated: true)
-                    }
-                } else if let error = error {
-                    print("Problem creating new study group: \(error.localizedDescription)")
+            let query = PFQuery(className: "StudyGroup")
+            query.whereKey("name", equalTo: studyGroupName)
+            query.findObjectsInBackground{ (findStudyGroup: [PFObject]?, error: Error?) -> Void in
+                if findStudyGroup!.count == 0 {
+                    self.createStudyGroup(studyGroupName: studyGroupName, profName: profName)
+                } else {
+                    self.present(self.studyGroupNameDuplicateErrorAlertController, animated: true)
                 }
+            }
+        }
+    }
+    
+    func createStudyGroup(studyGroupName: String, profName: String){
+        let newStudyGroup = PFObject(className: "StudyGroup")
+        newStudyGroup["name"] = studyGroupName
+        newStudyGroup["members"] = []
+        newStudyGroup["messages"] = []
+        newStudyGroup["course"] = courseLabel.text
+        newStudyGroup["professor"] = profName
+        
+        newStudyGroup.saveInBackground{(success, error) in
+            if success {
+                print("study group called \(newStudyGroup["name"]) created")
+                if let navController = self.navigationController {
+                    navController.popViewController(animated: true)
+                }
+            } else if let error = error {
+                print("Problem creating new study group: \(error.localizedDescription)")
             }
         }
     }
