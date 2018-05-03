@@ -1,22 +1,15 @@
 //
-//  ProfileViewController.swift
+//  changePasswordVIewController.swift
 //  share-time
 //
-//  Created by Guanxin Li on 4/30/18.
+//  Created by Jiayi Wang on 5/2/18.
 //  Copyright © 2018 share-time. All rights reserved.
 //
 
 import UIKit
-import Parse
-class ProfileViewController: UIViewController {
 
-    @IBOutlet weak var emailText: UITextField!
-    @IBOutlet weak var nameText: UITextField!
-    @IBAction func onLogoutButton(_ sender: Any) {
-        print("on sending logout")
-        PFUser.logOutInBackground()
-        self.performSegue(withIdentifier: "logoutSegue", sender: nil)
-    }
+class changePasswordVIewController: UIViewController {
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
