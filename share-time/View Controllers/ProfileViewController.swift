@@ -12,14 +12,25 @@ class ProfileViewController: UIViewController {
 
     @IBOutlet weak var emailText: UITextField!
     @IBOutlet weak var nameText: UITextField!
+    
+    
     @IBAction func onLogoutButton(_ sender: Any) {
         print("on sending logout")
         PFUser.logOutInBackground()
         self.performSegue(withIdentifier: "logoutSegue", sender: nil)
     }
+    
+    @IBAction func save(_ sender: Any) {
+    }
+    @IBAction func changePassWord(_ sender: Any) {
+      self.performSegue(withIdentifier: "changePasswordSegue", sender: nil)
+    }
+    
+    @IBOutlet weak var leave: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+      
         // Do any additional setup after loading the view.
     }
 
