@@ -61,7 +61,14 @@ class AddStudyGroupViewController: UIViewController {
                         arrStudyGroups.append(newStudyGroup)
                         self.course["studyGroups"] = arrStudyGroups
                     }
-                    self.performSegue(withIdentifier: "createStudyGroupSegue", sender: nil)
+                    self.course.saveInBackground{(success, error) in
+                        if success{
+                            self.performSegue(withIdentifier: "createStudyGroupSegue", sender: nil)
+                        } else if let error = error {
+                            print("Problem creating new study group: \(error.localizedDescription)")
+                        }
+                    }
+                    //print(self.course["studyGroups"])
                 } else if let error = error {
                     print("Problem creating new study group: \(error.localizedDescription)")
                 }
