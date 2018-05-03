@@ -23,13 +23,13 @@ class AddStudyGroupViewController: UIViewController {
         //does nothing -> dismisses alert view
     }
     
-    var course: PFObject!
+    var courseName: String!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         profTextFieldErrorAlertController.addAction(OKAction)
         studyGroupNameTextFieldErrorAlertController.addAction(OKAction)
-        courseLabel.text = course.object(forKey: "courseName") as? String
+        courseLabel.text = courseName
         // Do any additional setup after loading the view.
     }
     
@@ -57,18 +57,9 @@ class AddStudyGroupViewController: UIViewController {
             newStudyGroup.saveInBackground{(success, error) in
                 if success {
                     print("study group called \(newStudyGroup["name"]) created")
-                    if var arrStudyGroups = self.course["studyGroups"] as? [PFObject]{
-                        arrStudyGroups.append(newStudyGroup)
-                        self.course["studyGroups"] = arrStudyGroups
+                    if let navController = self.navigationController {
+                        navController.popViewController(animated: true)
                     }
-                    self.course.saveInBackground{(success, error) in
-                        if success{
-                            self.performSegue(withIdentifier: "createStudyGroupSegue", sender: nil)
-                        } else if let error = error {
-                            print("Problem creating new study group: \(error.localizedDescription)")
-                        }
-                    }
-                    //print(self.course["studyGroups"])
                 } else if let error = error {
                     print("Problem creating new study group: \(error.localizedDescription)")
                 }
@@ -78,8 +69,7 @@ class AddStudyGroupViewController: UIViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let classDetailViewController = segue.destination as! ClassDetailViewController
-        classDetailViewController.course = course
-        classDetailViewController.courseName = course.object(forKey: "courseName") as? String
+        classDetailViewController.courseName = self.courseName
     }
     
     

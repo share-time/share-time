@@ -16,41 +16,34 @@ class ClassDetailViewController: UIViewController, UITableViewDelegate, UITableV
     @IBOutlet weak var studyGroupTableView: UITableView!
 
     var courseName: String!
-    var course: PFObject!
     var studyGroups: [PFObject]? = []
     
     override func viewDidLoad() {
+        super.viewDidLoad()
         
-        /*
-        let query = PFQuery(className: "Course")
-        query.whereKey("courseName", equalTo: courseName)
-        query.findObjectsInBackground{ (findCourse: [PFObject]?, error: Error?) -> Void in
-            if findCourse?.count != 0 {
-                self.course = findCourse![0] as? Course
-                print(self.course)
-                //print(self.course.object(forKey: "studyGroups") as? [PFObject]!)
-                self.studyGroups = self.course.object(forKey: "studyGroups") as? [PFObject]
-            } else {
-                let newCourse = PFObject(className: "Course")
-                newCourse["courseName"] = self.courseName
-                newCourse["studyGroups"] = [] as? [StudyGroup]
-                newCourse.saveInBackground{(success, error) in
-                    if success {
-                        print("class called \(newCourse["courseName"]) created")
-                        self.course = newCourse
-                    } else if let error = error {
-                        print("Problem creating new study group: \(error.localizedDescription)")
-                    }
-                }
-            }
+        studyGroupTableView.delegate = self
+        studyGroupTableView.dataSource = self
+        
+        let query = PFQuery(className: "StudyGroup")
+        query.whereKey("course", equalTo: courseName)
+        query.findObjectsInBackground{ (findStudyGroup: [PFObject]?, error: Error?) -> Void in
+            self.studyGroups = findStudyGroup
+            self.studyGroupTableView.reloadData()
         }
-        */
         classNameLabel.text = courseName
         
         print(studyGroups!)
-        super.viewDidLoad()
-
+        
         // Do any additional setup after loading the view.
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        let query = PFQuery(className: "StudyGroup")
+        query.whereKey("course", equalTo: courseName)
+        query.findObjectsInBackground{ (findStudyGroup: [PFObject]?, error: Error?) -> Void in
+            self.studyGroups = findStudyGroup
+            self.studyGroupTableView.reloadData()
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -61,12 +54,12 @@ class ClassDetailViewController: UIViewController, UITableViewDelegate, UITableV
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if (segue.identifier == "addGroupSegue"){
             let addStudyGroupViewController = segue.destination as! AddStudyGroupViewController
-            addStudyGroupViewController.course = self.course
+            addStudyGroupViewController.courseName = self.courseName
         }
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return (course["studyGroups"] as? [StudyGroup])!.count
+        return studyGroups!.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
