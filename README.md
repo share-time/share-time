@@ -3,7 +3,9 @@ time together with classmates.
 
 ## User Stories
 Basic story:
-- [] User can enter the subject, class, target of study to search for study buddies or study groups.
+- [x] User can sign up, login with password, change password and stay sign-in as the current user.  
+- [x] User can enter the subject, class, target of study to search for study buddies or study groups.
+- [x] For each study groups, students can chat and help each other out
 - [] Each study group, or each person (who prefer to study alone) can adopt and raisea **study trition** as 
 a study as incentive.
 
@@ -14,8 +16,7 @@ a study as incentive.
 
 ## Collaborator
 
-Guanxin Li -
-Godwin Pang - 
-Jiayi Wang -
+Guanxin Li 
+Godwin Pang 
+Jiayi Wang
 
- 3a40f2e2bc09613e8265f8c33e2dd155917e8b16
