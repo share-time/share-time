@@ -32,7 +32,16 @@ class MainPageViewController: UIViewController,UITableViewDelegate, UITableViewD
         let usrPathUrlString = user?.username
         let iconURL = URL(string: userIconBaseURLString + usrPathUrlString! + ".png")!
         personalImage.af_setImage(withURL: iconURL)
-        self.studyGroups = (user!.object(forKey: "studyGroups") as? [PFObject])!
+        user?.relation(forKey: "studyGroups").query().findObjectsInBackground{
+            (studyGroups: [PFObject]?, error: Error?) -> Void in
+            if error != nil {
+                print("please dont print")
+            } else {
+                self.studyGroups = studyGroups!
+            }
+        }
+        print(studyGroups)
+        self.tableView.reloadData()
         // Do any additional setup after loading the view.
     }
     
@@ -62,18 +71,22 @@ class MainPageViewController: UIViewController,UITableViewDelegate, UITableViewD
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "StudyGroupCell", for: indexPath) as! StudyGroupCell
         print("The number of row is" + String(indexPath.row))
-        let studyGroup = studyGroups[indexPath.row]
+        var studyGroup = studyGroups[indexPath.row]
+        /*
         let studyGroupID = studyGroups[indexPath.row].objectId
         print(studyGroupID)
-        let query = PFQuery(className: "StudyGroups")
-        query.whereKey("objectId", equalTo: studyGroupID!)
-        query.findObjectsInBackground{ (findStudyGroup: [PFObject]?, error: Error?) -> Void in
-            if findStudyGroup!.count == 0 {
-                cell.studyGroup = findStudyGroup![0]
-            } else {
-                print("please don't print")
+        studyGroup.fetchIfNeededInBackground{ (findStudyGroup: PFObject?, error: Error?) -> Void in
+            if let findStudyGroup = findStudyGroup{
+                let test = findStudyGroup["professor"]
+                studyGroup = findStudyGroup
+                print(studyGroup)
+                print(test)
+                print("WTF DUDE")
             }
         }
+         */
+        print(studyGroup)
+        cell.studyGroup = studyGroup
 
         return cell
     }

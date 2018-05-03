@@ -73,9 +73,16 @@ class AddStudyGroupViewController: UIViewController {
         newStudyGroup.saveInBackground{(success, error) in
             if success {
                 print("study group called \(newStudyGroup["name"]) created")
-                user!.add(newStudyGroup, forKey: "studyGroups")
-                if let navController = self.navigationController {
-                    navController.popViewController(animated: true)
+                var relation = user?.relation(forKey: "studyGroups")
+                relation?.add(newStudyGroup)
+                user?.saveInBackground{ (success: Bool, error: Error?) -> Void in
+                    if (success){
+                        if let navController = self.navigationController {
+                            navController.popViewController(animated: true)
+                        }
+                    } else {
+                        print(error?.localizedDescription)
+                    }
                 }
             } else if let error = error {
                 print("Problem creating new study group: \(error.localizedDescription)")

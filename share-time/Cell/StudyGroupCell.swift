@@ -10,6 +10,11 @@ class StudyGroupCell: UITableViewCell {
     @IBAction func onEnterGroupButton(_ sender: Any) {
     }
     
+    var nameLabelText: String!
+    var members: [PFObject]!
+    var classLabelText: String!
+    var professorLabelText: String!
+    
     var studyGroup: PFObject! {
         didSet {
             self.nameLabel.text = studyGroup.object(forKey: "name") as? String
@@ -23,6 +28,7 @@ class StudyGroupCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        
     }
     
     override func setSelected(_ selected: Bool, animated: Bool) {
