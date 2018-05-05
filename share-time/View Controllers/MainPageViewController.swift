@@ -48,6 +48,11 @@ class MainPageViewController: UIViewController,UITableViewDelegate, UITableViewD
     override func viewWillAppear(_ animated: Bool) {
         emailLabel.text = user?.email
         nameLabel.text = user?.username
+        let userIconBaseURLString = "http://api.adorable.io/avatars/285/"
+        let usrPathUrlString = user?["imgUrl"] as! String
+        let iconURL = URL(string: userIconBaseURLString + usrPathUrlString + ".png")!
+        personalImage.af_setImage(withURL: iconURL)
+
         self.tableView.reloadData()
     }
 

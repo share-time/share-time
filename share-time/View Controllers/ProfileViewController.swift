@@ -52,6 +52,15 @@ class ProfileViewController: UIViewController {
     @IBAction func changePassWord(_ sender: Any) {
       self.performSegue(withIdentifier: "changePasswordSegue", sender: nil)
     }
+
+    @IBAction func changePersonalImage(_ sender: Any) {
+        let imgUrl = String(arc4random_uniform(UInt32.max))
+        user["imgUrl"] = imgUrl
+        let userIconBaseURLString = "http://api.adorable.io/avatars/285/"
+        let usrPathUrlString = user["imgUrl"] as! String
+        let iconURL = URL(string: userIconBaseURLString + usrPathUrlString + ".png")!
+        personalImage.af_setImage(withURL: iconURL)
+    }
     
     @IBAction func onLogout(_ sender: Any) {
         PFUser.logOutInBackground()

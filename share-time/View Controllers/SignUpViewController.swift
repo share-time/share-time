@@ -43,7 +43,8 @@ class SignUpViewController: UIViewController {
         newUser.username = usernameField.text
         newUser.password = passwordField.text
         newUser.email = emailField.text
-        newUser["imgUrl"] = usernameField.text
+        let imgUrl = String(arc4random_uniform(UInt32.max))
+        newUser["imgUrl"] = imgUrl
         if (emailField.text?.isEmpty)!{
             present(signUpEmailErrorAlertController, animated: true)
         } else if (usernameField.text?.isEmpty)!{
