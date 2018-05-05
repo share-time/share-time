@@ -12,10 +12,19 @@ class ProfileViewController: UIViewController {
 
     @IBOutlet weak var emailText: UITextField!
     @IBOutlet weak var nameText: UITextField!
+    @IBOutlet weak var personalImage: UIImageView!
     
     let user = PFUser.current()!
     var username: String = ""
     var email: String = ""
+    let noSaveAlertController = UIAlertController(title: "Username Required", message: "Please enter username", preferredStyle: .alert)
+    let CancelAction = UIAlertAction(title: "Cancel", style: .default) { (action) in
+        //does nothing -> dismisses alert view
+    }
+    let SaveAction = UIAlertAction(title: "Save", style: .default){ (action) in
+        updateParseUser()
+    }
+    
     
     @IBAction func save(_ sender: Any) {
         var changed = false
@@ -32,11 +41,7 @@ class ProfileViewController: UIViewController {
         if (changed){
             user.saveInBackground{ (success: Bool, error: Error?) -> Void in
                 if (success){
-                    print("WOOOO")
-                    print("emailText.text: "+self.emailText.text!)
-                    print(self.user["email"])
-                    print("nameText.text: "+self.nameText.text!)
-                    print(self.user["username"])
+                    
                 } else {
                     print("wassup")
                 }
@@ -53,12 +58,32 @@ class ProfileViewController: UIViewController {
         self.performSegue(withIdentifier: "logoutSegue", sender: nil)
     }
     
+
     override func viewWillDisappear(_ animated: Bool) {
-        if()
+        print("disappearing bb")
+        /*
+        if(username != nameText.text || email != emailText.text){
+            self.present(noSaveAlertController, animated: true)
+        }
+        */
     }
+ 
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        username = (user.object(forKey: "username") as? String)!
+        email = (user.object(forKey: "email") as? String)!
+        emailText.text = email
+        nameText.text = username
+        let userIconBaseURLString = "http://api.adorable.io/avatars/285/"
+        let usrPathUrlString = user["imgUrl"] as! String
+        let iconURL = URL(string: userIconBaseURLString + usrPathUrlString + ".png")!
+        personalImage.af_setImage(withURL: iconURL)
+        noSaveAlertController.addAction(SaveAction)
+        noSaveAlertController.addAction(CancelAction)
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
         username = (user.object(forKey: "username") as? String)!
         email = (user.object(forKey: "email") as? String)!
         emailText.text = email
@@ -67,5 +92,16 @@ class ProfileViewController: UIViewController {
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
+    }
+    
+    class func updateParseUser() {
+        let user = PFUser.current()
+        user?.saveInBackground{ (success: Bool, error: Error?) -> Void in
+            if (success){
+                
+            } else {
+                print("wassup")
+            }
+        }
     }
 }

@@ -281,10 +281,6 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="b0C-Yt-m7a">
-                                <rect key="frame" x="245" y="32" width="93" height="128"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="B33-Z9-cjB">
                                 <rect key="frame" x="184" y="202" width="97" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -323,6 +319,10 @@
                                     <action selector="onLogout:" destination="fkh-l9-k67" eventType="touchUpInside" id="SYv-gr-eVb"/>
                                 </connections>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="b0C-Yt-m7a">
+                                <rect key="frame" x="222" y="38" width="92" height="92"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="RFa-FL-800"/>
@@ -331,13 +331,14 @@
                     <connections>
                         <outlet property="emailText" destination="LWl-SV-s86" id="o32-B2-GAp"/>
                         <outlet property="nameText" destination="B33-Z9-cjB" id="Lp8-ji-1GX"/>
+                        <outlet property="personalImage" destination="b0C-Yt-m7a" id="spP-xy-hRT"/>
                         <segue destination="mut-Vh-fwo" kind="presentation" identifier="changePasswordSegue" id="xoj-4i-0sz"/>
                         <segue destination="BYZ-38-t0r" kind="presentation" identifier="logoutSegue" id="tRQ-gE-X8o"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sS1-Ou-WdU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="366" y="-834"/>
+            <point key="canvasLocation" x="365.60000000000002" y="-834.33283358320841"/>
         </scene>
         <!--Change Password View Controller-->
         <scene sceneID="7X1-JN-lh1">
@@ -954,6 +955,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="Zm7-A3-dLP"/>
+        <segue reference="tMb-o2-l4n"/>
     </inferredMetricsTieBreakers>
 </document>
