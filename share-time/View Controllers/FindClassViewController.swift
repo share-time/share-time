@@ -39,10 +39,6 @@ class FindClassViewController: UIViewController, UITableViewDelegate, UITableVie
         classTableView.tableHeaderView = searchController.searchBar
         definesPresentationContext = true
         searchController.hidesNavigationBarDuringPresentation = false
-
-        //searchedCourses = courses
-
-        // Do any additional setup after loading the view.
     }
 
     override func didReceiveMemoryWarning() {

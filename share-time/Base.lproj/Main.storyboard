@@ -456,14 +456,6 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="121.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cyR-jC-BOv">
-                                                    <rect key="frame" x="303" y="43" width="37" height="30"/>
-                                                    <state key="normal" title="Enter"/>
-                                                    <connections>
-                                                        <action selector="onEnterGroupButton:" destination="oIx-l0-YNH" eventType="touchUpInside" id="pY0-Px-2QJ"/>
-                                                        <segue destination="4Fk-RM-atx" kind="show" id="rF6-s3-p9P"/>
-                                                    </connections>
-                                                </button>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CSE 100" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3mi-Uu-kFf">
                                                     <rect key="frame" x="35" y="14" width="65" height="21"/>
                                                     <constraints>
@@ -497,16 +489,13 @@
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="6HO-0O-CR7" firstAttribute="leading" secondItem="eU1-lg-ZVg" secondAttribute="leadingMargin" constant="20" id="25g-RL-Q65"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="cyR-jC-BOv" secondAttribute="trailing" constant="20" id="3ou-Ms-K0f"/>
                                                 <constraint firstItem="6HO-0O-CR7" firstAttribute="top" secondItem="QjE-0k-7z6" secondAttribute="bottom" constant="8" id="CYa-ux-nvK"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="0c5-aX-Cxf" secondAttribute="trailing" constant="20" id="Iwx-rZ-1gx"/>
                                                 <constraint firstItem="3mi-Uu-kFf" firstAttribute="top" secondItem="eU1-lg-ZVg" secondAttribute="topMargin" constant="3" id="PSM-Vb-N2r"/>
-                                                <constraint firstItem="cyR-jC-BOv" firstAttribute="top" secondItem="0c5-aX-Cxf" secondAttribute="bottom" constant="8" id="Z0a-6j-Zn8"/>
                                                 <constraint firstItem="0c5-aX-Cxf" firstAttribute="top" secondItem="eU1-lg-ZVg" secondAttribute="topMargin" constant="3" id="ZX3-of-cnH"/>
                                                 <constraint firstItem="3mi-Uu-kFf" firstAttribute="leading" secondItem="eU1-lg-ZVg" secondAttribute="leadingMargin" constant="20" id="fhl-EK-Jtt"/>
                                                 <constraint firstItem="0c5-aX-Cxf" firstAttribute="baseline" secondItem="3mi-Uu-kFf" secondAttribute="baseline" id="hMx-wn-vcU"/>
                                                 <constraint firstItem="QjE-0k-7z6" firstAttribute="leading" secondItem="eU1-lg-ZVg" secondAttribute="leadingMargin" constant="20" id="ivd-g3-yBj"/>
-                                                <constraint firstItem="cyR-jC-BOv" firstAttribute="baseline" secondItem="QjE-0k-7z6" secondAttribute="baseline" id="yb0-of-wPM"/>
                                                 <constraint firstItem="QjE-0k-7z6" firstAttribute="top" secondItem="3mi-Uu-kFf" secondAttribute="bottom" constant="8" id="z19-xo-SSm"/>
                                             </constraints>
                                         </tableViewCellContentView>
@@ -515,6 +504,7 @@
                                             <outlet property="memberNumLabel" destination="6HO-0O-CR7" id="bjX-l5-6tO"/>
                                             <outlet property="nameLabel" destination="QjE-0k-7z6" id="WAE-Be-en2"/>
                                             <outlet property="professorLabel" destination="0c5-aX-Cxf" id="OKa-bw-ADz"/>
+                                            <segue destination="4Fk-RM-atx" kind="show" identifier="toChatSegue" id="343-eb-cnU"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -963,7 +953,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="xoj-4i-0sz"/>
         <segue reference="tMb-o2-l4n"/>
     </inferredMetricsTieBreakers>
 </document>

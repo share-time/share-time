@@ -19,11 +19,7 @@ class StudyGroupCell: UITableViewCell {
             self.classLabel.text = studyGroup.object(forKey: "course") as? String
             self.professorLabel.text = studyGroup.object(forKey: "professor") as? String
         }
-    }
-    
-    @IBAction func onEnterGroupButton(_ sender: Any) {
-        
-    }
+    }    
     
     override func awakeFromNib() {
         super.awakeFromNib()

@@ -66,11 +66,6 @@ class ClassDetailViewController: UIViewController, UITableViewDelegate, UITableV
         let cell = tableView.dequeueReusableCell(withIdentifier: "PublicStudyGroupCell", for: indexPath) as! PublicStudyGroupCell
         let studyGroup = studyGroups![indexPath.row]
         cell.studyGroup = studyGroup
-        /*
-        cell.nameLabel.text = cellStudyGroup["name"] as? String
-        cell.profLabel.text = cellStudyGroup["professor"] as? String
-        cell.memberCountLabel.text = String((cellStudyGroup["members"] as AnyObject).count) + " Members"
-         */
         return cell
     }
     

@@ -41,7 +41,7 @@ class MainPageViewController: UIViewController,UITableViewDelegate, UITableViewD
                 self.tableView.reloadData()
             }
         }
-        self.tableView.reloadData()
+        //self.tableView.reloadData()
         // Do any additional setup after loading the view.
     }
     
@@ -53,7 +53,15 @@ class MainPageViewController: UIViewController,UITableViewDelegate, UITableViewD
         let iconURL = URL(string: userIconBaseURLString + usrPathUrlString + ".png")!
         personalImage.af_setImage(withURL: iconURL)
 
-        self.tableView.reloadData()
+        user?.relation(forKey: "studyGroups").query().findObjectsInBackground{
+            (studyGroups: [PFObject]?, error: Error?) -> Void in
+            if error != nil {
+                print("please dont print")
+            } else {
+                self.studyGroups = studyGroups!
+                self.tableView.reloadData()
+            }
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -74,7 +82,14 @@ class MainPageViewController: UIViewController,UITableViewDelegate, UITableViewD
         return cell
     }
 
-    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let cell = sender as! UITableViewCell
+        if let indexPath = tableView.indexPath(for: cell){
+            let studyGroup = studyGroups[indexPath.row]
+            let chatViewController = segue.destination as! ChatViewController
+            chatViewController.studyGroupName = studyGroup["name"] as! String
+        }
+    }
 
     /*
     // MARK: - Navigation

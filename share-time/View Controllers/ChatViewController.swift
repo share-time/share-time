@@ -19,6 +19,8 @@ class ChatViewController: UIViewController, UITableViewDelegate, UITableViewData
     @IBOutlet weak var tableView: UITableView!
     var chatMessage: [PFObject]? = []
     var refresher: UIRefreshControl!
+    var studyGroupName: String!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.dataSource = self
@@ -45,6 +47,7 @@ class ChatViewController: UIViewController, UITableViewDelegate, UITableViewData
     @objc func onTimer() {
         let query = PFQuery(className: "Message")
         query.includeKey("user")
+        query.whereKey("studyGroupName", equalTo: studyGroupName)
         query.addDescendingOrder("createdAt")
         query.findObjectsInBackground { (posts: [PFObject]?, error: Error?) in
             if let posts = posts {
@@ -78,6 +81,7 @@ class ChatViewController: UIViewController, UITableViewDelegate, UITableViewData
         let sendObject = PFObject(className: "Message")
         sendObject["text"] = messageTextField.text ?? ""
         sendObject["user"] = PFUser.current()
+        sendObject["studyGroupName"] = studyGroupName
         sendObject.saveInBackground { (success, error) in
             if success {
                 print("The message was saved!")
