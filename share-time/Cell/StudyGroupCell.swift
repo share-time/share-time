@@ -7,24 +7,23 @@ class StudyGroupCell: UITableViewCell {
     @IBOutlet weak var memberNumLabel: UILabel!
     @IBOutlet weak var professorLabel: UILabel!
     @IBOutlet weak var classLabel: UILabel!
-    @IBAction func onEnterGroupButton(_ sender: Any) {
-    }
-    
-    var nameLabelText: String!
-    var members: [PFObject]!
-    var classLabelText: String!
-    var professorLabelText: String!
     
     var studyGroup: PFObject! {
         didSet {
             self.nameLabel.text = studyGroup.object(forKey: "name") as? String
             let members = studyGroup.object(forKey: "members") as? [PFObject]
-            self.memberNumLabel.text = String(describing: members?.count)
+            let memberNum = members!.count
+            var memberNumString = String(describing: memberNum)
+            memberNumString += (memberNum == 1) ? " Member" : " Members"
+            self.memberNumLabel.text = memberNumString
             self.classLabel.text = studyGroup.object(forKey: "course") as? String
             self.professorLabel.text = studyGroup.object(forKey: "professor") as? String
         }
     }
     
+    @IBAction func onEnterGroupButton(_ sender: Any) {
+        
+    }
     
     override func awakeFromNib() {
         super.awakeFromNib()

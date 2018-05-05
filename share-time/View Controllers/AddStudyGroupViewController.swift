@@ -73,7 +73,7 @@ class AddStudyGroupViewController: UIViewController {
         newStudyGroup.saveInBackground{(success, error) in
             if success {
                 print("study group called \(newStudyGroup["name"]) created")
-                var relation = user?.relation(forKey: "studyGroups")
+                let relation = user?.relation(forKey: "studyGroups")
                 relation?.add(newStudyGroup)
                 user?.saveInBackground{ (success: Bool, error: Error?) -> Void in
                     if (success){
@@ -81,7 +81,7 @@ class AddStudyGroupViewController: UIViewController {
                             navController.popViewController(animated: true)
                         }
                     } else {
-                        print(error?.localizedDescription)
+                        print(error?.localizedDescription as Any)
                     }
                 }
             } else if let error = error {
@@ -89,11 +89,4 @@ class AddStudyGroupViewController: UIViewController {
             }
         }
     }
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let classDetailViewController = segue.destination as! ClassDetailViewController
-        classDetailViewController.courseName = self.courseName
-    }
-    
-    
 }

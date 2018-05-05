@@ -43,6 +43,7 @@ class SignUpViewController: UIViewController {
         newUser.username = usernameField.text
         newUser.password = passwordField.text
         newUser.email = emailField.text
+        newUser["imgUrl"] = usernameField.text
         if (emailField.text?.isEmpty)!{
             present(signUpEmailErrorAlertController, animated: true)
         } else if (usernameField.text?.isEmpty)!{
@@ -58,9 +59,18 @@ class SignUpViewController: UIViewController {
                     signUpErrorAlertController.addAction(self.OKAction)
                     self.present(signUpErrorAlertController, animated: true)
                 } else {
-                    self.performSegue(withIdentifier: "toLoginSegue", sender: nil)
+                    if let navController = self.navigationController {
+                        navController.popViewController(animated: true)
+                    }
                 }
             }
         }
     }
+    
+    @IBAction func toSignIn(_ sender: Any) {
+        if let navController = self.navigationController {
+            navController.popViewController(animated: true)
+        }
+    }
+    
 }

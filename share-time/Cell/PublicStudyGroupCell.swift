@@ -7,12 +7,25 @@
 //
 
 import UIKit
+import Parse
 
 class PublicStudyGroupCell: UITableViewCell {
 
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var profLabel: UILabel!
     @IBOutlet weak var memberCountLabel: UILabel!
+    
+    var studyGroup: PFObject! {
+        didSet {
+            self.nameLabel.text = studyGroup.object(forKey: "name") as? String
+            let members = studyGroup.object(forKey: "members") as? [PFObject]
+            let memberNum = members!.count
+            var memberNumString = String(describing: memberNum)
+            memberNumString += (memberNum == 1) ? " Member" : " Members"
+            self.memberCountLabel.text = memberNumString
+            self.profLabel.text = studyGroup.object(forKey: "professor") as? String
+        }
+    }
     
     
     override func awakeFromNib() {

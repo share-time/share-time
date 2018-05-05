@@ -1,14 +1,14 @@
 //
-//  changePasswordVIewController.swift
+//  ChangePasswordViewController.swift
 //  share-time
 //
-//  Created by Jiayi Wang on 5/2/18.
+//  Created by Godwin Pang on 5/5/18.
 //  Copyright © 2018 share-time. All rights reserved.
 //
 
 import UIKit
 
-class changePasswordVIewController: UIViewController {
+class ChangePasswordViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()

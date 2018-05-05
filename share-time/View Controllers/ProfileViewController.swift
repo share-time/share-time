@@ -13,41 +13,59 @@ class ProfileViewController: UIViewController {
     @IBOutlet weak var emailText: UITextField!
     @IBOutlet weak var nameText: UITextField!
     
-    
-    @IBAction func onLogoutButton(_ sender: Any) {
-        print("on sending logout")
-        PFUser.logOutInBackground()
-        self.performSegue(withIdentifier: "logoutSegue", sender: nil)
-    }
+    let user = PFUser.current()!
+    var username: String = ""
+    var email: String = ""
     
     @IBAction func save(_ sender: Any) {
+        var changed = false
+        
+        if (username != nameText.text){
+            user["username"] = nameText.text
+            changed = true
+        }
+        if (email != emailText.text){
+            user["email"] = emailText.text
+            changed = true
+        }
+        
+        if (changed){
+            user.saveInBackground{ (success: Bool, error: Error?) -> Void in
+                if (success){
+                    print("WOOOO")
+                    print("emailText.text: "+self.emailText.text!)
+                    print(self.user["email"])
+                    print("nameText.text: "+self.nameText.text!)
+                    print(self.user["username"])
+                } else {
+                    print("wassup")
+                }
+            }
+        }
     }
+    
     @IBAction func changePassWord(_ sender: Any) {
       self.performSegue(withIdentifier: "changePasswordSegue", sender: nil)
     }
     
-    @IBOutlet weak var leave: UIButton!
+    @IBAction func onLogout(_ sender: Any) {
+        PFUser.logOutInBackground()
+        self.performSegue(withIdentifier: "logoutSegue", sender: nil)
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        if()
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-      
-        // Do any additional setup after loading the view.
+        username = (user.object(forKey: "username") as? String)!
+        email = (user.object(forKey: "email") as? String)!
+        emailText.text = email
+        nameText.text = username
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
