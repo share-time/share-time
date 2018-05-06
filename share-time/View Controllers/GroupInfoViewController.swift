@@ -8,16 +8,31 @@
 
 import UIKit
 
-class GroupInfoViewController: UIViewController {
+class GroupInfoViewController: UIViewController, UICollectionViewDataSource {
 
+    @IBOutlet weak var collectionView: UICollectionView!
     @IBAction func onLeaveButton(_ sender: UIButton) {
     }
     @IBOutlet weak var leaveGroupButton: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        collectionView.dataSource = self
+        
+        let layout = collectionView.collectionViewLayout as! UICollectionViewFlowLayout
+        layout.minimumInteritemSpacing = 5
+        layout.minimumLineSpacing = layout.minimumInteritemSpacing
         // Do any additional setup after loading the view.
     }
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return 10
+    }
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "MemberCell", for: indexPath) as! MemberCell
+
+        return cell
+    }
+    
+    
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

@@ -9,7 +9,7 @@
 import UIKit
 
 class MemberCell: UICollectionViewCell {
-    
     @IBOutlet weak var memberNameLabel: UILabel!
     @IBOutlet weak var memberIconImage: UIImageView!
+
 }
