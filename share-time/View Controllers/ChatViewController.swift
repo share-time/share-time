@@ -24,6 +24,7 @@ class ChatViewController: UIViewController, UITableViewDelegate, UITableViewData
         super.viewDidLoad()
         tableView.dataSource = self
         tableView.delegate = self
+        tableView.allowsSelection = false
         self.refresher = UIRefreshControl()
         self.refresher.tintColor = UIColor.darkText
         self.refresher.addTarget(self, action: #selector(refreshControlAction(_:)), for: .valueChanged)
