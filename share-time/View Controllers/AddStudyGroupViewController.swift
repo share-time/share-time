@@ -107,10 +107,11 @@ class AddStudyGroupViewController: UIViewController, UITableViewDelegate, UITabl
         let user = PFUser.current()
         let newStudyGroup = PFObject(className: "StudyGroup")
         newStudyGroup["name"] = studyGroupName
-        newStudyGroup["members"] = [user]
         newStudyGroup["messages"] = []
         newStudyGroup["course"] = courseLabel.text
         newStudyGroup["professor"] = profName
+        let relation = newStudyGroup.relation(forKey: "members")
+        relation.add(user!)
         
         newStudyGroup.saveInBackground{(success, error) in
             if success {
