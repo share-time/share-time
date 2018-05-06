@@ -11,8 +11,8 @@ class StudyGroupCell: UITableViewCell {
     var studyGroup: PFObject! {
         didSet {
             self.nameLabel.text = studyGroup.object(forKey: "name") as? String
-            let members = studyGroup.object(forKey: "members") as? [PFObject]
-            let memberNum = members!.count
+            //let members = studyGroup.object(forKey: "members") as? [PFObject]
+            let memberNum = 10 //members!.count
             var memberNumString = String(describing: memberNum)
             memberNumString += (memberNum == 1) ? " Member" : " Members"
             self.memberNumLabel.text = memberNumString
