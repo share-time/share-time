@@ -7,12 +7,27 @@
 //
 
 import UIKit
+import Parse
 
 class ChangePasswordViewController: UIViewController {
 
+    let signUpConfirmErrorAlertController = UIAlertController(title: "Passwords do not match", message: "Please enter again", preferredStyle: .alert)
+    let signUpPasswordErrorAlertController = UIAlertController(title: "Incorrect Password", message: "Please re-enter password", preferredStyle: .alert)
+    
+    let OKAction = UIAlertAction(title: "OK", style: .default) { (action) in
+        //does nothing -> dismisses alert view
+    }
+    
+    @IBOutlet weak var currentPasswordTextField: UITextField!
+    @IBOutlet weak var newPasswordTextField: UITextField!
+    @IBOutlet weak var confirmPasswordTextField: UITextField!
+    
+    let user = PFUser.current()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        signUpConfirmErrorAlertController.addAction(OKAction)
+        signUpPasswordErrorAlertController.addAction(OKAction)
         // Do any additional setup after loading the view.
     }
 
@@ -22,14 +37,26 @@ class ChangePasswordViewController: UIViewController {
     }
     
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    @IBAction func onPasswordSave(_ sender: Any) {
+        /*if (currentPasswordTextField.text != user?.password){
+            print(currentPasswordTextField.text!)
+            print(user)
+            print(user?.password)
+            present(signUpPasswordErrorAlertController, animated: true)
+        } else */if (newPasswordTextField.text != confirmPasswordTextField.text){
+            present(signUpConfirmErrorAlertController, animated: true)
+        } else {
+            user?.password = newPasswordTextField.text
+            user?.saveInBackground{ (success: Bool, error: Error?) -> Void in
+                if (success){
+                    if let navController = self.navigationController{
+                        navController.popViewController(animated: true)
+                    }
+                } else {
+                    print("could not save password")
+                }
+            }
+        }
     }
-    */
-
+    
 }
