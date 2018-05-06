@@ -17,6 +17,8 @@ class ClassDetailViewController: UIViewController, UITableViewDelegate, UITableV
 
     var courseName: String!
     var studyGroups: [PFObject]? = []
+    var userStudyGroups: [PFObject]? = []
+    let user = PFUser.current()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,7 +34,10 @@ class ClassDetailViewController: UIViewController, UITableViewDelegate, UITableV
         }
         classNameLabel.text = courseName
         
-        print(studyGroups!)
+        user?.relation(forKey: "studyGroups").query().findObjectsInBackground{
+            (userStudyGroups: [PFObject]?, error: Error?) -> Void in
+            self.userStudyGroups = userStudyGroups
+        }
         
         // Do any additional setup after loading the view.
     }
@@ -66,6 +71,12 @@ class ClassDetailViewController: UIViewController, UITableViewDelegate, UITableV
         let cell = tableView.dequeueReusableCell(withIdentifier: "PublicStudyGroupCell", for: indexPath) as! PublicStudyGroupCell
         let studyGroup = studyGroups![indexPath.row]
         cell.studyGroup = studyGroup
+        for findStudyGroup in userStudyGroups!{
+            if (findStudyGroup["name"] as? String == studyGroup["name"] as? String){
+                cell.joinStudyGroupButton.isHidden = true
+            }
+        }
+        
         return cell
     }
     

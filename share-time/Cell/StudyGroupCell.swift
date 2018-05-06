@@ -7,6 +7,7 @@ class StudyGroupCell: UITableViewCell {
     @IBOutlet weak var memberNumLabel: UILabel!
     @IBOutlet weak var professorLabel: UILabel!
     @IBOutlet weak var classLabel: UILabel!
+    var memberNum = 0
     
     var studyGroup: PFObject! {
         didSet {
@@ -18,9 +19,9 @@ class StudyGroupCell: UITableViewCell {
                 if error != nil {
                     print("please dont print")
                 } else {
-                    let memberNum = (studyGroups?.count)!
-                    var memberNumString = String(describing: memberNum)
-                    memberNumString += (memberNum == 1) ? " Member" : " Members"
+                    self.memberNum = (studyGroups?.count)!
+                    var memberNumString = String(describing: self.memberNum)
+                    memberNumString += (self.memberNum == 1) ? " Member" : " Members"
                     self.memberNumLabel.text = memberNumString
                 }
             }
