@@ -406,8 +406,8 @@
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nwz-d5-JPM">
-                                <rect key="frame" x="60" y="522" width="54" height="42"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <rect key="frame" x="60" y="522" width="45" height="38"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
                                 <state key="normal" title="Save"/>
                                 <connections>
                                     <action selector="onPasswordSave:" destination="mut-Vh-fwo" eventType="touchUpInside" id="BHO-Uz-nxZ"/>
@@ -718,7 +718,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="75" height="69"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fdA-fy-tje">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="snowman" translatesAutoresizingMaskIntoConstraints="NO" id="fdA-fy-tje">
                                                     <rect key="frame" x="9" y="1" width="57" height="48"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 </imageView>
