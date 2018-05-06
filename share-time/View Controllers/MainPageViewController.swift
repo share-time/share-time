@@ -86,7 +86,7 @@ class MainPageViewController: UIViewController,UITableViewDelegate, UITableViewD
             let studyGroup = studyGroups[indexPath.row]
             let chatViewController = segue.destination as! ChatViewController
             chatViewController.studyGroupName = studyGroup["name"] as! String
-            chatViewController.studyGroup = studyGroup as! StudyGroup
+            chatViewController.studyGroup = studyGroup as! PFObject
         }
     }
 

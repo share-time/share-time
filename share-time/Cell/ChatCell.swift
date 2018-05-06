@@ -18,7 +18,7 @@ class ChatCell: UITableViewCell {
         super.awakeFromNib()
         bubbleView.layer.cornerRadius = 10
         bubbleView.clipsToBounds = true
-        bubbleView.backgroundColor = UIColor(red:0.02, green:0.47, blue:0.98, alpha:1.0)
+        bubbleView.backgroundColor = UIColor.lightGray
         // Initialization code
     }
 

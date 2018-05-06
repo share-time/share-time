@@ -19,7 +19,7 @@ class ChatViewController: UIViewController, UITableViewDelegate, UITableViewData
     var chatMessage: [PFObject]? = []
     var refresher: UIRefreshControl!
     var studyGroupName: String!
-    //var studyGroup: studyGroup
+    var studyGroup: PFObject!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -71,9 +71,13 @@ class ChatViewController: UIViewController, UITableViewDelegate, UITableViewData
         if let user = messages?["user"] as? PFUser {
             print("The user is: \(user)")
             cell.usernameLabel.text = user.username
+            
             let imgUrlString = user["imgUrl"] as? String
             let imgUrl = URL(string: imgUrlString!)!
             cell.personalIconImage.af_setImage(withURL: imgUrl)
+            if (user.username == PFUser.current()?.username) {
+                cell.bubbleView.backgroundColor = UIColor(red:0.02, green:0.47, blue:0.98, alpha:1.0)
+            }
         } else {
             // No user found, set default username
             cell.usernameLabel.text = "🤖"

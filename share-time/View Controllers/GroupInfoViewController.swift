@@ -14,8 +14,8 @@ class GroupInfoViewController: UIViewController, UICollectionViewDataSource {
     @IBAction func onLeaveButton(_ sender: UIButton) {
     }
     @IBOutlet weak var leaveGroupButton: UIButton!
-    CGFloat screenWidth = screenRect.size.width;
-    CGFloat screenHeight = screenRect.size.height;
+   // CGFloat screenWidth = screenRect.size.width;
+   // CGFloat screenHeight = screenRect.size.height;
     override func viewDidLoad() {
         super.viewDidLoad()
         collectionView.dataSource = self
