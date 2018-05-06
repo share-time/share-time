@@ -9,7 +9,7 @@
 import UIKit
 
 class ChatCell: UITableViewCell {
-
+    @IBOutlet weak var personalIconImage: UIImageView!
     @IBOutlet weak var usernameLabel: UILabel!
     @IBOutlet weak var bubbleView: UIView!
     @IBOutlet weak var messageLabel: UILabel!
