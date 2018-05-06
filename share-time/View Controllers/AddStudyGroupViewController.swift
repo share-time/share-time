@@ -9,13 +9,18 @@
 import UIKit
 import Parse
 
-class AddStudyGroupViewController: UIViewController {
+class AddStudyGroupViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     @IBOutlet weak var courseLabel: UILabel!
     @IBOutlet weak var profTextField: UITextField!
     @IBOutlet weak var studyGroupNameTextField: UITextField!
     @IBOutlet weak var profLabel: UILabel!
     @IBOutlet weak var groupNameLabel: UILabel!
     @IBOutlet weak var memberSearchBar: UITextField!
+    @IBOutlet weak var tableView: UITableView!
+    
+    var searchController: UISearchController!
+    
+    var users: [PFObject]!
     
     let profTextFieldErrorAlertController = UIAlertController(title: "Professor Name Required", message: "Please enter name of professor", preferredStyle: .alert)
     let studyGroupNameTextFieldErrorAlertController = UIAlertController(title: "Study Group Name Required", message: "Please enter name of study group", preferredStyle: .alert)
@@ -25,6 +30,7 @@ class AddStudyGroupViewController: UIViewController {
     }
     
     var courseName: String!
+    let user = PFUser.current()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,12 +38,48 @@ class AddStudyGroupViewController: UIViewController {
         studyGroupNameTextFieldErrorAlertController.addAction(OKAction)
         studyGroupNameDuplicateErrorAlertController.addAction(OKAction)
         courseLabel.text = courseName
+        
+        /*
+        searchController = UISearchController(searchResultsController: nil)
+        //searchController.searchResultsUpdater = self as! UISearchResultsUpdating
+        searchController.dimsBackgroundDuringPresentation = false
+        searchController.searchBar.sizeToFit()
+        searchController.searchBar.placeholder = "Search for people to study with!"
+        tableView.tableHeaderView = searchController.searchBar
+        definesPresentationContext = true
+        searchController.hidesNavigationBarDuringPresentation = false
+         */
+        
+        tableView.dataSource = self
+        tableView.delegate = self
+        
+        let query = PFUser.query()
+        query?.whereKey("username", notEqualTo: user!["username"])
+        do {
+            try users = query?.findObjects()
+        } catch {
+            //meh
+        }
+        tableView.reloadData()
         // Do any additional setup after loading the view.
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if users != nil {
+            return users.count
+        } else {
+            return 0
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "UserCell", for: indexPath) as! UserCell
+        return cell
     }
     
     @IBAction func onAddButton(_ sender: Any) {
@@ -73,7 +115,7 @@ class AddStudyGroupViewController: UIViewController {
         newStudyGroup.saveInBackground{(success, error) in
             if success {
                 print("study group called \(newStudyGroup["name"]) created")
-                var relation = user?.relation(forKey: "studyGroups")
+                let relation = user?.relation(forKey: "studyGroups")
                 relation?.add(newStudyGroup)
                 user?.saveInBackground{ (success: Bool, error: Error?) -> Void in
                     if (success){
@@ -81,7 +123,7 @@ class AddStudyGroupViewController: UIViewController {
                             navController.popViewController(animated: true)
                         }
                     } else {
-                        print(error?.localizedDescription)
+                        print(error?.localizedDescription as Any)
                     }
                 }
             } else if let error = error {
@@ -89,11 +131,4 @@ class AddStudyGroupViewController: UIViewController {
             }
         }
     }
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let classDetailViewController = segue.destination as! ClassDetailViewController
-        classDetailViewController.courseName = self.courseName
-    }
-    
-    
 }

@@ -29,8 +29,8 @@ class MainPageViewController: UIViewController,UITableViewDelegate, UITableViewD
         emailLabel.text = user?.email
         nameLabel.text = user?.username
         let userIconBaseURLString = "http://api.adorable.io/avatars/285/"
-        let usrPathUrlString = user?.username
-        let iconURL = URL(string: userIconBaseURLString + usrPathUrlString! + ".png")!
+        let usrPathUrlString = user?["imgUrl"] as! String
+        let iconURL = URL(string: userIconBaseURLString + usrPathUrlString + ".png")!
         personalImage.af_setImage(withURL: iconURL)
         user?.relation(forKey: "studyGroups").query().findObjectsInBackground{
             (studyGroups: [PFObject]?, error: Error?) -> Void in
@@ -38,15 +38,30 @@ class MainPageViewController: UIViewController,UITableViewDelegate, UITableViewD
                 print("please dont print")
             } else {
                 self.studyGroups = studyGroups!
+                self.tableView.reloadData()
             }
         }
-        print(studyGroups)
-        self.tableView.reloadData()
+        //self.tableView.reloadData()
         // Do any additional setup after loading the view.
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        self.tableView.reloadData()
+        emailLabel.text = user?.email
+        nameLabel.text = user?.username
+        let userIconBaseURLString = "http://api.adorable.io/avatars/285/"
+        let usrPathUrlString = user?["imgUrl"] as! String
+        let iconURL = URL(string: userIconBaseURLString + usrPathUrlString + ".png")!
+        personalImage.af_setImage(withURL: iconURL)
+
+        user?.relation(forKey: "studyGroups").query().findObjectsInBackground{
+            (studyGroups: [PFObject]?, error: Error?) -> Void in
+            if error != nil {
+                print("please dont print")
+            } else {
+                self.studyGroups = studyGroups!
+                self.tableView.reloadData()
+            }
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -56,42 +71,25 @@ class MainPageViewController: UIViewController,UITableViewDelegate, UITableViewD
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int)
         -> Int {
-            print(studyGroups)
-            //print(studyGroups.count)
             return studyGroups.count
-            /*
-            if let studyGroups = user?["studyGroups"] as? [PFObject] {
-                return studyGroups.count
-            } else {
-                return 10
-            }
-             */
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "StudyGroupCell", for: indexPath) as! StudyGroupCell
-        print("The number of row is" + String(indexPath.row))
-        var studyGroup = studyGroups[indexPath.row]
-        /*
-        let studyGroupID = studyGroups[indexPath.row].objectId
-        print(studyGroupID)
-        studyGroup.fetchIfNeededInBackground{ (findStudyGroup: PFObject?, error: Error?) -> Void in
-            if let findStudyGroup = findStudyGroup{
-                let test = findStudyGroup["professor"]
-                studyGroup = findStudyGroup
-                print(studyGroup)
-                print(test)
-                print("WTF DUDE")
-            }
-        }
-         */
-        print(studyGroup)
+        let studyGroup = studyGroups[indexPath.row]
         cell.studyGroup = studyGroup
 
         return cell
     }
 
-    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let cell = sender as! UITableViewCell
+        if let indexPath = tableView.indexPath(for: cell){
+            let studyGroup = studyGroups[indexPath.row]
+            let chatViewController = segue.destination as! ChatViewController
+            chatViewController.studyGroupName = studyGroup["name"] as! String
+        }
+    }
 
     /*
     // MARK: - Navigation

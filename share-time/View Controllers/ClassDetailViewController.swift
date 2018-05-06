@@ -64,10 +64,8 @@ class ClassDetailViewController: UIViewController, UITableViewDelegate, UITableV
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "PublicStudyGroupCell", for: indexPath) as! PublicStudyGroupCell
-        let cellStudyGroup = studyGroups![indexPath.row]
-        cell.nameLabel.text = cellStudyGroup["name"] as? String
-        cell.profLabel.text = cellStudyGroup["professor"] as? String
-        cell.memberCountLabel.text = String((cellStudyGroup["members"] as AnyObject).count)
+        let studyGroup = studyGroups![indexPath.row]
+        cell.studyGroup = studyGroup
         return cell
     }
     
