@@ -100,6 +100,11 @@ class ChatViewController: UIViewController, UITableViewDelegate, UITableViewData
         }
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let groupInfoViewController = segue.destination as! GroupInfoViewController
+        groupInfoViewController.studyGroup = studyGroup
+    }
+    
     @objc func refreshControlAction(_ refreshControl: UIRefreshControl) {
         onTimer()
         // Tell the refreshControl to stop spinning
