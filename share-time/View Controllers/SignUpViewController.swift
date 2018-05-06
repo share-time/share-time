@@ -43,8 +43,9 @@ class SignUpViewController: UIViewController {
         newUser.username = usernameField.text
         newUser.password = passwordField.text
         newUser.email = emailField.text
-        let imgUrl = String(arc4random_uniform(UInt32.max))
-        newUser["imgUrl"] = imgUrl
+        let imgCode = String(arc4random_uniform(UInt32.max))
+        let userIconBaseURLString = "http://api.adorable.io/avatars/285/"
+        newUser["imgUrl"] = userIconBaseURLString+imgCode+".png"
         if (emailField.text?.isEmpty)!{
             present(signUpEmailErrorAlertController, animated: true)
         } else if (usernameField.text?.isEmpty)!{
