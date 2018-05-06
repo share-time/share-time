@@ -28,7 +28,8 @@ class GroupInfoViewController: UIViewController, UICollectionViewDataSource {
     }
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "MemberCell", for: indexPath) as! MemberCell
-
+//        cell.memberIconImage =
+//        cell.memberNameLabel = user.
         return cell
     }
     

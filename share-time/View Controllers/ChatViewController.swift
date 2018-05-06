@@ -19,6 +19,7 @@ class ChatViewController: UIViewController, UITableViewDelegate, UITableViewData
     var chatMessage: [PFObject]? = []
     var refresher: UIRefreshControl!
     var studyGroupName: String!
+    //var studyGroup: studyGroup
     
     override func viewDidLoad() {
         super.viewDidLoad()
