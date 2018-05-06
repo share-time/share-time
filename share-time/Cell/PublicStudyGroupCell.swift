@@ -15,6 +15,9 @@ class PublicStudyGroupCell: UITableViewCell {
     @IBOutlet weak var profLabel: UILabel!
     @IBOutlet weak var memberCountLabel: UILabel!
     @IBOutlet weak var joinStudyGroupButton: UIButton!
+    var memberNum = 0
+    
+    let user = PFUser.current()
     
     var studyGroup: PFObject! {
         didSet {
@@ -26,19 +29,30 @@ class PublicStudyGroupCell: UITableViewCell {
                 if error != nil {
                     print("please dont print")
                 } else {
-                    let memberNum = (studyGroups?.count)!
-                    var memberNumString = String(describing: memberNum)
-                    memberNumString += (memberNum == 1) ? " Member" : " Members"
+                    self.memberNum = (studyGroups?.count)!
+                    var memberNumString = String(describing: self.memberNum)
+                    memberNumString += (self.memberNum == 1) ? " Member" : " Members"
                     self.memberCountLabel.text = memberNumString
                 }
             }
             
             
             self.profLabel.text = studyGroup.object(forKey: "professor") as? String
+            
+            //check if user has already joined
+            self.user?.relation(forKey: "studyGroups").query().findObjectsInBackground{
+                (studyGroups: [PFObject]?, error: Error?) -> Void in
+                //print("studyGroups: ")
+                //print(studyGroups)
+                //print(self.studyGroup)
+                for studyGroup in studyGroups!{
+                    if (studyGroup["name"] as? String == self.studyGroup["name"] as? String){
+                        self.joinStudyGroupButton.isHidden = true
+                    }
+                }
+            }
         }
     }
-    
-    let user = PFUser.current()
     
     @IBAction func onJoinStudyGroup(_ sender: Any) {
         let studyGroupRelation = studyGroup?.relation(forKey: "members")
@@ -53,6 +67,10 @@ class PublicStudyGroupCell: UITableViewCell {
                 self.user?.saveInBackground{ (success: Bool, error: Error?) -> Void in
                     if (success){
                         self.joinStudyGroupButton.isHidden = true
+                        self.memberNum = self.memberNum + 1
+                        var memberNumString = String(describing: self.memberNum)
+                        memberNumString += (self.memberNum == 1) ? " Member" : " Members"
+                        self.memberCountLabel.text = memberNumString
                     } else {
                         print("i fucked up again")
                     }
