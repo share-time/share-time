@@ -43,7 +43,14 @@ class ChangePasswordViewController: UIViewController {
             print(user)
             print(user?.password)
             present(signUpPasswordErrorAlertController, animated: true)
-        } else */if (newPasswordTextField.text != confirmPasswordTextField.text){
+        } else */
+        PFUser.logInWithUsername(inBackground: (self.user?.username!)!, password: self.currentPasswordTextField.text!) { (user: PFUser?, error: Error?) in
+            if error != nil {
+                self.present(self.signUpPasswordErrorAlertController, animated: true)
+            }
+        }
+        
+        if (newPasswordTextField.text != confirmPasswordTextField.text){
             present(signUpConfirmErrorAlertController, animated: true)
         } else {
             user?.password = newPasswordTextField.text
