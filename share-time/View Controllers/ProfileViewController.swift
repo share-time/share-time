@@ -54,12 +54,12 @@ class ProfileViewController: UIViewController {
     }
 
     @IBAction func changePersonalImage(_ sender: Any) {
-        let imgUrl = String(arc4random_uniform(UInt32.max))
-        user["imgUrl"] = imgUrl
+        let imgCode = String(arc4random_uniform(UInt32.max))
         let userIconBaseURLString = "http://api.adorable.io/avatars/285/"
-        let usrPathUrlString = user["imgUrl"] as! String
-        let iconURL = URL(string: userIconBaseURLString + usrPathUrlString + ".png")!
-        personalImage.af_setImage(withURL: iconURL)
+        let imgUrl = URL(string: userIconBaseURLString+imgCode+".png")!
+        user["imgUrl"] = userIconBaseURLString+imgCode+".png"
+        
+        personalImage.af_setImage(withURL: imgUrl)
     }
     
     @IBAction func onLogout(_ sender: Any) {
@@ -84,10 +84,9 @@ class ProfileViewController: UIViewController {
         email = (user.object(forKey: "email") as? String)!
         emailText.text = email
         nameText.text = username
-        let userIconBaseURLString = "http://api.adorable.io/avatars/285/"
-        let usrPathUrlString = user["imgUrl"] as! String
-        let iconURL = URL(string: userIconBaseURLString + usrPathUrlString + ".png")!
-        personalImage.af_setImage(withURL: iconURL)
+        let imgUrlString = user["imgUrl"] as! String
+        let imgUrl = URL(string: imgUrlString)!
+        personalImage.af_setImage(withURL: imgUrl)
         noSaveAlertController.addAction(SaveAction)
         noSaveAlertController.addAction(CancelAction)
     }

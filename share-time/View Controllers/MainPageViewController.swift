@@ -28,10 +28,9 @@ class MainPageViewController: UIViewController,UITableViewDelegate, UITableViewD
         tableView.rowHeight = 125
         emailLabel.text = user?.email
         nameLabel.text = user?.username
-        let userIconBaseURLString = "http://api.adorable.io/avatars/285/"
-        let usrPathUrlString = user?["imgUrl"] as! String
-        let iconURL = URL(string: userIconBaseURLString + usrPathUrlString + ".png")!
-        personalImage.af_setImage(withURL: iconURL)
+        let iconURLString = user?["imgUrl"] as? String
+        let iconURL = URL(string: iconURLString!)
+        personalImage.af_setImage(withURL: iconURL!)
         user?.relation(forKey: "studyGroups").query().findObjectsInBackground{
             (studyGroups: [PFObject]?, error: Error?) -> Void in
             if error != nil {
@@ -48,10 +47,9 @@ class MainPageViewController: UIViewController,UITableViewDelegate, UITableViewD
     override func viewWillAppear(_ animated: Bool) {
         emailLabel.text = user?.email
         nameLabel.text = user?.username
-        let userIconBaseURLString = "http://api.adorable.io/avatars/285/"
-        let usrPathUrlString = user?["imgUrl"] as! String
-        let iconURL = URL(string: userIconBaseURLString + usrPathUrlString + ".png")!
-        personalImage.af_setImage(withURL: iconURL)
+        let imgUrlString = user!["imgUrl"] as? String
+        let imgUrl = URL(string: imgUrlString!)!
+        personalImage.af_setImage(withURL: imgUrl)
 
         user?.relation(forKey: "studyGroups").query().findObjectsInBackground{
             (studyGroups: [PFObject]?, error: Error?) -> Void in

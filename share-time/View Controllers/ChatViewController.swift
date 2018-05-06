@@ -69,12 +69,9 @@ class ChatViewController: UIViewController, UITableViewDelegate, UITableViewData
         if let user = messages?["user"] as? PFUser {
             print("The user is: \(user)")
             cell.usernameLabel.text = user.username
-            let imgUrl = String(arc4random_uniform(UInt32.max))
-            user["imgUrl"] = imgUrl
-            let userIconBaseURLString = "http://api.adorable.io/avatars/285/"
-            let usrPathUrlString = user["imgUrl"] as! String
-            let iconURL = URL(string: userIconBaseURLString + usrPathUrlString + ".png")
-            cell.personalIconImage.af_setImage(withURL: iconURL!)
+            let imgUrlString = user["imgUrl"] as? String
+            let imgUrl = URL(string: imgUrlString!)!
+            cell.personalIconImage.af_setImage(withURL: imgUrl)
         } else {
             // No user found, set default username
             cell.usernameLabel.text = "🤖"

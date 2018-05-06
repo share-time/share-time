@@ -38,12 +38,7 @@ class ChangePasswordViewController: UIViewController {
     
 
     @IBAction func onPasswordSave(_ sender: Any) {
-        /*if (currentPasswordTextField.text != user?.password){
-            print(currentPasswordTextField.text!)
-            print(user)
-            print(user?.password)
-            present(signUpPasswordErrorAlertController, animated: true)
-        } else */
+
         PFUser.logInWithUsername(inBackground: (self.user?.username!)!, password: self.currentPasswordTextField.text!) { (user: PFUser?, error: Error?) in
             if error != nil {
                 self.present(self.signUpPasswordErrorAlertController, animated: true)
