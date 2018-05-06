@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Parse
 
 class ChatCell: UITableViewCell {
     @IBOutlet weak var personalIconImage: UIImageView!

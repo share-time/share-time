@@ -19,11 +19,13 @@ class ChatViewController: UIViewController, UITableViewDelegate, UITableViewData
     var chatMessage: [PFObject]? = []
     var refresher: UIRefreshControl!
     var studyGroupName: String!
+    //var studyGroup: studyGroup
     
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.dataSource = self
         tableView.delegate = self
+        tableView.allowsSelection = false
         self.refresher = UIRefreshControl()
         self.refresher.tintColor = UIColor.darkText
         self.refresher.addTarget(self, action: #selector(refreshControlAction(_:)), for: .valueChanged)

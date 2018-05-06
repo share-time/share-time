@@ -406,8 +406,8 @@
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nwz-d5-JPM">
-                                <rect key="frame" x="60" y="522" width="54" height="42"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <rect key="frame" x="60" y="522" width="45" height="38"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
                                 <state key="normal" title="Save"/>
                                 <connections>
                                     <action selector="onPasswordSave:" destination="mut-Vh-fwo" eventType="touchUpInside" id="BHO-Uz-nxZ"/>
@@ -705,32 +705,39 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="DOh-sh-JGC">
-                                    <size key="itemSize" width="75" height="69"/>
+                                    <size key="itemSize" width="85" height="80"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" restorationIdentifier="MemberCell" reuseIdentifier="MemberCell" id="Nvj-jf-GvQ" customClass="MemberCell" customModule="share_time" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="75" height="69"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="85" height="80"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
-                                            <rect key="frame" x="0.0" y="0.0" width="75" height="69"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="85" height="80"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fdA-fy-tje">
-                                                    <rect key="frame" x="9" y="1" width="57" height="48"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Gary G." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lne-ho-08u">
-                                                    <rect key="frame" x="23" y="51" width="40" height="14"/>
+                                                    <rect key="frame" x="25" y="60" width="40" height="14"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="11"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="snowman" translatesAutoresizingMaskIntoConstraints="NO" id="fdA-fy-tje">
+                                                    <rect key="frame" x="20" y="12" width="45" height="43"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" secondItem="fdA-fy-tje" secondAttribute="height" multiplier="30:30" id="RHd-aG-Wfv"/>
+                                                    </constraints>
+                                                </imageView>
                                             </subviews>
                                         </view>
+                                        <constraints>
+                                            <constraint firstAttribute="bottom" secondItem="fdA-fy-tje" secondAttribute="bottom" constant="10" id="5XY-hx-XOC"/>
+                                            <constraint firstItem="fdA-fy-tje" firstAttribute="top" secondItem="Nvj-jf-GvQ" secondAttribute="topMargin" constant="10" id="fzg-Dx-FRA"/>
+                                            <constraint firstItem="fdA-fy-tje" firstAttribute="leading" secondItem="Nvj-jf-GvQ" secondAttribute="leading" constant="10" id="rOV-eQ-LFO"/>
+                                        </constraints>
                                         <connections>
                                             <outlet property="memberIconImage" destination="fdA-fy-tje" id="tDm-wT-NNe"/>
                                             <outlet property="memberNameLabel" destination="lne-ho-08u" id="4wH-B0-obP"/>
@@ -751,6 +758,7 @@
                         <viewLayoutGuide key="safeArea" id="ynR-ou-2fS"/>
                     </view>
                     <connections>
+                        <outlet property="collectionView" destination="L4I-fx-8pH" id="QdW-8t-Sac"/>
                         <outlet property="leaveGroupButton" destination="Y7P-1u-KYy" id="r3c-mK-o1t"/>
                     </connections>
                 </viewController>
