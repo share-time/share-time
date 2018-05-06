@@ -11,11 +11,20 @@ class StudyGroupCell: UITableViewCell {
     var studyGroup: PFObject! {
         didSet {
             self.nameLabel.text = studyGroup.object(forKey: "name") as? String
-            //let members = studyGroup.object(forKey: "members") as? [PFObject]
-            let memberNum = 10 //members!.count
-            var memberNumString = String(describing: memberNum)
-            memberNumString += (memberNum == 1) ? " Member" : " Members"
-            self.memberNumLabel.text = memberNumString
+            
+            // code to get number of members
+            studyGroup.relation(forKey: "members").query().findObjectsInBackground{
+                (studyGroups: [PFObject]?, error: Error?) -> Void in
+                if error != nil {
+                    print("please dont print")
+                } else {
+                    let memberNum = (studyGroups?.count)!
+                    var memberNumString = String(describing: memberNum)
+                    memberNumString += (memberNum == 1) ? " Member" : " Members"
+                    self.memberNumLabel.text = memberNumString
+                }
+            }
+            
             self.classLabel.text = studyGroup.object(forKey: "course") as? String
             self.professorLabel.text = studyGroup.object(forKey: "professor") as? String
         }
