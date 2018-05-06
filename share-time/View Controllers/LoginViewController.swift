@@ -76,10 +76,7 @@ class LoginViewController: UIViewController {
             }
         }
     }
-    
-    @IBAction func onSignup(_ sender: Any) {
-        self.performSegue(withIdentifier: "toSignUpSegue", sender: nil)
-    }
+
     
     
     /*

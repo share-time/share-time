@@ -68,8 +68,7 @@
                                 <rect key="frame" x="251.5" y="550.5" width="52" height="30"/>
                                 <state key="normal" title="Sign up"/>
                                 <connections>
-                                    <action selector="onSignup:" destination="BYZ-38-t0r" eventType="touchUpInside" id="MLr-DH-bzo"/>
-                                    <segue destination="KFt-uC-aDe" kind="show" identifier="toSignUpSegue" id="s9b-ZE-6HV"/>
+                                    <segue destination="KFt-uC-aDe" kind="show" id="I3Y-Go-ajE"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -644,7 +643,13 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="HHO-us-6hF"/>
                     </view>
-                    <navigationItem key="navigationItem" id="nuQ-r7-SVh"/>
+                    <navigationItem key="navigationItem" id="nuQ-r7-SVh">
+                        <barButtonItem key="rightBarButtonItem" title="Item" image="members" id="rS1-Ea-vdZ">
+                            <connections>
+                                <segue destination="xm7-Cj-7g2" kind="show" id="Qzc-pa-7zc"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="messageTextField" destination="FgE-od-Wft" id="G90-F5-gnR"/>
                         <outlet property="sendButton" destination="skN-eu-o7a" id="Zkw-KA-oRD"/>
@@ -654,6 +659,72 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2lg-yf-itM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2524" y="26.53673163418291"/>
+        </scene>
+        <!--Group Info View Controller-->
+        <scene sceneID="Phd-LY-VyN">
+            <objects>
+                <viewController id="xm7-Cj-7g2" customClass="GroupInfoViewController" customModule="share_time" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="eMN-za-Vnl">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="L4I-fx-8pH">
+                                <rect key="frame" x="0.0" y="64" width="375" height="353"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="DOh-sh-JGC">
+                                    <size key="itemSize" width="75" height="69"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" restorationIdentifier="MemberCell" reuseIdentifier="MemberCell" id="Nvj-jf-GvQ" customClass="MemberCell" customModule="share_time" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="75" height="69"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                            <rect key="frame" x="0.0" y="0.0" width="75" height="69"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fdA-fy-tje">
+                                                    <rect key="frame" x="9" y="1" width="57" height="48"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Gary G." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lne-ho-08u">
+                                                    <rect key="frame" x="23" y="51" width="40" height="14"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </view>
+                                        <connections>
+                                            <outlet property="memberIconImage" destination="fdA-fy-tje" id="tDm-wT-NNe"/>
+                                            <outlet property="memberNameLabel" destination="lne-ho-08u" id="4wH-B0-obP"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y7P-1u-KYy">
+                                <rect key="frame" x="128" y="517" width="118" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Delete and Leave"/>
+                                <connections>
+                                    <action selector="onLeaveButton:" destination="xm7-Cj-7g2" eventType="touchUpInside" id="IWw-AC-gVB"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="ynR-ou-2fS"/>
+                    </view>
+                    <connections>
+                        <outlet property="leaveGroupButton" destination="Y7P-1u-KYy" id="r3c-mK-o1t"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="G6j-Wr-yJg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3429.5999999999999" y="26.53673163418291"/>
         </scene>
         <!--Find Class View Controller-->
         <scene sceneID="G3P-IE-IrH">
@@ -1000,6 +1071,7 @@
     </scenes>
     <resources>
         <image name="feed_tab" width="25" height="25"/>
+        <image name="members" width="25" height="25"/>
         <image name="profile_tab" width="25" height="25"/>
         <image name="search_tab" width="25" height="25"/>
         <image name="snowman" width="600" height="600"/>
