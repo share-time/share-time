@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Parse
 
 class GroupInfoViewController: UIViewController, UICollectionViewDataSource {
 
@@ -14,6 +15,7 @@ class GroupInfoViewController: UIViewController, UICollectionViewDataSource {
     @IBAction func onLeaveButton(_ sender: UIButton) {
     }
     @IBOutlet weak var leaveGroupButton: UIButton!
+    var studyGroup: StudyGroup!
    // CGFloat screenWidth = screenRect.size.width;
    // CGFloat screenHeight = screenRect.size.height;
     override func viewDidLoad() {
@@ -26,7 +28,7 @@ class GroupInfoViewController: UIViewController, UICollectionViewDataSource {
         // Do any additional setup after loading the view.
     }
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 10
+        return studyGroup.members.count
     }
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "MemberCell", for: indexPath) as! MemberCell
