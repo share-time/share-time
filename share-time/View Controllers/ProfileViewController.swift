@@ -61,7 +61,6 @@ class ProfileViewController: UIViewController {
         self.personalImage.af_setImage(withURL: imgUrl)
         user.saveInBackground{ (success: Bool, error: Error?) -> Void in
             if (success){
-                self.personalImage.af_setImage(withURL: imgUrl)
             } else {
                 print("wassup")
             }

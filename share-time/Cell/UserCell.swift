@@ -11,8 +11,23 @@ import Parse
 
 class UserCell: UITableViewCell {
     
-    var onSelect:((PFUser) -> ())?
-
+    //returns false if user has been removed (+) and true if user has been added (-)
+    var onSelect:((PFUser) -> (Bool))?
+    var user: PFUser!
+    
+    @IBOutlet weak var usernameLabel: UILabel!
+    @IBOutlet weak var selectMemberButton: UIButton!
+    
+    
+    @IBAction func onSelectUserAsMember(_ sender: Any) {
+        let buttonText = onSelect!(user)
+        if (buttonText){
+            selectMemberButton.titleLabel?.text = "-"
+        } else {
+            selectMemberButton.titleLabel?.text = "+"
+        }
+    }
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

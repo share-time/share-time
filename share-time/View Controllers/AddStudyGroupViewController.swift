@@ -30,7 +30,7 @@ class AddStudyGroupViewController: UIViewController, UITableViewDelegate, UITabl
     }
     
     var courseName: String!
-    let user = PFUser.current()
+    let currentUser = PFUser.current()!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -52,15 +52,17 @@ class AddStudyGroupViewController: UIViewController, UITableViewDelegate, UITabl
         
         tableView.dataSource = self
         tableView.delegate = self
-        /*
+        tableView.allowsSelection = false
+        
+        
         let query = PFUser.query()
-        query?.whereKey("username", notEqualTo: user!["username"])
+        query?.whereKey("username", notEqualTo: currentUser["username"])
         do {
-            try users = query?.findObjects()
+            try users = query?.findObjects() as! [PFUser]
         } catch {
             //meh
         }
-         */
+        
         tableView.reloadData()
         // Do any additional setup after loading the view.
     }
@@ -80,9 +82,22 @@ class AddStudyGroupViewController: UIViewController, UITableViewDelegate, UITabl
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "UserCell", for: indexPath) as! UserCell
-        //cell.onSelect = { (user: PFUser) -> Void in
-            
-        //}
+        let user = users[indexPath.row]
+        cell.user = user
+        cell.usernameLabel.text = user.username
+        
+        //returns false if user has been removed (+) and true if user has been added (-)
+        cell.onSelect = { (user: PFUser) -> Bool in
+            if (self.users.contains(user)){
+                let index = self.users.index(of: user)
+                self.users.remove(at: index!)
+                return true
+            } else {
+                self.users.append(user)
+                return false
+            }
+        }
+        
         return cell
     }
     
@@ -108,21 +123,36 @@ class AddStudyGroupViewController: UIViewController, UITableViewDelegate, UITabl
     }
     
     func createStudyGroup(studyGroupName: String, profName: String){
-        let user = PFUser.current()
         let newStudyGroup = PFObject(className: "StudyGroup")
         newStudyGroup["name"] = studyGroupName
         newStudyGroup["messages"] = []
         newStudyGroup["course"] = courseLabel.text
         newStudyGroup["professor"] = profName
         let relation = newStudyGroup.relation(forKey: "members")
-        relation.add(user!)
+        for user in users{
+            relation.add(user)
+        }
+        relation.add(currentUser)
         
         newStudyGroup.saveInBackground{(success, error) in
             if success {
                 print("study group called \(newStudyGroup["name"]) created")
-                let relation = user?.relation(forKey: "studyGroups")
-                relation?.add(newStudyGroup)
-                user?.saveInBackground{ (success: Bool, error: Error?) -> Void in
+                for user in self.users{
+                    let relation = user.relation(forKey: "studyGroups")
+                    relation.add(newStudyGroup)
+                    user.saveInBackground{ (success: Bool, error: Error?) -> Void in
+                        if (success){
+                            if let navController = self.navigationController {
+                                navController.popViewController(animated: true)
+                            }
+                        } else {
+                            print(error?.localizedDescription as Any)
+                        }
+                    }
+                }
+                let relation = self.currentUser.relation(forKey: "studyGroups")
+                relation.add(newStudyGroup)
+                self.currentUser.saveInBackground{ (success: Bool, error: Error?) -> Void in
                     if (success){
                         if let navController = self.navigationController {
                             navController.popViewController(animated: true)
