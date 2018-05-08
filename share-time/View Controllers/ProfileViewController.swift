@@ -58,8 +58,14 @@ class ProfileViewController: UIViewController {
         let userIconBaseURLString = "http://api.adorable.io/avatars/285/"
         let imgUrl = URL(string: userIconBaseURLString+imgCode+".png")!
         user["imgUrl"] = userIconBaseURLString+imgCode+".png"
-        
-        personalImage.af_setImage(withURL: imgUrl)
+        self.personalImage.af_setImage(withURL: imgUrl)
+        user.saveInBackground{ (success: Bool, error: Error?) -> Void in
+            if (success){
+                self.personalImage.af_setImage(withURL: imgUrl)
+            } else {
+                print("wassup")
+            }
+        }
     }
     
     @IBAction func onLogout(_ sender: Any) {

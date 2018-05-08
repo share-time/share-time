@@ -37,6 +37,10 @@ class ChatViewController: UIViewController, UITableViewDelegate, UITableViewData
         Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(ChatViewController.onTimer), userInfo: nil, repeats: true)
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        tableView.reloadData()
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int)
         -> Int {
         if let chatMessage = chatMessage {
@@ -84,6 +88,7 @@ class ChatViewController: UIViewController, UITableViewDelegate, UITableViewData
             cell.usernameLabel.text = "🤖"
         }
         return cell
+        //return cell
     }
 
     @IBAction func onSend(_ sender: UIButton) {

@@ -20,7 +20,7 @@ class AddStudyGroupViewController: UIViewController, UITableViewDelegate, UITabl
     
     var searchController: UISearchController!
     
-    var users: [PFObject]!
+    var users: [PFUser]!
     
     let profTextFieldErrorAlertController = UIAlertController(title: "Professor Name Required", message: "Please enter name of professor", preferredStyle: .alert)
     let studyGroupNameTextFieldErrorAlertController = UIAlertController(title: "Study Group Name Required", message: "Please enter name of study group", preferredStyle: .alert)
@@ -52,7 +52,7 @@ class AddStudyGroupViewController: UIViewController, UITableViewDelegate, UITabl
         
         tableView.dataSource = self
         tableView.delegate = self
-        
+        /*
         let query = PFUser.query()
         query?.whereKey("username", notEqualTo: user!["username"])
         do {
@@ -60,6 +60,7 @@ class AddStudyGroupViewController: UIViewController, UITableViewDelegate, UITabl
         } catch {
             //meh
         }
+         */
         tableView.reloadData()
         // Do any additional setup after loading the view.
     }
@@ -79,6 +80,9 @@ class AddStudyGroupViewController: UIViewController, UITableViewDelegate, UITabl
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "UserCell", for: indexPath) as! UserCell
+        //cell.onSelect = { (user: PFUser) -> Void in
+            
+        //}
         return cell
     }
     

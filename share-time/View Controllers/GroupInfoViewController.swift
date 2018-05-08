@@ -43,7 +43,9 @@ class GroupInfoViewController: UIViewController, UICollectionViewDataSource {
     }
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "MemberCell", for: indexPath) as! MemberCell
-        cell.member = self.members[indexPath.item]
+        let member = self.members[indexPath.item]
+        cell.memberNameLabel.text = member.username
+        cell.memberIconImage.af_setImage(withURL: URL(string: (member["imgUrl"] as! String?)!)!)
         return cell
     }
     

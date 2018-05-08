@@ -25,6 +25,7 @@ class ClassDetailViewController: UIViewController, UITableViewDelegate, UITableV
         
         studyGroupTableView.delegate = self
         studyGroupTableView.dataSource = self
+        studyGroupTableView.allowsSelection = false
         
         let query = PFQuery(className: "StudyGroup")
         query.whereKey("course", equalTo: courseName)

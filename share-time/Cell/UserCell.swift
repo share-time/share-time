@@ -7,8 +7,11 @@
 //
 
 import UIKit
+import Parse
 
 class UserCell: UITableViewCell {
+    
+    var onSelect:((PFUser) -> ())?
 
     override func awakeFromNib() {
         super.awakeFromNib()
