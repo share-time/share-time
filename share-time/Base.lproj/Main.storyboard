@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="PPx-g2-hi5">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="PPx-g2-hi5">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
@@ -794,7 +794,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="91u-7s-xEE">
-                                                    <rect key="frame" x="15" y="8" width="61.5" height="24"/>
+                                                    <rect key="frame" x="30" y="8" width="61.5" height="24"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="26"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -809,7 +809,7 @@
                                             </subviews>
                                             <constraints>
                                                 <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="91u-7s-xEE" secondAttribute="trailing" constant="20" id="79L-SV-yke"/>
-                                                <constraint firstItem="91u-7s-xEE" firstAttribute="leading" secondItem="z4j-dk-arL" secondAttribute="leading" constant="15" id="9j8-21-CVw"/>
+                                                <constraint firstItem="91u-7s-xEE" firstAttribute="leading" secondItem="z4j-dk-arL" secondAttribute="leading" constant="30" id="9j8-21-CVw"/>
                                                 <constraint firstAttribute="bottom" secondItem="91u-7s-xEE" secondAttribute="bottom" constant="12" id="M2N-27-ljM"/>
                                                 <constraint firstItem="91u-7s-xEE" firstAttribute="top" secondItem="z4j-dk-arL" secondAttribute="top" constant="8" id="hD6-Hw-Zos"/>
                                             </constraints>
