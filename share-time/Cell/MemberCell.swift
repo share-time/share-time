@@ -7,9 +7,16 @@
 //
 
 import UIKit
+import Parse
 
 class MemberCell: UICollectionViewCell {
     @IBOutlet weak var memberNameLabel: UILabel!
     @IBOutlet weak var memberIconImage: UIImageView!
-
+    
+    var member: PFUser!{
+        didSet{
+            memberNameLabel.text = member.username
+            memberIconImage.af_setImage(withURL: URL(string: (member["imgUrl"] as! String?)!)!)
+        }
+    }
 }

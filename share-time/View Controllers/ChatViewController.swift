@@ -20,6 +20,7 @@ class ChatViewController: UIViewController, UITableViewDelegate, UITableViewData
     var refresher: UIRefreshControl!
     var studyGroupName: String!
     var studyGroup: PFObject!
+    var members: [PFObject]!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -99,10 +100,22 @@ class ChatViewController: UIViewController, UITableViewDelegate, UITableViewData
             }
         }
     }
+    @IBAction func toGroupInfoViewController(_ sender: Any) {
+        studyGroup.relation(forKey: "members").query().findObjectsInBackground{
+            (members: [PFObject]?, error: Error?) -> Void in
+            if error == nil{
+                self.members = members as! [PFUser]
+                self.performSegue(withIdentifier: "toGroupInfoViewControllerSegue", sender: nil)
+            } else {
+                print("i fucked up again")
+            }
+        }
+    }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let groupInfoViewController = segue.destination as! GroupInfoViewController
         groupInfoViewController.studyGroup = studyGroup as! StudyGroup?
+        groupInfoViewController.members = members as! [PFUser]
     }
     
     @objc func refreshControlAction(_ refreshControl: UIRefreshControl) {

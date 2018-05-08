@@ -10,14 +10,15 @@ import UIKit
 import Parse
 
 class GroupInfoViewController: UIViewController, UICollectionViewDataSource {
-
+    
     @IBOutlet weak var collectionView: UICollectionView!
     @IBAction func onLeaveButton(_ sender: UIButton) {
     }
     @IBOutlet weak var leaveGroupButton: UIButton!
-    var studyGroup: StudyGroup!
-   // CGFloat screenWidth = screenRect.size.width;
-   // CGFloat screenHeight = screenRect.size.height;
+    var studyGroup: PFObject!
+    var members: [PFUser] = []
+    // CGFloat screenWidth = screenRect.size.width;
+    // CGFloat screenHeight = screenRect.size.height;
     override func viewDidLoad() {
         super.viewDidLoad()
         collectionView.dataSource = self
@@ -25,37 +26,43 @@ class GroupInfoViewController: UIViewController, UICollectionViewDataSource {
         let layout = collectionView.collectionViewLayout as! UICollectionViewFlowLayout
         layout.minimumInteritemSpacing = 5
         layout.minimumLineSpacing = layout.minimumInteritemSpacing
+        
         // Do any additional setup after loading the view.
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        collectionView.reloadData()
+    }
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return studyGroup.members.count
+        if members != nil {
+            return members.count
+        } else {
+            return 10
+        }
     }
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "MemberCell", for: indexPath) as! MemberCell
-//        cell.memberIconImage =
-//        cell.memberNameLabel = user.
+        cell.member = self.members[indexPath.item]
         return cell
     }
     
     
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    
     /*
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: 100, height: 100)
-    }
- */
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+     // MARK: - Navigation
+     
+     // In a storyboard-based application, you will often want to do a little preparation before navigation
+     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+     // Get the new view controller using segue.destinationViewController.
+     // Pass the selected object to the new view controller.
+     }
+     */
+    
 }
