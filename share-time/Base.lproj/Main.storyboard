@@ -21,12 +21,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="128" translatesAutoresizingMaskIntoConstraints="NO" id="3WY-sz-tFN">
-                                <rect key="frame" x="123" y="82" width="129" height="36"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Eo7-q9-FJG">
                                 <rect key="frame" x="141.5" y="320" width="163.5" height="30"/>
                                 <nil key="textColor"/>
@@ -72,6 +66,18 @@
                                     <segue destination="KFt-uC-aDe" kind="show" id="I3Y-Go-ajE"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="128" translatesAutoresizingMaskIntoConstraints="NO" id="3WY-sz-tFN">
+                                <rect key="frame" x="88" y="108" width="199" height="47"/>
+                                <attributedString key="attributedText">
+                                    <fragment content="Study Triton">
+                                        <attributes>
+                                            <font key="NSFont" size="52" name="SignPainter-HouseScript"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -86,7 +92,7 @@
                             <constraint firstItem="5kZ-F5-khJ" firstAttribute="baseline" secondItem="9LQ-7I-AyC" secondAttribute="baseline" id="b0T-ac-ahU"/>
                             <constraint firstItem="Eo7-q9-FJG" firstAttribute="baseline" secondItem="wKB-WY-ofI" secondAttribute="baseline" id="chn-zg-e1E"/>
                             <constraint firstItem="wKB-WY-ofI" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" multiplier="0.5" id="dLs-9B-J89"/>
-                            <constraint firstItem="3WY-sz-tFN" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" multiplier="0.3" id="foY-Jq-0oq"/>
+                            <constraint firstItem="3WY-sz-tFN" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" multiplier="0.4" id="foY-Jq-0oq"/>
                             <constraint firstItem="U1K-Pi-Vnh" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" multiplier="1.3" id="h3u-Qg-Mdv"/>
                             <constraint firstItem="GPp-tq-g9z" firstAttribute="baseline" secondItem="HlP-AH-9rJ" secondAttribute="baseline" id="ihn-1U-bOp"/>
                             <constraint firstItem="3WY-sz-tFN" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="nBp-GS-BKe"/>

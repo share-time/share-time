@@ -27,8 +27,8 @@ class LoginViewController: UIViewController {
         let gradient = CAGradientLayer()
         gradient.frame = self.view.bounds
         gradient.colors = [
-            UIColor(red: 103/255, green: 62/255, blue: 48/255, alpha: 0.5).cgColor,
-            UIColor(red: 53/255, green: 88/255, blue: 244/255, alpha: 0.5).cgColor
+            UIColor(red: 103/255, green: 62/255, blue: 48/255, alpha: 1).cgColor,
+            UIColor(red: 53/255, green: 88/255, blue: 244/255, alpha: 1).cgColor
         ]
         gradient.startPoint = CGPoint(x:0, y:0)
         gradient.endPoint = CGPoint(x:1, y:1)
@@ -77,7 +77,9 @@ class LoginViewController: UIViewController {
         }
     }
 
-    
+    override func viewWillAppear(_ animated: Bool) {
+        self.navigationController?.isNavigationBarHidden = true
+    }
     
     /*
     // MARK: - Navigation
