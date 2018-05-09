@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="PPx-g2-hi5">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="PPx-g2-hi5">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
@@ -53,21 +53,21 @@
                                     <action selector="onLogin:" destination="BYZ-38-t0r" eventType="touchUpInside" id="tLg-zc-caI"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="If you do not have an account, please" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HlP-AH-9rJ">
-                                <rect key="frame" x="32.5" y="559.5" width="211" height="14.5"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Don't have an account? Please" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HlP-AH-9rJ">
+                                <rect key="frame" x="51.5" y="559.5" width="173" height="15"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GPp-tq-g9z">
-                                <rect key="frame" x="251.5" y="550.5" width="52" height="30"/>
+                                <rect key="frame" x="232.5" y="550.5" width="52" height="30"/>
                                 <state key="normal" title="Sign up"/>
                                 <connections>
                                     <segue destination="KFt-uC-aDe" kind="show" id="I3Y-Go-ajE"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="128" translatesAutoresizingMaskIntoConstraints="NO" id="3WY-sz-tFN">
-                                <rect key="frame" x="88" y="108" width="199" height="47"/>
+                                <rect key="frame" x="88" y="108" width="199" height="67"/>
                                 <attributedString key="attributedText">
                                     <fragment content="Study Triton">
                                         <attributes>
@@ -92,7 +92,7 @@
                             <constraint firstItem="5kZ-F5-khJ" firstAttribute="baseline" secondItem="9LQ-7I-AyC" secondAttribute="baseline" id="b0T-ac-ahU"/>
                             <constraint firstItem="Eo7-q9-FJG" firstAttribute="baseline" secondItem="wKB-WY-ofI" secondAttribute="baseline" id="chn-zg-e1E"/>
                             <constraint firstItem="wKB-WY-ofI" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" multiplier="0.5" id="dLs-9B-J89"/>
-                            <constraint firstItem="3WY-sz-tFN" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" multiplier="0.4" id="foY-Jq-0oq"/>
+                            <constraint firstItem="3WY-sz-tFN" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" multiplier="0.4" constant="8.0999999999999943" id="foY-Jq-0oq"/>
                             <constraint firstItem="U1K-Pi-Vnh" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" multiplier="1.3" id="h3u-Qg-Mdv"/>
                             <constraint firstItem="GPp-tq-g9z" firstAttribute="baseline" secondItem="HlP-AH-9rJ" secondAttribute="baseline" id="ihn-1U-bOp"/>
                             <constraint firstItem="3WY-sz-tFN" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="nBp-GS-BKe"/>
@@ -732,7 +732,7 @@
                                                         <constraint firstAttribute="height" constant="45" id="KJh-2s-ftk"/>
                                                     </constraints>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Gary G." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lne-ho-08u">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Gary G." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lne-ho-08u">
                                                     <rect key="frame" x="22" y="60" width="40" height="14"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="11"/>
                                                     <nil key="textColor"/>
@@ -745,6 +745,7 @@
                                             <constraint firstItem="lne-ho-08u" firstAttribute="top" secondItem="fdA-fy-tje" secondAttribute="bottom" constant="6" id="B6m-Co-Y4g"/>
                                             <constraint firstAttribute="bottom" secondItem="lne-ho-08u" secondAttribute="bottom" constant="6" id="DHS-wx-cHf"/>
                                             <constraint firstAttribute="trailingMargin" secondItem="fdA-fy-tje" secondAttribute="trailing" constant="12" id="kOW-3k-0Z1"/>
+                                            <constraint firstItem="lne-ho-08u" firstAttribute="centerX" secondItem="fdA-fy-tje" secondAttribute="centerX" id="s7P-8j-CWX"/>
                                         </constraints>
                                         <connections>
                                             <outlet property="memberIconImage" destination="fdA-fy-tje" id="tDm-wT-NNe"/>
