@@ -12,7 +12,11 @@ import AlamofireImage
 import PKHUD
 
 class ChatViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
-
+    let emptyMessageAlertController = UIAlertController(title: "Error", message: "Unable to send blank message", preferredStyle: .alert)
+    let OKAction = UIAlertAction(title: "OK", style: .default) { (action) in
+        //does nothing -> dismisses alert view
+    }
+    
     @IBOutlet weak var sendButton: UIButton!
     @IBOutlet weak var messageTextField: UITextField!
     @IBOutlet weak var tableView: UITableView!
@@ -35,6 +39,7 @@ class ChatViewController: UIViewController, UITableViewDelegate, UITableViewData
         tableView.insertSubview(refresher, at: 0)
         tableView.separatorStyle = .none
         Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(ChatViewController.onTimer), userInfo: nil, repeats: true)
+        emptyMessageAlertController.addAction(OKAction)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -92,16 +97,20 @@ class ChatViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
 
     @IBAction func onSend(_ sender: UIButton) {
-        let sendObject = PFObject(className: "Message")
-        sendObject["text"] = messageTextField.text ?? ""
-        sendObject["user"] = PFUser.current()
-        sendObject["studyGroupName"] = studyGroupName
-        sendObject.saveInBackground { (success, error) in
-            if success {
-                print("The message was saved!")
-                self.messageTextField.text = ""
-            } else if let error = error {
-                print("Problem saving message: \(error.localizedDescription)")
+    if(messageTextField.text?.trimmingCharacters(in: .whitespaces).isEmpty)! {
+            self.present(self.emptyMessageAlertController, animated: true)
+        } else {
+            let sendObject = PFObject(className: "Message")
+            sendObject["text"] = messageTextField.text ?? ""
+            sendObject["user"] = PFUser.current()
+            sendObject["studyGroupName"] = studyGroupName
+            sendObject.saveInBackground { (success, error) in
+                if success {
+                    print("The message was saved!")
+                    self.messageTextField.text = ""
+                } else if let error = error {
+                    print("Problem saving message: \(error.localizedDescription)")
+                }
             }
         }
     }

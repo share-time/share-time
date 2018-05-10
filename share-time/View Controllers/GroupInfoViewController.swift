@@ -9,7 +9,7 @@
 import UIKit
 import Parse
 
-class GroupInfoViewController: UIViewController, UICollectionViewDataSource {
+class GroupInfoViewController: UIViewController, UICollectionViewDataSource,UICollectionViewDelegateFlowLayout {
     
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var leaveGroupButton: UIButton!
@@ -23,7 +23,7 @@ class GroupInfoViewController: UIViewController, UICollectionViewDataSource {
         collectionView.dataSource = self
         
         let layout = collectionView.collectionViewLayout as! UICollectionViewFlowLayout
-        layout.minimumInteritemSpacing = 5
+        layout.minimumInteritemSpacing = 10
         layout.minimumLineSpacing = layout.minimumInteritemSpacing
         
         // Do any additional setup after loading the view.
@@ -80,7 +80,10 @@ class GroupInfoViewController: UIViewController, UICollectionViewDataSource {
         return cell
     }
     
-    
+    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
+        
+        return CGSize(width: 200, height: 200)
+    }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

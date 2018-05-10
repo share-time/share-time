@@ -18,6 +18,7 @@ class MainPageViewController: UIViewController,UITableViewDelegate, UITableViewD
     @IBOutlet weak var studyTritonImage: UIImageView!
     let user = PFUser.current()
     var studyGroups: [PFObject] = []
+    var refresher: UIRefreshControl!
     
     
     override func viewDidLoad() {
@@ -26,6 +27,10 @@ class MainPageViewController: UIViewController,UITableViewDelegate, UITableViewD
         tableView.delegate = self
         tableView.rowHeight = UITableViewAutomaticDimension
         tableView.rowHeight = 125
+        self.refresher = UIRefreshControl()
+        self.refresher.tintColor = UIColor.darkText
+        self.refresher.addTarget(self, action: #selector(refreshControlAction(_:)), for: .valueChanged)
+        tableView.insertSubview(refresher, at: 0)
         emailLabel.text = user?.email
         nameLabel.text = user?.username
         let iconURLString = user?["imgUrl"] as? String
@@ -39,7 +44,9 @@ class MainPageViewController: UIViewController,UITableViewDelegate, UITableViewD
                 self.studyGroups = studyGroups!
                 self.tableView.reloadData()
             }
+            
         }
+        
         //self.tableView.reloadData()
         // Do any additional setup after loading the view.
     }
@@ -50,7 +57,11 @@ class MainPageViewController: UIViewController,UITableViewDelegate, UITableViewD
         let imgUrlString = user!["imgUrl"] as? String
         let imgUrl = URL(string: imgUrlString!)!
         personalImage.af_setImage(withURL: imgUrl)
-
+        getStudyGoups()
+        
+    }
+    
+    func getStudyGoups() {
         user?.relation(forKey: "studyGroups").query().findObjectsInBackground{
             (studyGroups: [PFObject]?, error: Error?) -> Void in
             if error != nil {
@@ -99,5 +110,10 @@ class MainPageViewController: UIViewController,UITableViewDelegate, UITableViewD
         // Pass the selected object to the new view controller.
     }
     */
+    @objc func refreshControlAction(_ refreshControl: UIRefreshControl) {
+        getStudyGoups()
+        // Tell the refreshControl to stop spinning
+        refresher.endRefreshing()
+    }
 
 }
