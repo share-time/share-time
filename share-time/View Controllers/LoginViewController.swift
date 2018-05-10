@@ -27,8 +27,8 @@ class LoginViewController: UIViewController {
         let gradient = CAGradientLayer()
         gradient.frame = self.view.bounds
         gradient.colors = [
-            UIColor(red: 103/255, green: 62/255, blue: 48/255, alpha: 1).cgColor,
-            UIColor(red: 53/255, green: 88/255, blue: 244/255, alpha: 1).cgColor
+            UIColor(red: 100/255, green: 244/255, blue: 231/255, alpha: 0.5).cgColor,
+            UIColor(red: 176/255, green: 232/255, blue: 231/255, alpha: 0.5).cgColor
         ]
         gradient.startPoint = CGPoint(x:0, y:0)
         gradient.endPoint = CGPoint(x:1, y:1)
@@ -36,12 +36,13 @@ class LoginViewController: UIViewController {
         let gradientChangeAnimation = CABasicAnimation(keyPath: "colors")
         gradientChangeAnimation.duration = 5.0
         gradientChangeAnimation.toValue = [
-            UIColor(red: 53/255, green: 88/255, blue: 244/255, alpha: 0.5).cgColor,
-            UIColor(red: 107/255, green: 70/255, blue: 196/255, alpha: 0.5).cgColor
+            UIColor(red: 60/255, green: 37/255, blue: 218/255, alpha: 0.5).cgColor,
+            UIColor(red: 163/255, green: 255/255, blue: 218/255, alpha: 0.5).cgColor
         ]
         gradientChangeAnimation.fillMode = kCAFillModeForwards
         gradientChangeAnimation.isRemovedOnCompletion = false
         gradient.add(gradientChangeAnimation, forKey: "colorChange")
+       
         loginUsernameErrorAlertController.addAction(OKAction)
         loginPasswordErrorAlertController.addAction(OKAction)
         //loginErrorAlertController.addAction(self.OKAction)
