@@ -128,15 +128,19 @@ class AddStudyGroupViewController: UIViewController, UITableViewDelegate, UITabl
         newStudyGroup["messages"] = []
         newStudyGroup["course"] = courseLabel.text
         newStudyGroup["professor"] = profName
+        
         let relation = newStudyGroup.relation(forKey: "members")
+        /*
         for user in users{
             relation.add(user)
         }
+         */
         relation.add(currentUser)
         
         newStudyGroup.saveInBackground{(success, error) in
             if success {
                 print("study group called \(newStudyGroup["name"]) created")
+                /*
                 for user in self.users{
                     let relation = user.relation(forKey: "studyGroups")
                     relation.add(newStudyGroup)
@@ -150,6 +154,7 @@ class AddStudyGroupViewController: UIViewController, UITableViewDelegate, UITabl
                         }
                     }
                 }
+                */
                 let relation = self.currentUser.relation(forKey: "studyGroups")
                 relation.add(newStudyGroup)
                 self.currentUser.saveInBackground{ (success: Bool, error: Error?) -> Void in
