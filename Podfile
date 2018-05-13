@@ -9,6 +9,8 @@ target 'share-time' do
   pod 'Parse'
   pod 'PKHUD', '~> 5.0'
   pod 'AlamofireImage'
+  pod 'Chatto', '= 3.3.1'
+  pod 'ChattoAdditions', '= 3.3.1' # for the cells or the input component
 
   target 'share-timeTests' do
     inherit! :search_paths
