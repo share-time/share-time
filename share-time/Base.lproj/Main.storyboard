@@ -12,6 +12,11 @@
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="Optima.ttc">
+            <string>Optima-Regular</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--Login View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -859,43 +864,66 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="PublicStudyGroupCell" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="PublicStudyGroupCell" rowHeight="108" id="dea-G5-Pdp" customClass="PublicStudyGroupCell" customModule="share_time" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="375" height="108"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="PublicStudyGroupCell" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="PublicStudyGroupCell" rowHeight="140" id="dea-G5-Pdp" customClass="PublicStudyGroupCell" customModule="share_time" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="140"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="dea-G5-Pdp" id="ENX-64-0EH">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="107.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="139.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Ace the 100" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ehy-UD-PKg">
-                                                    <rect key="frame" x="34" y="12" width="91" height="21"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ace the 100" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ehy-UD-PKg">
+                                                    <rect key="frame" x="111.5" y="17.5" width="152" height="35"/>
+                                                    <fontDescription key="fontDescription" name="Optima-Regular" family="Optima" pointSize="29"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="100" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hyT-Pj-Oz6">
+                                                    <rect key="frame" x="134" y="95.5" width="28.5" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="100" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hyT-Pj-Oz6">
-                                                    <rect key="frame" x="201" y="11" width="93" height="21"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="GG" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QXa-3C-n8y">
+                                                    <rect key="frame" x="134" y="59.5" width="25" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="viq-hK-iwY">
-                                                    <rect key="frame" x="318" y="6" width="30" height="30"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Professor:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cGa-NB-iJ4">
+                                                    <rect key="frame" x="36" y="59.5" width="78" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Group Size:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FNS-wM-Suo">
+                                                    <rect key="frame" x="25" y="95.5" width="89" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="viq-hK-iwY">
+                                                    <rect key="frame" x="302" y="91" width="30" height="30"/>
                                                     <state key="normal" title="Join"/>
                                                     <connections>
                                                         <action selector="onJoinStudyGroup:" destination="dea-G5-Pdp" eventType="touchUpInside" id="OEP-Ha-RXD"/>
                                                     </connections>
                                                 </button>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="GG" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QXa-3C-n8y">
-                                                    <rect key="frame" x="67" y="62" width="25" height="21"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstItem="QXa-3C-n8y" firstAttribute="baseline" secondItem="cGa-NB-iJ4" secondAttribute="baseline" id="5a6-GN-viH"/>
+                                                <constraint firstItem="QXa-3C-n8y" firstAttribute="leading" secondItem="cGa-NB-iJ4" secondAttribute="trailing" constant="20" id="7kI-gm-7ZC"/>
+                                                <constraint firstItem="Ehy-UD-PKg" firstAttribute="centerX" secondItem="ENX-64-0EH" secondAttribute="centerX" id="9nJ-iy-D4E"/>
+                                                <constraint firstItem="viq-hK-iwY" firstAttribute="baseline" secondItem="hyT-Pj-Oz6" secondAttribute="baseline" id="CCe-wD-G2b"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="viq-hK-iwY" secondAttribute="trailing" constant="28" id="Dqr-ym-ndg"/>
+                                                <constraint firstAttribute="trailingMargin" relation="greaterThanOrEqual" secondItem="QXa-3C-n8y" secondAttribute="trailing" constant="20" id="I5Y-Yp-hkW"/>
+                                                <constraint firstItem="hyT-Pj-Oz6" firstAttribute="leading" secondItem="FNS-wM-Suo" secondAttribute="trailing" constant="20" id="RCQ-ix-ND5"/>
+                                                <constraint firstItem="Ehy-UD-PKg" firstAttribute="centerY" secondItem="ENX-64-0EH" secondAttribute="centerY" multiplier="0.5" id="Vem-uD-T3m"/>
+                                                <constraint firstItem="FNS-wM-Suo" firstAttribute="trailing" secondItem="cGa-NB-iJ4" secondAttribute="trailing" id="bL2-aL-rpJ"/>
+                                                <constraint firstItem="FNS-wM-Suo" firstAttribute="top" secondItem="cGa-NB-iJ4" secondAttribute="bottom" constant="15" id="cni-IR-KqZ"/>
+                                                <constraint firstItem="hyT-Pj-Oz6" firstAttribute="baseline" secondItem="FNS-wM-Suo" secondAttribute="baseline" id="nuZ-Lx-gzm"/>
+                                                <constraint firstItem="cGa-NB-iJ4" firstAttribute="centerX" secondItem="ENX-64-0EH" secondAttribute="centerX" multiplier="0.4" id="p40-cs-eEh"/>
+                                                <constraint firstItem="cGa-NB-iJ4" firstAttribute="centerY" secondItem="ENX-64-0EH" secondAttribute="centerY" id="tKd-a3-8tU"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="joinStudyGroupButton" destination="viq-hK-iwY" id="wCp-kB-JOg"/>
@@ -929,7 +957,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TO1-JG-dg1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2261.5999999999999" y="930.58470764617698"/>
+            <point key="canvasLocation" x="2314" y="931"/>
         </scene>
         <!--Add Study Group View Controller-->
         <scene sceneID="dhv-eC-FO7">
