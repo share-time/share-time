@@ -16,15 +16,16 @@ class GroupInfoViewController: UIViewController, UICollectionViewDataSource,UICo
     var studyGroup: PFObject!
     var members: [PFUser] = []
     let currentUser = PFUser.current()!
-    // CGFloat screenWidth = screenRect.size.width;
-    // CGFloat screenHeight = screenRect.size.height;
     override func viewDidLoad() {
         super.viewDidLoad()
         collectionView.dataSource = self
         
         let layout = collectionView.collectionViewLayout as! UICollectionViewFlowLayout
-        layout.minimumInteritemSpacing = 10
-        layout.minimumLineSpacing = layout.minimumInteritemSpacing
+        let cellPerLine: CGFloat = 4
+        let totalSpacing = cellPerLine * layout.minimumInteritemSpacing
+        let width = (collectionView.frame.size.width-totalSpacing)/cellPerLine
+        layout.itemSize = CGSize(width:width, height: width*3/2)
+        //layout.sectionInset = UIEdgeInsets(top: 20, left: 0, bottom: 10, right: 0)
         
         // Do any additional setup after loading the view.
     }
@@ -79,12 +80,12 @@ class GroupInfoViewController: UIViewController, UICollectionViewDataSource,UICo
         cell.memberIconImage.af_setImage(withURL: URL(string: (member["imgUrl"] as! String?)!)!)
         return cell
     }
-    
+    /*
     func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
         
         return CGSize(width: 200, height: 200)
     }
-    
+    */
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
