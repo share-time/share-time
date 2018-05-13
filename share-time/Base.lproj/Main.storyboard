@@ -1165,6 +1165,21 @@
             </objects>
             <point key="canvasLocation" x="706" y="-818"/>
         </scene>
+        <!--Studying View Controller-->
+        <scene sceneID="YCM-9a-ol1">
+            <objects>
+                <viewController id="TCR-SM-m2C" customClass="StudyingViewController" customModule="share_time" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="iUb-5E-R2k">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <viewLayoutGuide key="safeArea" id="tmt-Wv-pHF"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="liZ-fq-Mho" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-3206" y="28"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="cW3-0p-eKA">
             <objects>
