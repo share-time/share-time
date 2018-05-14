@@ -6,6 +6,7 @@ PODS:
   - Chatto (3.3.1)
   - ChattoAdditions (3.3.1):
     - Chatto
+  - Pageboy (2.5.1)
   - Parse (1.16.0):
     - Parse/Core (= 1.16.0)
   - Parse/Core (1.16.0):
@@ -16,8 +17,20 @@ DEPENDENCIES:
   - AlamofireImage
   - Chatto (= 3.3.1)
   - ChattoAdditions (= 3.3.1)
+  - Pageboy (~> 2.0)
   - Parse
   - PKHUD (~> 5.0)
+
+SPEC REPOS:
+  https://github.com/CocoaPods/Specs.git:
+    - Alamofire
+    - AlamofireImage
+    - Bolts
+    - Chatto
+    - ChattoAdditions
+    - Pageboy
+    - Parse
+    - PKHUD
 
 SPEC CHECKSUMS:
   Alamofire: f41a599bd63041760b26d393ec1069d9d7b917f4
@@ -25,9 +38,10 @@ SPEC CHECKSUMS:
   Bolts: ac6567323eac61e203f6a9763667d0f711be34c8
   Chatto: 24a6c9b0c91b08130466888b8b61563b90191c6f
   ChattoAdditions: cc74cd3dd371aa3f70e5ab8568a4f383f0c0eb8c
+  Pageboy: f0295ea949f0b0123a1b486fd347ea892d0078e0
   Parse: 5b36dc2c2f0a2fd82a257ae018bc3d68cf2c24e7
   PKHUD: 3c001512c6e002091184197a8de7a20420786e3b
 
-PODFILE CHECKSUM: 2b167820be4d2cdceb94239fe37ce7ed24072025
+PODFILE CHECKSUM: 27efc00480b5f9a4681adf3ad7e9c3bee4d12bfc
 
-COCOAPODS: 1.4.0
+COCOAPODS: 1.5.0

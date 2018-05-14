@@ -18,7 +18,7 @@ class StudyingViewController: UIViewController {
         super.viewDidLoad()
         device.isProximityMonitoringEnabled = true
         if (device.isProximityMonitoringEnabled){
-            //NotificationCenter.default.addObserver(self, selector: #selector(ViewController.proximityChanged), name: Notification.Name(rawValue: "UIDeviceProximityStateDidChangeNotification"), object: device)
+            NotificationCenter.default.addObserver(self, selector: #selector(StudyingViewController.proximityChanged), name: Notification.Name(rawValue: "UIDeviceProximityStateDidChangeNotification"), object: device)
         }
     }
 
@@ -27,7 +27,7 @@ class StudyingViewController: UIViewController {
             print("\(device) detected!")
             print("proximityState: " + String(device.proximityState))
             if (device.proximityState){
-                //timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(ViewController.updateTimer), userInfo: nil, repeats: true)
+                timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(StudyingViewController.updateTimer), userInfo: nil, repeats: true)
             } else {
                 print("Time interval: \(counter)")
                 timer.invalidate()

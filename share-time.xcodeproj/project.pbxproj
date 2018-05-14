@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		4E1DAE25259F11E514246437 /* Pods_share_time.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB0B32FD4E359D86F70E22A2 /* Pods_share_time.framework */; };
+		5A0CC9C920A954D3002E6F9F /* PageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A0CC9C820A954D3002E6F9F /* PageViewController.swift */; };
 		5A142AF0209A99DD003FF5C7 /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A142AEF209A99DD003FF5C7 /* Helper.swift */; };
 		5A254ADB2082F04E00767CB7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A254ADA2082F04E00767CB7 /* AppDelegate.swift */; };
 		5A254AE02082F04E00767CB7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5A254ADE2082F04E00767CB7 /* Main.storyboard */; };
@@ -57,6 +58,7 @@
 
 /* Begin PBXFileReference section */
 		1D584195F00E2A4D3C99DAFB /* Pods-share-timeUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-share-timeUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-share-timeUITests/Pods-share-timeUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		5A0CC9C820A954D3002E6F9F /* PageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageViewController.swift; sourceTree = "<group>"; };
 		5A142AEF209A99DD003FF5C7 /* Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
 		5A254AD72082F04E00767CB7 /* share-time.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "share-time.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5A254ADA2082F04E00767CB7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -221,6 +223,7 @@
 				70CE5AD920830A2F0023F3D7 /* ChatViewController.swift */,
 				705BAB40209808DC0047F91D /* ProfileViewController.swift */,
 				70F23BDC209F8526009E7598 /* GroupInfoViewController.swift */,
+				5A0CC9C820A954D3002E6F9F /* PageViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -250,7 +253,6 @@
 				5A254AD42082F04E00767CB7 /* Frameworks */,
 				5A254AD52082F04E00767CB7 /* Resources */,
 				9913918F4293A6A725DF3F37 /* [CP] Embed Pods Frameworks */,
-				46C4E85FAA021975984F8745 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -269,8 +271,6 @@
 				5A254AE72082F04E00767CB7 /* Sources */,
 				5A254AE82082F04E00767CB7 /* Frameworks */,
 				5A254AE92082F04E00767CB7 /* Resources */,
-				503197386CA0E779891BBEBA /* [CP] Embed Pods Frameworks */,
-				2C12CD2573BEB4CBD0C069A1 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -290,8 +290,6 @@
 				5A254AF22082F04E00767CB7 /* Sources */,
 				5A254AF32082F04E00767CB7 /* Frameworks */,
 				5A254AF42082F04E00767CB7 /* Resources */,
-				EC20F24300455625B4238215 /* [CP] Embed Pods Frameworks */,
-				D1E6E9FACD948F14D2F4A0C0 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -377,51 +375,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		2C12CD2573BEB4CBD0C069A1 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-share-timeTests/Pods-share-timeTests-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		46C4E85FAA021975984F8745 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-share-time/Pods-share-time-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		503197386CA0E779891BBEBA /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-share-timeTests/Pods-share-timeTests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		710DD6A7EEF22442B66B9573 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -489,6 +442,7 @@
 				"${BUILT_PRODUCTS_DIR}/Chatto/Chatto.framework",
 				"${BUILT_PRODUCTS_DIR}/ChattoAdditions/ChattoAdditions.framework",
 				"${BUILT_PRODUCTS_DIR}/PKHUD/PKHUD.framework",
+				"${BUILT_PRODUCTS_DIR}/Pageboy/Pageboy.framework",
 				"${BUILT_PRODUCTS_DIR}/Parse/Parse.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
@@ -499,41 +453,12 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Chatto.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ChattoAdditions.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PKHUD.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Pageboy.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Parse.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-share-time/Pods-share-time-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		D1E6E9FACD948F14D2F4A0C0 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-share-timeUITests/Pods-share-timeUITests-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		EC20F24300455625B4238215 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-share-timeUITests/Pods-share-timeUITests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -556,6 +481,7 @@
 				70F23BDD209F8526009E7598 /* GroupInfoViewController.swift in Sources */,
 				5AEE747B209162B7006A2689 /* Course.swift in Sources */,
 				5AFE25A82082F5E900EED7F9 /* FindClassViewController.swift in Sources */,
+				5A0CC9C920A954D3002E6F9F /* PageViewController.swift in Sources */,
 				70CE5AD8208309300023F3D7 /* StudyGroupCell.swift in Sources */,
 				5A2F10CE209DC707007A0A4C /* ChangePasswordViewController.swift in Sources */,
 				5AFE25AC2082F79C00EED7F9 /* AddStudyGroupViewController.swift in Sources */,
@@ -731,6 +657,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = JFKG4HDM34;
 				INFOPLIST_FILE = "share-time/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.share-time";
@@ -746,6 +673,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = JFKG4HDM34;
 				INFOPLIST_FILE = "share-time/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.share-time";

@@ -11,6 +11,7 @@ target 'share-time' do
   pod 'AlamofireImage'
   pod 'Chatto', '= 3.3.1'
   pod 'ChattoAdditions', '= 3.3.1' # for the cells or the input component
+  pod 'Pageboy', '~> 2.0'
 
   target 'share-timeTests' do
     inherit! :search_paths
