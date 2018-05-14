@@ -11,7 +11,7 @@ import Parse
 import AlamofireImage
 import PKHUD
 
-class ChatViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class ChatViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UITextFieldDelegate {
     let emptyMessageAlertController = UIAlertController(title: "Error", message: "Unable to send blank message", preferredStyle: .alert)
     let OKAction = UIAlertAction(title: "OK", style: .default) { (action) in
         //does nothing -> dismisses alert view
@@ -20,6 +20,7 @@ class ChatViewController: UIViewController, UITableViewDelegate, UITableViewData
     @IBOutlet weak var sendButton: UIButton!
     @IBOutlet weak var messageTextField: UITextField!
     @IBOutlet weak var tableView: UITableView!
+    var activeTextField : UITextField!
     var chatMessage: [PFObject]? = []
     var refresher: UIRefreshControl!
     var studyGroupName: String!
@@ -31,6 +32,7 @@ class ChatViewController: UIViewController, UITableViewDelegate, UITableViewData
         tableView.dataSource = self
         tableView.delegate = self
         tableView.allowsSelection = false
+        messageTextField.delegate = self
         self.refresher = UIRefreshControl()
         self.refresher.tintColor = UIColor.darkText
         self.refresher.addTarget(self, action: #selector(refreshControlAction(_:)), for: .valueChanged)
@@ -40,6 +42,11 @@ class ChatViewController: UIViewController, UITableViewDelegate, UITableViewData
         tableView.separatorStyle = .none
         Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(ChatViewController.onTimer), userInfo: nil, repeats: true)
         emptyMessageAlertController.addAction(OKAction)
+        // Keyboard stuff
+        let center: NotificationCenter = NotificationCenter.default
+        center.addObserver(self, selector: #selector(keyboardDidShow(notification:)), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
+        center.addObserver(self, selector: #selector(keyboardWillHide(notification:)), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
+        self.hideKeyboardWhenTappedAround()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -124,6 +131,46 @@ class ChatViewController: UIViewController, UITableViewDelegate, UITableViewData
                 print("i fucked up again")
             }
         }
+    }
+    
+    @objc func keyboardDidShow(notification: Notification) {
+        let info: NSDictionary = notification.userInfo! as NSDictionary
+        let keyboardSize = (info[UIKeyboardFrameBeginUserInfoKey] as! NSValue).cgRectValue
+        let keyboardY = self.view.frame.size.height - keyboardSize.height
+        if activeTextField == nil {
+            print("active text field is nil")
+        }
+        let editingTextFIeldY:CGFloat! = self.activeTextField?.frame.origin.y
+        
+        if self.view.frame.origin.y >= 0 {
+            // checking if the text field is really hiding behind the keyboard
+            if editingTextFIeldY > keyboardY - 60 {
+                UIView.animate(withDuration: 0.25, delay: 0.0, options: UIViewAnimationOptions.curveEaseIn, animations: {
+                    self.view.frame = CGRect(x: 0, y: self.view.frame.origin.y - (editingTextFIeldY! - (keyboardY - 60)), width: self.view.bounds.width, height: self.view.bounds.height)
+                }, completion: nil)
+            }
+        }
+    }
+    
+    
+    @objc func keyboardWillHide(notification: Notification) {
+        UIView.animate(withDuration: 0.25, delay: 0.0, options: UIViewAnimationOptions.curveEaseIn, animations: {
+            self.view.frame = CGRect(x: 0, y: 0, width: self.view.bounds.width, height: self.view.bounds.height)
+        }, completion: nil)
+    }
+    
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        activeTextField = textField
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        NotificationCenter.default.removeObserver(self, name: Notification.Name.UIKeyboardWillShow, object: nil)
+        NotificationCenter.default.removeObserver(self, name: Notification.Name.UIKeyboardWillHide, object: nil)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
