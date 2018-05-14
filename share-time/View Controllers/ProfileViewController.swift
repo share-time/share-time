@@ -10,22 +10,29 @@ import UIKit
 import Parse
 class ProfileViewController: UIViewController {
 
-    @IBOutlet weak var emailText: UITextField!
-    @IBOutlet weak var nameText: UITextField!
+    @IBOutlet weak var nameText: UILabel!
+    
+    @IBOutlet weak var emailText: UILabel!
     @IBOutlet weak var personalImage: UIImageView!
     
     let user = PFUser.current()!
     var username: String = ""
     var email: String = ""
+    
     let noSaveAlertController = UIAlertController(title: "Username Required", message: "Please enter username", preferredStyle: .alert)
     let CancelAction = UIAlertAction(title: "Cancel", style: .default) { (action) in
         //does nothing -> dismisses alert view
     }
-    let SaveAction = UIAlertAction(title: "Save", style: .default){ (action) in
+    let logOutAlertController = UIAlertController(title:"Logout Alert", message:"Do you want to log out?", preferredStyle:.alert)
+   /*
+    let continueAction = UIAlertAction(title: "Continue", style: .default){ (action) in
+        
         updateParseUser()
     }
+ 
+    */
     
-    
+    /*
     @IBAction func save(_ sender: Any) {
         var changed = false
         
@@ -48,6 +55,7 @@ class ProfileViewController: UIViewController {
             }
         }
     }
+    */
     
     @IBAction func changePassWord(_ sender: Any) {
       self.performSegue(withIdentifier: "changePasswordSegue", sender: nil)
@@ -69,7 +77,10 @@ class ProfileViewController: UIViewController {
     
     @IBAction func onLogout(_ sender: Any) {
         PFUser.logOutInBackground()
+        self.present(logOutAlertController,animated: true, completion: nil)
+        /*
         self.performSegue(withIdentifier: "logoutSegue", sender: nil)
+ */
     }
     
 
@@ -92,8 +103,12 @@ class ProfileViewController: UIViewController {
         let imgUrlString = user["imgUrl"] as! String
         let imgUrl = URL(string: imgUrlString)!
         personalImage.af_setImage(withURL: imgUrl)
-        noSaveAlertController.addAction(SaveAction)
-        noSaveAlertController.addAction(CancelAction)
+        
+        logOutAlertController.addAction(UIAlertAction(title: "Continue", style: UIAlertActionStyle.default, handler:{
+            action in self.performSegue(withIdentifier: "logoutSegue", sender: nil)}
+        ))
+        logOutAlertController.addAction(UIAlertAction(title: "Cancel", style: UIAlertActionStyle.cancel, handler: nil))
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
