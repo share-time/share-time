@@ -45,7 +45,7 @@ class PageViewController: PageboyViewController, PageboyViewControllerDataSource
     }
     
     func defaultPage(for pageboyViewController: PageboyViewController) -> PageboyViewController.Page? {
-        return nil
+        return .at(index: 1)
     }
     
 
