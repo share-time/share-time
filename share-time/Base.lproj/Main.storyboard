@@ -1,17 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="PPx-g2-hi5">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="PPx-g2-hi5">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="Optima.ttc">
+            <string>Optima-Regular</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--Blob View Controller-->
         <scene sceneID="zgw-B8-5iE">
@@ -35,14 +40,23 @@
                                     </segue>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uBg-ho-X3u">
+                                <rect key="frame" x="293" y="41" width="39" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Sleep"/>
+                                <connections>
+                                    <segue destination="TCR-SM-m2C" kind="presentation" modalPresentationStyle="overCurrentContext" id="Djq-BJ-dj1"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <viewLayoutGuide key="safeArea" id="DfS-LH-AZL"/>
                     </view>
+                    <navigationItem key="navigationItem" id="zEu-Go-zvI"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UYz-4h-hFg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1646" y="-1568"/>
+            <point key="canvasLocation" x="268" y="-818"/>
         </scene>
         <!--Login View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -398,7 +412,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sS1-Ou-WdU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1645.5999999999999" y="-807.34632683658174"/>
+            <point key="canvasLocation" x="2324" y="-807.34632683658174"/>
         </scene>
         <!--Change Password View Controller-->
         <scene sceneID="7X1-JN-lh1">
@@ -484,7 +498,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xWL-3r-BQJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2645.5999999999999" y="-807.34632683658174"/>
+            <point key="canvasLocation" x="3324" y="-807.34632683658174"/>
         </scene>
         <!--Home Page-->
         <scene sceneID="3Tr-Mf-m05">
@@ -1186,22 +1200,32 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sYg-eo-LMy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="706" y="-818"/>
+            <point key="canvasLocation" x="1383.2" y="-818.14092953523243"/>
         </scene>
         <!--Studying View Controller-->
         <scene sceneID="YCM-9a-ol1">
             <objects>
                 <viewController id="TCR-SM-m2C" customClass="StudyingViewController" customModule="share_time" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="iUb-5E-R2k">
+                    <view key="view" alpha="0.75" contentMode="scaleToFill" id="iUb-5E-R2k">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xkz-Fl-rDA">
+                                <rect key="frame" x="172" y="49" width="30" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="x"/>
+                                <connections>
+                                    <action selector="endSleep:" destination="TCR-SM-m2C" eventType="touchUpInside" id="NuG-dp-Prf"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                         <viewLayoutGuide key="safeArea" id="tmt-Wv-pHF"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="liZ-fq-Mho" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-3206" y="28"/>
+            <point key="canvasLocation" x="268" y="-1526"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="cW3-0p-eKA">
@@ -1224,6 +1248,7 @@
         <!--Navigation Controller-->
         <scene sceneID="rc5-6k-vXc">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hYD-kQ-eIg" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="saT-WV-EO3" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="ySz-R9-KXe">
@@ -1235,7 +1260,6 @@
                         <segue destination="pbi-2d-2Rb" kind="relationship" relationship="rootViewController" id="NXg-CB-Lyo"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="hYD-kQ-eIg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-335" y="27"/>
         </scene>
