@@ -15,6 +15,8 @@ class ProfileViewController: UIViewController {
     @IBOutlet weak var emailText: UILabel!
     @IBOutlet weak var personalImage: UIImageView!
     
+    var xBarButton: UIBarButtonItem!
+    
     let user = PFUser.current()!
     var username: String = ""
     var email: String = ""
@@ -103,6 +105,7 @@ class ProfileViewController: UIViewController {
         let imgUrlString = user["imgUrl"] as! String
         let imgUrl = URL(string: imgUrlString)!
         personalImage.af_setImage(withURL: imgUrl)
+        addBarButton()
         
         logOutAlertController.addAction(UIAlertAction(title: "Continue", style: UIAlertActionStyle.default, handler:{
             action in self.performSegue(withIdentifier: "logoutSegue", sender: nil)}
@@ -118,6 +121,16 @@ class ProfileViewController: UIViewController {
         nameText.text = username
     }
 
+    func addBarButton(){
+        let xBarButton = UIBarButtonItem(title: "x", style: .plain, target: self, action: #selector(xBarButtonPressed(sender:)))
+        navigationItem.setLeftBarButton(xBarButton, animated: false)
+        self.xBarButton = xBarButton
+    }
+    
+    @objc func xBarButtonPressed(sender: UIBarButtonItem){
+        self.dismiss(animated: true)
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
