@@ -64,6 +64,7 @@ class AddStudyGroupViewController: UIViewController, UITableViewDelegate, UITabl
         }
         
         tableView.reloadData()
+        self.hideKeyboardWhenTappedAround()
         // Do any additional setup after loading the view.
     }
     

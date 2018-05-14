@@ -84,12 +84,10 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     }
     
     func textFieldDidBeginEditing(_ textField: UITextField) {
-        print("called here")
         activeTextField = textField
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        print("first responder")
         textField.resignFirstResponder()
         return true
     }
