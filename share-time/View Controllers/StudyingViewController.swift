@@ -36,10 +36,6 @@ class StudyingViewController: UIViewController {
         }
     }
     
-    @IBAction func endSleep(_ sender: Any) {
-        self.dismiss(animated: true, completion: nil)
-    }
-    
     @objc func updateTimer(){
         counter = counter + 1
         print(counter)
