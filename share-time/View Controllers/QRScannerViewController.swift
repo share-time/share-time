@@ -12,7 +12,7 @@ import Parse
 
 class QRScannerViewController: UIViewController, AVCaptureMetadataOutputObjectsDelegate {
 
-    let user = PFUser.current()
+    let currentUser = PFUser.current()
     
     var captureSession: AVCaptureSession!
     var previewLayer: AVCaptureVideoPreviewLayer!
@@ -91,12 +91,51 @@ class QRScannerViewController: UIViewController, AVCaptureMetadataOutputObjectsD
             guard let readableObject = metadataObject as? AVMetadataMachineReadableCodeObject else { return }
             guard let stringValue = readableObject.stringValue else { return }
             AudioServicesPlaySystemSound(SystemSoundID(kSystemSoundID_Vibrate))
-            found(code: stringValue)
+            searchStudyGroup(studyGroupName: stringValue)
         }
     }
     
-    func found(code: String) {
-        print(code)
+    func searchStudyGroup(studyGroupName: String){
+        
+        var studyGroupToAdd: PFObject!
+        
+        let query = PFQuery(className: "StudyGroup")
+        query.whereKey("name", equalTo: studyGroupName)
+        query.findObjectsInBackground{ (findStudyGroup: [PFObject]?, error: Error?) -> Void in
+            if findStudyGroup!.count > 0 {
+                studyGroupToAdd = findStudyGroup![0]
+                self.addStudyGroup(studyGroupToAdd: studyGroupToAdd)
+            }
+        }
+    }
+    
+    func addStudyGroup(studyGroupToAdd: PFObject) {
+        
+        let studyGroupRelation = studyGroupToAdd.relation(forKey: "members")
+        studyGroupRelation.add(currentUser!)
+        
+        let userRelation = currentUser?.relation(forKey: "studyGroups")
+        userRelation?.add(studyGroupToAdd)
+        
+        studyGroupToAdd.saveInBackground{ (success: Bool, error: Error?) -> Void in
+            if (success){
+                self.currentUser?.saveInBackground{ (success: Bool, error: Error?) -> Void in
+                    if (success){
+                        if let navController = self.navigationController {
+                            // sTODO
+                            navController.popViewController(animated: true)
+                            navController.popViewController(animated: true)
+                            self.parentPageboy?.scrollToPage(.at(index: 0), animated: true)
+                        }
+                    } else {
+                        self.captureSession.startRunning()
+                    }
+                }
+            } else {
+                self.captureSession.startRunning()
+            }
+        }
+        
     }
     
     override var prefersStatusBarHidden: Bool {
