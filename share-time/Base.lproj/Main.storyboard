@@ -1037,6 +1037,14 @@
                                     <segue destination="SNw-SO-4Kv" kind="show" identifier="addGroupSegue" id="QtS-5H-LwC"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="efP-xE-IXP">
+                                <rect key="frame" x="32" y="82" width="53" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="QR Add"/>
+                                <connections>
+                                    <segue destination="9iw-aJ-3DJ" kind="show" id="ZTq-IP-wor"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -1238,20 +1246,32 @@
             </objects>
             <point key="canvasLocation" x="366" y="931"/>
         </scene>
-        <!--View Controller-->
+        <!--Scanner View Controller-->
         <scene sceneID="9ad-eb-sHE">
             <objects>
-                <viewController id="9iw-aJ-3DJ" sceneMemberID="viewController">
+                <viewController id="9iw-aJ-3DJ" customClass="QRScannerViewController" customModule="share_time" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="lrV-k6-91D">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nHP-Pv-fUt">
+                                <rect key="frame" x="29" y="599" width="317" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <viewLayoutGuide key="safeArea" id="KGo-6u-b2E"/>
                     </view>
+                    <connections>
+                        <outlet property="messageLabel" destination="nHP-Pv-fUt" id="oaM-F2-kMj"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qOM-JH-JLG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="364" y="1735"/>
+            <point key="canvasLocation" x="2312.8000000000002" y="1650.224887556222"/>
         </scene>
         <!--Profile-->
         <scene sceneID="Uia-GL-ee8">

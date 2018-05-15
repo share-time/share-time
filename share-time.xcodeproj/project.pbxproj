@@ -19,6 +19,7 @@
 		5A254AFB2082F04E00767CB7 /* share_timeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A254AFA2082F04E00767CB7 /* share_timeUITests.swift */; };
 		5A2F10CE209DC707007A0A4C /* ChangePasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A2F10CD209DC707007A0A4C /* ChangePasswordViewController.swift */; };
 		5A372707209DF26000EFE1F4 /* UserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A372706209DF26000EFE1F4 /* UserCell.swift */; };
+		5A8B072420AAED5700755718 /* QRScannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A8B072320AAED5700755718 /* QRScannerViewController.swift */; };
 		5A8FF2BF20859C02004957DE /* PublicStudyGroupCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A8FF2BE20859C02004957DE /* PublicStudyGroupCell.swift */; };
 		5AA6C68F20AAE88900F86C92 /* QRViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AA6C68E20AAE88900F86C92 /* QRViewController.swift */; };
 		5AA6EE7020A7CCDC0081B5EB /* StudyingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AA6EE6F20A7CCDC0081B5EB /* StudyingViewController.swift */; };
@@ -77,6 +78,7 @@
 		5A254AFC2082F04E00767CB7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5A2F10CD209DC707007A0A4C /* ChangePasswordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChangePasswordViewController.swift; sourceTree = "<group>"; };
 		5A372706209DF26000EFE1F4 /* UserCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCell.swift; sourceTree = "<group>"; };
+		5A8B072320AAED5700755718 /* QRScannerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRScannerViewController.swift; sourceTree = "<group>"; };
 		5A8FF2BE20859C02004957DE /* PublicStudyGroupCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PublicStudyGroupCell.swift; sourceTree = "<group>"; };
 		5AA6C68E20AAE88900F86C92 /* QRViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRViewController.swift; sourceTree = "<group>"; };
 		5AA6EE6F20A7CCDC0081B5EB /* StudyingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudyingViewController.swift; sourceTree = "<group>"; };
@@ -224,6 +226,7 @@
 				5A0CC9CB20A95ADF002E6F9F /* BlobViewController.swift */,
 				5AFE25A92082F68100EED7F9 /* ClassDetailViewController.swift */,
 				5AFE25AB2082F79C00EED7F9 /* AddStudyGroupViewController.swift */,
+				5A8B072320AAED5700755718 /* QRScannerViewController.swift */,
 				70CE5AD5208300810023F3D7 /* MainPageViewController.swift */,
 				70CE5AD920830A2F0023F3D7 /* ChatViewController.swift */,
 				705BAB40209808DC0047F91D /* ProfileViewController.swift */,
@@ -481,6 +484,7 @@
 				70CE5AD6208300810023F3D7 /* MainPageViewController.swift in Sources */,
 				5AA6EE7020A7CCDC0081B5EB /* StudyingViewController.swift in Sources */,
 				5AFE25A62082F4FE00EED7F9 /* LoginViewController.swift in Sources */,
+				5A8B072420AAED5700755718 /* QRScannerViewController.swift in Sources */,
 				70CE5ADF20830EEB0023F3D7 /* ClassCell.swift in Sources */,
 				70CE5ADC20830B6E0023F3D7 /* ChatCell.swift in Sources */,
 				C68E4B852083178F0073F695 /* SignUpViewController.swift in Sources */,
