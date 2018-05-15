@@ -17,12 +17,16 @@ class BlobViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        tiredTimer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(BlobViewController.updateHp), userInfo: nil, repeats: true)
+        
+        let swipeUp = UISwipeGestureRecognizer(target: self, action: #selector(handleGesture))
+        swipeUp.direction = .up
+        self.view.addGestureRecognizer(swipeUp)
         // Do any additional setup after loading the view.
     }
     
     override func viewWillAppear(_ animated: Bool) {
         hpLabel.text = String(hp)
-        tiredTimer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(BlobViewController.updateHp), userInfo: nil, repeats: true)
     }
     
    
@@ -31,6 +35,12 @@ class BlobViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    
+    @objc func handleGesture(gesture: UISwipeGestureRecognizer) -> Void {
+        if gesture.direction == UISwipeGestureRecognizerDirection.up {
+            self.performSegue(withIdentifier: "toSleepSegue", sender: nil)
+        }
+    }
     
     @objc func updateHp(){
         if (hp >= 0){
@@ -43,16 +53,14 @@ class BlobViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if (segue.identifier == "toSleepSegue"){
             let studyingViewController = segue.destination as! StudyingViewController
-            studyingViewController.changeHp = { (hp: Int) -> Bool in
+            studyingViewController.changeHp = { (hp: Int) -> () in
                 self.hp = self.hp + 1
                 self.hpLabel.text = String(self.hp)
-                return true
             }
-            studyingViewController.resumeUpdateHpTimer = { () -> Bool in
-                self.tiredTimer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(BlobViewController.updateHp), userInfo: nil, repeats: true)
-                return true
-            }
-            tiredTimer.invalidate()
+            //studyingViewController.resumeUpdateHpTimer = { () -> () in
+            //   self.tiredTimer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(BlobViewController.updateHp), userInfo: nil, repeats: true)
+            //}
+            //tiredTimer.invalidate()
         }
     }
 }
