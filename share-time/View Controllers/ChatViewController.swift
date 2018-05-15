@@ -17,6 +17,7 @@ class ChatViewController: UIViewController, UITableViewDelegate, UITableViewData
         //does nothing -> dismisses alert view
     }
     
+    @IBOutlet weak var bottomContraints: NSLayoutConstraint!
     @IBOutlet weak var sendButton: UIButton!
     @IBOutlet weak var messageTextField: UITextField!
     @IBOutlet weak var tableView: UITableView!
@@ -80,21 +81,25 @@ class ChatViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ChatCell", for: indexPath) as! ChatCell
+        cell.bubbleView.layer.cornerRadius = 10
+        cell.bubbleView.clipsToBounds = true
+        cell.bubbleView.backgroundColor = UIColor.lightGray
         let messages = chatMessage?[indexPath.row]
         if let msgString = messages?["text"] as? String {
             cell.messageLabel.text = msgString
         }
         
         if let user = messages?["user"] as? PFUser {
+            if (user.username == PFUser.current()?.username) {
+                cell.bubbleView.backgroundColor = UIColor(red:0.02, green:0.47, blue:0.98, alpha:1.0)
+            }
             print("The user is: \(user)")
             cell.usernameLabel.text = user.username
             
             let imgUrlString = user["imgUrl"] as? String
             let imgUrl = URL(string: imgUrlString!)!
             cell.personalIconImage.af_setImage(withURL: imgUrl)
-            if (user.username == PFUser.current()?.username) {
-                cell.bubbleView.backgroundColor = UIColor(red:0.02, green:0.47, blue:0.98, alpha:1.0)
-            }
+            
         } else {
             // No user found, set default username
             cell.usernameLabel.text = "🤖"
@@ -137,25 +142,21 @@ class ChatViewController: UIViewController, UITableViewDelegate, UITableViewData
         let info: NSDictionary = notification.userInfo! as NSDictionary
         let keyboardSize = (info[UIKeyboardFrameBeginUserInfoKey] as! NSValue).cgRectValue
         let keyboardY = self.view.frame.size.height - keyboardSize.height
-        if activeTextField == nil {
-            print("active text field is nil")
-        }
         let editingTextFIeldY:CGFloat! = self.activeTextField?.frame.origin.y
         
-        if self.view.frame.origin.y >= 0 {
-            // checking if the text field is really hiding behind the keyboard
-            if editingTextFIeldY > keyboardY - 60 {
-                UIView.animate(withDuration: 0.25, delay: 0.0, options: UIViewAnimationOptions.curveEaseIn, animations: {
-                    self.view.frame = CGRect(x: 0, y: self.view.frame.origin.y - (editingTextFIeldY! - (keyboardY - 60)), width: self.view.bounds.width, height: self.view.bounds.height)
-                }, completion: nil)
-            }
+        if editingTextFIeldY > keyboardY - 80 {
+            UIView.animate(withDuration: 0.25, delay: 0.0, options: UIViewAnimationOptions.curveEaseIn, animations: {
+                self.view.layoutIfNeeded()
+                print("changing the buttom containts")
+                self.bottomContraints.constant = keyboardSize.height + 60
+            }, completion: nil)
         }
     }
     
     
     @objc func keyboardWillHide(notification: Notification) {
         UIView.animate(withDuration: 0.25, delay: 0.0, options: UIViewAnimationOptions.curveEaseIn, animations: {
-            self.view.frame = CGRect(x: 0, y: 0, width: self.view.bounds.width, height: self.view.bounds.height)
+            self.bottomContraints.constant = 13
         }, completion: nil)
     }
     

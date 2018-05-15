@@ -16,9 +16,7 @@ class ChatCell: UITableViewCell {
     @IBOutlet weak var messageLabel: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
-        bubbleView.layer.cornerRadius = 10
-        bubbleView.clipsToBounds = true
-        bubbleView.backgroundColor = UIColor.lightGray
+        
         // Initialization code
     }
 
@@ -27,5 +25,9 @@ class ChatCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
-
+//    override func prepareForReuse() {
+//        for subview in self.contentView.subviews {
+//            subview.removeFromSuperView
+//        }
+//    }
 }
