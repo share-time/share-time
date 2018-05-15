@@ -43,7 +43,7 @@ class BlobViewController: UIViewController {
     }
     
     @objc func updateHp(){
-        if (hp >= 0){
+        if (hp > 0){
             hp = hp - 1
             hpLabel.text = String(hp)
         }
@@ -57,9 +57,12 @@ class BlobViewController: UIViewController {
                 self.hp = self.hp + 1
                 self.hpLabel.text = String(self.hp)
             }
-            //studyingViewController.resumeUpdateHpTimer = { () -> () in
-            //   self.tiredTimer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(BlobViewController.updateHp), userInfo: nil, repeats: true)
-            //}
+            studyingViewController.deleteUpdateHpTimer = { () -> () in
+               self.tiredTimer.invalidate()
+            }
+            studyingViewController.resumeUpdateHpTimer = { () -> () in
+                self.tiredTimer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(BlobViewController.updateHp), userInfo: nil, repeats: true)
+            }
             //tiredTimer.invalidate()
         }
     }

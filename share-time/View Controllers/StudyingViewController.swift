@@ -13,8 +13,9 @@ class StudyingViewController: UIViewController {
     let device = UIDevice.current
     var counter = 0
     var sleepTimer = Timer()
-    var changeHp:((Int) -> ())? 
-    //var resumeUpdateHpTimer:(() -> ())?
+    var changeHp:((Int) -> ())?
+    var resumeUpdateHpTimer:(() -> ())?
+    var deleteUpdateHpTimer:(() -> ())?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -42,9 +43,11 @@ class StudyingViewController: UIViewController {
             print("\(device) detected!")
             print("proximityState: " + String(device.proximityState))
             if (device.proximityState){
+                deleteUpdateHpTimer!()
                 sleepTimer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(StudyingViewController.updateSleepTimer), userInfo: nil, repeats: true)
             } else {
                 print("Time interval: \(counter)")
+                resumeUpdateHpTimer!()
                 sleepTimer.invalidate()
             }
         }
@@ -65,7 +68,7 @@ class StudyingViewController: UIViewController {
     
     
     @objc func updateSleepTimer(){
-        if (counter <= 800){
+        if (counter < 800){
             counter = counter + 1
             changeHp!(counter) // ignore the result unused warning
             print("updateSleepTimer: \(counter)")
