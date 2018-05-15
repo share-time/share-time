@@ -11,8 +11,9 @@ import UIKit
 class StudyingViewController: UIViewController {
     
     let device = UIDevice.current
-    var counter = 0.0
-    var timer = Timer()
+    var counter = 0
+    var sleepTimer = Timer()
+    var changeHp:((Int) -> (Bool))? // returns bool cuz I cant figure out how to write a closure returning Void
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,25 +22,39 @@ class StudyingViewController: UIViewController {
             NotificationCenter.default.addObserver(self, selector: #selector(StudyingViewController.proximityChanged), name: Notification.Name(rawValue: "UIDeviceProximityStateDidChangeNotification"), object: device)
         }
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        device.isProximityMonitoringEnabled = true
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        device.isProximityMonitoringEnabled = false
+    }
 
     @objc func proximityChanged(notification: Notification){
         if let device = notification.object as? UIDevice{
             print("\(device) detected!")
             print("proximityState: " + String(device.proximityState))
             if (device.proximityState){
-                timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(StudyingViewController.updateTimer), userInfo: nil, repeats: true)
+                sleepTimer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(StudyingViewController.updateTimer), userInfo: nil, repeats: true)
             } else {
                 print("Time interval: \(counter)")
-                timer.invalidate()
-                counter = 0
+                sleepTimer.invalidate()
             }
         }
     }
     
+    @IBAction func endSleep(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
+    }
+    
+    
     @objc func updateTimer(){
         counter = counter + 1
+        changeHp!(counter) // ignore the result unused warning
         print(counter)
     }
+    
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

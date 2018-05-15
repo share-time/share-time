@@ -40,10 +40,28 @@
                                     </segue>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Db-ys-8uZ">
+                                <rect key="frame" x="287" y="41" width="39" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Sleep"/>
+                                <connections>
+                                    <segue destination="TCR-SM-m2C" kind="presentation" identifier="toSleepSegue" modalPresentationStyle="overCurrentContext" id="l48-l0-QVa"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gNo-2i-sL8">
+                                <rect key="frame" x="166" y="582" width="42" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <viewLayoutGuide key="safeArea" id="DfS-LH-AZL"/>
                     </view>
+                    <connections>
+                        <outlet property="hpLabel" destination="gNo-2i-sL8" id="zoM-ad-5Vc"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UYz-4h-hFg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -397,7 +415,7 @@
                         <outlet property="emailText" destination="cIW-DY-vj4" id="XAc-Po-g1E"/>
                         <outlet property="nameText" destination="eSz-gJ-Oic" id="I5G-Dh-z5A"/>
                         <outlet property="personalImage" destination="b0C-Yt-m7a" id="spP-xy-hRT"/>
-                        <segue destination="mut-Vh-fwo" kind="push" identifier="changePasswordSegue" id="xoj-4i-0sz"/>
+                        <segue destination="mut-Vh-fwo" kind="show" identifier="changePasswordSegue" id="xoj-4i-0sz"/>
                         <segue destination="PPx-g2-hi5" kind="presentation" identifier="logoutSegue" id="tRQ-gE-X8o"/>
                     </connections>
                 </viewController>
@@ -1197,16 +1215,26 @@
         <scene sceneID="YCM-9a-ol1">
             <objects>
                 <viewController id="TCR-SM-m2C" customClass="StudyingViewController" customModule="share_time" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="iUb-5E-R2k">
+                    <view key="view" alpha="0.65000000000000002" contentMode="scaleToFill" id="iUb-5E-R2k">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sig-qn-H2u">
+                                <rect key="frame" x="172" y="37" width="30" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="x"/>
+                                <connections>
+                                    <action selector="endSleep:" destination="TCR-SM-m2C" eventType="touchUpInside" id="MX5-7S-8q2"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                         <viewLayoutGuide key="safeArea" id="tmt-Wv-pHF"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="liZ-fq-Mho" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-3206" y="28"/>
+            <point key="canvasLocation" x="2646" y="-1568"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="cW3-0p-eKA">
