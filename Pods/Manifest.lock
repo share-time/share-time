@@ -12,6 +12,7 @@ PODS:
   - Parse/Core (1.16.0):
     - Bolts/Tasks (~> 1.9)
   - PKHUD (5.0.0)
+  - QRCode (2.0)
 
 DEPENDENCIES:
   - AlamofireImage
@@ -20,6 +21,7 @@ DEPENDENCIES:
   - Pageboy (~> 2.0)
   - Parse
   - PKHUD (~> 5.0)
+  - QRCode
 
 SPEC REPOS:
   https://github.com/CocoaPods/Specs.git:
@@ -31,6 +33,7 @@ SPEC REPOS:
     - Pageboy
     - Parse
     - PKHUD
+    - QRCode
 
 SPEC CHECKSUMS:
   Alamofire: f41a599bd63041760b26d393ec1069d9d7b917f4
@@ -41,7 +44,8 @@ SPEC CHECKSUMS:
   Pageboy: f0295ea949f0b0123a1b486fd347ea892d0078e0
   Parse: 5b36dc2c2f0a2fd82a257ae018bc3d68cf2c24e7
   PKHUD: 3c001512c6e002091184197a8de7a20420786e3b
+  QRCode: f98a1886c8f37523704a7512a4c0cd45b34c18a4
 
-PODFILE CHECKSUM: 27efc00480b5f9a4681adf3ad7e9c3bee4d12bfc
+PODFILE CHECKSUM: bfef8568413243af44b0a03d3402821a6fcf0124
 
 COCOAPODS: 1.5.0
