@@ -13,8 +13,8 @@ class StudyingViewController: UIViewController {
     let device = UIDevice.current
     var counter = 0
     var sleepTimer = Timer()
-    var changeHp:((Int) -> (Bool))? // returns bool cuz I cant figure out how to write a closure returning Void
-    var resumeUpdateHpTimer:(() -> (Bool))? // returns bool cuz I cant figure out how to write a closure returning Void
+    var changeHp:((Int) -> ())? 
+    //var resumeUpdateHpTimer:(() -> ())?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,6 +22,9 @@ class StudyingViewController: UIViewController {
         if (device.isProximityMonitoringEnabled){
             NotificationCenter.default.addObserver(self, selector: #selector(StudyingViewController.proximityChanged), name: Notification.Name(rawValue: "UIDeviceProximityStateDidChangeNotification"), object: device)
         }
+        let swipeDown = UISwipeGestureRecognizer(target: self, action: #selector(handleGesture))
+        swipeDown.direction = .down
+        self.view.addGestureRecognizer(swipeDown)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -47,8 +50,16 @@ class StudyingViewController: UIViewController {
         }
     }
     
+    @objc func handleGesture(gesture: UISwipeGestureRecognizer) -> Void {
+        if gesture.direction == UISwipeGestureRecognizerDirection.down {
+            print("SWIPEBOI")
+            //resumeUpdateHpTimer!()
+            self.dismiss(animated: true, completion: nil)
+        }
+    }
+    
     @IBAction func endSleep(_ sender: Any) {
-        resumeUpdateHpTimer!()
+        //resumeUpdateHpTimer!()
         self.dismiss(animated: true, completion: nil)
     }
     
