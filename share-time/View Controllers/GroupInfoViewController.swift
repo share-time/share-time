@@ -91,6 +91,16 @@ class GroupInfoViewController: UIViewController, UICollectionViewDataSource,UICo
         // Dispose of any resources that can be recreated.
     }
     
+    @IBAction func toQR(_ sender: Any) {
+        self.performSegue(withIdentifier: "toQRSegue", sender: nil)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "toQRSegue"{
+            let qrViewController = segue.destination as? QRViewController
+            qrViewController?.studyGroup = self.studyGroup
+        }
+    }
     
     /*
      // MARK: - Navigation

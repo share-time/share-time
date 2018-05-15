@@ -824,6 +824,14 @@
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PI5-eK-RsQ">
+                                <rect key="frame" x="172" y="578" width="30" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="QR"/>
+                                <connections>
+                                    <action selector="toQR:" destination="xm7-Cj-7g2" eventType="touchUpInside" id="qCa-lP-sj0"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -835,11 +843,36 @@
                     <connections>
                         <outlet property="collectionView" destination="I5L-6y-uAe" id="Bap-56-mNg"/>
                         <outlet property="leaveGroupButton" destination="Y7P-1u-KYy" id="r3c-mK-o1t"/>
+                        <segue destination="NUF-gu-DQS" kind="show" identifier="toQRSegue" id="Jbz-Z0-tRk"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="G6j-Wr-yJg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3983.1999999999998" y="-14.842578710644679"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="9jA-dT-Dqn">
+            <objects>
+                <viewController id="NUF-gu-DQS" customClass="QRViewController" customModule="share_time" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="M2K-5V-B54">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="z9N-IJ-qY0">
+                                <rect key="frame" x="67" y="213" width="240" height="240"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <viewLayoutGuide key="safeArea" id="Ksn-CJ-IBB"/>
+                    </view>
+                    <connections>
+                        <outlet property="QRImage" destination="z9N-IJ-qY0" id="QwV-7D-IQS"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cWT-vr-jy6" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4857" y="-15"/>
         </scene>
         <!--Find Class View Controller-->
         <scene sceneID="G3P-IE-IrH">
@@ -1204,6 +1237,21 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5oN-XW-zyZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="366" y="931"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="9ad-eb-sHE">
+            <objects>
+                <viewController id="9iw-aJ-3DJ" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="lrV-k6-91D">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <viewLayoutGuide key="safeArea" id="KGo-6u-b2E"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qOM-JH-JLG" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="364" y="1735"/>
         </scene>
         <!--Profile-->
         <scene sceneID="Uia-GL-ee8">
