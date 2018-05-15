@@ -14,6 +14,7 @@ class StudyingViewController: UIViewController {
     var counter = 0
     var sleepTimer = Timer()
     var changeHp:((Int) -> (Bool))? // returns bool cuz I cant figure out how to write a closure returning Void
+    var resumeUpdateHpTimer:(() -> (Bool))? // returns bool cuz I cant figure out how to write a closure returning Void
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,10 +26,12 @@ class StudyingViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         device.isProximityMonitoringEnabled = true
+        counter = 0
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         device.isProximityMonitoringEnabled = false
+        sleepTimer.invalidate()
     }
 
     @objc func proximityChanged(notification: Notification){
@@ -36,7 +39,7 @@ class StudyingViewController: UIViewController {
             print("\(device) detected!")
             print("proximityState: " + String(device.proximityState))
             if (device.proximityState){
-                sleepTimer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(StudyingViewController.updateTimer), userInfo: nil, repeats: true)
+                sleepTimer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(StudyingViewController.updateSleepTimer), userInfo: nil, repeats: true)
             } else {
                 print("Time interval: \(counter)")
                 sleepTimer.invalidate()
@@ -45,14 +48,17 @@ class StudyingViewController: UIViewController {
     }
     
     @IBAction func endSleep(_ sender: Any) {
+        resumeUpdateHpTimer!()
         self.dismiss(animated: true, completion: nil)
     }
     
     
-    @objc func updateTimer(){
-        counter = counter + 1
-        changeHp!(counter) // ignore the result unused warning
-        print(counter)
+    @objc func updateSleepTimer(){
+        if (counter <= 800){
+            counter = counter + 1
+            changeHp!(counter) // ignore the result unused warning
+            print("updateSleepTimer: \(counter)")
+        }
     }
     
     
