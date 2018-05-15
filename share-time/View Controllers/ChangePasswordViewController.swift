@@ -39,7 +39,6 @@ class ChangePasswordViewController: UIViewController, UITextFieldDelegate {
         center.addObserver(self, selector: #selector(keyboardDidShow(notification:)), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
         center.addObserver(self, selector: #selector(keyboardWillHide(notification:)), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
         self.hideKeyboardWhenTappedAround()
-        self.hideKeyboardWhenTappedAround()
     }
     
     @objc func keyboardDidShow(notification: Notification) {
