@@ -122,10 +122,9 @@ class QRScannerViewController: UIViewController, AVCaptureMetadataOutputObjectsD
                 self.currentUser?.saveInBackground{ (success: Bool, error: Error?) -> Void in
                     if (success){
                         if let navController = self.navigationController {
-                            // sTODO
                             navController.popViewController(animated: true)
                             navController.popViewController(animated: true)
-                            self.parentPageboy?.scrollToPage(.at(index: 0), animated: true)
+                            navController.parentPageboy?.scrollToPage(.at(index: 0), animated: true)
                         }
                     } else {
                         self.captureSession.startRunning()
