@@ -11,14 +11,18 @@ import Parse
 
 class BlobViewController: UIViewController {
     
+    var redBar: UILabel!
+    var blackBorder : UILabel!
     @IBOutlet weak var hpLabel: UILabel!
     @IBOutlet weak var profileButton: UIButton!
+    
     
     var hp = 800
     var tiredTimer = Timer()
     var textField : UITextField!
     var label : UILabel!
     var user = PFUser.current()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         tiredTimer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(BlobViewController.updateHp), userInfo: nil, repeats: true)
@@ -37,12 +41,27 @@ class BlobViewController: UIViewController {
         profileButton.layer.borderWidth = 2.0
         profileButton.layer.borderColor = UIColor.gray.cgColor
         
-        label = UILabel(frame: CGRect(x: 50, y: 200, width: 200, height: 20))
+        let space:CGFloat = 80
+        let width = self.view.frame.size.width - space
+        redBar = UILabel(frame:CGRect(x:40, y:600, width: width, height: 30))
+        blackBorder = UILabel(frame:CGRect(x:38, y:600, width: width+4, height: 32))
+        redBar.backgroundColor = UIColor.red
+        redBar.layer.cornerRadius = 8
+        blackBorder.layer.cornerRadius = 8
+        blackBorder.clipsToBounds = true
+        redBar.clipsToBounds = true
+        blackBorder.layer.borderColor = UIColor.black.cgColor
+        blackBorder.layer.borderWidth = 4
+        view.addSubview(redBar)
+        view.addSubview(blackBorder)
+       /*
+        let x = redBar.frame.midX
+        let y = redBar.frame.midY
+        let height = redBar.frame.height
+        blackBorder.frame = CGRect(x:x, y:y, width:200, height: height)
+       */
+        
        
-        label.backgroundColor = UIColor.red
-        label.layer.cornerRadius = 10
-        label.clipsToBounds = true
-        view.addSubview(label)
         
         // Do any additional setup after loading the view.
     }
