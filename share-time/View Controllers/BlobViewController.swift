@@ -14,7 +14,8 @@ class BlobViewController: UIViewController {
     
     var hp = 800
     var tiredTimer = Timer()
-
+    var textField : UITextField!
+    var label : UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
         tiredTimer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(BlobViewController.updateHp), userInfo: nil, repeats: true)
@@ -22,6 +23,16 @@ class BlobViewController: UIViewController {
         let swipeUp = UISwipeGestureRecognizer(target: self, action: #selector(handleGesture))
         swipeUp.direction = .up
         self.view.addGestureRecognizer(swipeUp)
+        
+        
+        
+        label = UILabel(frame: CGRect(x: 50, y: 200, width: 200, height: 20))
+       
+        label.backgroundColor = UIColor.red
+        label.layer.cornerRadius = 10
+        label.clipsToBounds = true
+        view.addSubview(label)
+        
         // Do any additional setup after loading the view.
     }
     
