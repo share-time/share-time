@@ -35,7 +35,7 @@ class BlobViewController: UIViewController {
         HPtext.font.withSize(25)
         view.addSubview(HPtext)
         redBar = UILabel(frame:CGRect(x:80, y:600, width: width, height: 30))
-        blackBorder = UILabel(frame:CGRect(x:78, y:598, width: width+4, height: 34))
+        blackBorder = UILabel(frame:CGRect(x:76, y:598, width: width+8, height: 34))
         redBar.backgroundColor = UIColor.red
         //redBar.layer.cornerRadius = 8
         blackBorder.layer.cornerRadius = 8
