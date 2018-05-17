@@ -7,15 +7,18 @@
 ///Users/godwin/code/CodePath/share-time/share-time/Base.lproj/Main.storyboard
 
 import UIKit
+import Parse
 
 class BlobViewController: UIViewController {
     
     @IBOutlet weak var hpLabel: UILabel!
+    @IBOutlet weak var profileButton: UIButton!
     
     var hp = 800
     var tiredTimer = Timer()
     var textField : UITextField!
     var label : UILabel!
+    var user = PFUser.current()
     override func viewDidLoad() {
         super.viewDidLoad()
         tiredTimer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(BlobViewController.updateHp), userInfo: nil, repeats: true)
@@ -23,8 +26,16 @@ class BlobViewController: UIViewController {
         let swipeUp = UISwipeGestureRecognizer(target: self, action: #selector(handleGesture))
         swipeUp.direction = .up
         self.view.addGestureRecognizer(swipeUp)
-        
-        
+        let imgUrlString = user!["imgUrl"] as? String
+        let imgUrl = URL(string: imgUrlString!)!
+        if profileButton == nil {
+            print("profile is nil")
+        }
+        profileButton.af_setBackgroundImage(for: UIControlState.normal, url: imgUrl)
+        //profileButton.frame = CGRect(x: 0, y: 0, width: 30, height: 30)
+        profileButton.layer.cornerRadius = 22.5
+        profileButton.layer.borderWidth = 2.0
+        profileButton.layer.borderColor = UIColor.gray.cgColor
         
         label = UILabel(frame: CGRect(x: 50, y: 200, width: 200, height: 20))
        
