@@ -11,6 +11,7 @@ import Parse
 
 class BlobViewController: UIViewController {
     
+    var HPtext: UILabel!
     var redBar: UILabel!
     var blackBorder : UILabel!
     @IBOutlet weak var hpLabel: UILabel!
@@ -18,6 +19,8 @@ class BlobViewController: UIViewController {
     
     
     var hp = 800
+    var cgHP:CGFloat = 800
+    let full:CGFloat = 800
     var tiredTimer = Timer()
     var textField : UITextField!
     var label : UILabel!
@@ -25,6 +28,25 @@ class BlobViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        let space:CGFloat = 120
+        let width = self.view.frame.size.width - space
+        HPtext = UILabel(frame:CGRect(x:40, y:600, width: width, height: 30))
+        HPtext.text = "HP:"
+        HPtext.font.withSize(25)
+        view.addSubview(HPtext)
+        redBar = UILabel(frame:CGRect(x:80, y:600, width: width, height: 30))
+        blackBorder = UILabel(frame:CGRect(x:78, y:598, width: width+4, height: 34))
+        redBar.backgroundColor = UIColor.red
+        //redBar.layer.cornerRadius = 8
+        blackBorder.layer.cornerRadius = 8
+        blackBorder.clipsToBounds = true
+        //redBar.clipsToBounds = true
+        blackBorder.layer.borderColor = UIColor.black.cgColor
+        blackBorder.layer.borderWidth = 4
+        
+        view.addSubview(redBar)
+        view.addSubview(blackBorder)
+        
         tiredTimer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(BlobViewController.updateHp), userInfo: nil, repeats: true)
         
         let swipeUp = UISwipeGestureRecognizer(target: self, action: #selector(handleGesture))
@@ -41,25 +63,8 @@ class BlobViewController: UIViewController {
         profileButton.layer.borderWidth = 2.0
         profileButton.layer.borderColor = UIColor.gray.cgColor
         
-        let space:CGFloat = 80
-        let width = self.view.frame.size.width - space
-        redBar = UILabel(frame:CGRect(x:40, y:600, width: width, height: 30))
-        blackBorder = UILabel(frame:CGRect(x:38, y:600, width: width+4, height: 32))
-        redBar.backgroundColor = UIColor.red
-        redBar.layer.cornerRadius = 8
-        blackBorder.layer.cornerRadius = 8
-        blackBorder.clipsToBounds = true
-        redBar.clipsToBounds = true
-        blackBorder.layer.borderColor = UIColor.black.cgColor
-        blackBorder.layer.borderWidth = 4
-        view.addSubview(redBar)
-        view.addSubview(blackBorder)
-       /*
-        let x = redBar.frame.midX
-        let y = redBar.frame.midY
-        let height = redBar.frame.height
-        blackBorder.frame = CGRect(x:x, y:y, width:200, height: height)
-       */
+        
+       
         
        
         
@@ -87,6 +92,13 @@ class BlobViewController: UIViewController {
         if (hp > 0){
             hp = hp - 1
             hpLabel.text = String(hp)
+            
+            cgHP = cgHP - 1
+            let space:CGFloat = 120
+            let width = self.view.frame.size.width - space
+            redBar.frame = CGRect(x: 80, y: 600, width: width*cgHP/full, height: 30)
+            //redBar.frame = CGRectMake(40, 600, width*cgHP/full, 30)
+           
         }
         print("updatingHp: \(hp)")
     }
