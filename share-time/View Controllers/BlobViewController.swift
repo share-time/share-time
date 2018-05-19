@@ -8,6 +8,7 @@
 
 import UIKit
 import Parse
+import FLAnimatedImage
 
 class BlobViewController: UIViewController {
     
@@ -16,7 +17,7 @@ class BlobViewController: UIViewController {
     var blackBorder : UILabel!
     @IBOutlet weak var hpLabel: UILabel!
     @IBOutlet weak var profileButton: UIButton!
-    
+    @IBOutlet var blobImage: FLAnimatedImageView!
     
     var hp = 800
     var cgHP:CGFloat = 800
@@ -30,6 +31,7 @@ class BlobViewController: UIViewController {
         super.viewDidLoad()
         let space:CGFloat = 120
         let width = self.view.frame.size.width - space
+        
         HPtext = UILabel(frame:CGRect(x:40, y:600, width: width, height: 30))
         HPtext.text = "HP:"
         HPtext.font.withSize(25)
@@ -121,4 +123,6 @@ class BlobViewController: UIViewController {
             //tiredTimer.invalidate()
         }
     }
+    
+    
 }

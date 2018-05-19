@@ -13,6 +13,7 @@ target 'share-time' do
   pod 'ChattoAdditions', '= 3.3.1' # for the cells or the input component
   pod 'Pageboy', '~> 2.0'
   pod 'QRCode'
+  pod 'FLAnimatedImage', '~> 1.0'
 
   target 'share-timeTests' do
     inherit! :search_paths

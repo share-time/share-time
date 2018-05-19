@@ -6,6 +6,7 @@ PODS:
   - Chatto (3.3.1)
   - ChattoAdditions (3.3.1):
     - Chatto
+  - FLAnimatedImage (1.0.12)
   - Pageboy (2.5.1)
   - Parse (1.16.0):
     - Parse/Core (= 1.16.0)
@@ -18,22 +19,11 @@ DEPENDENCIES:
   - AlamofireImage
   - Chatto (= 3.3.1)
   - ChattoAdditions (= 3.3.1)
+  - FLAnimatedImage (~> 1.0)
   - Pageboy (~> 2.0)
   - Parse
   - PKHUD (~> 5.0)
   - QRCode
-
-SPEC REPOS:
-  https://github.com/CocoaPods/Specs.git:
-    - Alamofire
-    - AlamofireImage
-    - Bolts
-    - Chatto
-    - ChattoAdditions
-    - Pageboy
-    - Parse
-    - PKHUD
-    - QRCode
 
 SPEC CHECKSUMS:
   Alamofire: f41a599bd63041760b26d393ec1069d9d7b917f4
@@ -41,11 +31,12 @@ SPEC CHECKSUMS:
   Bolts: ac6567323eac61e203f6a9763667d0f711be34c8
   Chatto: 24a6c9b0c91b08130466888b8b61563b90191c6f
   ChattoAdditions: cc74cd3dd371aa3f70e5ab8568a4f383f0c0eb8c
+  FLAnimatedImage: 4a0b56255d9b05f18b6dd7ee06871be5d3b89e31
   Pageboy: f0295ea949f0b0123a1b486fd347ea892d0078e0
   Parse: 5b36dc2c2f0a2fd82a257ae018bc3d68cf2c24e7
   PKHUD: 3c001512c6e002091184197a8de7a20420786e3b
   QRCode: f98a1886c8f37523704a7512a4c0cd45b34c18a4
 
-PODFILE CHECKSUM: bfef8568413243af44b0a03d3402821a6fcf0124
+PODFILE CHECKSUM: 509cdace95f88709b3f214844a76fad2e3909151
 
-COCOAPODS: 1.5.0
+COCOAPODS: 1.4.0

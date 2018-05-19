@@ -262,6 +262,7 @@
 				5A254AD42082F04E00767CB7 /* Frameworks */,
 				5A254AD52082F04E00767CB7 /* Resources */,
 				9913918F4293A6A725DF3F37 /* [CP] Embed Pods Frameworks */,
+				15D3B2FDEA53538B7F64D82D /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -280,6 +281,8 @@
 				5A254AE72082F04E00767CB7 /* Sources */,
 				5A254AE82082F04E00767CB7 /* Frameworks */,
 				5A254AE92082F04E00767CB7 /* Resources */,
+				68E9A3A3DB1BAF91212C4BE8 /* [CP] Embed Pods Frameworks */,
+				E7E88AD1DAC0CF8647294CC8 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -299,6 +302,8 @@
 				5A254AF22082F04E00767CB7 /* Sources */,
 				5A254AF32082F04E00767CB7 /* Frameworks */,
 				5A254AF42082F04E00767CB7 /* Resources */,
+				5AFDFCDA852324D436EBA8EC /* [CP] Embed Pods Frameworks */,
+				B4F0FD78563FA64D563A0A84 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -384,6 +389,51 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		15D3B2FDEA53538B7F64D82D /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-share-time/Pods-share-time-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		5AFDFCDA852324D436EBA8EC /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-share-timeUITests/Pods-share-timeUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		68E9A3A3DB1BAF91212C4BE8 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-share-timeTests/Pods-share-timeTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		710DD6A7EEF22442B66B9573 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -450,6 +500,7 @@
 				"${BUILT_PRODUCTS_DIR}/Bolts/Bolts.framework",
 				"${BUILT_PRODUCTS_DIR}/Chatto/Chatto.framework",
 				"${BUILT_PRODUCTS_DIR}/ChattoAdditions/ChattoAdditions.framework",
+				"${BUILT_PRODUCTS_DIR}/FLAnimatedImage/FLAnimatedImage.framework",
 				"${BUILT_PRODUCTS_DIR}/PKHUD/PKHUD.framework",
 				"${BUILT_PRODUCTS_DIR}/Pageboy/Pageboy.framework",
 				"${BUILT_PRODUCTS_DIR}/Parse/Parse.framework",
@@ -462,6 +513,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Bolts.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Chatto.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ChattoAdditions.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FLAnimatedImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PKHUD.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Pageboy.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Parse.framework",
@@ -470,6 +522,36 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-share-time/Pods-share-time-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B4F0FD78563FA64D563A0A84 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-share-timeUITests/Pods-share-timeUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E7E88AD1DAC0CF8647294CC8 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-share-timeTests/Pods-share-timeTests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
