@@ -11,7 +11,7 @@ Basic story:
 - [x] User can chat in the study groups
 - [x] User can see the members in the study groups and leave the study group
 - [x] User will adopt an adorable **study trition** as a study incentive
-- [ ] User can see the study triton jiggling if 
+- [ ] User can see the study triton jiggling if the Study Triton is happy, sad if the Triton thinks that you need to study more
 
 (More to elaborate)
 - [ ] User can schedule study meet-ups easily (calendars).
