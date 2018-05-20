@@ -57,11 +57,11 @@ class MainPageViewController: UIViewController,UITableViewDelegate, UITableViewD
         let imgUrlString = user!["imgUrl"] as? String
         let imgUrl = URL(string: imgUrlString!)!
         personalImage.af_setImage(withURL: imgUrl)
-        getStudyGoups()
+        getStudyGroups()
         
     }
     
-    func getStudyGoups() {
+    func getStudyGroups() {
         user?.relation(forKey: "studyGroups").query().findObjectsInBackground{
             (studyGroups: [PFObject]?, error: Error?) -> Void in
             if error != nil {
@@ -101,17 +101,8 @@ class MainPageViewController: UIViewController,UITableViewDelegate, UITableViewD
         }
     }
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
     @objc func refreshControlAction(_ refreshControl: UIRefreshControl) {
-        getStudyGoups()
+        getStudyGroups()
         // Tell the refreshControl to stop spinning
         refresher.endRefreshing()
     }

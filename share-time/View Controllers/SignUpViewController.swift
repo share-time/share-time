@@ -45,9 +45,6 @@ class SignUpViewController: UIViewController, UITextFieldDelegate{
         let info: NSDictionary = notification.userInfo! as NSDictionary
         let keyboardSize = (info[UIKeyboardFrameBeginUserInfoKey] as! NSValue).cgRectValue
         let keyboardY = self.view.frame.size.height - keyboardSize.height
-        if activeTextField == nil {
-            print("active text field is nil")
-        }
         let editingTextFIeldY:CGFloat! = self.activeTextField?.frame.origin.y
         
         if self.view.frame.origin.y >= 0 {

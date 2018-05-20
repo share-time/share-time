@@ -34,8 +34,6 @@ class StudyingViewController: UIViewController {
 
     @objc func proximityChanged(notification: Notification){
         if let device = notification.object as? UIDevice{
-            print("\(device) detected!")
-            print("proximityState: " + String(device.proximityState))
             if (device.proximityState){
                 HPTimer.isIncrease = true
             } else {

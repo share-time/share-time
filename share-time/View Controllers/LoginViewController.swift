@@ -61,9 +61,6 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         let info: NSDictionary = notification.userInfo! as NSDictionary
         let keyboardSize = (info[UIKeyboardFrameBeginUserInfoKey] as! NSValue).cgRectValue
         let keyboardY = self.view.frame.size.height - keyboardSize.height
-        if activeTextField == nil {
-            print("active text field is nil")
-        }
         let editingTextFIeldY:CGFloat! = self.activeTextField?.frame.origin.y
         
         if self.view.frame.origin.y >= 0 {
@@ -103,10 +100,8 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         
         if(usernameField.text?.isEmpty)!{
             present(loginUsernameErrorAlertController, animated: true)
-            print("empty username")
         } else if(passwordField.text?.isEmpty)!{
             present(loginPasswordErrorAlertController, animated: true)
-            print("empty password")
         } else {
             PFUser.logInWithUsername(inBackground: username, password: password) { (user: PFUser?, error: Error?) in
                 if let error = error {
@@ -130,18 +125,6 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         NotificationCenter.default.removeObserver(self, name: Notification.Name.UIKeyboardWillShow, object: nil)
          NotificationCenter.default.removeObserver(self, name: Notification.Name.UIKeyboardWillHide, object: nil)
     }
-    
-
-    
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
 

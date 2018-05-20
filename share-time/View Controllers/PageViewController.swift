@@ -18,7 +18,6 @@ class PageViewController: PageboyViewController, PageboyViewControllerDataSource
         let mainNavController = storyboard.instantiateViewController(withIdentifier: "MainNavController") as! UINavigationController
         let findClassNavController = storyboard.instantiateViewController(withIdentifier: "FindClassNavController") as! UINavigationController
         let blobViewController = storyboard.instantiateViewController(withIdentifier: "BlobViewController") 
-        //viewControllers.append(profileNavController)
         viewControllers.append(mainNavController)
         viewControllers.append(blobViewController)
         viewControllers.append(findClassNavController)
@@ -49,16 +48,5 @@ class PageViewController: PageboyViewController, PageboyViewControllerDataSource
     func defaultPage(for pageboyViewController: PageboyViewController) -> PageboyViewController.Page? {
         return .at(index: 1)
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

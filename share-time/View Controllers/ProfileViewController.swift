@@ -70,10 +70,6 @@ class ProfileViewController: UIViewController {
         user["imgUrl"] = userIconBaseURLString+imgCode+".png"
         self.personalImage.af_setImage(withURL: imgUrl)
         user.saveInBackground{ (success: Bool, error: Error?) -> Void in
-            if (success){
-            } else {
-                print("wassup")
-            }
         }
     }
     
@@ -84,17 +80,6 @@ class ProfileViewController: UIViewController {
         self.performSegue(withIdentifier: "logoutSegue", sender: nil)
  */
     }
-    
-
-    override func viewWillDisappear(_ animated: Bool) {
-        print("disappearing bb")
-        /*
-        if(username != nameText.text || email != emailText.text){
-            self.present(noSaveAlertController, animated: true)
-        }
-        */
-    }
- 
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -138,11 +123,6 @@ class ProfileViewController: UIViewController {
     class func updateParseUser() {
         let user = PFUser.current()
         user?.saveInBackground{ (success: Bool, error: Error?) -> Void in
-            if (success){
-                
-            } else {
-                print("wassup")
-            }
         }
     }
 }

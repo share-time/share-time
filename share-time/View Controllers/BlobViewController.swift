@@ -59,7 +59,6 @@ class BlobViewController: UIViewController {
         view.addSubview(blackBorder)
         view.addSubview(BlobViewController.HPnum)
         
-        //tiredTimer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(BlobViewController.updateHp), userInfo: nil, repeats: true)
         HPTimer.startHPTimer()
         
         let swipeUp = UISwipeGestureRecognizer(target: self, action: #selector(handleGesture))
@@ -106,23 +105,5 @@ class BlobViewController: UIViewController {
         redBar.frame = CGRect(x: 80, y: 600, width: barWidth, height: 30)
         HPnum.text = "\(String(hp))/800"
     }
-    /*
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if (segue.identifier == "toSleepSegue"){
-            let studyingViewController = segue.destination as! StudyingViewController
-            studyingViewController.changeHp = { (hp: Int) -> () in
-                self.hp = self.hp + 1
-                //self.hpLabel.text = String(self.hp)
-            }
-            studyingViewController.deleteUpdateHpTimer = { () -> () in
-               self.tiredTimer.invalidate()
-            }
-            studyingViewController.resumeUpdateHpTimer = { () -> () in
-                self.tiredTimer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(BlobViewController.updateHp), userInfo: nil, repeats: true)
-            }
-        }
-    }
- */
-    
     
 }

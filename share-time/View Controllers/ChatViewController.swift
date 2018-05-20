@@ -97,7 +97,7 @@ class ChatViewController: UIViewController, UITableViewDelegate, UITableViewData
                 cell.contentView.layoutIfNeeded()
                 cell.chatRightConstraint = NSLayoutConstraint(item: cell, attribute: .trailing, relatedBy: .equal, toItem: view, attribute: .trailingMargin, multiplier: 1.0, constant: 15.0)
                 cell.chatLeftConstraint = NSLayoutConstraint(item: cell, attribute: .leading, relatedBy: .greaterThanOrEqual, toItem: view, attribute: .leadingMargin, multiplier: 1.0, constant: 15.0)
-                print ("After chaning, the left constaints is" + String(Float(cell.chatLeftConstraint.constant)))
+                print ("After changing, the left constaints is" + String(Float(cell.chatLeftConstraint.constant)))
                 print ("The right constaints is" + String(Float(cell.chatRightConstraint.constant)))
                 cell.contentView.layoutIfNeeded()
                 
@@ -141,8 +141,6 @@ class ChatViewController: UIViewController, UITableViewDelegate, UITableViewData
             if error == nil{
                 self.members = members as! [PFUser]
                 self.performSegue(withIdentifier: "toGroupInfoViewControllerSegue", sender: nil)
-            } else {
-                print("i fucked up again")
             }
         }
     }
