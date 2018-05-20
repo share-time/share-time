@@ -84,16 +84,25 @@ class ChatViewController: UIViewController, UITableViewDelegate, UITableViewData
         cell.bubbleView.layer.cornerRadius = 10
         cell.bubbleView.clipsToBounds = true
         cell.bubbleView.backgroundColor = UIColor.lightGray
+        //cell.chatLeftConstraint.constant = 15
+        //cell.chatRightConstraint = NSLayoutConstraint(item: cell, attribute: .trailing, relatedBy: .greaterThanOrEqual, toItem: view, attribute: .trailingMargin, multiplier: 1.0, constant: 15.0)
+        cell.personalIconImage.clipsToBounds = true
         let messages = chatMessage?[indexPath.row]
         if let msgString = messages?["text"] as? String {
             cell.messageLabel.text = msgString
         }
-        
         if let user = messages?["user"] as? PFUser {
             if (user.username == PFUser.current()?.username) {
                 cell.bubbleView.backgroundColor = UIColor(red:0.02, green:0.47, blue:0.98, alpha:1.0)
+                cell.contentView.layoutIfNeeded()
+                cell.chatRightConstraint = NSLayoutConstraint(item: cell, attribute: .trailing, relatedBy: .equal, toItem: view, attribute: .trailingMargin, multiplier: 1.0, constant: 15.0)
+                cell.chatLeftConstraint = NSLayoutConstraint(item: cell, attribute: .leading, relatedBy: .greaterThanOrEqual, toItem: view, attribute: .leadingMargin, multiplier: 1.0, constant: 15.0)
+                print ("After chaning, the left constaints is" + String(Float(cell.chatLeftConstraint.constant)))
+                print ("The right constaints is" + String(Float(cell.chatRightConstraint.constant)))
+                cell.contentView.layoutIfNeeded()
+                
             }
-            print("The user is: \(user)")
+            //print("The user is: \(user)")
             cell.usernameLabel.text = user.username
             
             let imgUrlString = user["imgUrl"] as? String
@@ -147,7 +156,6 @@ class ChatViewController: UIViewController, UITableViewDelegate, UITableViewData
         if editingTextFIeldY > keyboardY - 80 {
             UIView.animate(withDuration: 0.25, delay: 0.0, options: UIViewAnimationOptions.curveEaseIn, animations: {
                 self.view.layoutIfNeeded()
-                print("changing the buttom containts")
                 self.bottomContraints.constant = keyboardSize.height + 60
             }, completion: nil)
         }

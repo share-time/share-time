@@ -8,6 +8,7 @@
 
 import UIKit
 import Parse
+import FLAnimatedImage
 
 class BlobViewController: UIViewController {
     
@@ -17,7 +18,7 @@ class BlobViewController: UIViewController {
     var blackBorder : UILabel!
     @IBOutlet weak var hpLabel: UILabel!
     @IBOutlet weak var profileButton: UIButton!
-    
+    @IBOutlet var blobImage: FLAnimatedImageView!
     
     var hp = 800
     var cgHP:CGFloat = 800
@@ -68,17 +69,19 @@ class BlobViewController: UIViewController {
         profileButton.layer.cornerRadius = 22.5
         profileButton.layer.borderWidth = 2.0
         profileButton.layer.borderColor = UIColor.gray.cgColor
-        
-        
-       
-        
-       
-        
+
         // Do any additional setup after loading the view.
     }
     
     override func viewWillAppear(_ animated: Bool) {
         hpLabel.text = String(hp)
+        let imgUrlString = user!["imgUrl"] as? String
+        let imgUrl = URL(string: imgUrlString!)!
+        profileButton.af_setBackgroundImage(for: UIControlState.normal, url: imgUrl)
+        //profileButton.frame = CGRect(x: 0, y: 0, width: 30, height: 30)
+        profileButton.layer.cornerRadius = 22.5
+        profileButton.layer.borderWidth = 2.0
+        profileButton.layer.borderColor = UIColor.gray.cgColor
     }
     
    
@@ -126,4 +129,6 @@ class BlobViewController: UIViewController {
             //tiredTimer.invalidate()
         }
     }
+    
+    
 }
