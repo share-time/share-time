@@ -10,9 +10,8 @@
 #endif
 #endif
 
-#import "FLAnimatedImage.h"
-#import "FLAnimatedImageView.h"
+#import "AutoInset.h"
 
-FOUNDATION_EXPORT double FLAnimatedImageVersionNumber;
-FOUNDATION_EXPORT const unsigned char FLAnimatedImageVersionString[];
+FOUNDATION_EXPORT double AutoInsetterVersionNumber;
+FOUNDATION_EXPORT const unsigned char AutoInsetterVersionString[];
 

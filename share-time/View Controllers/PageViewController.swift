@@ -17,10 +17,12 @@ class PageViewController: PageboyViewController, PageboyViewControllerDataSource
         let profileNavController = storyboard.instantiateViewController(withIdentifier: "ProfileNavController") as! UINavigationController
         let mainNavController = storyboard.instantiateViewController(withIdentifier: "MainNavController") as! UINavigationController
         let findClassNavController = storyboard.instantiateViewController(withIdentifier: "FindClassNavController") as! UINavigationController
-        let blobViewController = storyboard.instantiateViewController(withIdentifier: "BlobViewController") 
+        let blobViewController = storyboard.instantiateViewController(withIdentifier: "BlobViewController")
+        let tabNavController = storyboard.instantiateViewController(withIdentifier: "TabNavController") as! UINavigationController
         viewControllers.append(mainNavController)
         viewControllers.append(blobViewController)
         viewControllers.append(findClassNavController)
+        viewControllers.append(tabNavController)
         return viewControllers
     }()
     

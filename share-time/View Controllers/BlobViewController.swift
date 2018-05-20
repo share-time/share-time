@@ -8,7 +8,6 @@
 
 import UIKit
 import Parse
-import FLAnimatedImage
 import SwiftGifOrigin
 
 class BlobViewController: UIViewController {

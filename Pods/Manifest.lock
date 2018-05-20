@@ -2,11 +2,11 @@ PODS:
   - Alamofire (4.6.0)
   - AlamofireImage (3.3.0):
     - Alamofire (~> 4.5)
+  - AutoInsetter (1.2.3)
   - Bolts/Tasks (1.9.0)
   - Chatto (3.3.1)
   - ChattoAdditions (3.3.1):
     - Chatto
-  - FLAnimatedImage (1.0.12)
   - Pageboy (2.5.1)
   - Parse (1.16.0):
     - Parse/Core (= 1.16.0)
@@ -15,45 +15,50 @@ PODS:
   - PKHUD (5.0.0)
   - QRCode (2.0)
   - SwiftGifOrigin (1.6.1)
+  - Tabman (1.8.2):
+    - AutoInsetter (~> 1.2.0)
+    - Pageboy (~> 2.5.0)
 
 DEPENDENCIES:
   - AlamofireImage
   - Chatto (= 3.3.1)
   - ChattoAdditions (= 3.3.1)
-  - FLAnimatedImage (~> 1.0)
   - Pageboy (~> 2.0)
   - Parse
   - PKHUD (~> 5.0)
   - QRCode
   - SwiftGifOrigin (~> 1.6.1)
+  - Tabman (~> 1.0)
 
 SPEC REPOS:
   https://github.com/CocoaPods/Specs.git:
     - Alamofire
     - AlamofireImage
+    - AutoInsetter
     - Bolts
     - Chatto
     - ChattoAdditions
-    - FLAnimatedImage
     - Pageboy
     - Parse
     - PKHUD
     - QRCode
     - SwiftGifOrigin
+    - Tabman
 
 SPEC CHECKSUMS:
   Alamofire: f41a599bd63041760b26d393ec1069d9d7b917f4
   AlamofireImage: 2e784dc5d00f04903a52c1d169181469c805c3df
+  AutoInsetter: 1a8f8ad5e7da8e993970b3809cfb8e8e330f4db1
   Bolts: ac6567323eac61e203f6a9763667d0f711be34c8
   Chatto: 24a6c9b0c91b08130466888b8b61563b90191c6f
   ChattoAdditions: cc74cd3dd371aa3f70e5ab8568a4f383f0c0eb8c
-  FLAnimatedImage: 4a0b56255d9b05f18b6dd7ee06871be5d3b89e31
   Pageboy: f0295ea949f0b0123a1b486fd347ea892d0078e0
   Parse: 5b36dc2c2f0a2fd82a257ae018bc3d68cf2c24e7
   PKHUD: 3c001512c6e002091184197a8de7a20420786e3b
   QRCode: f98a1886c8f37523704a7512a4c0cd45b34c18a4
   SwiftGifOrigin: d6679d3ebe9df2e049a84bc52582635107b581f6
+  Tabman: 69ce69b44cec1ad693b82c24cdbdf0c45915668c
 
-PODFILE CHECKSUM: 9bcd9b04d12fddb385b37fb7eea6937c68ff8020
+PODFILE CHECKSUM: 87e84a4aaca5abcbac83cddde77481f25fb05a80
 
 COCOAPODS: 1.5.0

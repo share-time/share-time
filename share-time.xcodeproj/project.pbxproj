@@ -20,6 +20,7 @@
 		5A2D1ADE20B15398007B7088 /* HPTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A2D1ADD20B15398007B7088 /* HPTimer.swift */; };
 		5A2F10CE209DC707007A0A4C /* ChangePasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A2F10CD209DC707007A0A4C /* ChangePasswordViewController.swift */; };
 		5A372707209DF26000EFE1F4 /* UserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A372706209DF26000EFE1F4 /* UserCell.swift */; };
+		5A7D516220B181CD00D69ECD /* TabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A7D516120B181CD00D69ECD /* TabViewController.swift */; };
 		5A8B072420AAED5700755718 /* QRScannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A8B072320AAED5700755718 /* QRScannerViewController.swift */; };
 		5A8FF2BF20859C02004957DE /* PublicStudyGroupCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A8FF2BE20859C02004957DE /* PublicStudyGroupCell.swift */; };
 		5AA6C68F20AAE88900F86C92 /* QRViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AA6C68E20AAE88900F86C92 /* QRViewController.swift */; };
@@ -81,6 +82,7 @@
 		5A2D1ADD20B15398007B7088 /* HPTimer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HPTimer.swift; sourceTree = "<group>"; };
 		5A2F10CD209DC707007A0A4C /* ChangePasswordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChangePasswordViewController.swift; sourceTree = "<group>"; };
 		5A372706209DF26000EFE1F4 /* UserCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCell.swift; sourceTree = "<group>"; };
+		5A7D516120B181CD00D69ECD /* TabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabViewController.swift; sourceTree = "<group>"; };
 		5A8B072320AAED5700755718 /* QRScannerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRScannerViewController.swift; sourceTree = "<group>"; };
 		5A8FF2BE20859C02004957DE /* PublicStudyGroupCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PublicStudyGroupCell.swift; sourceTree = "<group>"; };
 		5AA6C68E20AAE88900F86C92 /* QRViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRViewController.swift; sourceTree = "<group>"; };
@@ -235,6 +237,7 @@
 				5A8B072320AAED5700755718 /* QRScannerViewController.swift */,
 				70CE5AD5208300810023F3D7 /* MainPageViewController.swift */,
 				70CE5AD920830A2F0023F3D7 /* ChatViewController.swift */,
+				5A7D516120B181CD00D69ECD /* TabViewController.swift */,
 				705BAB40209808DC0047F91D /* ProfileViewController.swift */,
 				70F23BDC209F8526009E7598 /* GroupInfoViewController.swift */,
 				5AA6C68E20AAE88900F86C92 /* QRViewController.swift */,
@@ -454,29 +457,31 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-share-time/Pods-share-time-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/AlamofireImage/AlamofireImage.framework",
+				"${BUILT_PRODUCTS_DIR}/AutoInsetter/AutoInsetter.framework",
 				"${BUILT_PRODUCTS_DIR}/Bolts/Bolts.framework",
 				"${BUILT_PRODUCTS_DIR}/Chatto/Chatto.framework",
 				"${BUILT_PRODUCTS_DIR}/ChattoAdditions/ChattoAdditions.framework",
-				"${BUILT_PRODUCTS_DIR}/FLAnimatedImage/FLAnimatedImage.framework",
 				"${BUILT_PRODUCTS_DIR}/PKHUD/PKHUD.framework",
 				"${BUILT_PRODUCTS_DIR}/Pageboy/Pageboy.framework",
 				"${BUILT_PRODUCTS_DIR}/Parse/Parse.framework",
 				"${BUILT_PRODUCTS_DIR}/QRCode/QRCode.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftGifOrigin/SwiftGifOrigin.framework",
+				"${BUILT_PRODUCTS_DIR}/Tabman/Tabman.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireImage.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AutoInsetter.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Bolts.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Chatto.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ChattoAdditions.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FLAnimatedImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PKHUD.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Pageboy.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Parse.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/QRCode.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftGifOrigin.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Tabman.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -514,6 +519,7 @@
 				70F23BDF209F88A6009E7598 /* MemberCell.swift in Sources */,
 				5A372707209DF26000EFE1F4 /* UserCell.swift in Sources */,
 				705BAB41209808DC0047F91D /* ProfileViewController.swift in Sources */,
+				5A7D516220B181CD00D69ECD /* TabViewController.swift in Sources */,
 				70CE5ADA20830A2F0023F3D7 /* ChatViewController.swift in Sources */,
 				5A254ADB2082F04E00767CB7 /* AppDelegate.swift in Sources */,
 			);
