@@ -13,6 +13,7 @@ class BlobViewController: UIViewController {
     
     var HPtext: UILabel!
     var redBar: UILabel!
+    var HPnum: UILabel!
     var blackBorder : UILabel!
     @IBOutlet weak var hpLabel: UILabel!
     @IBOutlet weak var profileButton: UIButton!
@@ -21,6 +22,7 @@ class BlobViewController: UIViewController {
     var hp = 800
     var cgHP:CGFloat = 800
     let full:CGFloat = 800
+    let hundred:CGFloat = 800
     var tiredTimer = Timer()
     var textField : UITextField!
     var label : UILabel!
@@ -30,10 +32,13 @@ class BlobViewController: UIViewController {
         super.viewDidLoad()
         let space:CGFloat = 120
         let width = self.view.frame.size.width - space
+        
         HPtext = UILabel(frame:CGRect(x:40, y:600, width: width, height: 30))
         HPtext.text = "HP:"
         HPtext.font.withSize(25)
         view.addSubview(HPtext)
+        HPnum = UILabel (frame: CGRect(x:80+width/2-30, y:600, width: 100, height:30))
+        HPnum.text = "800/800"
         redBar = UILabel(frame:CGRect(x:80, y:600, width: width, height: 30))
         blackBorder = UILabel(frame:CGRect(x:76, y:598, width: width+8, height: 34))
         redBar.backgroundColor = UIColor.red
@@ -46,6 +51,7 @@ class BlobViewController: UIViewController {
         
         view.addSubview(redBar)
         view.addSubview(blackBorder)
+        view.addSubview(HPnum)
         
         tiredTimer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(BlobViewController.updateHp), userInfo: nil, repeats: true)
         
@@ -97,6 +103,7 @@ class BlobViewController: UIViewController {
             let space:CGFloat = 120
             let width = self.view.frame.size.width - space
             redBar.frame = CGRect(x: 80, y: 600, width: width*cgHP/full, height: 30)
+            HPnum.text = "\(String(format:"%.f",cgHP/full*hundred))/800"
             //redBar.frame = CGRectMake(40, 600, width*cgHP/full, 30)
            
         }
