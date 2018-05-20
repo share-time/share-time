@@ -55,14 +55,11 @@ class StudyingViewController: UIViewController {
     
     @objc func handleGesture(gesture: UISwipeGestureRecognizer) -> Void {
         if gesture.direction == UISwipeGestureRecognizerDirection.down {
-            print("SWIPEBOI")
-            //resumeUpdateHpTimer!()
             self.dismiss(animated: true, completion: nil)
         }
     }
     
     @IBAction func endSleep(_ sender: Any) {
-        //resumeUpdateHpTimer!()
         self.dismiss(animated: true, completion: nil)
     }
     
@@ -70,7 +67,7 @@ class StudyingViewController: UIViewController {
     @objc func updateSleepTimer(){
         if (counter < 800){
             counter = counter + 1
-            changeHp!(counter) // ignore the result unused warning
+            changeHp!(counter)
             print("updateSleepTimer: \(counter)")
         }
     }

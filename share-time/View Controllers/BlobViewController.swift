@@ -4,7 +4,7 @@
 //
 //  Created by Godwin Pang on 5/13/18.
 //  Copyright © 2018 share-time. All rights reserved.
-///Users/godwin/code/CodePath/share-time/share-time/Base.lproj/Main.storyboard
+//
 
 import UIKit
 import Parse
@@ -16,23 +16,26 @@ class BlobViewController: UIViewController {
     var redBar: UILabel!
     var HPnum: UILabel!
     var blackBorder : UILabel!
-    @IBOutlet weak var hpLabel: UILabel!
+    
     @IBOutlet weak var profileButton: UIButton!
     @IBOutlet var blobImage: FLAnimatedImageView!
     
     var hp = 800
-    var cgHP:CGFloat = 800
-    let full:CGFloat = 800
-    let hundred:CGFloat = 800
+    let maxHP = 800
     var tiredTimer = Timer()
     var textField : UITextField!
     var label : UILabel!
     var user = PFUser.current()
     
+    let space = 120
+    var frameWidth: Int!
+    var width: Int!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        let space:CGFloat = 120
-        let width = self.view.frame.size.width - space
+        
+        frameWidth = Int(self.view.frame.size.width)
+        width = frameWidth - space
         
         HPtext = UILabel(frame:CGRect(x:40, y:600, width: width, height: 30))
         HPtext.text = "HP:"
@@ -43,10 +46,8 @@ class BlobViewController: UIViewController {
         redBar = UILabel(frame:CGRect(x:80, y:600, width: width, height: 30))
         blackBorder = UILabel(frame:CGRect(x:76, y:598, width: width+8, height: 34))
         redBar.backgroundColor = UIColor.red
-        //redBar.layer.cornerRadius = 8
         blackBorder.layer.cornerRadius = 8
         blackBorder.clipsToBounds = true
-        //redBar.clipsToBounds = true
         blackBorder.layer.borderColor = UIColor.black.cgColor
         blackBorder.layer.borderWidth = 4
         
@@ -65,7 +66,6 @@ class BlobViewController: UIViewController {
             print("profile is nil")
         }
         profileButton.af_setBackgroundImage(for: UIControlState.normal, url: imgUrl)
-        //profileButton.frame = CGRect(x: 0, y: 0, width: 30, height: 30)
         profileButton.layer.cornerRadius = 22.5
         profileButton.layer.borderWidth = 2.0
         profileButton.layer.borderColor = UIColor.gray.cgColor
@@ -74,11 +74,9 @@ class BlobViewController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        hpLabel.text = String(hp)
         let imgUrlString = user!["imgUrl"] as? String
         let imgUrl = URL(string: imgUrlString!)!
         profileButton.af_setBackgroundImage(for: UIControlState.normal, url: imgUrl)
-        //profileButton.frame = CGRect(x: 0, y: 0, width: 30, height: 30)
         profileButton.layer.cornerRadius = 22.5
         profileButton.layer.borderWidth = 2.0
         profileButton.layer.borderColor = UIColor.gray.cgColor
@@ -100,17 +98,12 @@ class BlobViewController: UIViewController {
     @objc func updateHp(){
         if (hp > 0){
             hp = hp - 1
-            hpLabel.text = String(hp)
             
-            cgHP = cgHP - 1
-            let space:CGFloat = 120
-            let width = self.view.frame.size.width - space
-            redBar.frame = CGRect(x: 80, y: 600, width: width*cgHP/full, height: 30)
-            HPnum.text = "\(String(format:"%.f",cgHP/full*hundred))/800"
-            //redBar.frame = CGRectMake(40, 600, width*cgHP/full, 30)
-           
+            let barWidth: Double = Double(width) * Double(hp) / Double(maxHP)
+
+            redBar.frame = CGRect(x: 80, y: 600, width: barWidth, height: 30)
+            HPnum.text = "\(String(hp))/800"
         }
-        print("updatingHp: \(hp)")
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -118,7 +111,7 @@ class BlobViewController: UIViewController {
             let studyingViewController = segue.destination as! StudyingViewController
             studyingViewController.changeHp = { (hp: Int) -> () in
                 self.hp = self.hp + 1
-                self.hpLabel.text = String(self.hp)
+                //self.hpLabel.text = String(self.hp)
             }
             studyingViewController.deleteUpdateHpTimer = { () -> () in
                self.tiredTimer.invalidate()
@@ -126,7 +119,6 @@ class BlobViewController: UIViewController {
             studyingViewController.resumeUpdateHpTimer = { () -> () in
                 self.tiredTimer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(BlobViewController.updateHp), userInfo: nil, repeats: true)
             }
-            //tiredTimer.invalidate()
         }
     }
     
