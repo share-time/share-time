@@ -40,6 +40,7 @@ class BlobViewController: UIViewController {
         //frameWidth = Int(self.view.frame.size.width)
         //width = BlobViewController.frameWidth - space
         blobImage.image = UIImage.gif(name: "defaultBlob")
+        blobImage.tintColor = UIColor.yellow
         HPtext = UILabel(frame:CGRect(x:40, y:600, width: BlobViewController.width, height: 30))
         HPtext.text = "HP:"
         HPtext.font.withSize(25)
@@ -99,20 +100,13 @@ class BlobViewController: UIViewController {
         }
     }
     
-    @objc func updateHp(){
-        if (hp > 0){
-            hp = hp - 1
-            BlobViewController.updateHPBar(hp:hp)
-        }
-    }
-    
     class func updateHPBar(hp: Int){
         let barWidth: Double = Double(width) * Double(hp) / Double(800)
         
         redBar.frame = CGRect(x: 80, y: 600, width: barWidth, height: 30)
         HPnum.text = "\(String(hp))/800"
     }
-    
+    /*
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if (segue.identifier == "toSleepSegue"){
             let studyingViewController = segue.destination as! StudyingViewController
@@ -128,6 +122,7 @@ class BlobViewController: UIViewController {
             }
         }
     }
+ */
     
     
 }

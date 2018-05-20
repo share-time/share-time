@@ -33,6 +33,7 @@ class HPTimer{
         } else {
             decreaseHP()
         }
+        print(hp)
     }
     
     @objc static func increaseHP()->(){
