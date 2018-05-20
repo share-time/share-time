@@ -11,62 +11,62 @@ Basic story:
 - [x] User can chat in the study groups
 - [x] User can see the members in the study groups and leave the study group
 - [x] User will adopt an adorable **study trition** as a study incentive
-- [] User can see the study triton jiggling if 
+- [ ] User can see the study triton jiggling if 
 
 (More to elaborate)
-- [] User can schedule study meet-ups easily (calendars).
-- [] More samiliar field of interest to spend time together!
-- [] Every user will have it's own QR code exchange contacts easily or dm each other
+- [ ] User can schedule study meet-ups easily (calendars).
+- [ ] More samiliar field of interest to spend time together!
+- [ ] Every user will have it's own QR code exchange contacts easily or dm each other
 
 ## Todo list
 -Major
-[] Add gif in the blob vc (Guanxin)
+ - [ ] Add gif in the blob vc (Guanxin)
 	- default
 	- excited when tap
 	- sad when hp below certain number
-[] Timer issue (Godwin)
-[] Chat left side/right side (Jiayi)
-[] Head bar (Godwin)
-[] Find class VC UI Rehaul (Godwin)
+ - [ ] Timer issue (Godwin)
+ - [ ] Chat left side/right side (Jiayi)
+ - [ ] Head bar (Godwin)
+ - [ ] Find class VC UI Rehaul (Godwin)
 
 -Middle priority
-[] Login UI
+- [ ] Login UI
 	-background color
 	-add subview for the gradient background(check on instagram)
-[] Profile UI - UItable?
-[] Sign up/Sign in button (position, font)
+- [ ] Profile UI - UItable?
+- [ ] Sign up/Sign in button (position, font)
 
 -Enhancement
 Home page
-	[]Study group cell looks a little empty
-	[]Add arrow to cell so that the user know to tap on
+- [ ] Study group cell looks a little empty
+- [ ] Add arrow to cell so that the user know to tap on
 Chat page
-	[]Round corners for profile image
-	[]Add loading icon before loading out all the chat
+- [ ] Round corners for profile image
+- [ ] Add loading icon before loading out all the chat
 Group vc
-	[] Delete and leave button/ QR button looks wierd
+- [ ] Delete and leave button/ QR button looks wierd
 QR
-	[]pop up
-	[]scan need a box
+- [ ] pop up
+- [ ] scan need a box
 Blob
-	[]background?
-	[]UI for sleep - only the blob part dim out
+- [ ] background?
+- [ ] UI for sleep - only the blob part dim out
 Profile vc
-	[]Logout button - Red-white button
-	[]Round corners for profile pic
-	[]Change password page -- save button on navigation bar
+- [ ] Logout button - Red-white button
+- [ ] Round corners for profile pic
+- [ ] Change password page -- save button on navigation bar
 Find class vc
-	[]Autolayout-cell label
+- [ ] Autolayout-cell label
 Add class vc
-	[]Move QR scan out
+- [ ] Move QR scan out
 Class Detail
-	[]Remove table
-	[]Add group button into navigation bar
+- [ ] Remove table
+- [ ] Add group button into navigation bar
 
 
 
 ## Collaborator
 -Guanxin Li
 -Godwin Pang
-Jiayi Wang
+-Jiayi Wang
 
