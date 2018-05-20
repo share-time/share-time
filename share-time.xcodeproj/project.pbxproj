@@ -21,6 +21,7 @@
 		5A2F10CE209DC707007A0A4C /* ChangePasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A2F10CD209DC707007A0A4C /* ChangePasswordViewController.swift */; };
 		5A372707209DF26000EFE1F4 /* UserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A372706209DF26000EFE1F4 /* UserCell.swift */; };
 		5A7D516220B181CD00D69ECD /* TabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A7D516120B181CD00D69ECD /* TabViewController.swift */; };
+		5A7D516620B1880500D69ECD /* PresetAppearanceConfigs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A7D516520B1880500D69ECD /* PresetAppearanceConfigs.swift */; };
 		5A8B072420AAED5700755718 /* QRScannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A8B072320AAED5700755718 /* QRScannerViewController.swift */; };
 		5A8FF2BF20859C02004957DE /* PublicStudyGroupCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A8FF2BE20859C02004957DE /* PublicStudyGroupCell.swift */; };
 		5AA6C68F20AAE88900F86C92 /* QRViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AA6C68E20AAE88900F86C92 /* QRViewController.swift */; };
@@ -83,6 +84,7 @@
 		5A2F10CD209DC707007A0A4C /* ChangePasswordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChangePasswordViewController.swift; sourceTree = "<group>"; };
 		5A372706209DF26000EFE1F4 /* UserCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCell.swift; sourceTree = "<group>"; };
 		5A7D516120B181CD00D69ECD /* TabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabViewController.swift; sourceTree = "<group>"; };
+		5A7D516520B1880500D69ECD /* PresetAppearanceConfigs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresetAppearanceConfigs.swift; sourceTree = "<group>"; };
 		5A8B072320AAED5700755718 /* QRScannerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRScannerViewController.swift; sourceTree = "<group>"; };
 		5A8FF2BE20859C02004957DE /* PublicStudyGroupCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PublicStudyGroupCell.swift; sourceTree = "<group>"; };
 		5AA6C68E20AAE88900F86C92 /* QRViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRViewController.swift; sourceTree = "<group>"; };
@@ -235,6 +237,7 @@
 				5AFE25A92082F68100EED7F9 /* ClassDetailViewController.swift */,
 				5AFE25AB2082F79C00EED7F9 /* AddStudyGroupViewController.swift */,
 				5A8B072320AAED5700755718 /* QRScannerViewController.swift */,
+				5A7D516520B1880500D69ECD /* PresetAppearanceConfigs.swift */,
 				70CE5AD5208300810023F3D7 /* MainPageViewController.swift */,
 				70CE5AD920830A2F0023F3D7 /* ChatViewController.swift */,
 				5A7D516120B181CD00D69ECD /* TabViewController.swift */,
@@ -499,6 +502,7 @@
 				5AFE25AA2082F68100EED7F9 /* ClassDetailViewController.swift in Sources */,
 				70CE5AD6208300810023F3D7 /* MainPageViewController.swift in Sources */,
 				5AA6EE7020A7CCDC0081B5EB /* StudyingViewController.swift in Sources */,
+				5A7D516620B1880500D69ECD /* PresetAppearanceConfigs.swift in Sources */,
 				5AFE25A62082F4FE00EED7F9 /* LoginViewController.swift in Sources */,
 				5A8B072420AAED5700755718 /* QRScannerViewController.swift in Sources */,
 				70CE5ADF20830EEB0023F3D7 /* ClassCell.swift in Sources */,

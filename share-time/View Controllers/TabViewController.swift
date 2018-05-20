@@ -29,6 +29,9 @@ class TabViewController: TabmanViewController, PageboyViewControllerDataSource {
         
         self.bar.items = [Item(title: "Course"),Item(title: "Profile")]
         
+        bar.style = .buttonBar
+        
+        bar.appearance = PresetAppearanceConfigs.forStyle(self.bar.style, currentAppearance: self.bar.appearance)
     }
     
     func numberOfViewControllers(in pageboyViewController: PageboyViewController) -> Int {
