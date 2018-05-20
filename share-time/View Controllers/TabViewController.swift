@@ -12,6 +12,8 @@ import Pageboy
 
 class TabViewController: TabmanViewController, PageboyViewControllerDataSource {
 
+    var qrBarButton: UIBarButtonItem!
+    
     let tabControllers: [UIViewController] = {
         let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
         var viewControllers = [UIViewController]()
@@ -32,6 +34,18 @@ class TabViewController: TabmanViewController, PageboyViewControllerDataSource {
         bar.style = .buttonBar
         
         bar.appearance = PresetAppearanceConfigs.forStyle(self.bar.style, currentAppearance: self.bar.appearance)
+        
+        addBarButton()
+    }
+    
+    func addBarButton(){
+        let qrBarButton = UIBarButtonItem(title: "QR", style: .plain, target: self, action: #selector(qrBarButtonPressed(sender:)))
+        navigationItem.setRightBarButton(qrBarButton, animated: false)
+        self.qrBarButton = qrBarButton
+    }
+    
+    @objc func qrBarButtonPressed(sender: UIBarButtonItem){
+        self.performSegue(withIdentifier: "toScanSegue", sender: nil)
     }
     
     func numberOfViewControllers(in pageboyViewController: PageboyViewController) -> Int {

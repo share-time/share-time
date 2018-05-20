@@ -123,7 +123,6 @@ class QRScannerViewController: UIViewController, AVCaptureMetadataOutputObjectsD
                     if (success){
                         if let navController = self.navigationController {
                             navController.popViewController(animated: true)
-                            navController.popViewController(animated: true)
                             navController.parentPageboy?.scrollToPage(.at(index: 0), animated: true)
                         }
                     } else {

@@ -14,7 +14,7 @@ class PresetAppearanceConfigs: Any {
     static func forStyle(_ style: TabmanBar.Style, currentAppearance: TabmanBar.Appearance?) -> TabmanBar.Appearance? {
         let appearance = currentAppearance ?? TabmanBar.Appearance.defaultAppearance
         
-        appearance.style.background = .blur(style: .extraLight)
+        appearance.style.background = .clear
         
         appearance.state.selectedColor = UIColor.black
         appearance.state.color = UIColor.black.withAlphaComponent(0.3)
