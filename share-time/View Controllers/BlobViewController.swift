@@ -13,8 +13,8 @@ import FLAnimatedImage
 class BlobViewController: UIViewController {
     
     var HPtext: UILabel!
-    var redBar: UILabel!
-    var HPnum: UILabel!
+    static var redBar: UILabel!
+    static var HPnum: UILabel!
     var blackBorder : UILabel!
     
     @IBOutlet weak var profileButton: UIButton!
@@ -27,35 +27,38 @@ class BlobViewController: UIViewController {
     var label : UILabel!
     var user = PFUser.current()
     
-    let space = 120
-    var frameWidth: Int!
-    var width: Int!
+    static let space = 120
+    //var frameWidth: Int!
+    
+    static let frameWidth = Int(UIScreen.main.bounds.width)
+    static var width = BlobViewController.frameWidth - space
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        frameWidth = Int(self.view.frame.size.width)
-        width = frameWidth - space
+        //frameWidth = Int(self.view.frame.size.width)
+        //width = BlobViewController.frameWidth - space
         
-        HPtext = UILabel(frame:CGRect(x:40, y:600, width: width, height: 30))
+        HPtext = UILabel(frame:CGRect(x:40, y:600, width: BlobViewController.width, height: 30))
         HPtext.text = "HP:"
         HPtext.font.withSize(25)
         view.addSubview(HPtext)
-        HPnum = UILabel (frame: CGRect(x:80+width/2-30, y:600, width: 100, height:30))
-        HPnum.text = "800/800"
-        redBar = UILabel(frame:CGRect(x:80, y:600, width: width, height: 30))
-        blackBorder = UILabel(frame:CGRect(x:76, y:598, width: width+8, height: 34))
-        redBar.backgroundColor = UIColor.red
+        BlobViewController.HPnum = UILabel (frame: CGRect(x:80+BlobViewController.width/2-30, y:600, width: 100, height:30))
+        BlobViewController.HPnum.text = "800/800"
+        BlobViewController.redBar = UILabel(frame:CGRect(x:80, y:600, width: BlobViewController.width, height: 30))
+        blackBorder = UILabel(frame:CGRect(x:76, y:598, width: BlobViewController.width+8, height: 34))
+        BlobViewController.redBar.backgroundColor = UIColor.red
         blackBorder.layer.cornerRadius = 8
         blackBorder.clipsToBounds = true
         blackBorder.layer.borderColor = UIColor.black.cgColor
         blackBorder.layer.borderWidth = 4
         
-        view.addSubview(redBar)
+        view.addSubview(BlobViewController.redBar)
         view.addSubview(blackBorder)
-        view.addSubview(HPnum)
+        view.addSubview(BlobViewController.HPnum)
         
-        tiredTimer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(BlobViewController.updateHp), userInfo: nil, repeats: true)
+        //tiredTimer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(BlobViewController.updateHp), userInfo: nil, repeats: true)
+        HPTimer.startHPTimer()
         
         let swipeUp = UISwipeGestureRecognizer(target: self, action: #selector(handleGesture))
         swipeUp.direction = .up
@@ -98,12 +101,15 @@ class BlobViewController: UIViewController {
     @objc func updateHp(){
         if (hp > 0){
             hp = hp - 1
-            
-            let barWidth: Double = Double(width) * Double(hp) / Double(maxHP)
-
-            redBar.frame = CGRect(x: 80, y: 600, width: barWidth, height: 30)
-            HPnum.text = "\(String(hp))/800"
+            BlobViewController.updateHPBar(hp:hp)
         }
+    }
+    
+    class func updateHPBar(hp: Int){
+        let barWidth: Double = Double(width) * Double(hp) / Double(800)
+        
+        redBar.frame = CGRect(x: 80, y: 600, width: barWidth, height: 30)
+        HPnum.text = "\(String(hp))/800"
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
