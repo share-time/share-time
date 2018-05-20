@@ -9,6 +9,7 @@
 import UIKit
 import Parse
 import FLAnimatedImage
+import SwiftGifOrigin
 
 class BlobViewController: UIViewController {
     
@@ -18,7 +19,7 @@ class BlobViewController: UIViewController {
     var blackBorder : UILabel!
     
     @IBOutlet weak var profileButton: UIButton!
-    @IBOutlet var blobImage: FLAnimatedImageView!
+    @IBOutlet var blobImage: UIImageView!
     
     var hp = 800
     let maxHP = 800
@@ -38,7 +39,7 @@ class BlobViewController: UIViewController {
         
         //frameWidth = Int(self.view.frame.size.width)
         //width = BlobViewController.frameWidth - space
-        
+        blobImage.image = UIImage.gif(name: "defaultBlob")
         HPtext = UILabel(frame:CGRect(x:40, y:600, width: BlobViewController.width, height: 30))
         HPtext.text = "HP:"
         HPtext.font.withSize(25)

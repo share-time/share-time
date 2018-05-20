@@ -14,6 +14,7 @@ target 'share-time' do
   pod 'Pageboy', '~> 2.0'
   pod 'QRCode'
   pod 'FLAnimatedImage', '~> 1.0'
+  pod 'SwiftGifOrigin', '~> 1.6.1'
 
   target 'share-timeTests' do
     inherit! :search_paths

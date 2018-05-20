@@ -14,6 +14,7 @@ PODS:
     - Bolts/Tasks (~> 1.9)
   - PKHUD (5.0.0)
   - QRCode (2.0)
+  - SwiftGifOrigin (1.6.1)
 
 DEPENDENCIES:
   - AlamofireImage
@@ -24,6 +25,21 @@ DEPENDENCIES:
   - Parse
   - PKHUD (~> 5.0)
   - QRCode
+  - SwiftGifOrigin (~> 1.6.1)
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - Alamofire
+    - AlamofireImage
+    - Bolts
+    - Chatto
+    - ChattoAdditions
+    - FLAnimatedImage
+    - Pageboy
+    - Parse
+    - PKHUD
+    - QRCode
+    - SwiftGifOrigin
 
 SPEC CHECKSUMS:
   Alamofire: f41a599bd63041760b26d393ec1069d9d7b917f4
@@ -36,7 +52,8 @@ SPEC CHECKSUMS:
   Parse: 5b36dc2c2f0a2fd82a257ae018bc3d68cf2c24e7
   PKHUD: 3c001512c6e002091184197a8de7a20420786e3b
   QRCode: f98a1886c8f37523704a7512a4c0cd45b34c18a4
+  SwiftGifOrigin: d6679d3ebe9df2e049a84bc52582635107b581f6
 
-PODFILE CHECKSUM: 509cdace95f88709b3f214844a76fad2e3909151
+PODFILE CHECKSUM: 9bcd9b04d12fddb385b37fb7eea6937c68ff8020
 
-COCOAPODS: 1.4.0
+COCOAPODS: 1.5.2

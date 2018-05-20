@@ -10,8 +10,7 @@
 #endif
 #endif
 
-#import "SwiftyGif.h"
 
-FOUNDATION_EXPORT double SwiftyGifVersionNumber;
-FOUNDATION_EXPORT const unsigned char SwiftyGifVersionString[];
+FOUNDATION_EXPORT double SwiftGifOriginVersionNumber;
+FOUNDATION_EXPORT const unsigned char SwiftGifOriginVersionString[];
 

@@ -31,6 +31,7 @@
 		5AFE25AA2082F68100EED7F9 /* ClassDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AFE25A92082F68100EED7F9 /* ClassDetailViewController.swift */; };
 		5AFE25AC2082F79C00EED7F9 /* AddStudyGroupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AFE25AB2082F79C00EED7F9 /* AddStudyGroupViewController.swift */; };
 		705BAB41209808DC0047F91D /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 705BAB40209808DC0047F91D /* ProfileViewController.swift */; };
+		709FAEAA20B1665A00FA1C6B /* defaultBlob.gif in Resources */ = {isa = PBXBuildFile; fileRef = 709FAEA920B1665A00FA1C6B /* defaultBlob.gif */; };
 		70CE5AD6208300810023F3D7 /* MainPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70CE5AD5208300810023F3D7 /* MainPageViewController.swift */; };
 		70CE5AD8208309300023F3D7 /* StudyGroupCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70CE5AD7208309300023F3D7 /* StudyGroupCell.swift */; };
 		70CE5ADA20830A2F0023F3D7 /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70CE5AD920830A2F0023F3D7 /* ChatViewController.swift */; };
@@ -94,6 +95,7 @@
 		67513358329D0E17CC4439B8 /* Pods-share-timeTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-share-timeTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-share-timeTests/Pods-share-timeTests.release.xcconfig"; sourceTree = "<group>"; };
 		69D4E1F4917B9F8942861F63 /* Pods-share-timeUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-share-timeUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-share-timeUITests/Pods-share-timeUITests.release.xcconfig"; sourceTree = "<group>"; };
 		705BAB40209808DC0047F91D /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		709FAEA920B1665A00FA1C6B /* defaultBlob.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = defaultBlob.gif; sourceTree = SOURCE_ROOT; };
 		70CE5AD5208300810023F3D7 /* MainPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPageViewController.swift; sourceTree = "<group>"; };
 		70CE5AD7208309300023F3D7 /* StudyGroupCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudyGroupCell.swift; sourceTree = "<group>"; };
 		70CE5AD920830A2F0023F3D7 /* ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
@@ -175,6 +177,7 @@
 		5A254AD92082F04E00767CB7 /* share-time */ = {
 			isa = PBXGroup;
 			children = (
+				709FAEA920B1665A00FA1C6B /* defaultBlob.gif */,
 				70CE5ADD20830B770023F3D7 /* Cell */,
 				70CE5AD4208300150023F3D7 /* View Controllers */,
 				5A254ADA2082F04E00767CB7 /* AppDelegate.swift */,
@@ -265,7 +268,6 @@
 				5A254AD42082F04E00767CB7 /* Frameworks */,
 				5A254AD52082F04E00767CB7 /* Resources */,
 				9913918F4293A6A725DF3F37 /* [CP] Embed Pods Frameworks */,
-				15D3B2FDEA53538B7F64D82D /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -284,8 +286,6 @@
 				5A254AE72082F04E00767CB7 /* Sources */,
 				5A254AE82082F04E00767CB7 /* Frameworks */,
 				5A254AE92082F04E00767CB7 /* Resources */,
-				68E9A3A3DB1BAF91212C4BE8 /* [CP] Embed Pods Frameworks */,
-				E7E88AD1DAC0CF8647294CC8 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -305,8 +305,6 @@
 				5A254AF22082F04E00767CB7 /* Sources */,
 				5A254AF32082F04E00767CB7 /* Frameworks */,
 				5A254AF42082F04E00767CB7 /* Resources */,
-				5AFDFCDA852324D436EBA8EC /* [CP] Embed Pods Frameworks */,
-				B4F0FD78563FA64D563A0A84 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -372,6 +370,7 @@
 				5A254AE52082F04E00767CB7 /* LaunchScreen.storyboard in Resources */,
 				5A254AE22082F04E00767CB7 /* Assets.xcassets in Resources */,
 				5A254AE02082F04E00767CB7 /* Main.storyboard in Resources */,
+				709FAEAA20B1665A00FA1C6B /* defaultBlob.gif in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -392,51 +391,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		15D3B2FDEA53538B7F64D82D /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-share-time/Pods-share-time-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		5AFDFCDA852324D436EBA8EC /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-share-timeUITests/Pods-share-timeUITests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		68E9A3A3DB1BAF91212C4BE8 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-share-timeTests/Pods-share-timeTests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		710DD6A7EEF22442B66B9573 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -508,6 +462,7 @@
 				"${BUILT_PRODUCTS_DIR}/Pageboy/Pageboy.framework",
 				"${BUILT_PRODUCTS_DIR}/Parse/Parse.framework",
 				"${BUILT_PRODUCTS_DIR}/QRCode/QRCode.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftGifOrigin/SwiftGifOrigin.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
@@ -521,40 +476,11 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Pageboy.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Parse.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/QRCode.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftGifOrigin.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-share-time/Pods-share-time-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		B4F0FD78563FA64D563A0A84 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-share-timeUITests/Pods-share-timeUITests-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		E7E88AD1DAC0CF8647294CC8 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-share-timeTests/Pods-share-timeTests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
