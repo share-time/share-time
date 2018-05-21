@@ -30,6 +30,8 @@ class ChatViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+       
         tableView.dataSource = self
         tableView.delegate = self
         tableView.allowsSelection = false
@@ -78,12 +80,15 @@ class ChatViewController: UIViewController, UITableViewDelegate, UITableViewData
         }
     }
     
-    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ChatCell", for: indexPath) as! ChatCell
+        cell.personalIconImage.isHidden = false
+        cell.usernameLabel.isHidden = false
         cell.bubbleView.layer.cornerRadius = 10
         cell.bubbleView.clipsToBounds = true
         cell.bubbleView.backgroundColor = UIColor.lightGray
+        //cell.bubbleView.addConstraint(cell.chatLeftConstraint)
+        
         //cell.chatLeftConstraint.constant = 15
         //cell.chatRightConstraint = NSLayoutConstraint(item: cell, attribute: .trailing, relatedBy: .greaterThanOrEqual, toItem: view, attribute: .trailingMargin, multiplier: 1.0, constant: 15.0)
         cell.personalIconImage.clipsToBounds = true
@@ -93,16 +98,27 @@ class ChatViewController: UIViewController, UITableViewDelegate, UITableViewData
         }
         if let user = messages?["user"] as? PFUser {
             if (user.username == PFUser.current()?.username) {
+                cell.personalIconImage.isHidden=true
+                cell.usernameLabel.isHidden=true
+                cell.chatLeftConstraint.constant = 200
+                cell.chatRightConstraint.relation
+                cell.chatRightConstraint.constant = 15
                 cell.bubbleView.backgroundColor = UIColor(red:0.02, green:0.47, blue:0.98, alpha:1.0)
-                cell.contentView.layoutIfNeeded()
-                cell.chatRightConstraint = NSLayoutConstraint(item: cell, attribute: .trailing, relatedBy: .equal, toItem: view, attribute: .trailingMargin, multiplier: 1.0, constant: 15.0)
-                cell.chatLeftConstraint = NSLayoutConstraint(item: cell, attribute: .leading, relatedBy: .greaterThanOrEqual, toItem: view, attribute: .leadingMargin, multiplier: 1.0, constant: 15.0)
-                print ("After changing, the left constaints is" + String(Float(cell.chatLeftConstraint.constant)))
-                print ("The right constaints is" + String(Float(cell.chatRightConstraint.constant)))
-                cell.contentView.layoutIfNeeded()
+//                cell.contentView.layoutIfNeeded()
+//                cell.chatRightConstraint = NSLayoutConstraint(item: cell, attribute: .trailing, relatedBy: .equal, toItem: view, attribute: .trailingMargin, multiplier: 1.0, constant: 15.0)
+//                cell.chatLeftConstraint = NSLayoutConstraint(item: cell, attribute: .leading, relatedBy: .greaterThanOrEqual, toItem: view, attribute: .leadingMargin, multiplier: 1.0, constant: 100.0)
+//
+//                cell.bubbleView.rightAnchor.constraint(equalTo: cell.rightAnchor)
+//                print ("After changing, the left constaints is" + String(Float(cell.chatLeftConstraint.constant)))
+//                print ("The right constaints is" + String(Float(cell.chatRightConstraint.constant)))
+//                cell.contentView.layoutIfNeeded()
                 
             }
+            else{
+                cell.chatLeftConstraint.constant = 15
+            }
             //print("The user is: \(user)")
+            
             cell.usernameLabel.text = user.username
             
             let imgUrlString = user["imgUrl"] as? String
