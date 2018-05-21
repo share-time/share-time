@@ -14,15 +14,11 @@ class FindClassViewController: UIViewController, UITableViewDelegate, UITableVie
     @IBOutlet weak var classSearchBar: UITextField!
     @IBOutlet weak var classTableView: UITableView!
 
-    var searchController: UISearchController!
 
     static var searchedCourses: [String]!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        searchController = UISearchController(searchResultsController: nil)
-        // Include the search bar within the navigation bar.
-        self.navigationItem.titleView = self.searchController.searchBar;
         classTableView.dataSource = self
         classTableView.delegate = self
         classTableView.rowHeight = UITableViewAutomaticDimension
@@ -30,14 +26,7 @@ class FindClassViewController: UIViewController, UITableViewDelegate, UITableVie
         classTableView.estimatedRowHeight = 85.0
         classTableView.rowHeight = UITableViewAutomaticDimension
         
-        searchController.searchResultsUpdater = self
-        searchController.dimsBackgroundDuringPresentation = false
-        searchController.searchBar.sizeToFit()
-        searchController.searchBar.placeholder = "Search for classes!"
-        
-        //classTableView.tableHeaderView = searchController.searchBar
         definesPresentationContext = true
-        searchController.hidesNavigationBarDuringPresentation = false
         
         NotificationCenter.default.addObserver(self, selector: #selector(FindClassViewController.updateClassTableView), name: NSNotification.Name(rawValue: "updateClassTableView"), object: nil)
     }

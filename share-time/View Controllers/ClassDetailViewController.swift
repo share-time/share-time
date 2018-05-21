@@ -52,16 +52,6 @@ class ClassDetailViewController: UIViewController, UITableViewDelegate, UITableV
             self.studyGroupTableView.reloadData()
         }
     }
-    
-    /*
-    override func viewWillDisappear(_ animated: Bool) {
-        if let navController = self.navigationController {
-            navController.parentPageboy?.navigationController?.setNavigationBarHidden(false, animated: false)
-            let tabController = navController.parentPageboy as! TabViewController
-            tabController.bar.behaviors = [.autoHide(.never)]
-        }
-    }
-    */
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

@@ -111,7 +111,7 @@ class BlobViewController: UIViewController {
     }
     
     @objc func updateBlobToDefault(hp: Int) {
-            blobImage.image = UIImage.gif(name: "defaultBlob")
+        blobImage.image = UIImage.gif(name: "defaultBlob")
     }
     
 }
