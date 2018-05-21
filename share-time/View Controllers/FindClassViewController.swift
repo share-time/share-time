@@ -48,12 +48,13 @@ class FindClassViewController: UIViewController, UITableViewDelegate, UITableVie
     }
 
     
-    override func viewDidAppear(_ animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         if let navController = self.navigationController {
             navController.parentPageboy?.navigationController?.setNavigationBarHidden(false, animated: false)
             let tabController = navController.parentPageboy as! TabViewController
             tabController.bar.behaviors = [.autoHide(.never)]
         }
+        deselectAnySelectedTableViewCell()
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -72,6 +73,14 @@ class FindClassViewController: UIViewController, UITableViewDelegate, UITableVie
     
     @objc func updateClassTableView(){
         classTableView.reloadData()
+    }
+    
+    func deselectAnySelectedTableViewCell(){
+        let selectedIndexPath = classTableView.indexPathForSelectedRow
+        
+        if selectedIndexPath != nil {
+            classTableView.deselectRow(at: selectedIndexPath!, animated: true)
+        }
     }
 
     func updateSearchResults(for searchController: UISearchController) {
