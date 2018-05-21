@@ -67,7 +67,7 @@ class FindGroupViewController: UIViewController, UITableViewDelegate, UITableVie
         let query = PFQuery(className: "StudyGroup")
         query.whereKey("name", equalTo: searchText)
         query.findObjectsInBackground{ (findStudyGroup: [PFObject]?, error: Error?) -> Void in
-            if findStudyGroup!.count > 0 {
+            if findStudyGroup!.count >= 0 {
                 self.searchedGroups = findStudyGroup!
                 NotificationCenter.default.post(name: NSNotification.Name(rawValue: "updateGroupTableView"), object: nil)
             }
