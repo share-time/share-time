@@ -83,17 +83,12 @@ class ChatViewController: UIViewController, UITableViewDelegate, UITableViewData
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ChatCell", for: indexPath) as! ChatCell
         
-        cell.chatLeftConstraintU.isActive = false
-        cell.chatRightConstraintU.isActive = false
-        cell.chatRightConstraint.isActive = true
-        cell.chatLeftConstraint.isActive = true
-       
         cell.personalIconImage.isHidden = false
         cell.usernameLabel.isHidden = false
         cell.bubbleView.layer.cornerRadius = 10
         cell.bubbleView.clipsToBounds = true
         cell.bubbleView.backgroundColor = UIColor.lightGray
-        cell.messageLabel.textColor = UIColor.black
+       
         //cell.bubbleView.addConstraint(cell.chatLeftConstraint)
         
         //cell.chatLeftConstraint.constant = 15
@@ -125,9 +120,13 @@ class ChatViewController: UIViewController, UITableViewDelegate, UITableViewData
 //                cell.contentView.layoutIfNeeded()
                 
             }
-//            else{
-//                cell.chatLeftConstraint.constant = 15
-//            }
+           else{
+                cell.chatLeftConstraintU.isActive = false
+                cell.chatRightConstraintU.isActive = false
+                cell.chatRightConstraint.isActive = true
+                cell.chatLeftConstraint.isActive = true
+                cell.messageLabel.textColor = UIColor.black
+            }
             //print("The user is: \(user)")
             
             cell.usernameLabel.text = user.username
