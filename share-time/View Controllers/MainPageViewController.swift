@@ -15,7 +15,6 @@ class MainPageViewController: UIViewController,UITableViewDelegate, UITableViewD
     @IBOutlet weak var emailLabel: UILabel!
     @IBOutlet weak var backDropImage: UIImageView!
     @IBOutlet weak var nameLabel: UILabel!
-    @IBOutlet weak var studyTritonImage: UIImageView!
     let user = PFUser.current()
     var studyGroups: [PFObject] = []
     var refresher: UIRefreshControl!

@@ -34,11 +34,11 @@ Basic story:
 	-background color
 	-add subview for the gradient background(check on instagram)
 - [ ] Profile UI - UItable?
-- [ ] Sign up/Sign in button (position, font)
+- [x] Sign up/Sign in button (position, font)
 
 -Enhancement
 Home page
-- [ ] Study group cell looks a little empty
+- [x] Study group cell looks a little empty
 - [ ] Add arrow to cell so that the user know to tap on
 Chat page
 - [ ] Round corners for profile image

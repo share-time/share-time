@@ -11,6 +11,7 @@ import Parse
 
 class LoginViewController: UIViewController, UITextFieldDelegate {
     
+    @IBOutlet var headerLabel: UILabel!
     @IBOutlet weak var usernameField: UITextField!
     @IBOutlet weak var passwordField: UITextField!
     var activeTextField : UITextField!
@@ -27,28 +28,31 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         super.viewDidLoad()
         usernameField.delegate = self
         passwordField.delegate = self
+        
+        let view = UIView(frame: CGRect(x: 0, y: 0, width: self.view.frame.width, height: self.view.frame.height*0.35))
         let gradient = CAGradientLayer()
-        gradient.frame = self.view.bounds
+        gradient.frame = view.bounds
+        self.view.insertSubview(view, at:0)
         gradient.colors = [
-            UIColor(red: 100/255, green: 244/255, blue: 231/255, alpha: 0.8).cgColor,
-            UIColor(red: 176/255, green: 232/255, blue: 231/255, alpha: 0.8).cgColor
+            UIColor(red: 100/255, green: 244/255, blue: 231/255, alpha: 1).cgColor,
+            UIColor(red: 176/255, green: 232/255, blue: 231/255, alpha: 1).cgColor
         ]
         gradient.startPoint = CGPoint(x:0, y:0)
         gradient.endPoint = CGPoint(x:1, y:1)
-        self.view.layer.addSublayer(gradient)
+        
         let gradientChangeAnimation = CABasicAnimation(keyPath: "colors")
         gradientChangeAnimation.duration = 5.0
         gradientChangeAnimation.toValue = [
-            UIColor(red: 60/255, green: 37/255, blue: 218/255, alpha: 0.8).cgColor,
-            UIColor(red: 163/255, green: 255/255, blue: 218/255, alpha: 0.8).cgColor
+            UIColor(red: 60/255, green: 37/255, blue: 218/255, alpha: 1).cgColor,
+            UIColor(red: 163/255, green: 255/255, blue: 218/255, alpha: 1).cgColor
         ]
         gradientChangeAnimation.fillMode = kCAFillModeForwards
         gradientChangeAnimation.isRemovedOnCompletion = false
         gradient.add(gradientChangeAnimation, forKey: "colorChange")
-        self.view.layer.insertSublayer(gradient, at: 0)
-       
-        loginUsernameErrorAlertController.addAction(OKAction)
-        loginPasswordErrorAlertController.addAction(OKAction)
+        view.layer.insertSublayer(gradient, at: 0)
+        headerLabel.textColor = UIColor.white
+    loginUsernameErrorAlertController.addAction(OKAction)
+    loginPasswordErrorAlertController.addAction(OKAction)
         //loginErrorAlertController.addAction(self.OKAction)
         let center: NotificationCenter = NotificationCenter.default
         center.addObserver(self, selector: #selector(keyboardDidShow(notification:)), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
