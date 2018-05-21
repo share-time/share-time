@@ -10,9 +10,11 @@ import UIKit
 import Tabman
 import Pageboy
 
-class TabViewController: TabmanViewController, PageboyViewControllerDataSource {
+class TabViewController: TabmanViewController, PageboyViewControllerDataSource, UISearchResultsUpdating {
 
     var qrBarButton: UIBarButtonItem!
+    
+    var searchController: UISearchController!
     
     let tabControllers: [UIViewController] = {
         let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
@@ -36,6 +38,22 @@ class TabViewController: TabmanViewController, PageboyViewControllerDataSource {
         bar.appearance = PresetAppearanceConfigs.forStyle(self.bar.style, currentAppearance: self.bar.appearance)
         
         addBarButton()
+        
+        
+        searchController = UISearchController(searchResultsController: nil)
+        self.navigationItem.titleView = self.searchController.searchBar
+        searchController.searchResultsUpdater = self
+        searchController.dimsBackgroundDuringPresentation = false
+        searchController.searchBar.sizeToFit()
+        searchController.searchBar.placeholder = "Search for classes!"
+        searchController.hidesNavigationBarDuringPresentation = false
+        
+        definesPresentationContext = true
+    }
+    
+    func updateSearchResults(for searchController: UISearchController) {
+        FindClassViewController.filterClassForSearchText(searchController.searchBar.text!)
+        NotificationCenter.default.post(name: NSNotification.Name(rawValue: "updateClassTableView"), object: nil)
     }
     
     func addBarButton(){
@@ -57,7 +75,7 @@ class TabViewController: TabmanViewController, PageboyViewControllerDataSource {
     }
     
     func defaultPage(for pageboyViewController: PageboyViewController) -> PageboyViewController.Page? {
-        return .at(index: 0)
+        return .first
     }
 
     override func didReceiveMemoryWarning() {

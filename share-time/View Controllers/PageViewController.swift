@@ -21,7 +21,7 @@ class PageViewController: PageboyViewController, PageboyViewControllerDataSource
         let tabNavController = storyboard.instantiateViewController(withIdentifier: "TabNavController") as! UINavigationController
         viewControllers.append(mainNavController)
         viewControllers.append(blobViewController)
-        viewControllers.append(findClassNavController)
+        //viewControllers.append(findClassNavController)
         viewControllers.append(tabNavController)
         return viewControllers
     }()
