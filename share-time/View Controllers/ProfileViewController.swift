@@ -69,6 +69,7 @@ class ProfileViewController: UIViewController {
         let imgUrl = URL(string: userIconBaseURLString+imgCode+".png")!
         user["imgUrl"] = userIconBaseURLString+imgCode+".png"
         self.personalImage.af_setImage(withURL: imgUrl)
+        self.personalImage.layer.cornerRadius = self.personalImage.frame.width*0.5
         user.saveInBackground{ (success: Bool, error: Error?) -> Void in
         }
     }

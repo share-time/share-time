@@ -378,20 +378,20 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Profile Photo:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1UH-iV-vuU">
-                                <rect key="frame" x="22" y="118.5" width="144" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <rect key="frame" x="36" y="122" width="116" height="24"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mrC-96-555">
-                                <rect key="frame" x="21" y="285" width="71" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <rect key="frame" x="28.5" y="288.5" width="57" height="24"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8mQ-qh-VRo">
-                                <rect key="frame" x="23.5" y="352" width="66" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <rect key="frame" x="30.5" y="355.5" width="53" height="24"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -410,19 +410,20 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rcE-BB-2IL">
                                 <rect key="frame" x="21" y="152" width="146" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <state key="normal" title="Change Profile Photo"/>
                                 <connections>
                                     <action selector="changePersonalImage:" destination="fkh-l9-k67" eventType="touchUpInside" id="eyz-a3-l7y"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="email@gamil.com" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cIW-DY-vj4">
-                                <rect key="frame" x="109.5" y="357" width="154" height="24"/>
+                                <rect key="frame" x="103.5" y="355.5" width="154" height="24"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="hi" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eSz-gJ-Oic">
-                                <rect key="frame" x="112" y="290" width="16" height="24"/>
+                                <rect key="frame" x="105.5" y="288.5" width="16" height="24"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -728,10 +729,10 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Fql-8f-VNS">
-                                                    <rect key="frame" x="15" y="33" width="170" height="62"/>
+                                                    <rect key="frame" x="15" y="33" width="345" height="62"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Here is the message" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lmX-25-Zet">
-                                                            <rect key="frame" x="7" y="5" width="156" height="54"/>
+                                                            <rect key="frame" x="7" y="5" width="331" height="54"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
@@ -757,19 +758,23 @@
                                                 <constraint firstItem="005-lJ-LZw" firstAttribute="leading" secondItem="k1y-xc-z9Z" secondAttribute="leading" constant="15" id="DfJ-cb-3bI"/>
                                                 <constraint firstItem="Fql-8f-VNS" firstAttribute="top" secondItem="8YW-kL-d2X" secondAttribute="bottom" constant="3.5" id="OCi-r3-3V1"/>
                                                 <constraint firstItem="Fql-8f-VNS" firstAttribute="leading" secondItem="k1y-xc-z9Z" secondAttribute="leading" constant="15" id="SFg-y1-PEj"/>
-                                                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Fql-8f-VNS" secondAttribute="trailing" constant="15" id="ZTA-zM-QDX"/>
+                                                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Fql-8f-VNS" secondAttribute="trailing" constant="50" id="ZTA-zM-QDX"/>
+                                                <constraint firstItem="Fql-8f-VNS" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="k1y-xc-z9Z" secondAttribute="leading" constant="50" id="ZTg-sL-ziY"/>
                                                 <constraint firstItem="8YW-kL-d2X" firstAttribute="centerY" secondItem="005-lJ-LZw" secondAttribute="centerY" id="Za1-YY-1QC"/>
                                                 <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="8YW-kL-d2X" secondAttribute="trailing" constant="20" id="epJ-M3-X9W"/>
                                                 <constraint firstItem="Fql-8f-VNS" firstAttribute="top" secondItem="005-lJ-LZw" secondAttribute="bottom" constant="5" id="gFc-R7-KAi"/>
                                                 <constraint firstAttribute="bottom" secondItem="Fql-8f-VNS" secondAttribute="bottom" constant="1.5" id="gLH-hc-Gga"/>
                                                 <constraint firstItem="8YW-kL-d2X" firstAttribute="leading" secondItem="005-lJ-LZw" secondAttribute="trailing" constant="20" id="inC-rg-L7B"/>
+                                                <constraint firstAttribute="trailing" secondItem="Fql-8f-VNS" secondAttribute="trailing" constant="15" id="mOY-Hk-KVV"/>
                                                 <constraint firstItem="005-lJ-LZw" firstAttribute="top" secondItem="k1y-xc-z9Z" secondAttribute="top" constant="8" id="vK3-pU-zNU"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="bubbleView" destination="Fql-8f-VNS" id="Fw8-oQ-bhf"/>
                                             <outlet property="chatLeftConstraint" destination="SFg-y1-PEj" id="Ssc-K0-pFK"/>
+                                            <outlet property="chatLeftConstraintU" destination="ZTg-sL-ziY" id="IxD-xm-BHv"/>
                                             <outlet property="chatRightConstraint" destination="ZTA-zM-QDX" id="VFA-aa-OSO"/>
+                                            <outlet property="chatRightConstraintU" destination="mOY-Hk-KVV" id="FQZ-fx-6Gu"/>
                                             <outlet property="messageLabel" destination="lmX-25-Zet" id="MaA-cT-vWw"/>
                                             <outlet property="personalIconImage" destination="005-lJ-LZw" id="8sT-PC-Xhx"/>
                                             <outlet property="usernameLabel" destination="8YW-kL-d2X" id="r6E-lu-FkW"/>
