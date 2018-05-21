@@ -82,6 +82,12 @@ class ChatViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ChatCell", for: indexPath) as! ChatCell
+        
+        cell.chatLeftConstraintU.isActive = false
+        cell.chatRightConstraintU.isActive = false
+        cell.chatRightConstraint.isActive = true
+        cell.chatLeftConstraint.isActive = true
+       
         cell.personalIconImage.isHidden = false
         cell.usernameLabel.isHidden = false
         cell.bubbleView.layer.cornerRadius = 10
@@ -98,11 +104,14 @@ class ChatViewController: UIViewController, UITableViewDelegate, UITableViewData
         }
         if let user = messages?["user"] as? PFUser {
             if (user.username == PFUser.current()?.username) {
+                cell.chatRightConstraint.isActive = false
+                cell.chatLeftConstraint.isActive = false
+                cell.chatLeftConstraintU.isActive = true
+                cell.chatRightConstraintU.isActive = true
                 cell.personalIconImage.isHidden=true
                 cell.usernameLabel.isHidden=true
-                cell.chatLeftConstraint.constant = 200
-                cell.chatRightConstraint.relation
-                cell.chatRightConstraint.constant = 15
+//                cell.chatLeftConstraint.constant = 200
+//                cell.chatRightConstraint.constant = 15
                 cell.bubbleView.backgroundColor = UIColor(red:0.02, green:0.47, blue:0.98, alpha:1.0)
 //                cell.contentView.layoutIfNeeded()
 //                cell.chatRightConstraint = NSLayoutConstraint(item: cell, attribute: .trailing, relatedBy: .equal, toItem: view, attribute: .trailingMargin, multiplier: 1.0, constant: 15.0)
@@ -114,9 +123,9 @@ class ChatViewController: UIViewController, UITableViewDelegate, UITableViewData
 //                cell.contentView.layoutIfNeeded()
                 
             }
-            else{
-                cell.chatLeftConstraint.constant = 15
-            }
+//            else{
+//                cell.chatLeftConstraint.constant = 15
+//            }
             //print("The user is: \(user)")
             
             cell.usernameLabel.text = user.username

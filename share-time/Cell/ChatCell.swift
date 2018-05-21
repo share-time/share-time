@@ -11,6 +11,8 @@ import Parse
 
 class ChatCell: UITableViewCell {
     @IBOutlet var chatLeftConstraint: NSLayoutConstraint!
+    @IBOutlet var chatLeftConstraintU: NSLayoutConstraint!
+    @IBOutlet var chatRightConstraintU: NSLayoutConstraint!
     @IBOutlet var chatRightConstraint: NSLayoutConstraint!
     @IBOutlet weak var personalIconImage: UIImageView!
     @IBOutlet weak var usernameLabel: UILabel!
