@@ -17,6 +17,9 @@ class FindClassViewController: UIViewController, UITableViewDelegate, UITableVie
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.hideKeyboardWhenTappedAround()
+        
         classTableView.dataSource = self
         classTableView.delegate = self
         classTableView.rowHeight = UITableViewAutomaticDimension

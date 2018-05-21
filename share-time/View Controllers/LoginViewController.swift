@@ -134,11 +134,13 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
 
 extension UIViewController {
     func hideKeyboardWhenTappedAround() {
-        let tap: UITapGestureRecognizer =     UITapGestureRecognizer(target: self, action:    #selector(UIViewController.dismissKeyboard))
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(UIViewController.dismissKeyboard))
         tap.cancelsTouchesInView = false
         view.addGestureRecognizer(tap)
     }
     @objc func dismissKeyboard() {
+        print("tappedtrash")
         view.endEditing(true)
+        self.navigationController?.parentPageboy?.navigationController?.view.endEditing(true)
     }
 }

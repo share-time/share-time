@@ -32,7 +32,7 @@ class TabViewController: TabmanViewController, PageboyViewControllerDataSource, 
         super.viewDidLoad()
 
         self.dataSource = self
-        
+                
         self.bar.items = [Item(title: "Course"),Item(title: "Group")]
         
         bar.style = .buttonBar

@@ -17,6 +17,8 @@ class FindGroupViewController: UIViewController, UITableViewDelegate, UITableVie
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.hideKeyboardWhenTappedAround()
 
         groupTableView.dataSource = self
         groupTableView.delegate = self
@@ -72,11 +74,12 @@ class FindGroupViewController: UIViewController, UITableViewDelegate, UITableVie
                 NotificationCenter.default.post(name: NSNotification.Name(rawValue: "updateGroupTableView"), object: nil)
             }
         }
+        if searchText == ""{
+            searchedGroups = []
+        }
     }
     
     @objc func updateGroupTableView(){
         groupTableView.reloadData()
     }
-    
-    
 }
