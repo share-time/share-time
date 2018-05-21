@@ -13,6 +13,8 @@ class GroupInfoViewController: UIViewController, UICollectionViewDataSource,UICo
     
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var leaveGroupButton: UIButton!
+    
+    var hideLeaveGroupButton = false
     var studyGroup: PFObject!
     var members: [PFUser] = []
     let currentUser = PFUser.current()!
@@ -26,6 +28,10 @@ class GroupInfoViewController: UIViewController, UICollectionViewDataSource,UICo
         let width = (collectionView.frame.size.width-totalSpacing)/cellPerLine
         layout.itemSize = CGSize(width:width, height: width*3/2)
         //layout.sectionInset = UIEdgeInsets(top: 20, left: 0, bottom: 10, right: 0)
+        
+        if (hideLeaveGroupButton){
+            self.leaveGroupButton.isHidden = true
+        }
         
         // Do any additional setup after loading the view.
     }
@@ -101,15 +107,5 @@ class GroupInfoViewController: UIViewController, UICollectionViewDataSource,UICo
             qrViewController?.studyGroup = self.studyGroup
         }
     }
-    
-    /*
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destinationViewController.
-     // Pass the selected object to the new view controller.
-     }
-     */
     
 }

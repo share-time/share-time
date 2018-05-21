@@ -74,12 +74,34 @@ class FindGroupViewController: UIViewController, UITableViewDelegate, UITableVie
                 NotificationCenter.default.post(name: NSNotification.Name(rawValue: "updateGroupTableView"), object: nil)
             }
         }
-        if searchText == ""{
-            searchedGroups = []
-        }
     }
     
     @objc func updateGroupTableView(){
         groupTableView.reloadData()
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let studyGroup = FindGroupViewController.searchedGroups[indexPath.row]
+        
+        let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
+        let groupInfoViewController = storyboard.instantiateViewController(withIdentifier: "GroupInfoViewController") as! GroupInfoViewController
+        
+        groupInfoViewController.studyGroup = studyGroup
+        groupInfoViewController.hideLeaveGroupButton = true
+        
+        studyGroup.relation(forKey: "members").query().findObjectsInBackground{
+            (members: [PFObject]?, error: Error?) -> Void in
+            if error == nil{
+                groupInfoViewController.members = members as! [PFUser]
+                if let navController = self.navigationController {
+                    navController.parentPageboy?.navigationController?.setNavigationBarHidden(true, animated: false)
+                    let tabController = navController.parentPageboy as! TabViewController
+                    tabController.bar.behaviors = [.autoHide(.always)]
+                }
+                self.navigationController?.pushViewController(groupInfoViewController
+                    , animated: true)
+            }
+        }
+    }
+
 }

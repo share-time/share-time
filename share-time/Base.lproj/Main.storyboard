@@ -835,7 +835,7 @@
         <!--Group Info View Controller-->
         <scene sceneID="Phd-LY-VyN">
             <objects>
-                <viewController id="xm7-Cj-7g2" customClass="GroupInfoViewController" customModule="share_time" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="GroupInfoViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="xm7-Cj-7g2" customClass="GroupInfoViewController" customModule="share_time" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="eMN-za-Vnl">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -947,7 +947,7 @@
         <!--Find Class View Controller-->
         <scene sceneID="G3P-IE-IrH">
             <objects>
-                <viewController id="JyC-zV-0gj" customClass="FindClassViewController" customModule="share_time" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="JyC-zV-0gj" customClass="FindClassViewController" customModule="share_time" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="7sb-qj-fyU">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

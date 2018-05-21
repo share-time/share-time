@@ -21,10 +21,8 @@ class TabViewController: TabmanViewController, PageboyViewControllerDataSource, 
         var viewControllers = [UIViewController]()
         let findClassNavController = storyboard.instantiateViewController(withIdentifier: "FindClassNavController") as! UINavigationController
         let findGroupNavController = storyboard.instantiateViewController(withIdentifier: "FindGroupNavController") as! UINavigationController
-        //let profileNavController = storyboard.instantiateViewController(withIdentifier: "ProfileNavController") as! UINavigationController
         viewControllers.append(findClassNavController)
         viewControllers.append(findGroupNavController)
-        //viewControllers.append(profileNavController)
         return viewControllers
     }()
     
