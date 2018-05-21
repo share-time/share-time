@@ -72,7 +72,8 @@ class BlobViewController: UIViewController {
         profileButton.layer.cornerRadius = 22.5
         profileButton.layer.borderWidth = 2.0
         profileButton.layer.borderColor = UIColor.gray.cgColor
-
+        NotificationCenter.default.addObserver(self, selector: #selector(BlobViewController.updateBlobToSad), name: NSNotification.Name(rawValue: "updateBlobToSad"), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(BlobViewController.updateBlobToDefault), name: NSNotification.Name(rawValue: "updateBlobToDefault"), object: nil)
         // Do any additional setup after loading the view.
     }
     
@@ -98,11 +99,19 @@ class BlobViewController: UIViewController {
         }
     }
     
-    class func updateHPBar(hp: Int){
+    class func updateHPBar(hp: Int) {
         let barWidth: Double = Double(width) * Double(hp) / Double(800)
         
         redBar.frame = CGRect(x: 80, y: 600, width: barWidth, height: 30)
         HPnum.text = "\(String(hp))/800"
+    }
+    
+    @objc func updateBlobToSad() {
+        blobImage.image = UIImage(named: "sadBlob")
+    }
+    
+    @objc func updateBlobToDefault(hp: Int) {
+            blobImage.image = UIImage.gif(name: "defaultBlob")
     }
     
 }

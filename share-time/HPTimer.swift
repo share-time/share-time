@@ -13,6 +13,7 @@ class HPTimer{
     static var hp = 800
     static let maxHP = 800
     static let minHP = 0
+    static let updateBlobToSadHp = 790
     
     static var isIncrease = false
     static let hpChangeTimeInterval:Double = 1
@@ -41,6 +42,8 @@ class HPTimer{
             hp = hp + 1
         }
         BlobViewController.updateHPBar(hp: hp)
+        if (hp > updateBlobToSadHp) {
+            NotificationCenter.default.post(name: NSNotification.Name(rawValue: "updateBlobToDefault"), object: nil) }
     }
     
     @objc static func decreaseHP()->(){
@@ -48,7 +51,7 @@ class HPTimer{
             hp = hp - 1
         }
         BlobViewController.updateHPBar(hp: hp)
+        if (hp < updateBlobToSadHp) {
+            NotificationCenter.default.post(name: NSNotification.Name(rawValue: "updateBlobToSad"), object: nil) }
     }
-    
-    
 }
