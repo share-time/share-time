@@ -93,6 +93,7 @@ class ChatViewController: UIViewController, UITableViewDelegate, UITableViewData
         cell.bubbleView.layer.cornerRadius = 10
         cell.bubbleView.clipsToBounds = true
         cell.bubbleView.backgroundColor = UIColor.lightGray
+        cell.messageLabel.textColor = UIColor.black
         //cell.bubbleView.addConstraint(cell.chatLeftConstraint)
         
         //cell.chatLeftConstraint.constant = 15
@@ -113,6 +114,7 @@ class ChatViewController: UIViewController, UITableViewDelegate, UITableViewData
 //                cell.chatLeftConstraint.constant = 200
 //                cell.chatRightConstraint.constant = 15
                 cell.bubbleView.backgroundColor = UIColor(red:0.02, green:0.47, blue:0.98, alpha:1.0)
+                cell.messageLabel.textColor = UIColor.white
 //                cell.contentView.layoutIfNeeded()
 //                cell.chatRightConstraint = NSLayoutConstraint(item: cell, attribute: .trailing, relatedBy: .equal, toItem: view, attribute: .trailingMargin, multiplier: 1.0, constant: 15.0)
 //                cell.chatLeftConstraint = NSLayoutConstraint(item: cell, attribute: .leading, relatedBy: .greaterThanOrEqual, toItem: view, attribute: .leadingMargin, multiplier: 1.0, constant: 100.0)
