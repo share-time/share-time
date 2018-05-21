@@ -20,9 +20,11 @@ class TabViewController: TabmanViewController, PageboyViewControllerDataSource, 
         let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
         var viewControllers = [UIViewController]()
         let findClassNavController = storyboard.instantiateViewController(withIdentifier: "FindClassNavController") as! UINavigationController
-        let profileNavController = storyboard.instantiateViewController(withIdentifier: "ProfileNavController") as! UINavigationController
+        let findGroupNavController = storyboard.instantiateViewController(withIdentifier: "FindGroupNavController") as! UINavigationController
+        //let profileNavController = storyboard.instantiateViewController(withIdentifier: "ProfileNavController") as! UINavigationController
         viewControllers.append(findClassNavController)
-        viewControllers.append(profileNavController)
+        viewControllers.append(findGroupNavController)
+        //viewControllers.append(profileNavController)
         return viewControllers
     }()
     
@@ -31,7 +33,7 @@ class TabViewController: TabmanViewController, PageboyViewControllerDataSource, 
 
         self.dataSource = self
         
-        self.bar.items = [Item(title: "Course"),Item(title: "Profile")]
+        self.bar.items = [Item(title: "Course"),Item(title: "Group")]
         
         bar.style = .buttonBar
         
@@ -45,7 +47,7 @@ class TabViewController: TabmanViewController, PageboyViewControllerDataSource, 
         searchController.searchResultsUpdater = self
         searchController.dimsBackgroundDuringPresentation = false
         searchController.searchBar.sizeToFit()
-        searchController.searchBar.placeholder = "Search for classes!"
+        searchController.searchBar.placeholder = "Search for study groups!"
         searchController.hidesNavigationBarDuringPresentation = false
         
         definesPresentationContext = true
@@ -54,6 +56,8 @@ class TabViewController: TabmanViewController, PageboyViewControllerDataSource, 
     func updateSearchResults(for searchController: UISearchController) {
         FindClassViewController.filterClassForSearchText(searchController.searchBar.text!)
         NotificationCenter.default.post(name: NSNotification.Name(rawValue: "updateClassTableView"), object: nil)
+        
+        FindGroupViewController.searchGroupForSearchText(searchController.searchBar.text!)
     }
     
     func addBarButton(){

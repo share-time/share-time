@@ -1013,7 +1013,7 @@
         <!--Find Group View Controller-->
         <scene sceneID="hx0-UV-ieD">
             <objects>
-                <viewController id="lNY-q2-lNu" customClass="FindGroupViewController" customModule="share_time" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="FindGroupViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="lNY-q2-lNu" customClass="FindGroupViewController" customModule="share_time" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="doA-pf-6rK">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1100,6 +1100,9 @@
                         <viewLayoutGuide key="safeArea" id="6vf-vg-hfG"/>
                     </view>
                     <navigationItem key="navigationItem" id="Qx7-vO-yjA"/>
+                    <connections>
+                        <outlet property="groupTableView" destination="iK7-qN-H63" id="hpj-Ny-xwZ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xZt-ni-Hyt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1531,7 +1534,7 @@
         <!--Navigation Controller-->
         <scene sceneID="A3c-ev-qpb">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="WlD-Hd-YWl" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="FindGroupNavController" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="WlD-Hd-YWl" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="zOf-NG-RgK">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>

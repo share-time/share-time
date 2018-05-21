@@ -9,11 +9,9 @@
 import UIKit
 import Parse
 
-class FindClassViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UISearchResultsUpdating {
+class FindClassViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
-    @IBOutlet weak var classSearchBar: UITextField!
     @IBOutlet weak var classTableView: UITableView!
-
 
     static var searchedCourses: [String]!
     
@@ -72,9 +70,6 @@ class FindClassViewController: UIViewController, UITableViewDelegate, UITableVie
         }
     }
 
-    func updateSearchResults(for searchController: UISearchController) {
-        FindClassViewController.filterClassForSearchText(searchController.searchBar.text!)
-    }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ClassCell", for: indexPath) as! ClassCell
