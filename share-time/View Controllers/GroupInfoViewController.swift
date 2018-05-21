@@ -40,6 +40,7 @@ class GroupInfoViewController: UIViewController, UICollectionViewDataSource,UICo
         collectionView.reloadData()
     }
     
+    
     @IBAction func onLeaveButton(_ sender: UIButton) {
         let userRelation = currentUser.relation(forKey: "studyGroups")
         userRelation.remove(studyGroup)
