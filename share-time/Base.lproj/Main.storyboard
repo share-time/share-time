@@ -1,22 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="PPx-g2-hi5">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="PPx-g2-hi5">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
-    <customFonts key="customFonts">
-        <array key="Optima.ttc">
-            <string>Optima-Regular</string>
-        </array>
-    </customFonts>
     <scenes>
         <!--Blob View Controller-->
         <scene sceneID="zgw-B8-5iE">
@@ -378,20 +373,20 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Profile Photo:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1UH-iV-vuU">
-                                <rect key="frame" x="22" y="118.5" width="144" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <rect key="frame" x="36" y="122" width="116" height="24"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mrC-96-555">
-                                <rect key="frame" x="21" y="285" width="71" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <rect key="frame" x="28.5" y="288.5" width="57" height="24"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8mQ-qh-VRo">
-                                <rect key="frame" x="23.5" y="352" width="66" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <rect key="frame" x="30.5" y="355.5" width="53" height="24"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -410,19 +405,20 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rcE-BB-2IL">
                                 <rect key="frame" x="21" y="152" width="146" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <state key="normal" title="Change Profile Photo"/>
                                 <connections>
                                     <action selector="changePersonalImage:" destination="fkh-l9-k67" eventType="touchUpInside" id="eyz-a3-l7y"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="email@gamil.com" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cIW-DY-vj4">
-                                <rect key="frame" x="109.5" y="357" width="154" height="24"/>
+                                <rect key="frame" x="103.5" y="355.5" width="154" height="24"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="hi" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eSz-gJ-Oic">
-                                <rect key="frame" x="112" y="290" width="16" height="24"/>
+                                <rect key="frame" x="105.5" y="288.5" width="16" height="24"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -634,12 +630,6 @@
                                                     <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Members" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fvx-T6-lkD">
-                                                    <rect key="frame" x="64" y="85" width="72" height="21"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="100" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6HO-0O-CR7">
                                                     <rect key="frame" x="20" y="85" width="29" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -654,10 +644,8 @@
                                                 <constraint firstItem="3mi-Uu-kFf" firstAttribute="leading" secondItem="ELP-kj-Ao2" secondAttribute="trailing" constant="10" id="ERp-Mk-5Ev"/>
                                                 <constraint firstItem="QjE-0k-7z6" firstAttribute="top" secondItem="eU1-lg-ZVg" secondAttribute="top" constant="9" id="FzQ-4Z-MkA"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="5CC-IV-hMA" secondAttribute="trailing" constant="100" id="Rma-Ki-qF8"/>
-                                                <constraint firstItem="fvx-T6-lkD" firstAttribute="leading" secondItem="6HO-0O-CR7" secondAttribute="trailing" constant="15" id="S9b-WB-T1m"/>
                                                 <constraint firstItem="0c5-aX-Cxf" firstAttribute="leading" secondItem="5CC-IV-hMA" secondAttribute="trailing" constant="15" id="X01-cX-oiT"/>
                                                 <constraint firstItem="QjE-0k-7z6" firstAttribute="leading" secondItem="eU1-lg-ZVg" secondAttribute="leading" constant="20" id="XWN-oH-0Ko"/>
-                                                <constraint firstItem="fvx-T6-lkD" firstAttribute="bottom" secondItem="6HO-0O-CR7" secondAttribute="bottom" id="XbX-yj-iba"/>
                                                 <constraint firstItem="6HO-0O-CR7" firstAttribute="leading" secondItem="QjE-0k-7z6" secondAttribute="leading" id="cdP-kf-K6I"/>
                                                 <constraint firstItem="3mi-Uu-kFf" firstAttribute="bottom" secondItem="ELP-kj-Ao2" secondAttribute="bottom" id="fTv-3z-F5x"/>
                                                 <constraint firstItem="0c5-aX-Cxf" firstAttribute="bottom" secondItem="ELP-kj-Ao2" secondAttribute="bottom" id="fkU-o1-0e9"/>
