@@ -13,11 +13,16 @@ class GroupInfoViewController: UIViewController, UICollectionViewDataSource,UICo
     
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var leaveGroupButton: UIButton!
+    @IBOutlet weak var joinGroupButton: UIButton!
+    @IBOutlet weak var qrButton: UIButton!
     
     var hideLeaveGroupButton = false
+    var hideJoinGroupButton = true
+    var hideQRButton = false
     var studyGroup: PFObject!
     var members: [PFUser] = []
     let currentUser = PFUser.current()!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         collectionView.dataSource = self
@@ -33,6 +38,14 @@ class GroupInfoViewController: UIViewController, UICollectionViewDataSource,UICo
             self.leaveGroupButton.isHidden = true
         }
         
+        if (hideLeaveGroupButton){
+            self.joinGroupButton.isHidden = true
+        }
+        
+        if (hideQRButton){
+            self.qrButton.isHidden = true
+        }
+        
         // Do any additional setup after loading the view.
     }
     
@@ -40,6 +53,9 @@ class GroupInfoViewController: UIViewController, UICollectionViewDataSource,UICo
         collectionView.reloadData()
     }
     
+    @IBAction func onJoinButton(_ sender: Any) {
+        
+    }
     
     @IBAction func onLeaveButton(_ sender: UIButton) {
         let userRelation = currentUser.relation(forKey: "studyGroups")

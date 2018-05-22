@@ -902,6 +902,14 @@
                                     <action selector="toQR:" destination="xm7-Cj-7g2" eventType="touchUpInside" id="qCa-lP-sj0"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rkz-eQ-3SJ">
+                                <rect key="frame" x="150" y="478" width="75" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Join Group"/>
+                                <connections>
+                                    <action selector="onJoinButton:" destination="xm7-Cj-7g2" eventType="touchUpInside" id="M1S-Xo-iKX"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -912,7 +920,9 @@
                     </view>
                     <connections>
                         <outlet property="collectionView" destination="I5L-6y-uAe" id="Bap-56-mNg"/>
+                        <outlet property="joinGroupButton" destination="Rkz-eQ-3SJ" id="bDF-y4-sCJ"/>
                         <outlet property="leaveGroupButton" destination="Y7P-1u-KYy" id="r3c-mK-o1t"/>
+                        <outlet property="qrButton" destination="PI5-eK-RsQ" id="uaW-dG-k6u"/>
                         <segue destination="NUF-gu-DQS" kind="show" identifier="toQRSegue" id="Jbz-Z0-tRk"/>
                     </connections>
                 </viewController>

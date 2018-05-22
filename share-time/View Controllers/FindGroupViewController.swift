@@ -15,6 +15,8 @@ class FindGroupViewController: UIViewController, UITableViewDelegate, UITableVie
     
     static var searchedGroups: [PFObject] = []
     
+    let user = PFUser.current()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -88,18 +90,28 @@ class FindGroupViewController: UIViewController, UITableViewDelegate, UITableVie
         
         groupInfoViewController.studyGroup = studyGroup
         groupInfoViewController.hideLeaveGroupButton = true
+        groupInfoViewController.hideQRButton = true
         
         studyGroup.relation(forKey: "members").query().findObjectsInBackground{
             (members: [PFObject]?, error: Error?) -> Void in
             if error == nil{
                 groupInfoViewController.members = members as! [PFUser]
-                if let navController = self.navigationController {
-                    navController.parentPageboy?.navigationController?.setNavigationBarHidden(true, animated: false)
-                    let tabController = navController.parentPageboy as! TabViewController
-                    tabController.bar.behaviors = [.autoHide(.always)]
+                //check if user has already joined
+                self.user?.relation(forKey: "studyGroups").query().findObjectsInBackground{
+                    (foundStudyGroups: [PFObject]?, error: Error?) -> Void in
+                    for foundStudyGroup in foundStudyGroups!{
+                        if (foundStudyGroup["name"] as? String == studyGroup["name"] as? String){
+                            groupInfoViewController.hideJoinGroupButton = true
+                        }
+                    }
+                    if let navController = self.navigationController {
+                        navController.parentPageboy?.navigationController?.setNavigationBarHidden(true, animated: false)
+                        let tabController = navController.parentPageboy as! TabViewController
+                        tabController.bar.behaviors = [.autoHide(.always)]
+                    }
+                    self.navigationController?.pushViewController(groupInfoViewController
+                        , animated: true)
                 }
-                self.navigationController?.pushViewController(groupInfoViewController
-                    , animated: true)
             }
         }
     }

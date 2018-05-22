@@ -42,9 +42,6 @@ class PublicStudyGroupCell: UITableViewCell {
             //check if user has already joined
             self.user?.relation(forKey: "studyGroups").query().findObjectsInBackground{
                 (studyGroups: [PFObject]?, error: Error?) -> Void in
-                //print("studyGroups: ")
-                //print(studyGroups)
-                //print(self.studyGroup)
                 for studyGroup in studyGroups!{
                     if (studyGroup["name"] as? String == self.studyGroup["name"] as? String){
                         self.joinStudyGroupButton.isHidden = true
