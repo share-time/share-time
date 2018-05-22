@@ -10,13 +10,20 @@ import Foundation
 import UIKit
 
 class HPTimer{
+    
     static var hp = 800
     static let maxHP = 800
     static let minHP = 0
     static let updateBlobToSadHp = 790
+    static var studyHours: Float = 6
     
     static var isIncrease = false
-    static let hpChangeTimeInterval:Double = 1
+    static var hpChangeTimeInterval:Double = 1{
+        didSet{
+            stopHPTimer()
+            startHPTimer()
+        }
+    }
     
     static var hpTimer = Timer()
     
@@ -54,5 +61,11 @@ class HPTimer{
         if (hp < updateBlobToSadHp) {
             NotificationCenter.default.post(name: NSNotification.Name(rawValue: "updateBlobToSad"), object: nil)
         }
+    }
+    
+    static func updateStudyHours(hours: Float)->(){
+        studyHours = hours
+        let updateFactor:Double = 1.0/Double(hours)
+        hpChangeTimeInterval = 3.0 * updateFactor
     }
 }

@@ -26,6 +26,7 @@
 		5A8FF2BF20859C02004957DE /* PublicStudyGroupCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A8FF2BE20859C02004957DE /* PublicStudyGroupCell.swift */; };
 		5AA6C68F20AAE88900F86C92 /* QRViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AA6C68E20AAE88900F86C92 /* QRViewController.swift */; };
 		5AA6EE7020A7CCDC0081B5EB /* StudyingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AA6EE6F20A7CCDC0081B5EB /* StudyingViewController.swift */; };
+		5AE16BD620B44318003FF497 /* ChangeStudyHoursViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AE16BD520B44318003FF497 /* ChangeStudyHoursViewController.swift */; };
 		5AE258F720B2EBA30040866D /* FindGroupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AE258F620B2EBA30040866D /* FindGroupViewController.swift */; };
 		5AEE747920915F70006A2689 /* StudyGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AEE747820915F70006A2689 /* StudyGroup.swift */; };
 		5AEE747B209162B7006A2689 /* Course.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AEE747A209162B7006A2689 /* Course.swift */; };
@@ -90,6 +91,7 @@
 		5A8FF2BE20859C02004957DE /* PublicStudyGroupCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PublicStudyGroupCell.swift; sourceTree = "<group>"; };
 		5AA6C68E20AAE88900F86C92 /* QRViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRViewController.swift; sourceTree = "<group>"; };
 		5AA6EE6F20A7CCDC0081B5EB /* StudyingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudyingViewController.swift; sourceTree = "<group>"; };
+		5AE16BD520B44318003FF497 /* ChangeStudyHoursViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeStudyHoursViewController.swift; sourceTree = "<group>"; };
 		5AE258F620B2EBA30040866D /* FindGroupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindGroupViewController.swift; sourceTree = "<group>"; };
 		5AEE747820915F70006A2689 /* StudyGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = StudyGroup.swift; path = "share-time/StudyGroup.swift"; sourceTree = SOURCE_ROOT; };
 		5AEE747A209162B7006A2689 /* Course.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Course.swift; path = "share-time/Course.swift"; sourceTree = SOURCE_ROOT; };
@@ -248,6 +250,7 @@
 				5AA6C68E20AAE88900F86C92 /* QRViewController.swift */,
 				5A0CC9C820A954D3002E6F9F /* PageViewController.swift */,
 				5AE258F620B2EBA30040866D /* FindGroupViewController.swift */,
+				5AE16BD520B44318003FF497 /* ChangeStudyHoursViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -531,6 +534,7 @@
 				705BAB41209808DC0047F91D /* ProfileViewController.swift in Sources */,
 				5A7D516220B181CD00D69ECD /* TabViewController.swift in Sources */,
 				70CE5ADA20830A2F0023F3D7 /* ChatViewController.swift in Sources */,
+				5AE16BD620B44318003FF497 /* ChangeStudyHoursViewController.swift in Sources */,
 				5A254ADB2082F04E00767CB7 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
