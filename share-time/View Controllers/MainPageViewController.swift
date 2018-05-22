@@ -17,8 +17,16 @@ class MainPageViewController: UIViewController,UITableViewDelegate, UITableViewD
     @IBOutlet weak var nameLabel: UILabel!
     let user = PFUser.current()
     var studyGroups: [PFObject] = []
+    var newStudyGroup: PFObject! //stores the study groups that the user has been added to
     var refresher: UIRefreshControl!
     
+    let addNewStudyGroupAlertController = UIAlertController(title: "You have been added to a new study group", message: "Please confirm if you want to be added to the study group", preferredStyle: .alert)
+    let CancelAction = UIAlertAction(title: "Cancel", style: .cancel) { (action) in
+        //does nothing -> dismisses alert view
+    }
+    let ConfirmAction = UIAlertAction(title: "Confirm", style: .destructive) { (action) in
+        
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -46,6 +54,17 @@ class MainPageViewController: UIViewController,UITableViewDelegate, UITableViewD
             
         }
         
+        let allStudyGroups = getAllStudyGroups()
+        
+        for studyGroup in allStudyGroups{
+            searchStudyGroupForUser(studyGroup: studyGroup)
+        }
+        
+        if newStudyGroup != nil{
+            present(addNewStudyGroupAlertController, animated: true)
+        }
+        
+        
         //self.tableView.reloadData()
         // Do any additional setup after loading the view.
     }
@@ -58,6 +77,28 @@ class MainPageViewController: UIViewController,UITableViewDelegate, UITableViewD
         personalImage.af_setImage(withURL: imgUrl)
         getStudyGroups()
         
+    }
+    
+    func addNewStudyGroupToCurrentUser(studyGroup: PFObject)->(){
+        user?.relation(forKey: "studyGroups").add(studyGroup)
+        user?.saveInBackground()
+    }
+    
+    //add study group to newstudygroup if it contains user and user's study groups does not contain said studygroup
+    func searchStudyGroupForUser(studyGroup: PFObject)->(){
+        studyGroup.relation(forKey: "members").query().findObjectsInBackground{
+            (members: [PFObject]?, error: Error?) -> Void in
+            if error != nil {
+                print("please dont print")
+            } else {
+                let studyGroupMembers = members as! [PFUser]
+                if studyGroupMembers.contains(self.user!){
+                    if !(self.studyGroups.contains(studyGroup)){
+                        self.newStudyGroup = studyGroup
+                    }
+                }
+            }
+        }
     }
     
     func getStudyGroups() {
@@ -105,5 +146,18 @@ class MainPageViewController: UIViewController,UITableViewDelegate, UITableViewD
         // Tell the refreshControl to stop spinning
         refresher.endRefreshing()
     }
+    
+    func getAllStudyGroups()->([PFObject]){
+        var returnStudyGroups: [PFObject] = []
+        let query = PFQuery(className: "StudyGroup")
+        query.findObjectsInBackground(){ (findStudyGroups: [PFObject]?, error: Error?) -> Void in
+            if findStudyGroups != nil{
+                returnStudyGroups = findStudyGroups!
+            }
+        }
+        return returnStudyGroups
+    }
+    
+    
 
 }

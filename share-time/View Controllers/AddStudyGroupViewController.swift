@@ -140,22 +140,6 @@ class AddStudyGroupViewController: UIViewController, UITableViewDelegate, UITabl
         
         newStudyGroup.saveInBackground{(success, error) in
             if success {
-                print("study group called \(newStudyGroup["name"]) created")
-                /*
-                for user in self.users{
-                    let relation = user.relation(forKey: "studyGroups")
-                    relation.add(newStudyGroup)
-                    user.saveInBackground{ (success: Bool, error: Error?) -> Void in
-                        if (success){
-                            if let navController = self.navigationController {
-                                navController.popViewController(animated: true)
-                            }
-                        } else {
-                            print(error?.localizedDescription as Any)
-                        }
-                    }
-                }
-                */
                 let relation = self.currentUser.relation(forKey: "studyGroups")
                 relation.add(newStudyGroup)
                 self.currentUser.saveInBackground{ (success: Bool, error: Error?) -> Void in
