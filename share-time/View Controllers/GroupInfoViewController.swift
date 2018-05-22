@@ -38,7 +38,7 @@ class GroupInfoViewController: UIViewController, UICollectionViewDataSource,UICo
             self.leaveGroupButton.isHidden = true
         }
         
-        if (hideLeaveGroupButton){
+        if (hideJoinGroupButton){
             self.joinGroupButton.isHidden = true
         }
         
