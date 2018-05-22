@@ -21,6 +21,9 @@ class AddStudyGroupViewController: UIViewController, UITableViewDelegate, UITabl
     var searchController: UISearchController!
     
     var users: [PFUser]!
+    let currentUser = PFUser.current()!
+    
+    var addedUsers: [PFUser] = [PFUser.current()!]
     
     let profTextFieldErrorAlertController = UIAlertController(title: "Professor Name Required", message: "Please enter name of professor", preferredStyle: .alert)
     let studyGroupNameTextFieldErrorAlertController = UIAlertController(title: "Study Group Name Required", message: "Please enter name of study group", preferredStyle: .alert)
@@ -30,7 +33,6 @@ class AddStudyGroupViewController: UIViewController, UITableViewDelegate, UITabl
     }
     
     var courseName: String!
-    let currentUser = PFUser.current()!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -87,15 +89,15 @@ class AddStudyGroupViewController: UIViewController, UITableViewDelegate, UITabl
         cell.user = user
         cell.usernameLabel.text = user.username
         
-        //returns false if user has been removed (+) and true if user has been added (-)
+        //returns true if user has been removed (+) and false if user has been added (-)
         cell.onSelect = { (user: PFUser) -> Bool in
-            if (self.users.contains(user)){
-                let index = self.users.index(of: user)
-                self.users.remove(at: index!)
-                return true
+            if (self.addedUsers.contains(user)){
+                let index = self.addedUsers.index(of: user)
+                self.addedUsers.remove(at: index!)
+                return true // set to +
             } else {
-                self.users.append(user)
-                return false
+                self.addedUsers.append(user)
+                return false // set to -
             }
         }
         
@@ -131,12 +133,10 @@ class AddStudyGroupViewController: UIViewController, UITableViewDelegate, UITabl
         newStudyGroup["professor"] = profName
         
         let relation = newStudyGroup.relation(forKey: "members")
-        /*
-        for user in users{
+        
+        for user in addedUsers{
             relation.add(user)
         }
-         */
-        relation.add(currentUser)
         
         newStudyGroup.saveInBackground{(success, error) in
             if success {

@@ -139,7 +139,6 @@ extension UIViewController {
         view.addGestureRecognizer(tap)
     }
     @objc func dismissKeyboard() {
-        print("tappedtrash")
         view.endEditing(true)
         self.navigationController?.parentPageboy?.navigationController?.view.endEditing(true)
     }

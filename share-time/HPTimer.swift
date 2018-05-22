@@ -34,7 +34,6 @@ class HPTimer{
         } else {
             decreaseHP()
         }
-        print(hp)
     }
     
     @objc static func increaseHP()->(){
@@ -43,7 +42,8 @@ class HPTimer{
         }
         BlobViewController.updateHPBar(hp: hp)
         if (hp > updateBlobToSadHp) {
-            NotificationCenter.default.post(name: NSNotification.Name(rawValue: "updateBlobToDefault"), object: nil) }
+            NotificationCenter.default.post(name: NSNotification.Name(rawValue: "updateBlobToDefault"), object: nil)
+        }
     }
     
     @objc static func decreaseHP()->(){
@@ -52,6 +52,7 @@ class HPTimer{
         }
         BlobViewController.updateHPBar(hp: hp)
         if (hp < updateBlobToSadHp) {
-            NotificationCenter.default.post(name: NSNotification.Name(rawValue: "updateBlobToSad"), object: nil) }
+            NotificationCenter.default.post(name: NSNotification.Name(rawValue: "updateBlobToSad"), object: nil)
+        }
     }
 }

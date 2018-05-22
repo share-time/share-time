@@ -22,9 +22,9 @@ class UserCell: UITableViewCell {
     @IBAction func onSelectUserAsMember(_ sender: Any) {
         let buttonText = onSelect!(user)
         if (buttonText){
-            selectMemberButton.titleLabel?.text = "-"
+            selectMemberButton.setTitle("+", for: .normal)
         } else {
-            selectMemberButton.titleLabel?.text = "+"
+            selectMemberButton.setTitle("-", for: .normal)
         }
     }
     
