@@ -94,7 +94,7 @@ class ChatViewController: UIViewController, UITableViewDelegate, UITableViewData
         //cell.chatLeftConstraint.constant = 15
         //cell.chatRightConstraint = NSLayoutConstraint(item: cell, attribute: .trailing, relatedBy: .greaterThanOrEqual, toItem: view, attribute: .trailingMargin, multiplier: 1.0, constant: 15.0)
         cell.personalIconImage.clipsToBounds = true
-        let messages = chatMessage?[indexPath.row]
+        let messages = chatMessage?[(chatMessage?.count)! - indexPath.row - 1]
         if let msgString = messages?["text"] as? String {
             cell.messageLabel.text = msgString
         }
