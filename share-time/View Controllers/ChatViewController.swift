@@ -100,6 +100,8 @@ class ChatViewController: UIViewController, UITableViewDelegate, UITableViewData
         }
         if let user = messages?["user"] as? PFUser {
             if (user.username == PFUser.current()?.username) {
+                cell.iconTop.isActive = false
+                cell.iconLeading.isActive = false
                 cell.chatRightConstraint.isActive = false
                 cell.chatLeftConstraint.isActive = false
                 cell.chatLeftConstraintU.isActive = true
@@ -121,6 +123,8 @@ class ChatViewController: UIViewController, UITableViewDelegate, UITableViewData
                 
             }
            else{
+                cell.iconTop.isActive = true
+                cell.iconLeading.isActive = true
                 cell.chatLeftConstraintU.isActive = false
                 cell.chatRightConstraintU.isActive = false
                 cell.chatRightConstraint.isActive = true

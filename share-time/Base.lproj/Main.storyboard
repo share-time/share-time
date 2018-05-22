@@ -775,6 +775,8 @@
                                             <outlet property="chatLeftConstraintU" destination="ZTg-sL-ziY" id="IxD-xm-BHv"/>
                                             <outlet property="chatRightConstraint" destination="ZTA-zM-QDX" id="VFA-aa-OSO"/>
                                             <outlet property="chatRightConstraintU" destination="mOY-Hk-KVV" id="FQZ-fx-6Gu"/>
+                                            <outlet property="iconLeading" destination="DfJ-cb-3bI" id="yIZ-Tl-ufJ"/>
+                                            <outlet property="iconTop" destination="vK3-pU-zNU" id="PGs-ze-2vg"/>
                                             <outlet property="messageLabel" destination="lmX-25-Zet" id="MaA-cT-vWw"/>
                                             <outlet property="personalIconImage" destination="005-lJ-LZw" id="8sT-PC-Xhx"/>
                                             <outlet property="usernameLabel" destination="8YW-kL-d2X" id="r6E-lu-FkW"/>
