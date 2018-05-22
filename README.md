@@ -20,36 +20,36 @@ Basic story:
 
 ## Todo list
 -Major
- - [ ] Add gif in the blob vc (Guanxin)
+ - [x] Add gif in the blob vc (Guanxin)
 	- default
 	- excited when tap
 	- sad when hp below certain number
  - [ ] Timer issue (Godwin)
- - [ ] Chat left side/right side (Jiayi)
- - [ ] Head bar (Godwin)
- - [ ] Find class VC UI Rehaul (Godwin)
+ - [x] Chat left side/right side (Jiayi)
+ - [x] Head bar (Godwin)
+ - [x] Find class VC UI Rehaul (Godwin)
 
 -Middle priority
-- [ ] Login UI
+- [x] Login UI
 	-background color
 	-add subview for the gradient background(check on instagram)
 - [ ] Profile UI - UItable?
 - [x] Sign up/Sign in button (position, font)
 
 -Enhancement
-Home page
+- Home page
 - [x] Study group cell looks a little empty
 - [ ] Add arrow to cell so that the user know to tap on
-Chat page
+- Chat page
 - [ ] Round corners for profile image
 - [ ] Add loading icon before loading out all the chat
-Group vc
+- Group vc
 - [ ] Delete and leave button/ QR button looks wierd
-QR
+- QR
 - [ ] pop up
 - [ ] scan need a box
-Blob
-- [ ] background?
+- Blob
+- [x] background?
 - [ ] UI for sleep - only the blob part dim out
 Profile vc
 - [ ] Logout button - Red-white button
@@ -58,9 +58,9 @@ Profile vc
 Find class vc
 - [ ] Autolayout-cell label
 Add class vc
-- [ ] Move QR scan out
+- [x] Move QR scan out
 Class Detail
-- [ ] Remove table
+- [x] Remove table
 - [ ] Add group button into navigation bar
 
 
