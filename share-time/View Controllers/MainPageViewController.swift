@@ -21,11 +21,8 @@ class MainPageViewController: UIViewController,UITableViewDelegate, UITableViewD
     var refresher: UIRefreshControl!
     
     let addNewStudyGroupAlertController = UIAlertController(title: "You have been added to a new study group", message: "Please confirm if you want to be added to the study group", preferredStyle: .alert)
-    let CancelAction = UIAlertAction(title: "Cancel", style: .cancel) { (action) in
+    let CancelAction = UIAlertAction(title: "Cancel", style: .default) { (action) in
         //does nothing -> dismisses alert view
-    }
-    let ConfirmAction = UIAlertAction(title: "Confirm", style: .destructive) { (action) in
-        
     }
     
     override func viewDidLoad() {
@@ -49,24 +46,22 @@ class MainPageViewController: UIViewController,UITableViewDelegate, UITableViewD
                 print("please dont print")
             } else {
                 self.studyGroups = studyGroups!
+                _ = self.getAllStudyGroups()
                 self.tableView.reloadData()
             }
-            
         }
         
-        let allStudyGroups = getAllStudyGroups()
-        
-        for studyGroup in allStudyGroups{
-            searchStudyGroupForUser(studyGroup: studyGroup)
+        let ConfirmAction = UIAlertAction(title: "Confirm", style: .default) { (action) in
+            PFUser.current()?.relation(forKey: "studyGroups").add(self.newStudyGroup)
+            PFUser.current()?.saveInBackground{ (success: Bool, error: Error?) -> Void in
+                if (success){
+                    self.getStudyGroups()
+                }
+            }
         }
         
-        if newStudyGroup != nil{
-            present(addNewStudyGroupAlertController, animated: true)
-        }
-        
-        
-        //self.tableView.reloadData()
-        // Do any additional setup after loading the view.
+        addNewStudyGroupAlertController.addAction(CancelAction)
+        addNewStudyGroupAlertController.addAction(ConfirmAction)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -92,13 +87,31 @@ class MainPageViewController: UIViewController,UITableViewDelegate, UITableViewD
                 print("please dont print")
             } else {
                 let studyGroupMembers = members as! [PFUser]
-                if studyGroupMembers.contains(self.user!){
-                    if !(self.studyGroups.contains(studyGroup)){
-                        self.newStudyGroup = studyGroup
+                for member in studyGroupMembers{
+                    if member.objectId == self.user!.objectId{
+                        if !(self.tryIfArrayContainsPFObject(objectArray: self.studyGroups, findobject: studyGroup)){
+                            self.newStudyGroup = studyGroup
+                            if self.newStudyGroup != nil{
+                                self.present(self.addNewStudyGroupAlertController, animated: true)
+                            }
+                        }
                     }
                 }
             }
         }
+    }
+    
+    
+    //return true if contains
+    func tryIfArrayContainsPFObject(objectArray: [PFObject], findobject: PFObject)->(Bool){
+        var count = 0
+        for object in objectArray{
+            if findobject.objectId == object.objectId{
+                count = count + 1
+            }
+        }
+        
+        return (count != 0)
     }
     
     func getStudyGroups() {
@@ -153,6 +166,12 @@ class MainPageViewController: UIViewController,UITableViewDelegate, UITableViewD
         query.findObjectsInBackground(){ (findStudyGroups: [PFObject]?, error: Error?) -> Void in
             if findStudyGroups != nil{
                 returnStudyGroups = findStudyGroups!
+                print(returnStudyGroups)
+            } else {
+                print("WTF MAN")
+            }
+            for studyGroup in returnStudyGroups{
+                self.searchStudyGroupForUser(studyGroup: studyGroup)
             }
         }
         return returnStudyGroups
