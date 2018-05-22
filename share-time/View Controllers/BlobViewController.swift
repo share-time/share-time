@@ -35,9 +35,28 @@ class BlobViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        //Gradient layer
+        let gradient = CAGradientLayer()
+        gradient.frame = view.bounds
+        gradient.colors = [
+            UIColor(red: 186/255, green: 83/255, blue: 112/255, alpha: 1).cgColor,
+            UIColor(red: 255/255, green: 221/255, blue: 225/255, alpha: 1).cgColor
+        ]
+        gradient.startPoint = CGPoint(x:0, y:0)
+        gradient.endPoint = CGPoint(x:1, y:1)
+        // Add animation of the gradient background
+        let gradientChangeAnimation = CABasicAnimation(keyPath: "colors")
+        gradientChangeAnimation.duration = 5.0
+        gradientChangeAnimation.toValue = [
+            UIColor(red: 238/255, green: 205/255, blue: 163/255, alpha: 1).cgColor,
+            UIColor(red: 239/255, green: 98/255, blue: 159/255, alpha: 1).cgColor
+        ]
+        gradientChangeAnimation.fillMode = kCAFillModeForwards
+        gradientChangeAnimation.isRemovedOnCompletion = false
+        gradient.add(gradientChangeAnimation, forKey: "colorChange")
+        self.view.layer.insertSublayer(gradient, at: 0)
         
-        //frameWidth = Int(self.view.frame.size.width)
-        //width = BlobViewController.frameWidth - space
+        // Get the gif of the blob
         blobImage.image = UIImage.gif(name: "defaultBlob")
         blobImage.tintColor = UIColor.yellow
         HPtext = UILabel(frame:CGRect(x:40, y:600, width: BlobViewController.width, height: 30))

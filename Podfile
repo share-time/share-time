@@ -15,6 +15,7 @@ target 'share-time' do
   pod 'QRCode'
   pod 'SwiftGifOrigin', '~> 1.6.1'
   pod 'Tabman', '~> 1.0'
+  pod 'SkyFloatingLabelTextField', '~> 3.0'
 
   target 'share-timeTests' do
     inherit! :search_paths

@@ -14,6 +14,7 @@ PODS:
     - Bolts/Tasks (~> 1.9)
   - PKHUD (5.0.0)
   - QRCode (2.0)
+  - SkyFloatingLabelTextField (3.4.1)
   - SwiftGifOrigin (1.6.1)
   - Tabman (1.8.2):
     - AutoInsetter (~> 1.2.0)
@@ -27,11 +28,12 @@ DEPENDENCIES:
   - Parse
   - PKHUD (~> 5.0)
   - QRCode
+  - SkyFloatingLabelTextField (~> 3.0)
   - SwiftGifOrigin (~> 1.6.1)
   - Tabman (~> 1.0)
 
 SPEC REPOS:
-  https://github.com/CocoaPods/Specs.git:
+  https://github.com/cocoapods/specs.git:
     - Alamofire
     - AlamofireImage
     - AutoInsetter
@@ -42,6 +44,7 @@ SPEC REPOS:
     - Parse
     - PKHUD
     - QRCode
+    - SkyFloatingLabelTextField
     - SwiftGifOrigin
     - Tabman
 
@@ -56,9 +59,10 @@ SPEC CHECKSUMS:
   Parse: 5b36dc2c2f0a2fd82a257ae018bc3d68cf2c24e7
   PKHUD: 3c001512c6e002091184197a8de7a20420786e3b
   QRCode: f98a1886c8f37523704a7512a4c0cd45b34c18a4
+  SkyFloatingLabelTextField: 8085f20f57f74a00cfcae58099299faa1a971035
   SwiftGifOrigin: d6679d3ebe9df2e049a84bc52582635107b581f6
   Tabman: 69ce69b44cec1ad693b82c24cdbdf0c45915668c
 
-PODFILE CHECKSUM: 87e84a4aaca5abcbac83cddde77481f25fb05a80
+PODFILE CHECKSUM: b544410d3342e9b122d60891930df7af9179e6fa
 
-COCOAPODS: 1.5.0
+COCOAPODS: 1.5.2

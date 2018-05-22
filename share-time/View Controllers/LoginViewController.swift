@@ -34,8 +34,8 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         gradient.frame = view.bounds
         self.view.insertSubview(view, at:0)
         gradient.colors = [
-            UIColor(red: 100/255, green: 244/255, blue: 231/255, alpha: 1).cgColor,
-            UIColor(red: 176/255, green: 232/255, blue: 231/255, alpha: 1).cgColor
+            UIColor(red: 186/255, green: 83/255, blue: 112/255, alpha: 1).cgColor,
+            UIColor(red: 244/255, green: 226/255, blue: 216/255, alpha: 1).cgColor
         ]
         gradient.startPoint = CGPoint(x:0, y:0)
         gradient.endPoint = CGPoint(x:1, y:1)
@@ -43,16 +43,16 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         let gradientChangeAnimation = CABasicAnimation(keyPath: "colors")
         gradientChangeAnimation.duration = 5.0
         gradientChangeAnimation.toValue = [
-            UIColor(red: 60/255, green: 37/255, blue: 218/255, alpha: 1).cgColor,
-            UIColor(red: 163/255, green: 255/255, blue: 218/255, alpha: 1).cgColor
+            UIColor(red: 117/255, green: 58/255, blue: 136/255, alpha: 1).cgColor,
+            UIColor(red: 204/255, green: 43/255, blue: 94/255, alpha: 1).cgColor
         ]
         gradientChangeAnimation.fillMode = kCAFillModeForwards
         gradientChangeAnimation.isRemovedOnCompletion = false
         gradient.add(gradientChangeAnimation, forKey: "colorChange")
         view.layer.insertSublayer(gradient, at: 0)
         headerLabel.textColor = UIColor.white
-    loginUsernameErrorAlertController.addAction(OKAction)
-    loginPasswordErrorAlertController.addAction(OKAction)
+        loginUsernameErrorAlertController.addAction(OKAction)
+        loginPasswordErrorAlertController.addAction(OKAction)
         //loginErrorAlertController.addAction(self.OKAction)
         let center: NotificationCenter = NotificationCenter.default
         center.addObserver(self, selector: #selector(keyboardDidShow(notification:)), name: NSNotification.Name.UIKeyboardWillShow, object: nil)

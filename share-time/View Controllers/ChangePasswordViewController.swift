@@ -8,6 +8,7 @@
 
 import UIKit
 import Parse
+import SkyFloatingLabelTextField
 
 class ChangePasswordViewController: UIViewController, UITextFieldDelegate {
 
@@ -39,6 +40,32 @@ class ChangePasswordViewController: UIViewController, UITextFieldDelegate {
         center.addObserver(self, selector: #selector(keyboardDidShow(notification:)), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
         center.addObserver(self, selector: #selector(keyboardWillHide(notification:)), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
         self.hideKeyboardWhenTappedAround()
+        
+        
+        
+        let lightGreyColor = UIColor(red: 197/255, green: 205/255, blue: 205/255, alpha: 1.0)
+        let darkGreyColor = UIColor(red: 52/255, green: 42/255, blue: 61/255, alpha: 1.0)
+        let overcastBlueColor = UIColor(red: 0, green: 187/255, blue: 204/255, alpha: 1.0)
+        
+        let textField1 = SkyFloatingLabelTextField(frame: CGRect(x:10, y:10, width:120, height:45))
+        textField1.placeholder = "First name"
+        textField1.title = "Given name"
+        self.view.addSubview(textField1)
+        
+        let textField2 = SkyFloatingLabelTextField(frame: CGRect(x:150, y:10, width:120, height:45))
+        textField2.placeholder = "Last name"
+        textField2.title = "Family name"
+        
+        textField2.tintColor = overcastBlueColor // the color of the blinking cursor
+        textField2.textColor = darkGreyColor
+        textField2.lineColor = lightGreyColor
+        textField2.selectedTitleColor = overcastBlueColor
+        textField2.selectedLineColor = overcastBlueColor
+        
+        textField2.lineHeight = 1.0 // bottom line height in points
+        textField2.selectedLineHeight = 2.0
+        self.view.addSubview(textField2)
+        
     }
     
     @objc func keyboardDidShow(notification: Notification) {
