@@ -13,5 +13,5 @@
     Chameleon Pod to figure out colorscheme
 
 Jiayi: 1,3,8
-Godwin: 4,5,6,10,11,12
-Guanxin: 2,3,7,9,12
+Godwin: 5,6,10,11,12
+Guanxin: 2,3,7,9,12, 4(optional/low priority)
