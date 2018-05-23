@@ -48,8 +48,8 @@ class BlobViewController: UIViewController {
         let gradientChangeAnimation = CABasicAnimation(keyPath: "colors")
         gradientChangeAnimation.duration = 5.0
         gradientChangeAnimation.toValue = [
-            UIColor(red: 238/255, green: 205/255, blue: 163/255, alpha: 1).cgColor,
-            UIColor(red: 239/255, green: 98/255, blue: 159/255, alpha: 1).cgColor
+            UIColor(red: 221/255, green: 214/255, blue: 243/255, alpha: 1).cgColor,
+            UIColor(red: 250/255, green: 172/255, blue: 168/255, alpha: 1).cgColor
         ]
         gradientChangeAnimation.fillMode = kCAFillModeForwards
         gradientChangeAnimation.isRemovedOnCompletion = false
@@ -102,7 +102,7 @@ class BlobViewController: UIViewController {
         profileButton.af_setBackgroundImage(for: UIControlState.normal, url: imgUrl)
         profileButton.layer.cornerRadius = 22.5
         profileButton.layer.borderWidth = 2.0
-        profileButton.layer.borderColor = UIColor.gray.cgColor
+        profileButton.layer.borderColor = UIColor.white.cgColor
     }
     
    
