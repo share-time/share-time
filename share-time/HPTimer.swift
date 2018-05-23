@@ -18,6 +18,7 @@ class HPTimer{
     static var studyHours: Float = 6
     
     static var isIncrease = false
+    
     static var hpChangeTimeInterval:Double = 1{
         didSet{
             stopHPTimer()

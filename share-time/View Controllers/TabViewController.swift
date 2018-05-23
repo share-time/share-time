@@ -59,7 +59,10 @@ class TabViewController: TabmanViewController, PageboyViewControllerDataSource, 
     }
     
     func addBarButton(){
+        var image = UIImage(named:"QRScan")
+        image = image?.withRenderingMode(.alwaysOriginal)
         let qrBarButton = UIBarButtonItem(title: "QR", style: .plain, target: self, action: #selector(qrBarButtonPressed(sender:)))
+        //qrBarButton.setBackgroundImage(image, for: .normal, barMetrics: .`default`)
         navigationItem.setRightBarButton(qrBarButton, animated: false)
         self.qrBarButton = qrBarButton
     }

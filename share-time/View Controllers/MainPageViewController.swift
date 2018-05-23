@@ -102,6 +102,7 @@ class MainPageViewController: UIViewController,UITableViewDelegate, UITableViewD
     }
     
     
+    
     //return true if contains
     func tryIfArrayContainsPFObject(objectArray: [PFObject], findobject: PFObject)->(Bool){
         var count = 0

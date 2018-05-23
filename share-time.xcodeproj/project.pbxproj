@@ -17,6 +17,7 @@
 		5A254AE52082F04E00767CB7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5A254AE32082F04E00767CB7 /* LaunchScreen.storyboard */; };
 		5A254AF02082F04E00767CB7 /* share_timeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A254AEF2082F04E00767CB7 /* share_timeTests.swift */; };
 		5A254AFB2082F04E00767CB7 /* share_timeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A254AFA2082F04E00767CB7 /* share_timeUITests.swift */; };
+		5A2CA82D20B4E0EF00AD1CD5 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A2CA82C20B4E0EF00AD1CD5 /* Color.swift */; };
 		5A2D1ADE20B15398007B7088 /* HPTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A2D1ADD20B15398007B7088 /* HPTimer.swift */; };
 		5A2F10CE209DC707007A0A4C /* ChangePasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A2F10CD209DC707007A0A4C /* ChangePasswordViewController.swift */; };
 		5A372707209DF26000EFE1F4 /* UserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A372706209DF26000EFE1F4 /* UserCell.swift */; };
@@ -26,6 +27,7 @@
 		5A8FF2BF20859C02004957DE /* PublicStudyGroupCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A8FF2BE20859C02004957DE /* PublicStudyGroupCell.swift */; };
 		5AA6C68F20AAE88900F86C92 /* QRViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AA6C68E20AAE88900F86C92 /* QRViewController.swift */; };
 		5AA6EE7020A7CCDC0081B5EB /* StudyingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AA6EE6F20A7CCDC0081B5EB /* StudyingViewController.swift */; };
+		5AC3439D20B5209700EDF3C7 /* ProfileTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AC3439C20B5209700EDF3C7 /* ProfileTableViewController.swift */; };
 		5AE16BD620B44318003FF497 /* ChangeStudyHoursViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AE16BD520B44318003FF497 /* ChangeStudyHoursViewController.swift */; };
 		5AE258F720B2EBA30040866D /* FindGroupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AE258F620B2EBA30040866D /* FindGroupViewController.swift */; };
 		5AEE747920915F70006A2689 /* StudyGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AEE747820915F70006A2689 /* StudyGroup.swift */; };
@@ -82,6 +84,7 @@
 		5A254AF62082F04E00767CB7 /* share-timeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "share-timeUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5A254AFA2082F04E00767CB7 /* share_timeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = share_timeUITests.swift; sourceTree = "<group>"; };
 		5A254AFC2082F04E00767CB7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5A2CA82C20B4E0EF00AD1CD5 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		5A2D1ADD20B15398007B7088 /* HPTimer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HPTimer.swift; sourceTree = "<group>"; };
 		5A2F10CD209DC707007A0A4C /* ChangePasswordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChangePasswordViewController.swift; sourceTree = "<group>"; };
 		5A372706209DF26000EFE1F4 /* UserCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCell.swift; sourceTree = "<group>"; };
@@ -91,6 +94,7 @@
 		5A8FF2BE20859C02004957DE /* PublicStudyGroupCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PublicStudyGroupCell.swift; sourceTree = "<group>"; };
 		5AA6C68E20AAE88900F86C92 /* QRViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRViewController.swift; sourceTree = "<group>"; };
 		5AA6EE6F20A7CCDC0081B5EB /* StudyingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudyingViewController.swift; sourceTree = "<group>"; };
+		5AC3439C20B5209700EDF3C7 /* ProfileTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTableViewController.swift; sourceTree = "<group>"; };
 		5AE16BD520B44318003FF497 /* ChangeStudyHoursViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeStudyHoursViewController.swift; sourceTree = "<group>"; };
 		5AE258F620B2EBA30040866D /* FindGroupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindGroupViewController.swift; sourceTree = "<group>"; };
 		5AEE747820915F70006A2689 /* StudyGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = StudyGroup.swift; path = "share-time/StudyGroup.swift"; sourceTree = SOURCE_ROOT; };
@@ -197,6 +201,7 @@
 				5A142AEF209A99DD003FF5C7 /* Helper.swift */,
 				5AEE747A209162B7006A2689 /* Course.swift */,
 				5A2D1ADD20B15398007B7088 /* HPTimer.swift */,
+				5A2CA82C20B4E0EF00AD1CD5 /* Color.swift */,
 			);
 			path = "share-time";
 			sourceTree = "<group>";
@@ -251,6 +256,7 @@
 				5A0CC9C820A954D3002E6F9F /* PageViewController.swift */,
 				5AE258F620B2EBA30040866D /* FindGroupViewController.swift */,
 				5AE16BD520B44318003FF497 /* ChangeStudyHoursViewController.swift */,
+				5AC3439C20B5209700EDF3C7 /* ProfileTableViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -512,6 +518,7 @@
 				5AA6EE7020A7CCDC0081B5EB /* StudyingViewController.swift in Sources */,
 				5A7D516620B1880500D69ECD /* PresetAppearanceConfigs.swift in Sources */,
 				5AFE25A62082F4FE00EED7F9 /* LoginViewController.swift in Sources */,
+				5AC3439D20B5209700EDF3C7 /* ProfileTableViewController.swift in Sources */,
 				5A8B072420AAED5700755718 /* QRScannerViewController.swift in Sources */,
 				70CE5ADF20830EEB0023F3D7 /* ClassCell.swift in Sources */,
 				70CE5ADC20830B6E0023F3D7 /* ChatCell.swift in Sources */,
@@ -525,6 +532,7 @@
 				5AEE747B209162B7006A2689 /* Course.swift in Sources */,
 				5AFE25A82082F5E900EED7F9 /* FindClassViewController.swift in Sources */,
 				5A0CC9C920A954D3002E6F9F /* PageViewController.swift in Sources */,
+				5A2CA82D20B4E0EF00AD1CD5 /* Color.swift in Sources */,
 				70CE5AD8208309300023F3D7 /* StudyGroupCell.swift in Sources */,
 				5A2F10CE209DC707007A0A4C /* ChangePasswordViewController.swift in Sources */,
 				5A2D1ADE20B15398007B7088 /* HPTimer.swift in Sources */,
@@ -703,10 +711,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 73LHA5862B;
+				DEVELOPMENT_TEAM = JFKG4HDM34;
 				INFOPLIST_FILE = "share-time/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.share-time.guanxin";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.share-time.godwin";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -719,10 +727,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 73LHA5862B;
+				DEVELOPMENT_TEAM = JFKG4HDM34;
 				INFOPLIST_FILE = "share-time/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.share-time.guanxin";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.share-time.godwin";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

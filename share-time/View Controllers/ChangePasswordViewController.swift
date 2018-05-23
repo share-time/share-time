@@ -19,9 +19,9 @@ class ChangePasswordViewController: UIViewController, UITextFieldDelegate {
         //does nothing -> dismisses alert view
     }
     
-    @IBOutlet weak var currentPasswordTextField: UITextField!
-    @IBOutlet weak var newPasswordTextField: UITextField!
-    @IBOutlet weak var confirmPasswordTextField: UITextField!
+    @IBOutlet weak var currentPasswordTextField: SkyFloatingLabelTextField!
+    @IBOutlet weak var newPasswordTextField: SkyFloatingLabelTextField!
+    @IBOutlet weak var confirmPasswordTextField: SkyFloatingLabelTextField!
     var activeTextField : UITextField!
     
     let user = PFUser.current()
@@ -33,6 +33,8 @@ class ChangePasswordViewController: UIViewController, UITextFieldDelegate {
         signUpPasswordSuccessAlertController.addAction(OKAction)
         // Do any additional setup after loading the view.
         
+        self.title = "Password"
+        
         currentPasswordTextField.delegate = self
         newPasswordTextField.delegate = self
         confirmPasswordTextField.delegate = self
@@ -42,30 +44,36 @@ class ChangePasswordViewController: UIViewController, UITextFieldDelegate {
         self.hideKeyboardWhenTappedAround()
         
         
+        currentPasswordTextField.placeholder = "Current Password"
+        currentPasswordTextField.title = "Current Password"
+        currentPasswordTextField.tintColor = Color.overcastBlueColor // the color of the blinking cursor
+        currentPasswordTextField.textColor = Color.darkGreyColor
+        currentPasswordTextField.lineColor = Color.lightGreyColor
+        currentPasswordTextField.selectedTitleColor = Color.overcastBlueColor
+        currentPasswordTextField.selectedLineColor = Color.overcastBlueColor
+        currentPasswordTextField.lineHeight = 1.0 // bottom line height in points
+        currentPasswordTextField.selectedLineHeight = 2.0
         
-        let lightGreyColor = UIColor(red: 197/255, green: 205/255, blue: 205/255, alpha: 1.0)
-        let darkGreyColor = UIColor(red: 52/255, green: 42/255, blue: 61/255, alpha: 1.0)
-        let overcastBlueColor = UIColor(red: 0, green: 187/255, blue: 204/255, alpha: 1.0)
+        newPasswordTextField.placeholder = "New Password"
+        newPasswordTextField.title = "New Password"
+        newPasswordTextField.tintColor = Color.overcastBlueColor // the color of the blinking cursor
+        newPasswordTextField.textColor = Color.darkGreyColor
+        newPasswordTextField.lineColor = Color.lightGreyColor
+        newPasswordTextField.selectedTitleColor = Color.overcastBlueColor
+        newPasswordTextField.selectedLineColor = Color.overcastBlueColor
+        newPasswordTextField.lineHeight = 1.0 // bottom line height in points
+        newPasswordTextField.selectedLineHeight = 2.0
         
-        let textField1 = SkyFloatingLabelTextField(frame: CGRect(x:10, y:10, width:120, height:45))
-        textField1.placeholder = "First name"
-        textField1.title = "Given name"
-        self.view.addSubview(textField1)
         
-        let textField2 = SkyFloatingLabelTextField(frame: CGRect(x:150, y:10, width:120, height:45))
-        textField2.placeholder = "Last name"
-        textField2.title = "Family name"
-        
-        textField2.tintColor = overcastBlueColor // the color of the blinking cursor
-        textField2.textColor = darkGreyColor
-        textField2.lineColor = lightGreyColor
-        textField2.selectedTitleColor = overcastBlueColor
-        textField2.selectedLineColor = overcastBlueColor
-        
-        textField2.lineHeight = 1.0 // bottom line height in points
-        textField2.selectedLineHeight = 2.0
-        self.view.addSubview(textField2)
-        
+        confirmPasswordTextField.placeholder = "Confirm Password"
+        confirmPasswordTextField.title = "Confirm Password"
+        confirmPasswordTextField.tintColor = Color.overcastBlueColor // the color of the blinking cursor
+        confirmPasswordTextField.textColor = Color.darkGreyColor
+        confirmPasswordTextField.lineColor = Color.lightGreyColor
+        confirmPasswordTextField.selectedTitleColor = Color.overcastBlueColor
+        confirmPasswordTextField.selectedLineColor = Color.overcastBlueColor
+        confirmPasswordTextField.lineHeight = 1.0 // bottom line height in points
+        confirmPasswordTextField.selectedLineHeight = 2.0
     }
     
     @objc func keyboardDidShow(notification: Notification) {
