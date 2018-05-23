@@ -18,6 +18,7 @@ class SignUpViewController: UIViewController, UITextFieldDelegate{
         //does nothing -> dismisses alert view
     }
     
+    @IBOutlet var signUpButton: UIButton!
     @IBOutlet weak var emailField: UITextField!
     @IBOutlet weak var usernameField: UITextField!
     @IBOutlet weak var passwordField: UITextField!
@@ -34,6 +35,7 @@ class SignUpViewController: UIViewController, UITextFieldDelegate{
         usernameField.delegate = self
         passwordField.delegate = self
         confirmField.delegate = self
+        signUpButton.layer.cornerRadius = 10
         let center: NotificationCenter = NotificationCenter.default
         center.addObserver(self, selector: #selector(keyboardDidShow(notification:)), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
         center.addObserver(self, selector: #selector(keyboardWillHide(notification:)), name: NSNotification.Name.UIKeyboardWillHide, object: nil)

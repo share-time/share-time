@@ -58,7 +58,7 @@ class BlobViewController: UIViewController {
         
         // Get the gif of the blob
         blobImage.image = UIImage.gif(name: "defaultBlob")
-        blobImage.tintColor = UIColor.yellow
+        //blobImage.tintColor = UIColor.yellow
         HPtext = UILabel(frame:CGRect(x:40, y:600, width: BlobViewController.width, height: 30))
         HPtext.text = "HP:"
         HPtext.font.withSize(25)
@@ -90,7 +90,7 @@ class BlobViewController: UIViewController {
         profileButton.af_setBackgroundImage(for: UIControlState.normal, url: imgUrl)
         profileButton.layer.cornerRadius = 22.5
         profileButton.layer.borderWidth = 2.0
-        profileButton.layer.borderColor = UIColor.gray.cgColor
+        profileButton.layer.borderColor = UIColor.white.cgColor
         NotificationCenter.default.addObserver(self, selector: #selector(BlobViewController.updateBlobToSad), name: NSNotification.Name(rawValue: "updateBlobToSad"), object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(BlobViewController.updateBlobToDefault), name: NSNotification.Name(rawValue: "updateBlobToDefault"), object: nil)
         // Do any additional setup after loading the view.

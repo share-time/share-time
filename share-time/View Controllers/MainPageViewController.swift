@@ -59,7 +59,6 @@ class MainPageViewController: UIViewController,UITableViewDelegate, UITableViewD
                 }
             }
         }
-        
         addNewStudyGroupAlertController.addAction(CancelAction)
         addNewStudyGroupAlertController.addAction(ConfirmAction)
     }
@@ -139,6 +138,7 @@ class MainPageViewController: UIViewController,UITableViewDelegate, UITableViewD
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "StudyGroupCell", for: indexPath) as! StudyGroupCell
+        cell.contentView.layer.cornerRadius = cell.layer.frame.height / 2
         let studyGroup = studyGroups[indexPath.row]
         cell.studyGroup = studyGroup
 

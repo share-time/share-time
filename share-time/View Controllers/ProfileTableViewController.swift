@@ -31,7 +31,9 @@ class ProfileTableViewController: UITableViewController {
         let imgUrlString = user["imgUrl"] as! String
         let imgUrl = URL(string: imgUrlString)!
         profileImageView.af_setImage(withURL: imgUrl)
-        
+        profileImageView.layer.cornerRadius = profileImageView.frame.width / 2
+        profileImageView.layer.borderWidth = 5.0
+        profileImageView.layer.borderColor = UIColor.gray.cgColor
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 

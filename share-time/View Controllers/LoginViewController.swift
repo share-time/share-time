@@ -11,6 +11,7 @@ import Parse
 
 class LoginViewController: UIViewController, UITextFieldDelegate {
     
+    @IBOutlet var loginButton: UIButton!
     @IBOutlet var headerLabel: UILabel!
     @IBOutlet weak var usernameField: UITextField!
     @IBOutlet weak var passwordField: UITextField!
@@ -51,6 +52,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         gradient.add(gradientChangeAnimation, forKey: "colorChange")
         view.layer.insertSublayer(gradient, at: 0)
         headerLabel.textColor = UIColor.white
+        loginButton.layer.cornerRadius = 10
         loginUsernameErrorAlertController.addAction(OKAction)
         loginPasswordErrorAlertController.addAction(OKAction)
         //loginErrorAlertController.addAction(self.OKAction)
