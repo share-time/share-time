@@ -12,7 +12,9 @@ import Parse
 class ClassDetailViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     @IBOutlet weak var classNameLabel: UILabel!
-    @IBOutlet weak var createGroupButton: UIButton!
+    @IBOutlet weak var createGroupButton: UIBarButtonItem!
+    
+    //@IBOutlet weak var createeGroupButton: UIButton!
     @IBOutlet weak var studyGroupTableView: UITableView!
 
     var courseName: String!
