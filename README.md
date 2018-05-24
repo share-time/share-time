@@ -33,9 +33,7 @@ More to elaborate
 -Enhancement
 - Home page
 - [ ] Design the study group cell
-- [ ] Add arrow to cell so that the user know to tap on
 - Chat page
-- [ ] Round corners for profile image
 - [ ] Add loading icon before loading out all the chat
 - Group info vc
 - [ ] Delete and leave button/ QR button looks wierd
@@ -46,10 +44,7 @@ More to elaborate
 - [ ] UI for sleep - only the blob part dim out
 Profile vc
 - [ ] Logout button - Red-white button
-- [ ] Round corners for profile pic
 - [ ] Change password page -- save button on navigation bar
-Find class vc
-- [ ] Autolayout-cell label
 Class Detail
 - [ ] Add group button into navigation bar
 
