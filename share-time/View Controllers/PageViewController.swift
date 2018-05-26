@@ -9,8 +9,12 @@
 import UIKit
 import Pageboy
 
-class PageViewController: PageboyViewController, PageboyViewControllerDataSource  {
-
+class PageViewController: PageboyViewController, PageboyViewControllerDataSource, PageboyViewControllerDelegate  {
+    
+    @IBOutlet weak var toHomeViewControllerButton: UIButton!
+    @IBOutlet weak var toFindViewControllerButton: UIButton!
+    
+    
     let pageControllers: [UIViewController] = {
         let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
         var viewControllers = [UIViewController]()
@@ -29,6 +33,7 @@ class PageViewController: PageboyViewController, PageboyViewControllerDataSource
     override func viewDidLoad() {
         super.viewDidLoad()
         dataSource = self
+        delegate = self
         self.navigationController?.setNavigationBarHidden(true, animated: false)
 
         // Do any additional setup after loading the view.
@@ -50,5 +55,26 @@ class PageViewController: PageboyViewController, PageboyViewControllerDataSource
     func defaultPage(for pageboyViewController: PageboyViewController) -> PageboyViewController.Page? {
         return .at(index: 1)
     }
-
+    
+  
+    @IBAction func toHomeViewController(_ sender: Any) {
+        self.scrollToPage(.first, animated: true)
+    }
+    
+    
+    @IBAction func toFindViewController(_ sender: Any) {
+        self.scrollToPage(.last, animated: true)
+    }
+    
+    func pageboyViewController(_ pageboyViewController: PageboyViewController, willScrollToPageAt index: Int, direction: PageboyViewController.NavigationDirection, animated: Bool) {
+        //print("\(index)")
+        if index != 1{
+            toHomeViewControllerButton.isHidden = true
+            toFindViewControllerButton.isHidden = true
+        } else {
+            toHomeViewControllerButton.isHidden = false
+            toFindViewControllerButton.isHidden = false
+        }
+    }
+    
 }

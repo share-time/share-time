@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="PPx-g2-hi5">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="PPx-g2-hi5">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
@@ -634,7 +634,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lRk-IP-jhJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4053.5999999999999" y="-824.43778110944538"/>
+            <point key="canvasLocation" x="2801" y="-768"/>
         </scene>
         <!--Change Study Hours View Controller-->
         <scene sceneID="L9C-5E-Lp1">
@@ -678,7 +678,7 @@
             </objects>
             <point key="canvasLocation" x="5300" y="-644"/>
         </scene>
-        <!--Change Password View Controller-->
+        <!--Title-->
         <scene sceneID="7X1-JN-lh1">
             <objects>
                 <viewController id="mut-Vh-fwo" customClass="ChangePasswordViewController" customModule="share_time" customModuleProvider="target" sceneMemberID="viewController">
@@ -753,7 +753,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="FnW-Vx-3ED"/>
                     </view>
-                    <navigationItem key="navigationItem" id="Iuw-4i-5rD"/>
+                    <navigationItem key="navigationItem" title="Title" id="Rdl-dg-ZV3"/>
                     <connections>
                         <outlet property="confirmPasswordTextField" destination="xWG-YS-VYB" id="ElP-bF-ikH"/>
                         <outlet property="currentPasswordTextField" destination="JUp-iF-9cw" id="O4C-Ar-qH7"/>
@@ -1413,7 +1413,7 @@
                         <viewLayoutGuide key="safeArea" id="ag5-9X-2Xf"/>
                     </view>
                     <navigationItem key="navigationItem" id="fJO-fT-xZB">
-                        <barButtonItem key="rightBarButtonItem" title="Add Goup" id="A4o-F4-JNg">
+                        <barButtonItem key="rightBarButtonItem" title="Add Group" id="A4o-F4-JNg">
                             <connections>
                                 <segue destination="SNw-SO-4Kv" kind="show" identifier="addGroupSegue" id="LNs-FS-QOC"/>
                             </connections>
@@ -1543,10 +1543,44 @@
                     <view key="view" contentMode="scaleToFill" id="YGb-Sh-Je5">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RKL-uI-z7Y">
+                                <rect key="frame" x="30" y="600" width="25" height="25"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="25" id="7RS-ee-ViH"/>
+                                    <constraint firstAttribute="height" constant="25" id="MiN-f4-VaJ"/>
+                                </constraints>
+                                <state key="normal" image="icons8-back-filled-50"/>
+                                <connections>
+                                    <action selector="toHomeViewController:" destination="pbi-2d-2Rb" eventType="touchUpInside" id="vtN-r0-UFV"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9P4-Fn-KjB">
+                                <rect key="frame" x="320" y="600" width="25" height="25"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="25" id="a4y-KM-Lq2"/>
+                                    <constraint firstAttribute="width" constant="25" id="byo-sC-vyQ"/>
+                                </constraints>
+                                <state key="normal" title="Button" image="icons8-forward-filled-50"/>
+                                <connections>
+                                    <action selector="toFindViewController:" destination="pbi-2d-2Rb" eventType="touchUpInside" id="sJ9-Rs-Yvk"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Jvh-eg-KnA" firstAttribute="bottom" secondItem="RKL-uI-z7Y" secondAttribute="bottom" constant="42" id="9uS-IM-yRv"/>
+                            <constraint firstItem="Jvh-eg-KnA" firstAttribute="bottom" secondItem="9P4-Fn-KjB" secondAttribute="bottom" constant="42" id="DSt-7g-mf6"/>
+                            <constraint firstItem="RKL-uI-z7Y" firstAttribute="leading" secondItem="Jvh-eg-KnA" secondAttribute="leading" constant="30" id="IFY-Qo-AeH"/>
+                            <constraint firstItem="Jvh-eg-KnA" firstAttribute="trailing" secondItem="9P4-Fn-KjB" secondAttribute="trailing" constant="30" id="Vyp-Kc-C46"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="Jvh-eg-KnA"/>
                     </view>
                     <navigationItem key="navigationItem" id="YRP-F0-iV8"/>
+                    <connections>
+                        <outlet property="toFindViewControllerButton" destination="9P4-Fn-KjB" id="0tM-4J-GI3"/>
+                        <outlet property="toHomeViewControllerButton" destination="RKL-uI-z7Y" id="j7M-BK-Wde"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wbV-La-eBD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1737,6 +1771,8 @@
     <resources>
         <image name="feed_tab" width="25" height="25"/>
         <image name="forwardIcon" width="50" height="50"/>
+        <image name="icons8-back-filled-50" width="50" height="50"/>
+        <image name="icons8-forward-filled-50" width="50" height="50"/>
         <image name="members" width="25" height="25"/>
         <image name="profile_tab" width="25" height="25"/>
         <image name="search_tab" width="25" height="25"/>
