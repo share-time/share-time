@@ -26,6 +26,7 @@ class FindClassViewController: UIViewController, UITableViewDelegate, UITableVie
         classTableView.estimatedRowHeight = 100
         classTableView.estimatedRowHeight = 85.0
         classTableView.rowHeight = UITableViewAutomaticDimension
+        classTableView.backgroundColor = Color.lightMossGreen
         
         definesPresentationContext = true
         
@@ -78,7 +79,7 @@ class FindClassViewController: UIViewController, UITableViewDelegate, UITableVie
         let cell = tableView.dequeueReusableCell(withIdentifier: "ClassCell", for: indexPath) as! ClassCell
 
         cell.classnameLabel.text = FindClassViewController.searchedCourses[indexPath.row]
-        cell.contentView.backgroundColor = Color.lightGreen
+        cell.contentView.backgroundColor = Color.lightMossGreen
         return cell
     }
 

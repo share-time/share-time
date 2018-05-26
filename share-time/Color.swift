@@ -24,6 +24,7 @@ class Color {
     static let paleBlue = UIColor(red: 154/255, green: 209/255, blue: 212/255, alpha: 1)
     static let mediumBlueGreen = UIColor(red: 94/255, green: 194/255, blue: 183/255, alpha: 1)
     static let darkBlue = UIColor(red: 8/255, green: 65/255, blue: 92/255, alpha: 1)
+    static let lightMossGreen = UIColor(red: 186/255, green: 212/255, blue: 170/255, alpha: 1)
     
     
     
