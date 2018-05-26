@@ -8,6 +8,7 @@
 
 import UIKit
 import Parse
+import SkyFloatingLabelTextField
 
 class SignUpViewController: UIViewController, UITextFieldDelegate{
     let signUpUsernameErrorAlertController = UIAlertController(title: "Username Required", message: "Please enter username", preferredStyle: .alert)
@@ -19,10 +20,10 @@ class SignUpViewController: UIViewController, UITextFieldDelegate{
     }
     
     @IBOutlet var signUpButton: UIButton!
-    @IBOutlet weak var emailField: UITextField!
-    @IBOutlet weak var usernameField: UITextField!
-    @IBOutlet weak var passwordField: UITextField!
-    @IBOutlet weak var confirmField: UITextField!
+    @IBOutlet weak var emailField: SkyFloatingLabelTextField!
+    @IBOutlet weak var usernameField: SkyFloatingLabelTextField!
+    @IBOutlet weak var passwordField: SkyFloatingLabelTextField!
+    @IBOutlet weak var confirmField: SkyFloatingLabelTextField!
     var activeTextField : UITextField!
     
     override func viewDidLoad() {
@@ -41,6 +42,47 @@ class SignUpViewController: UIViewController, UITextFieldDelegate{
         center.addObserver(self, selector: #selector(keyboardWillHide(notification:)), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
         self.hideKeyboardWhenTappedAround()
         // Do any additional setup after loading the view.
+        
+        // Set up the text field
+        emailField.placeholder = "username"
+        emailField.title = "username"
+        emailField.tintColor = Color.darkPurpleColor // the color of the blinking cursor
+        emailField.textColor = Color.darkGreyColor
+        emailField.lineColor = Color.lightGreyColor
+        emailField.selectedTitleColor = Color.darkPurpleColor
+        emailField.selectedLineColor = Color.darkPurpleColor
+        emailField.lineHeight = 2.0 // bottom line height in points
+        emailField.selectedLineHeight = 2.0
+        
+        usernameField.placeholder = "password"
+        usernameField.title = "password"
+        usernameField.tintColor = Color.darkPurpleColor // the color of the blinking cursor
+        usernameField.textColor = Color.darkGreyColor
+        usernameField.lineColor = Color.lightGreyColor
+        usernameField.selectedTitleColor = Color.darkPurpleColor
+        usernameField.selectedLineColor = Color.darkPurpleColor
+        usernameField.lineHeight = 2.0 // bottom line height in points
+        usernameField.selectedLineHeight = 2.0
+        
+        passwordField.placeholder = "username"
+        passwordField.title = "username"
+        passwordField.tintColor = Color.darkPurpleColor // the color of the blinking cursor
+        passwordField.textColor = Color.darkGreyColor
+        passwordField.lineColor = Color.lightGreyColor
+        passwordField.selectedTitleColor = Color.darkPurpleColor
+        passwordField.selectedLineColor = Color.darkPurpleColor
+        passwordField.lineHeight = 2.0 // bottom line height in points
+        passwordField.selectedLineHeight = 2.0
+        
+        confirmField.placeholder = "password"
+        confirmField.title = "password"
+        confirmField.tintColor = Color.darkPurpleColor // the color of the blinking cursor
+        confirmField.textColor = Color.darkGreyColor
+        confirmField.lineColor = Color.lightGreyColor
+        confirmField.selectedTitleColor = Color.darkPurpleColor
+        confirmField.selectedLineColor = Color.darkPurpleColor
+        confirmField.lineHeight = 2.0 // bottom line height in points
+        confirmField.selectedLineHeight = 2.0
     }
     
     @objc func keyboardDidShow(notification: Notification) {

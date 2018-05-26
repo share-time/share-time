@@ -8,14 +8,14 @@
 
 import UIKit
 import Parse
+import SkyFloatingLabelTextField
 
 class AddStudyGroupViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     @IBOutlet weak var courseLabel: UILabel!
-    @IBOutlet weak var profTextField: UITextField!
-    @IBOutlet weak var studyGroupNameTextField: UITextField!
+    @IBOutlet weak var profTextField: SkyFloatingLabelTextField!
+    @IBOutlet weak var studyGroupNameTextField: SkyFloatingLabelTextField!
     @IBOutlet weak var profLabel: UILabel!
     @IBOutlet weak var groupNameLabel: UILabel!
-    @IBOutlet weak var memberSearchBar: UITextField!
     @IBOutlet weak var tableView: UITableView!
     
     var searchController: UISearchController!
@@ -68,6 +68,26 @@ class AddStudyGroupViewController: UIViewController, UITableViewDelegate, UITabl
         tableView.reloadData()
         self.hideKeyboardWhenTappedAround()
         // Do any additional setup after loading the view.
+        
+        profTextField.placeholder = "professor name"
+        profTextField.title = "professor name"
+        profTextField.tintColor = Color.darkPurpleColor // the color of the blinking cursor
+        profTextField.textColor = Color.darkGreyColor
+        profTextField.lineColor = Color.lightGreyColor
+        profTextField.selectedTitleColor = Color.darkPurpleColor
+        profTextField.selectedLineColor = Color.darkPurpleColor
+        profTextField.lineHeight = 2.0 // bottom line height in points
+        profTextField.selectedLineHeight = 2.0
+        
+        studyGroupNameTextField.placeholder = "group name"
+        studyGroupNameTextField.title = "group name"
+        studyGroupNameTextField.tintColor = Color.darkPurpleColor // the color of the blinking cursor
+        studyGroupNameTextField.textColor = Color.darkGreyColor
+        studyGroupNameTextField.lineColor = Color.lightGreyColor
+        studyGroupNameTextField.selectedTitleColor = Color.darkPurpleColor
+        studyGroupNameTextField.selectedLineColor = Color.darkPurpleColor
+        studyGroupNameTextField.lineHeight = 2.0 // bottom line height in points
+        studyGroupNameTextField.selectedLineHeight = 2.0
     }
     
     override func didReceiveMemoryWarning() {

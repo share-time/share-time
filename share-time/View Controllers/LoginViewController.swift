@@ -8,13 +8,14 @@
 
 import UIKit
 import Parse
+import SkyFloatingLabelTextField
 
 class LoginViewController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet var loginButton: UIButton!
     @IBOutlet var headerLabel: UILabel!
-    @IBOutlet weak var usernameField: UITextField!
-    @IBOutlet weak var passwordField: UITextField!
+    @IBOutlet weak var usernameField: SkyFloatingLabelTextField!
+    @IBOutlet weak var passwordField: SkyFloatingLabelTextField!
     var activeTextField : UITextField!
     
     let loginUsernameErrorAlertController = UIAlertController(title: "Username Required", message: "Please enter username", preferredStyle: .alert)
@@ -44,8 +45,8 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         let gradientChangeAnimation = CABasicAnimation(keyPath: "colors")
         gradientChangeAnimation.duration = 5.0
         gradientChangeAnimation.toValue = [
-            UIColor(red: 117/255, green: 58/255, blue: 136/255, alpha: 1).cgColor,
-            UIColor(red: 204/255, green: 43/255, blue: 94/255, alpha: 1).cgColor
+            Color.darkPurpleColor.cgColor,
+            Color.darkRedPinkColor.cgColor
         ]
         gradientChangeAnimation.fillMode = kCAFillModeForwards
         gradientChangeAnimation.isRemovedOnCompletion = false
@@ -61,6 +62,26 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         center.addObserver(self, selector: #selector(keyboardWillHide(notification:)), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
         self.hideKeyboardWhenTappedAround()
         // Do any additional setup after loading the view.
+        
+        usernameField.placeholder = "username"
+        usernameField.title = "username"
+        usernameField.tintColor = Color.darkPurpleColor // the color of the blinking cursor
+        usernameField.textColor = Color.darkGreyColor
+        usernameField.lineColor = Color.lightGreyColor
+        usernameField.selectedTitleColor = Color.darkPurpleColor
+        usernameField.selectedLineColor = Color.darkPurpleColor
+        usernameField.lineHeight = 2.0 // bottom line height in points
+        usernameField.selectedLineHeight = 2.0
+        
+        passwordField.placeholder = "password"
+        passwordField.title = "password"
+        passwordField.tintColor = Color.darkPurpleColor // the color of the blinking cursor
+        passwordField.textColor = Color.darkGreyColor
+        passwordField.lineColor = Color.lightGreyColor
+        passwordField.selectedTitleColor = Color.darkPurpleColor
+        passwordField.selectedLineColor = Color.darkPurpleColor
+        passwordField.lineHeight = 2.0 // bottom line height in points
+        passwordField.selectedLineHeight = 2.0
     }
     
     @objc func keyboardDidShow(notification: Notification) {
