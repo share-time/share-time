@@ -38,6 +38,7 @@ class SignUpViewController: UIViewController, UITextFieldDelegate{
         confirmField.delegate = self
         signUpButton.layer.cornerRadius = 10
         signUpButton.backgroundColor = Color.paleBlue
+        self.view.backgroundColor = UIColor(red: 244/255, green: 226/255, blue: 216/255, alpha: 1)
         let center: NotificationCenter = NotificationCenter.default
         center.addObserver(self, selector: #selector(keyboardDidShow(notification:)), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
         center.addObserver(self, selector: #selector(keyboardWillHide(notification:)), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
@@ -45,8 +46,8 @@ class SignUpViewController: UIViewController, UITextFieldDelegate{
         // Do any additional setup after loading the view.
         
         // Set up the text field
-        emailField.placeholder = "username"
-        emailField.title = "username"
+        emailField.placeholder = "email"
+        emailField.title = "email"
         emailField.tintColor = Color.darkPurpleColor // the color of the blinking cursor
         emailField.textColor = Color.darkGreyColor
         emailField.lineColor = Color.lightGreyColor
@@ -55,8 +56,8 @@ class SignUpViewController: UIViewController, UITextFieldDelegate{
         emailField.lineHeight = 2.0 // bottom line height in points
         emailField.selectedLineHeight = 2.0
         
-        usernameField.placeholder = "password"
-        usernameField.title = "password"
+        usernameField.placeholder = "username"
+        usernameField.title = "username"
         usernameField.tintColor = Color.darkPurpleColor // the color of the blinking cursor
         usernameField.textColor = Color.darkGreyColor
         usernameField.lineColor = Color.lightGreyColor
@@ -65,8 +66,8 @@ class SignUpViewController: UIViewController, UITextFieldDelegate{
         usernameField.lineHeight = 2.0 // bottom line height in points
         usernameField.selectedLineHeight = 2.0
         
-        passwordField.placeholder = "username"
-        passwordField.title = "username"
+        passwordField.placeholder = "password"
+        passwordField.title = "password"
         passwordField.tintColor = Color.darkPurpleColor // the color of the blinking cursor
         passwordField.textColor = Color.darkGreyColor
         passwordField.lineColor = Color.lightGreyColor
@@ -75,8 +76,8 @@ class SignUpViewController: UIViewController, UITextFieldDelegate{
         passwordField.lineHeight = 2.0 // bottom line height in points
         passwordField.selectedLineHeight = 2.0
         
-        confirmField.placeholder = "password"
-        confirmField.title = "password"
+        confirmField.placeholder = "confirm password"
+        confirmField.title = "confirm password"
         confirmField.tintColor = Color.darkPurpleColor // the color of the blinking cursor
         confirmField.textColor = Color.darkGreyColor
         confirmField.lineColor = Color.lightGreyColor

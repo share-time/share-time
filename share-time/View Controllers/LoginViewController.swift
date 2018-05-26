@@ -93,9 +93,9 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         
         if self.view.frame.origin.y >= 0 {
         // checking if the text field is really hiding behind the keyboard
-            if editingTextFIeldY > keyboardY - 60 {
+            if editingTextFIeldY > keyboardY - 50 {
                 UIView.animate(withDuration: 0.25, delay: 0.0, options: UIViewAnimationOptions.curveEaseIn, animations: {
-                    self.view.frame = CGRect(x: 0, y: self.view.frame.origin.y - (editingTextFIeldY! - (keyboardY - 60)), width: self.view.bounds.width, height: self.view.bounds.height)
+                    self.view.frame = CGRect(x: 0, y: self.view.frame.origin.y - (editingTextFIeldY! - (keyboardY - 50)), width: self.view.bounds.width, height: self.view.bounds.height)
                 }, completion: nil)
             }
         }
