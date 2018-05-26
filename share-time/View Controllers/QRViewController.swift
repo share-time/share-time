@@ -15,10 +15,11 @@ class QRViewController: UIViewController {
     var studyGroup: PFObject!
     var studyGroupName: String!
     @IBOutlet weak var QRImage: UIImageView!
-    
+    @IBOutlet weak var groupNameLabel: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
         studyGroupName = studyGroup.object(forKey: "name") as! String
+        groupNameLabel.text = studyGroupName
         let qrCode = QRCode(studyGroupName)
         QRImage.image = qrCode!.image
         // Do any additional setup after loading the view.

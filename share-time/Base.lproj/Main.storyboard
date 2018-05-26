@@ -1147,17 +1147,25 @@
                                 <rect key="frame" x="67" y="213" width="240" height="240"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E8L-VZ-UvQ">
+                                <rect key="frame" x="156" y="122" width="62" height="32"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="26"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <viewLayoutGuide key="safeArea" id="Ksn-CJ-IBB"/>
                     </view>
                     <connections>
                         <outlet property="QRImage" destination="z9N-IJ-qY0" id="QwV-7D-IQS"/>
+                        <outlet property="groupNameLabel" destination="E8L-VZ-UvQ" id="Y7N-mt-WM8"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cWT-vr-jy6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4857" y="-15"/>
+            <point key="canvasLocation" x="4856.8000000000002" y="-15.742128935532236"/>
         </scene>
         <!--Find Class View Controller-->
         <scene sceneID="G3P-IE-IrH">

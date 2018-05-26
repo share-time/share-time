@@ -18,6 +18,13 @@ class Color {
     static let darkPurpleColor = UIColor(red: 117/255, green: 58/255, blue: 136/255, alpha: 1)
     static let wateryPink =  UIColor(red: 186/255, green: 83/255, blue: 112/255, alpha: 1)
     static let superLightPInk = UIColor(red: 255/255, green: 221/255, blue: 225/255, alpha: 1)
+    
+    static let weldonBlue = UIColor(red: 119/255, green: 160/255, blue: 169/255, alpha: 1)
+    static let dimGray = UIColor(red: 108/255, green: 89/255, blue: 110/255, alpha: 1)
+    static let paleBlue = UIColor(red: 154/255, green: 209/255, blue: 212/255, alpha: 1)
+    
+    
+    
     // Color scheme
     static let superDarkPurple = UIColor(red: 56/255, green: 2/255, blue: 59/255, alpha: 1)
     static let lightPurple = UIColor(red: 162/255, green: 136/255, blue: 227/255, alpha: 1)

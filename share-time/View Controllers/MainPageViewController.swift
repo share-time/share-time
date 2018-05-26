@@ -31,7 +31,7 @@ class MainPageViewController: UIViewController,UITableViewDelegate, UITableViewD
         tableView.delegate = self
         tableView.rowHeight = UITableViewAutomaticDimension
         tableView.rowHeight = 125
-        self.view.backgroundColor = Color.lightGreen
+        //tableView.backgroundColor = Color.lightBlue
         self.refresher = UIRefreshControl()
         self.refresher.tintColor = UIColor.darkText
         self.refresher.addTarget(self, action: #selector(refreshControlAction(_:)), for: .valueChanged)
@@ -139,8 +139,8 @@ class MainPageViewController: UIViewController,UITableViewDelegate, UITableViewD
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "StudyGroupCell", for: indexPath) as! StudyGroupCell
-        cell.contentView.layer.cornerRadius = cell.layer.frame.height / 2
-        cell.contentView.backgroundColor = Color.lightGreen
+        cell.contentView.layer.cornerRadius = 20
+        cell.contentView.backgroundColor = Color.lightBlue
         let studyGroup = studyGroups[indexPath.row]
         cell.studyGroup = studyGroup
 
