@@ -1,0 +1,46 @@
+FOLLOW THE FOLLOWING RULES OR APP WILL BREAK!!!!
+1. Swipe
+   - Deliberate yet SLOW
+   - With Intent
+   - From Edge
+   - DONT GO BACK ON SWIPES OR EVERYTHING WILL BREAK
+
+2. Chat
+   - Short Messages
+   - 3 messages from the beginning
+   - 2 messages to be added to demonstrate chat functionality
+
+BLOB IS HAPPY UPON NEW LOGIN PLEASE DONT FORGET!!!!!
+
+1.   Introduction of app name and group members. Take turns saying names
+     according to order on slide. (Guanxin)
+
+2/3. Introduction to motivation using anecdote and pictures of people studying
+     (Jiayi)
+
+4.   Motivation bullet points (Jiayi)
+
+5.   Blob Introduction (Godwin)
+
+6.   Sad Blob :( (Godwin)
+
+7.   Study Group Creation/Search (Guanxin)
+
+8.   Study Group Chat (Guanxin)
+
+9.   Live Demo
+
+
+
+1. Sign Up User (Jiayi)
+
+2. Sign In User (Jiayi)
+
+3. Happy Blob is shown (Jiayi)
+
+4. Sad Blob is shown (Jiayi)
+
+    Once sad blob is shown, immediately proceed with following script while at
+    the same time swiping up and putting phone face down.
+    "The user may press a button or swipe up to prepare Blob for sleeping. After
+    "

@@ -79,7 +79,7 @@ class ProfileViewController: UIViewController {
         self.present(logOutAlertController,animated: true, completion: nil)
         /*
         self.performSegue(withIdentifier: "logoutSegue", sender: nil)
- */
+         */
     }
     
     override func viewDidLoad() {
