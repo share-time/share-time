@@ -17,6 +17,14 @@ class ProfileTableViewController: UITableViewController {
     @IBOutlet weak var usernameLabel: UILabel!
     @IBOutlet weak var emailLabel: UILabel!
     
+    var xBarButton: UIBarButtonItem!
+    
+    let logOutAlertController = UIAlertController(title:"Logout Alert", message:"Do you want to log out?", preferredStyle:.alert)
+    let CancelAction = UIAlertAction(title: "Cancel", style: .cancel) { (action) in
+        //does nothing -> dismisses alert view
+    }
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -34,6 +42,15 @@ class ProfileTableViewController: UITableViewController {
         profileImageView.layer.cornerRadius = profileImageView.frame.width / 2
         profileImageView.layer.borderWidth = 5.0
         profileImageView.layer.borderColor = UIColor.gray.cgColor
+        
+        logOutAlertController.addAction(UIAlertAction(title: "Continue", style: UIAlertActionStyle.default, handler:{
+            action in
+                PFUser.logOutInBackground()
+                self.performSegue(withIdentifier: "logoutSegue", sender: nil)}
+        ))
+        logOutAlertController.addAction(CancelAction)
+        
+        addBarButton()
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -74,6 +91,21 @@ class ProfileTableViewController: UITableViewController {
         self.profileImageView.af_setImage(withURL: imgUrl)
         self.profileImageView.layer.cornerRadius = self.profileImageView.frame.width*0.5
         user.saveInBackground()
+    }
+    
+    func addBarButton(){
+        let xBarButton = UIBarButtonItem(title: "x", style: .plain, target: self, action: #selector(xBarButtonPressed(sender:)))
+        navigationItem.setLeftBarButton(xBarButton, animated: false)
+        self.xBarButton = xBarButton
+    }
+    
+    @objc func xBarButtonPressed(sender: UIBarButtonItem){
+        self.dismiss(animated: true)
+    }
+    
+    
+    @IBAction func onLogout(_ sender: Any) {
+        self.present(logOutAlertController, animated: true, completion: nil)
     }
     
     /*
