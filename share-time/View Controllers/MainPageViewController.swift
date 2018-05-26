@@ -31,6 +31,7 @@ class MainPageViewController: UIViewController,UITableViewDelegate, UITableViewD
         tableView.delegate = self
         tableView.rowHeight = UITableViewAutomaticDimension
         tableView.rowHeight = 125
+        tableView.backgroundColor = UIColor.lightGray
         self.view.backgroundColor = Color.darkBlue
         self.refresher = UIRefreshControl()
         self.refresher.tintColor = UIColor.darkText

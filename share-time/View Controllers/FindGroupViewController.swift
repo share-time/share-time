@@ -26,7 +26,7 @@ class FindGroupViewController: UIViewController, UITableViewDelegate, UITableVie
         groupTableView.delegate = self
         groupTableView.rowHeight = UITableViewAutomaticDimension
         groupTableView.rowHeight = 125
-        
+        groupTableView.backgroundColor = Color.lightMossGreen
         definesPresentationContext = true
         
         NotificationCenter.default.addObserver(self, selector: #selector(FindGroupViewController.updateGroupTableView), name: NSNotification.Name(rawValue: "updateGroupTableView"), object: nil)
