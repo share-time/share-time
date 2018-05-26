@@ -27,6 +27,16 @@ class GroupInfoViewController: UIViewController, UICollectionViewDataSource,UICo
         super.viewDidLoad()
         collectionView.dataSource = self
         
+        joinGroupButton.layer.cornerRadius = 10
+        joinGroupButton.tintColor = UIColor.white
+        joinGroupButton.backgroundColor = Color.lightBlue
+        qrButton.layer.cornerRadius = 10
+        qrButton.tintColor = UIColor.white
+        qrButton.backgroundColor = Color.lightBlue
+        leaveGroupButton.layer.cornerRadius = 10
+        leaveGroupButton.tintColor = UIColor.white
+        leaveGroupButton.backgroundColor = UIColor.red
+        
         let layout = collectionView.collectionViewLayout as! UICollectionViewFlowLayout
         let cellPerLine: CGFloat = 4
         let totalSpacing = cellPerLine * layout.minimumInteritemSpacing
@@ -45,6 +55,7 @@ class GroupInfoViewController: UIViewController, UICollectionViewDataSource,UICo
         if (hideQRButton){
             self.qrButton.isHidden = true
         }
+        
         
         // Do any additional setup after loading the view.
     }

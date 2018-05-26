@@ -78,6 +78,7 @@ class FindClassViewController: UIViewController, UITableViewDelegate, UITableVie
         let cell = tableView.dequeueReusableCell(withIdentifier: "ClassCell", for: indexPath) as! ClassCell
 
         cell.classnameLabel.text = FindClassViewController.searchedCourses[indexPath.row]
+        cell.contentView.backgroundColor = Color.lightGreen
         return cell
     }
 

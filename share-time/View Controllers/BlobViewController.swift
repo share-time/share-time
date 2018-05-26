@@ -39,21 +39,20 @@ class BlobViewController: UIViewController {
         let gradient = CAGradientLayer()
         gradient.frame = view.bounds
         gradient.colors = [
-            UIColor(red: 186/255, green: 83/255, blue: 112/255, alpha: 1).cgColor,
-            UIColor(red: 255/255, green: 221/255, blue: 225/255, alpha: 1).cgColor
+            Color.mediumBlue.cgColor, Color.lightGreen.cgColor
         ]
         gradient.startPoint = CGPoint(x:0, y:0)
         gradient.endPoint = CGPoint(x:1, y:1)
-        // Add animation of the gradient background
-        let gradientChangeAnimation = CABasicAnimation(keyPath: "colors")
-        gradientChangeAnimation.duration = 5.0
-        gradientChangeAnimation.toValue = [
-            UIColor(red: 221/255, green: 214/255, blue: 243/255, alpha: 1).cgColor,
-            UIColor(red: 250/255, green: 172/255, blue: 168/255, alpha: 1).cgColor
-        ]
-        gradientChangeAnimation.fillMode = kCAFillModeForwards
-        gradientChangeAnimation.isRemovedOnCompletion = false
-        gradient.add(gradientChangeAnimation, forKey: "colorChange")
+//        // Add animation of the gradient background
+//        let gradientChangeAnimation = CABasicAnimation(keyPath: "colors")
+//        gradientChangeAnimation.duration = 5.0
+//        gradientChangeAnimation.toValue = [
+//            UIColor(red: 221/255, green: 214/255, blue: 243/255, alpha: 1).cgColor,
+//            UIColor(red: 250/255, green: 172/255, blue: 168/255, alpha: 1).cgColor
+//        ]
+//        gradientChangeAnimation.fillMode = kCAFillModeForwards
+//        gradientChangeAnimation.isRemovedOnCompletion = false
+//        gradient.add(gradientChangeAnimation, forKey: "colorChange")
         self.view.layer.insertSublayer(gradient, at: 0)
         
         // Get the gif of the blob

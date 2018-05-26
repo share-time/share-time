@@ -63,7 +63,7 @@ class FindGroupViewController: UIViewController, UITableViewDelegate, UITableVie
         let cell = tableView.dequeueReusableCell(withIdentifier: "StudyGroupCell") as! StudyGroupCell
         let studyGroup = FindGroupViewController.searchedGroups[indexPath.row]
         cell.studyGroup = studyGroup
-        
+        cell.contentView.backgroundColor = Color.lightGreen
         return cell
     }
     

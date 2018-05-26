@@ -16,7 +16,8 @@ class Color {
     // For the gradient background
     static let darkRedPinkColor = UIColor(red: 204/255, green: 43/255, blue: 94/255, alpha: 1)
     static let darkPurpleColor = UIColor(red: 117/255, green: 58/255, blue: 136/255, alpha: 1)
-    
+    static let wateryPink =  UIColor(red: 186/255, green: 83/255, blue: 112/255, alpha: 1)
+    static let superLightPInk = UIColor(red: 255/255, green: 221/255, blue: 225/255, alpha: 1)
     // Color scheme
     static let superDarkPurple = UIColor(red: 56/255, green: 2/255, blue: 59/255, alpha: 1)
     static let lightPurple = UIColor(red: 162/255, green: 136/255, blue: 227/255, alpha: 1)

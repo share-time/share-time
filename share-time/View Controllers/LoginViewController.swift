@@ -54,6 +54,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         view.layer.insertSublayer(gradient, at: 0)
         headerLabel.textColor = UIColor.white
         loginButton.layer.cornerRadius = 10
+        loginButton.backgroundColor = Color.mediumBlue
         loginUsernameErrorAlertController.addAction(OKAction)
         loginPasswordErrorAlertController.addAction(OKAction)
         //loginErrorAlertController.addAction(self.OKAction)

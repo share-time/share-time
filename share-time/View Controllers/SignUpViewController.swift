@@ -37,6 +37,7 @@ class SignUpViewController: UIViewController, UITextFieldDelegate{
         passwordField.delegate = self
         confirmField.delegate = self
         signUpButton.layer.cornerRadius = 10
+        signUpButton.backgroundColor = Color.lightBlue
         let center: NotificationCenter = NotificationCenter.default
         center.addObserver(self, selector: #selector(keyboardDidShow(notification:)), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
         center.addObserver(self, selector: #selector(keyboardWillHide(notification:)), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
