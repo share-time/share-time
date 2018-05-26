@@ -32,10 +32,9 @@ class GroupInfoViewController: UIViewController, UICollectionViewDataSource,UICo
         joinGroupButton.backgroundColor = Color.lightBlue
         qrButton.layer.cornerRadius = 10
         qrButton.tintColor = UIColor.white
-        qrButton.backgroundColor = Color.lightBlue
+        qrButton.backgroundColor = Color.paleBlue
         leaveGroupButton.layer.cornerRadius = 10
         leaveGroupButton.tintColor = UIColor.white
-        leaveGroupButton.backgroundColor = UIColor.red
         
         let layout = collectionView.collectionViewLayout as! UICollectionViewFlowLayout
         let cellPerLine: CGFloat = 4

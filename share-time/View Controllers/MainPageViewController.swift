@@ -31,7 +31,7 @@ class MainPageViewController: UIViewController,UITableViewDelegate, UITableViewD
         tableView.delegate = self
         tableView.rowHeight = UITableViewAutomaticDimension
         tableView.rowHeight = 125
-        //tableView.backgroundColor = Color.lightBlue
+        self.view.backgroundColor = Color.darkBlue
         self.refresher = UIRefreshControl()
         self.refresher.tintColor = UIColor.darkText
         self.refresher.addTarget(self, action: #selector(refreshControlAction(_:)), for: .valueChanged)
@@ -41,6 +41,9 @@ class MainPageViewController: UIViewController,UITableViewDelegate, UITableViewD
         let iconURLString = user?["imgUrl"] as? String
         let iconURL = URL(string: iconURLString!)
         personalImage.af_setImage(withURL: iconURL!)
+        personalImage.layer.cornerRadius = profileImageView.frame.width / 2
+        personalImage.layer.borderWidth = 2.0
+        personalImage.layer.borderColor = UIColor.gray.cgColor
         user?.relation(forKey: "studyGroups").query().findObjectsInBackground{
             (studyGroups: [PFObject]?, error: Error?) -> Void in
             if error != nil {
@@ -140,7 +143,7 @@ class MainPageViewController: UIViewController,UITableViewDelegate, UITableViewD
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "StudyGroupCell", for: indexPath) as! StudyGroupCell
         cell.contentView.layer.cornerRadius = 20
-        cell.contentView.backgroundColor = Color.lightBlue
+        cell.contentView.backgroundColor = Color.paleBlue
         let studyGroup = studyGroups[indexPath.row]
         cell.studyGroup = studyGroup
 

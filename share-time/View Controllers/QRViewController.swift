@@ -18,6 +18,7 @@ class QRViewController: UIViewController {
     @IBOutlet weak var groupNameLabel: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.view.backgroundColor = UIColor.darkGray
         studyGroupName = studyGroup.object(forKey: "name") as! String
         groupNameLabel.text = studyGroupName
         let qrCode = QRCode(studyGroupName)

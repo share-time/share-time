@@ -22,6 +22,9 @@ class Color {
     static let weldonBlue = UIColor(red: 119/255, green: 160/255, blue: 169/255, alpha: 1)
     static let dimGray = UIColor(red: 108/255, green: 89/255, blue: 110/255, alpha: 1)
     static let paleBlue = UIColor(red: 154/255, green: 209/255, blue: 212/255, alpha: 1)
+    static let mediumBlueGreen = UIColor(red: 94/255, green: 194/255, blue: 183/255, alpha: 1)
+    static let darkBlue = UIColor(red: 8/255, green: 65/255, blue: 92/255, alpha: 1)
+    
     
     
     
