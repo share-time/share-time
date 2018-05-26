@@ -14,11 +14,11 @@ class PresetAppearanceConfigs: Any {
     static func forStyle(_ style: TabmanBar.Style, currentAppearance: TabmanBar.Appearance?) -> TabmanBar.Appearance? {
         let appearance = currentAppearance ?? TabmanBar.Appearance.defaultAppearance
         
-        appearance.style.background = .clear
+        appearance.style.background = .solid(color: Color.mediumGreen)
         
-        appearance.state.selectedColor = UIColor.black
-        appearance.state.color = UIColor.black.withAlphaComponent(0.3)
-        appearance.indicator.color = UIColor.black
+        appearance.state.selectedColor = UIColor.white
+        appearance.state.color = UIColor.white.withAlphaComponent(0.3)
+        appearance.indicator.color = UIColor.white
         
         appearance.indicator.bounces = true
         appearance.indicator.lineWeight = .normal

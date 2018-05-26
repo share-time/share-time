@@ -27,6 +27,9 @@ class Color {
     static let lightMossGreen = UIColor(red: 186/255, green: 212/255, blue: 170/255, alpha: 1)
     
     
+    static let mediumGreen = UIColor(red: 145/255, green: 186/255, blue: 119/255, alpha: 1)
+    static let darkGreen = UIColor(red: 106/255, green: 152/255, blue: 77/255, alpha: 1)
+    
     
     
     // Color scheme

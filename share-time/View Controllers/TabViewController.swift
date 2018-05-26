@@ -48,6 +48,9 @@ class TabViewController: TabmanViewController, PageboyViewControllerDataSource, 
         searchController.searchBar.placeholder = "Search for study groups!"
         searchController.hidesNavigationBarDuringPresentation = false
         
+        navigationController?.navigationBar.barTintColor = Color.darkGreen
+        navigationController?.navigationBar.tintColor = UIColor.white
+        
         definesPresentationContext = true
     }
     
