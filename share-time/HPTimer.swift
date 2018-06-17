@@ -17,9 +17,9 @@ class HPTimer{
     static let timer = Timer()
     
     // Interval in seconds elapsed between each call to onInterval.
-    static var timerInterval: Double = 1{
+    static var timerInterval: Double{
         didSet{
-            restartTimer()
+            restart()
         }
     }
     
@@ -33,17 +33,17 @@ class HPTimer{
     }
     
     // Starts timer.
-    static func startTimer(){
+    static func start(){
         timer = Timer.scheduledTimer(timeInterval: timerInterval, target: self, selector: #selector(HPTimer.onInterval), userInfo: nil, repeats: true)
     }
     
     // Stops timer.
-    static func stopTimer(){
+    static func stop(){
         timer.invalidate()
     }
     
     // Restarts timer.
-    static func restartTimer(){
+    static func restart(){
         stopTimer()
         startTimer()
     }

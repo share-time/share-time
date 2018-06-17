@@ -36,6 +36,7 @@ class ClassDetailViewController: UIViewController, UITableViewDelegate, UITableV
             self.studyGroups = findStudyGroup
             self.studyGroupTableView.reloadData()
         }
+        
         classNameLabel.text = courseName
         
         user?.relation(forKey: "studyGroups").query().findObjectsInBackground{

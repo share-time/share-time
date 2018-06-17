@@ -63,6 +63,9 @@ class BlobViewController: UIViewController {
         HPtext.font.withSize(25)
         view.addSubview(HPtext)
         
+        // Start Timer.
+        BlobHP.hpDecreaseTimer.start()
+        
         BlobViewController.HPnum = UILabel (frame: CGRect(x:120+BlobViewController.width/2-30, y:598, width: 100, height:30))
         BlobViewController.HPnum.text = "800/800"
         BlobViewController.redBar = UILabel(frame:CGRect(x:120, y:598, width: BlobViewController.width, height: 30))
@@ -77,8 +80,6 @@ class BlobViewController: UIViewController {
         view.addSubview(blackBorder)
         view.addSubview(BlobViewController.HPnum)
         
-        HPTimer.startHPTimer()
-        
         let swipeUp = UISwipeGestureRecognizer(target: self, action: #selector(handleGesture))
         swipeUp.direction = .up
         self.view.addGestureRecognizer(swipeUp)
@@ -91,6 +92,8 @@ class BlobViewController: UIViewController {
         profileButton.layer.cornerRadius = 22.5
         profileButton.layer.borderWidth = 2.0
         profileButton.layer.borderColor = UIColor.white.cgColor
+        
+        
         NotificationCenter.default.addObserver(self, selector: #selector(BlobViewController.updateBlobToSad), name: NSNotification.Name(rawValue: "updateBlobToSad"), object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(BlobViewController.updateBlobToDefault), name: NSNotification.Name(rawValue: "updateBlobToDefault"), object: nil)
         // Do any additional setup after loading the view.

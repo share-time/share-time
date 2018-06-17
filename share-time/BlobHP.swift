@@ -1,5 +1,5 @@
 //
-//  hpTimer.swift
+//  BlobHP
 //  share-time
 //
 //  Created by Godwin Pang on 5/19/18.
@@ -10,12 +10,15 @@
 import Foundation
 import UIKit
 
-class hpTimer{
+class BlobHP{
     
     // NOTE
     //
     // Difference between class func and static func: class allows method to be
     // overwritten by subclasses.
+    
+    // Timer constants
+    let defaultTimerInterval = 1.0
     
     // HP levels and boundaries.
     static var hp = 800
@@ -32,47 +35,11 @@ class hpTimer{
     // TODO CHANGE THIS SHITTY ASS NAME
     static var isIncrease = false
     
-    
-    // Timer interval.
-    static var hpChangeTimeInterval:Double = 1 {
-        // Restarts timer upon changing intervals.
-        didSet{
-            restartHPTimer()
-        }
-    }
-    
     // Timer for HP.
-    static var hpTimer = Timer()
-    static var hpDecreaseTimer = Timer
-    
-    
-    // Initializes new timer to start it.
-    static func startHPTimer(){
-        hpTimer = Timer.scheduledTimer(timeInterval: hpChangeTimeInterval, target: self, selector: #selector(HPTimer.updateHP), userInfo: nil, repeats: true)
-    }
-
-    // Invalidates timer to stop it.
-    static func stopHPTimer(){
-        hpTimer.invalidate()
-    }
-    
-    // Restarts timer.
-    static func restartHPTimer(){
-        HPTimer.stopHPTimer()
-        HPTimer.startHPTimer()
-    }
-    
-    // Update
-    @objc static func updateHP(){
-        if (HPTimer.isIncrease){
-            increaseHP()
-        } else {
-            decreaseHP()
-        }
-    }
+    static var hpIncreaseTimer = HPTimer(defaultTimerInterval, increaseHP())
+    static var hpDecreaseTimer = HPTimer(defaultTimerInterval, decreaseHP())
     
     @objc static func increaseHP(){
-        
         // Check if HP may be increased.
         if (hp < maxHP){
             hp = hp + 1
@@ -90,7 +57,6 @@ class hpTimer{
     }
     
     @objc static func decreaseHP(){
-        
         // Check if HP may be decreased.
         if (hp > minHP){
             hp = hp - 1
@@ -113,5 +79,20 @@ class hpTimer{
         // TODO find algorithm that updates timer as intended.
         let updateFactor:Double = 1.0/Double(hours)
         hpChangeTimeInterval = 3.0 * updateFactor
+    }
+    
+    static func swapTimers(){
+        if (hpIncreaseTimer != nil){
+            hpIncreaseTimer.stop()
+            hpDecreaseTimer.start()
+        } else if (hpDecreaseTimer != nil){
+            hpDecreaseTimer.stop()
+            hpIncreaseTimer.start()
+        }
+    }
+    
+    static func stopAllTimers(){
+        hpIncreaseTimer.stop()
+        hpDecreaseTimer.stop()
     }
 }

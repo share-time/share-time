@@ -34,11 +34,7 @@ class StudyingViewController: UIViewController {
 
     @objc func proximityChanged(notification: Notification){
         if let device = notification.object as? UIDevice{
-            if (device.proximityState){
-                HPTimer.isIncrease = true
-            } else {
-                HPTimer.isIncrease = false
-            }
+            BlobHP.swapTimers()
         }
     }
     
