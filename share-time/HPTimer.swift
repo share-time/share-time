@@ -1,72 +1,51 @@
 //
-//  hpTimer.swift
+//  HPTimer.swift
 //  share-time
 //
-//  Created by Godwin Pang on 5/19/18.
+//  Created by Godwin Pang on 6/17/18.
 //  Copyright © 2018 share-time. All rights reserved.
 //
+//  Self-written version of timer to facilitate easy reuse.
+//  Needed for 3 timers:
 
 import Foundation
 import UIKit
 
 class HPTimer{
     
-    static var hp = 800
-    static let maxHP = 800
-    static let minHP = 0
-    static let updateBlobToSadHp = 790
-    static var studyHours: Float = 6
+    // Holds actual timer
+    static let timer = Timer()
     
-    static var isIncrease = false
-    
-    static var hpChangeTimeInterval:Double = 1{
+    // Interval in seconds elapsed between each call to onInterval.
+    static var timerInterval: Double = 1{
         didSet{
-            stopHPTimer()
-            startHPTimer()
+            restartTimer()
         }
     }
     
-    static var hpTimer = Timer()
+    // Function closure that is to executed on each interval.
+    static var onInterval:()?
     
-    class func startHPTimer(){
-        hpTimer = Timer.scheduledTimer(timeInterval: hpChangeTimeInterval, target: self, selector: #selector(HPTimer.updateHP), userInfo: nil, repeats: true)
-    }
-
-    class func stopHPTimer(){
-        hpTimer.invalidate()
-    }
-    
-    @objc static func updateHP(){
-        if (HPTimer.isIncrease){
-            increaseHP()
-        } else {
-            decreaseHP()
-        }
+    // Constructor.
+    init(timerInterval: Double, onInterval: ()){
+        self.timerInterval = timerInterval
+        self.onInterval = onInterval
     }
     
-    @objc static func increaseHP()->(){
-        if (hp < maxHP){
-            hp = hp + 1
-        }
-        BlobViewController.updateHPBar(hp: hp)
-        if (hp > updateBlobToSadHp) {
-            NotificationCenter.default.post(name: NSNotification.Name(rawValue: "updateBlobToDefault"), object: nil)
-        }
+    // Starts timer.
+    static func startTimer(){
+        timer = Timer.scheduledTimer(timeInterval: timerInterval, target: self, selector: #selector(HPTimer.onInterval), userInfo: nil, repeats: true)
     }
     
-    @objc static func decreaseHP()->(){
-        if (hp > minHP){
-            hp = hp - 1
-        }
-        BlobViewController.updateHPBar(hp: hp)
-        if (hp < updateBlobToSadHp) {
-            NotificationCenter.default.post(name: NSNotification.Name(rawValue: "updateBlobToSad"), object: nil)
-        }
+    // Stops timer.
+    static func stopTimer(){
+        timer.invalidate()
     }
     
-    static func updateStudyHours(hours: Float)->(){
-        studyHours = hours
-        let updateFactor:Double = 1.0/Double(hours)
-        hpChangeTimeInterval = 3.0 * updateFactor
+    // Restarts timer.
+    static func restartTimer(){
+        stopTimer()
+        startTimer()
     }
+    
 }
