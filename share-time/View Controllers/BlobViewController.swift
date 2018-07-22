@@ -63,9 +63,6 @@ class BlobViewController: UIViewController {
         HPtext.font.withSize(25)
         view.addSubview(HPtext)
         
-        // Start Timer.
-        BlobHP.hpDecreaseTimer.start()
-        
         BlobViewController.HPnum = UILabel (frame: CGRect(x:120+BlobViewController.width/2-30, y:598, width: 100, height:30))
         BlobViewController.HPnum.text = "800/800"
         BlobViewController.redBar = UILabel(frame:CGRect(x:120, y:598, width: BlobViewController.width, height: 30))

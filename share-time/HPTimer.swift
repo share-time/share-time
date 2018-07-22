@@ -14,38 +14,44 @@ import UIKit
 class HPTimer{
     
     // Holds actual timer
-    static let timer = Timer()
+    var timer = Timer()
+    
+    var studyHours = 5.0 {
+        didSet {
+            // code to set timerInterval based on studyHours
+        }
+    }
     
     // Interval in seconds elapsed between each call to onInterval.
-    static var timerInterval: Double{
+    var timerInterval = 5.0 {
         didSet{
             restart()
         }
     }
     
     // Function closure that is to executed on each interval.
-    static var onInterval:()?
+    var onInterval:(Timer) -> ()
     
     // Constructor.
-    init(timerInterval: Double, onInterval: ()){
+    init(timerInterval: Double, onInterval: @escaping (Timer) -> ()){
         self.timerInterval = timerInterval
         self.onInterval = onInterval
     }
     
     // Starts timer.
-    static func start(){
-        timer = Timer.scheduledTimer(timeInterval: timerInterval, target: self, selector: #selector(HPTimer.onInterval), userInfo: nil, repeats: true)
+    func start(){
+        timer = Timer.scheduledTimer(withTimeInterval: timerInterval, repeats: true, block: onInterval)
     }
     
     // Stops timer.
-    static func stop(){
+    func stop(){
         timer.invalidate()
     }
     
     // Restarts timer.
-    static func restart(){
-        stopTimer()
-        startTimer()
+    func restart(){
+        stop()
+        start()
     }
     
 }

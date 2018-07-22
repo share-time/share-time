@@ -15,12 +15,12 @@ class ChangeStudyHoursViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        studyHoursSlider.setValue(Float(HPTimer.studyHours), animated: false)
-        studyHours.text = String(format: "%.1f", HPTimer.studyHours)
+        //studyHoursSlider.setValue(Float(HPTimer.studyHours), animated: false)
+        //studyHours.text = String(format: "%.1f", HPTimer.studyHours)
     }
     
     override func viewDidDisappear(_ animated: Bool) {
-        HPTimer.updateStudyHours(hours: studyHoursSlider.value)
+        //HPTimer.updateStudyHours(hours: studyHoursSlider.value)
     }
     @IBAction func studyHoursChanged(_ sender: Any) {
         studyHours.text = String(format: "%.1f", studyHoursSlider.value)
