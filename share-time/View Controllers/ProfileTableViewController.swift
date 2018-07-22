@@ -20,7 +20,7 @@ class ProfileTableViewController: UITableViewController {
     var xBarButton: UIBarButtonItem!
     
     let logOutAlertController = UIAlertController(title:"Logout Alert", message:"Do you want to log out?", preferredStyle:.alert)
-    let CancelAction = UIAlertAction(title: "Cancel", style: .cancel) { (action) in
+    let cancelAction = UIAlertAction(title: "Cancel", style: .cancel) { (action) in
         //does nothing -> dismisses alert view
     }
     
@@ -48,7 +48,7 @@ class ProfileTableViewController: UITableViewController {
                 PFUser.logOutInBackground()
                 self.performSegue(withIdentifier: "logoutSegue", sender: nil)}
         ))
-        logOutAlertController.addAction(CancelAction)
+        logOutAlertController.addAction(cancelAction)
         
         addBarButton()
         // Uncomment the following line to preserve selection between presentations

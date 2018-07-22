@@ -22,7 +22,7 @@ class ProfileViewController: UIViewController {
     var email: String = ""
     
     let noSaveAlertController = UIAlertController(title: "Username Required", message: "Please enter username", preferredStyle: .alert)
-    let CancelAction = UIAlertAction(title: "Cancel", style: .default) { (action) in
+    let cancelAction = UIAlertAction(title: "Cancel", style: .default) { (action) in
         //does nothing -> dismisses alert view
     }
     let logOutAlertController = UIAlertController(title:"Logout Alert", message:"Do you want to log out?", preferredStyle:.alert)

@@ -6,50 +6,59 @@
 //  Copyright © 2018 share-time. All rights reserved.
 //
 //  Self-written version of timer to facilitate easy reuse.
-//  Needed for 3 timers:
+//  Needed for 2 timers:
 
 import Foundation
 import UIKit
 
-class HPTimer{
+class HPTimer {
     
     // Holds actual timer
-    var timer = Timer()
-    
-    var studyHours = 5.0 {
-        didSet {
-            // code to set timerInterval based on studyHours
-        }
-    }
-    
+    private var timer = Timer()
+
     // Interval in seconds elapsed between each call to onInterval.
-    var timerInterval = 5.0 {
-        didSet{
+    private var interval = 5.0 {
+        didSet {
             restart()
         }
     }
     
-    // Function closure that is to executed on each interval.
-    var onInterval:(Timer) -> ()
+    // Closure that is to be executed on each interval.
+    var onIntervalClosure: () -> Void
     
     // Constructor.
-    init(timerInterval: Double, onInterval: @escaping (Timer) -> ()){
-        self.timerInterval = timerInterval
-        self.onInterval = onInterval
+    init(onIntervalClosure: @escaping () -> Void) {
+        self.onIntervalClosure = onIntervalClosure
     }
     
     // Starts timer.
-    func start(){
-        timer = Timer.scheduledTimer(withTimeInterval: timerInterval, repeats: true, block: onInterval)
+    func start() {
+        timer = Timer.scheduledTimer(timeInterval: interval, target: self, selector: #selector(self.onInterval), userInfo: nil, repeats: true)
     }
     
     // Stops timer.
-    func stop(){
+    func stop() {
         timer.invalidate()
     }
     
+    // Actual function called by timer on each interval.
+    @objc func onInterval() {
+        self.onIntervalClosure()
+    }
+    
+    // Check if timer is running
+    func isRunning() -> Bool {
+        return timer.isValid
+    }
+    
+    // Set interval of timer.
+    func setInterval(interval: Double) {
+        self.interval = interval
+        self.restart()
+    }
+    
     // Restarts timer.
-    func restart(){
+    func restart() {
         stop()
         start()
     }

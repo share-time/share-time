@@ -5,20 +5,17 @@
 //  Created by Godwin Pang on 5/19/18.
 //  Copyright © 2018 share-time. All rights reserved.
 //
-//  Manages timer that keeps track of blob HP.
+//  Manages blob HP.
 
 import Foundation
 import UIKit
 
-class BlobHP{
+class BlobHP {
     
     // NOTE
     //
     // Difference between class func and static func: class allows method to be
     // overwritten by subclasses.
-    
-    // Timer constants
-    let defaultTimerInterval = 1.0
     
     // HP levels and boundaries.
     static var hp = 800
@@ -30,19 +27,21 @@ class BlobHP{
     static let updateBlobToHappyHp = 0
     
     // Goals for study hours.
-    static var studyHours: Float = 6
+    static var studyHours = 6.0 {
+        didSet {
+            // TODO add code for study hours to interval conversion
+            // call setter for intervals for both timers
+        }
+    }
     
-    // TODO CHANGE THIS SHITTY ASS NAME
-    static var isIncrease = false
+    // Timers for HP.
+    static var hpIncreaseTimer = HPTimer(onIntervalClosure: BlobHP.increaseHP)
+    static var hpDecreaseTimer = HPTimer(onIntervalClosure: BlobHP.decreaseHP)
     
-    // Timer for HP.
-    static var hpIncreaseTimer = HPTimer(defaultTimerInterval, increaseHP())
-    static var hpDecreaseTimer = HPTimer(defaultTimerInterval, decreaseHP())
-    
-    @objc static func increaseHP(){
+    @objc static func increaseHP() {
         // Check if HP may be increased.
-        if (hp < maxHP){
-            hp = hp + 1
+        if hp < maxHP {
+            hp += 1
         } else {
             return
         }
@@ -51,15 +50,15 @@ class BlobHP{
         BlobViewController.updateHPBar(hp: hp)
         
         // Threshold check for blob image update.
-        if (hp > updateBlobToSadHp) {
+        if hp > updateBlobToSadHp {
             NotificationCenter.default.post(name: NSNotification.Name(rawValue: "updateBlobToDefault"), object: nil)
         }
     }
     
-    @objc static func decreaseHP(){
+    @objc static func decreaseHP() {
         // Check if HP may be decreased.
-        if (hp > minHP){
-            hp = hp - 1
+        if hp > minHP {
+            hp -= 1
         } else {
             return
         }
@@ -68,30 +67,30 @@ class BlobHP{
         BlobViewController.updateHPBar(hp: hp)
         
         // Threshold check for blob image update.
-        if (hp < updateBlobToSadHp) {
+        if hp < updateBlobToSadHp {
             NotificationCenter.default.post(name: NSNotification.Name(rawValue: "updateBlobToSad"), object: nil)
         }
     }
     
-    static func updateStudyHours(hours: Float){
+    static func updateStudyHours(hours: Double) {
         studyHours = hours
         
-        // TODO find algorithm that updates timer as intended.
-        let updateFactor:Double = 1.0/Double(hours)
-        hpChangeTimeInterval = 3.0 * updateFactor
+        // find algorithm that updates timer as intended.
+        let updateFactor: Double = 1.0 / Double(hours)
+        // hpChangeTimeInterval = 3.0 * updateFactor
     }
     
     static func swapTimers(){
-        if (hpIncreaseTimer != nil){
+        if  hpIncreaseTimer.isRunning() {
             hpIncreaseTimer.stop()
             hpDecreaseTimer.start()
-        } else if (hpDecreaseTimer != nil){
+        } else if hpIncreaseTimer.isRunning() {
             hpDecreaseTimer.stop()
             hpIncreaseTimer.start()
         }
     }
     
-    static func stopAllTimers(){
+    static func stopAllTimers() {
         hpIncreaseTimer.stop()
         hpDecreaseTimer.stop()
     }

@@ -21,7 +21,7 @@ class MainPageViewController: UIViewController,UITableViewDelegate, UITableViewD
     var refresher: UIRefreshControl!
     
     let addNewStudyGroupAlertController = UIAlertController(title: "You have been added to a new study group", message: "Please confirm if you want to be added to the study group", preferredStyle: .alert)
-    let CancelAction = UIAlertAction(title: "Cancel", style: .default) { (action) in
+    let cancelAction = UIAlertAction(title: "Cancel", style: .default) { (action) in
         //does nothing -> dismisses alert view
     }
     
@@ -66,7 +66,7 @@ class MainPageViewController: UIViewController,UITableViewDelegate, UITableViewD
                 }
             }
         }
-        addNewStudyGroupAlertController.addAction(CancelAction)
+        addNewStudyGroupAlertController.addAction(cancelAction)
         addNewStudyGroupAlertController.addAction(ConfirmAction)
     }
     
@@ -114,7 +114,7 @@ class MainPageViewController: UIViewController,UITableViewDelegate, UITableViewD
         var count = 0
         for object in objectArray{
             if findobject.objectId == object.objectId{
-                count = count + 1
+                count += 1
             }
         }
         

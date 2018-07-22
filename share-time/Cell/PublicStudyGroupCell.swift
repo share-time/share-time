@@ -64,7 +64,7 @@ class PublicStudyGroupCell: UITableViewCell {
                 self.user?.saveInBackground{ (success: Bool, error: Error?) -> Void in
                     if (success){
                         self.joinStudyGroupButton.isHidden = true
-                        self.memberNum = self.memberNum + 1
+                        self.memberNum += 1
                         var memberNumString = String(describing: self.memberNum)
                         memberNumString += (self.memberNum == 1) ? " Member" : " Members"
                         self.memberCountLabel.text = memberNumString

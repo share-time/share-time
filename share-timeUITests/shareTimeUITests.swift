@@ -8,7 +8,7 @@
 
 import XCTest
 
-class share_timeUITests: XCTestCase {
+class ShareTimeUITests: XCTestCase {
         
     override func setUp() {
         super.setUp()
