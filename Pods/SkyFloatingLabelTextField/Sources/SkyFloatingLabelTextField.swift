@@ -20,7 +20,7 @@ open class SkyFloatingLabelTextField: UITextField { // swiftlint:disable:this ty
      A Boolean value that determines if the language displayed is LTR. 
      Default value set automatically from the application language settings.
      */
-    open var isLTRLanguage: Bool = UIApplication.shared.userInterfaceLayoutDirection == .leftToRight {
+    @objc open var isLTRLanguage: Bool = UIApplication.shared.userInterfaceLayoutDirection == .leftToRight {
         didSet {
            updateTextAligment()
         }
@@ -121,6 +121,27 @@ open class SkyFloatingLabelTextField: UITextField { // swiftlint:disable:this ty
         }
     }
 
+    /// A UIColor value that determines the color used for the line when error message is not `nil`
+    @IBInspectable dynamic open var lineErrorColor: UIColor? {
+        didSet {
+            updateColors()
+        }
+    }
+    
+    /// A UIColor value that determines the color used for the text when error message is not `nil`
+    @IBInspectable dynamic open var textErrorColor: UIColor? {
+        didSet {
+            updateColors()
+        }
+    }
+    
+    /// A UIColor value that determines the color used for the title label when error message is not `nil`
+    @IBInspectable dynamic open var titleErrorColor: UIColor? {
+        didSet {
+            updateColors()
+        }
+    }
+    
     /// A UIColor value that determines the color used for the title label and line when text field is disabled
     @IBInspectable dynamic open var disabledColor: UIColor = UIColor(white: 0.88, alpha: 1.0) {
         didSet {
@@ -409,7 +430,7 @@ open class SkyFloatingLabelTextField: UITextField { // swiftlint:disable:this ty
         if !isEnabled {
             lineView.backgroundColor = disabledColor
         } else if hasErrorMessage {
-            lineView.backgroundColor = errorColor
+            lineView.backgroundColor = lineErrorColor ?? errorColor
         } else {
             lineView.backgroundColor = editingOrSelected ? selectedLineColor : lineColor
         }
@@ -419,7 +440,7 @@ open class SkyFloatingLabelTextField: UITextField { // swiftlint:disable:this ty
         if !isEnabled {
             titleLabel.textColor = disabledColor
         } else if hasErrorMessage {
-            titleLabel.textColor = errorColor
+            titleLabel.textColor = titleErrorColor ?? errorColor
         } else {
             if editingOrSelected || isHighlighted {
                 titleLabel.textColor = selectedTitleColor
@@ -433,7 +454,7 @@ open class SkyFloatingLabelTextField: UITextField { // swiftlint:disable:this ty
         if !isEnabled {
             super.textColor = disabledColor
         } else if hasErrorMessage {
-            super.textColor = errorColor
+            super.textColor = textErrorColor ?? errorColor
         } else {
             super.textColor = cachedTextColor
         }
@@ -604,7 +625,11 @@ open class SkyFloatingLabelTextField: UITextField { // swiftlint:disable:this ty
      -returns: the calculated height of the textfield. Override to size the textfield with a different height
      */
     open func textHeight() -> CGFloat {
-        return self.font!.lineHeight + 7.0
+        guard let font = self.font else {
+            return 0.0
+        }
+
+        return font.lineHeight + 7.0;
     }
 
     // MARK: - Layout

@@ -1,22 +1,23 @@
 PODS:
-  - Alamofire (4.6.0)
-  - AlamofireImage (3.3.0):
+  - Alamofire (4.7.3)
+  - AlamofireImage (3.3.1):
     - Alamofire (~> 4.5)
-  - AutoInsetter (1.2.3)
+  - AutoInsetter (1.2.4)
   - Bolts/Tasks (1.9.0)
   - Chatto (3.3.1)
   - ChattoAdditions (3.3.1):
     - Chatto
-  - Pageboy (2.5.1)
-  - Parse (1.16.0):
-    - Parse/Core (= 1.16.0)
-  - Parse/Core (1.16.0):
+  - Pageboy (2.5.4)
+  - Parse (1.17.1):
+    - Parse/Core (= 1.17.1)
+  - Parse/Core (1.17.1):
     - Bolts/Tasks (~> 1.9)
-  - PKHUD (5.0.0)
+  - PKHUD (5.1.0)
   - QRCode (2.0)
-  - SkyFloatingLabelTextField (3.4.1)
+  - SkyFloatingLabelTextField (3.5.1)
   - SwiftGifOrigin (1.6.1)
-  - Tabman (1.8.2):
+  - SwiftLint (0.26.0)
+  - Tabman (1.9.1):
     - AutoInsetter (~> 1.2.0)
     - Pageboy (~> 2.5.0)
 
@@ -30,6 +31,7 @@ DEPENDENCIES:
   - QRCode
   - SkyFloatingLabelTextField (~> 3.0)
   - SwiftGifOrigin (~> 1.6.1)
+  - SwiftLint
   - Tabman (~> 1.0)
 
 SPEC REPOS:
@@ -46,23 +48,25 @@ SPEC REPOS:
     - QRCode
     - SkyFloatingLabelTextField
     - SwiftGifOrigin
+    - SwiftLint
     - Tabman
 
 SPEC CHECKSUMS:
-  Alamofire: f41a599bd63041760b26d393ec1069d9d7b917f4
-  AlamofireImage: 2e784dc5d00f04903a52c1d169181469c805c3df
-  AutoInsetter: 1a8f8ad5e7da8e993970b3809cfb8e8e330f4db1
+  Alamofire: c7287b6e5d7da964a70935e5db17046b7fde6568
+  AlamofireImage: 3b35b586853abaf94ca1250f4e94cff3c21a4c0d
+  AutoInsetter: 00cbcc6c56e9294169222b3e29fb336db7181156
   Bolts: ac6567323eac61e203f6a9763667d0f711be34c8
   Chatto: 24a6c9b0c91b08130466888b8b61563b90191c6f
   ChattoAdditions: cc74cd3dd371aa3f70e5ab8568a4f383f0c0eb8c
-  Pageboy: f0295ea949f0b0123a1b486fd347ea892d0078e0
-  Parse: 5b36dc2c2f0a2fd82a257ae018bc3d68cf2c24e7
-  PKHUD: 3c001512c6e002091184197a8de7a20420786e3b
+  Pageboy: 46d743783414a18f8b27a988485e0ed2ea219ff7
+  Parse: d3edaf8c7c722cb33cb83ba7821d015ae32d362d
+  PKHUD: 62ea46a1e88c4def1da784878d199bb54c841e3c
   QRCode: f98a1886c8f37523704a7512a4c0cd45b34c18a4
-  SkyFloatingLabelTextField: 8085f20f57f74a00cfcae58099299faa1a971035
+  SkyFloatingLabelTextField: 4cbeece9c3aae97c6019d8fae511cb5b755874f7
   SwiftGifOrigin: d6679d3ebe9df2e049a84bc52582635107b581f6
-  Tabman: 69ce69b44cec1ad693b82c24cdbdf0c45915668c
+  SwiftLint: f6b83e8d95ee1e91e11932d843af4fdcbf3fc764
+  Tabman: e867a8e3fc72a30cc694aca51a2b331070f5e3ba
 
-PODFILE CHECKSUM: b544410d3342e9b122d60891930df7af9179e6fa
+PODFILE CHECKSUM: 240e4726bd5d0447de59de26170674b78a09339e
 
-COCOAPODS: 1.5.2
+COCOAPODS: 1.5.3
