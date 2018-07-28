@@ -34,7 +34,7 @@ class StudyingViewController: UIViewController {
 
     @objc func proximityChanged(notification: Notification){
         if let device = notification.object as? UIDevice{
-            //BlobHP.swapTimers()
+            BlobHP.swapTimers()
         }
     }
     

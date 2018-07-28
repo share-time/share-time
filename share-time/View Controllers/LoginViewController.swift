@@ -138,13 +138,14 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
                     loginErrorAlertController.addAction(self.OKAction)
                     self.present(loginErrorAlertController, animated: true)
                 } else {
-                    self.performSegue(withIdentifier: "loginSegue", sender: nil)
+                    BlobHP.setup() { success in
+                        self.performSegue(withIdentifier: "loginSegue", sender: nil)
+                    }
                 }
             }
         }
     }
     
-
     override func viewWillAppear(_ animated: Bool) {
         self.navigationController?.isNavigationBarHidden = true
     }

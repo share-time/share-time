@@ -9,6 +9,7 @@
 
 import Foundation
 import UIKit
+import Parse
 
 class BlobHP {
     
@@ -23,13 +24,14 @@ class BlobHP {
     static let minHP = 0
     
     // HP thresholds.
-    static let updateBlobToSadHp = 790
-    static let updateBlobToHappyHp = 0
+    static let updateBlobGifHp = 790
+    
+    static var interval = 5.0
     
     // Goals for study hours.
     static var studyHours = 6.0 {
         didSet {
-            // TODO add code for study hours to interval conversion
+            // TODO add code  for study hours to interval conversion
             // call setter for intervals for both timers
         }
     }
@@ -50,12 +52,13 @@ class BlobHP {
         BlobViewController.updateHPBar(hp: hp)
         
         // Threshold check for blob image update.
-        if hp > updateBlobToSadHp {
+        if hp > updateBlobGifHp {
             NotificationCenter.default.post(name: NSNotification.Name(rawValue: "updateBlobToDefault"), object: nil)
         }
     }
     
     @objc static func decreaseHP() {
+        
         // Check if HP may be decreased.
         if hp > minHP {
             hp -= 1
@@ -67,7 +70,7 @@ class BlobHP {
         BlobViewController.updateHPBar(hp: hp)
         
         // Threshold check for blob image update.
-        if hp < updateBlobToSadHp {
+        if hp < updateBlobGifHp {
             NotificationCenter.default.post(name: NSNotification.Name(rawValue: "updateBlobToSad"), object: nil)
         }
     }
@@ -81,10 +84,10 @@ class BlobHP {
     }
     
     static func swapTimers(){
-        if  hpIncreaseTimer.isRunning() {
+        if hpIncreaseTimer.isRunning() {
             hpIncreaseTimer.stop()
             hpDecreaseTimer.start()
-        } else if hpIncreaseTimer.isRunning() {
+        } else if hpDecreaseTimer.isRunning() {
             hpDecreaseTimer.stop()
             hpIncreaseTimer.start()
         }
@@ -93,5 +96,34 @@ class BlobHP {
     static func stopAllTimers() {
         hpIncreaseTimer.stop()
         hpDecreaseTimer.stop()
+    }
+    
+    static func setup(completionHandler:@escaping (Bool) -> ()) {
+        hpDecreaseTimer.start()
+        let user = PFUser.current()
+        let lastHP = user?["blobHP"] as? Int
+        let logoutTimeString = user?["logoutTime"] as? String ?? ""
+        
+        if logoutTimeString == "" {
+            hp = 800
+        } else {
+            let logoutTime = logoutTimeString.toDate()
+            let timeElapsed = logoutTime.timeIntervalSinceNow
+            hp = lastHP! + Int(timeElapsed / interval)
+        }
+        completionHandler(true)
+    }
+    
+    static func teardown() {
+        stopAllTimers()
+        let logoutTime = Date()
+        let user = PFUser.current()
+        user?["logoutTime"] = logoutTime.toString()
+        user?["blobHP"] = hp
+        user?.saveInBackground { (success: Bool, _: Error?) -> Void in
+            if success {
+                PFUser.logOutInBackground()
+            }
+        }
     }
 }

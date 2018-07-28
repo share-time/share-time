@@ -20,9 +20,6 @@ class BlobViewController: UIViewController {
     @IBOutlet weak var profileButton: UIButton!
     @IBOutlet var blobImage: UIImageView!
     
-    var hp = 800
-    let maxHP = 800
-    var tiredTimer = Timer()
     var textField : UITextField!
     var label : UILabel!
     var user = PFUser.current()
@@ -35,6 +32,7 @@ class BlobViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         //Gradient layer
         let gradient = CAGradientLayer()
         gradient.frame = view.bounds
@@ -56,7 +54,11 @@ class BlobViewController: UIViewController {
         self.view.layer.insertSublayer(gradient, at: 0)
         
         // Get the gif of the blob
-        blobImage.image = UIImage.gif(name: "defaultBlob")
+        if BlobHP.hp > BlobHP.updateBlobGifHp {
+            updateBlobToDefault()
+        } else {
+            updateBlobToSad()
+        }
         
         HPtext = UILabel(frame:CGRect(x:80, y:598, width: BlobViewController.width, height: 30))
         HPtext.text = "HP:"
@@ -76,6 +78,8 @@ class BlobViewController: UIViewController {
         view.addSubview(BlobViewController.redBar)
         view.addSubview(blackBorder)
         view.addSubview(BlobViewController.HPnum)
+        
+        BlobViewController.updateHPBar(hp: BlobHP.hp)
         
         let swipeUp = UISwipeGestureRecognizer(target: self, action: #selector(handleGesture))
         swipeUp.direction = .up
@@ -129,7 +133,7 @@ class BlobViewController: UIViewController {
         blobImage.image = UIImage(named: "sadBlob")
     }
     
-    @objc func updateBlobToDefault(hp: Int) {
+    @objc func updateBlobToDefault() {
         blobImage.image = UIImage.gif(name: "defaultBlob")
     }
     
