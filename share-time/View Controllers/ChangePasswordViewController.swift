@@ -11,13 +11,6 @@ import Parse
 import SkyFloatingLabelTextField
 
 class ChangePasswordViewController: UIViewController, UITextFieldDelegate {
-
-    let signUpConfirmErrorAlertController = UIAlertController(title: "Passwords do not match", message: "Please enter again", preferredStyle: .alert)
-    let signUpPasswordErrorAlertController = UIAlertController(title: "Incorrect Password", message: "Please re-enter password", preferredStyle: .alert)
-    let signUpPasswordSuccessAlertController = UIAlertController(title: "Success", message: "Changed password successfully!", preferredStyle: .alert)
-    let OKAction = UIAlertAction(title: "OK", style: .default) { (action) in
-        //does nothing -> dismisses alert view
-    }
     
     @IBOutlet weak var currentPasswordTextField: SkyFloatingLabelTextField!
     @IBOutlet weak var newPasswordTextField: SkyFloatingLabelTextField!
@@ -28,9 +21,6 @@ class ChangePasswordViewController: UIViewController, UITextFieldDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        signUpConfirmErrorAlertController.addAction(OKAction)
-        signUpPasswordErrorAlertController.addAction(OKAction)
-        signUpPasswordSuccessAlertController.addAction(OKAction)
         // Do any additional setup after loading the view.
         
         self.title = "Password"
@@ -130,17 +120,17 @@ class ChangePasswordViewController: UIViewController, UITextFieldDelegate {
 
         PFUser.logInWithUsername(inBackground: (self.user?.username!)!, password: self.currentPasswordTextField.text!) { (user: PFUser?, error: Error?) in
             if error != nil {
-                self.present(self.signUpPasswordErrorAlertController, animated: true)
+                self.alert(msg: "Please re-enter password", title: "Incorrect Password", actionTitle: "OK")
                 self.clearPassword()
             } else {
-                if (self.newPasswordTextField.text != self.confirmPasswordTextField.text){
-                    self.present(self.signUpConfirmErrorAlertController, animated: true)
+                if (self.newPasswordTextField.text != self.confirmPasswordTextField.text) {
+                    self.alert(msg: "Please enter again", title: "Passwords do not match", actionTitle: "OK")
                     self.clearPassword()
                 } else {
                     user?.password = self.newPasswordTextField.text
                     user?.saveInBackground{ (success: Bool, error: Error?) -> Void in
                         if (success){
-                            self.present(self.signUpPasswordSuccessAlertController, animated: true)
+                            self.alert(msg: "Changed password successfully!", title: "Success", actionTitle: "OK")
                             if let navController = self.navigationController{
                                 navController.popViewController(animated: true)
                             }

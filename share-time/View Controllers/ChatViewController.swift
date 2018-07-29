@@ -2,7 +2,7 @@
 //  ChatViewController.swift
 //  share-time
 //
-//  Created by Guanxin Li on 4/14/18.
+//  Created by Guanxin Li and Godwin Pang on 4/14/18.
 //  Copyright © 2018 share-time. All rights reserved.
 //
 
@@ -12,10 +12,6 @@ import AlamofireImage
 import PKHUD
 
 class ChatViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UITextFieldDelegate {
-    let emptyMessageAlertController = UIAlertController(title: "Error", message: "Unable to send blank message", preferredStyle: .alert)
-    let OKAction = UIAlertAction(title: "OK", style: .default) { (action) in
-        //does nothing -> dismisses alert view
-    }
     
     @IBOutlet weak var bottomContraints: NSLayoutConstraint!
     @IBOutlet weak var sendButton: UIButton!
@@ -44,7 +40,6 @@ class ChatViewController: UIViewController, UITableViewDelegate, UITableViewData
         tableView.insertSubview(refresher, at: 0)
         tableView.separatorStyle = .none
         Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(ChatViewController.onTimer), userInfo: nil, repeats: true)
-        emptyMessageAlertController.addAction(OKAction)
         // Keyboard stuff
         let center: NotificationCenter = NotificationCenter.default
         center.addObserver(self, selector: #selector(keyboardDidShow(notification:)), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
@@ -149,7 +144,7 @@ class ChatViewController: UIViewController, UITableViewDelegate, UITableViewData
 
     @IBAction func onSend(_ sender: UIButton) {
     if(messageTextField.text?.trimmingCharacters(in: .whitespaces).isEmpty)! {
-            self.present(self.emptyMessageAlertController, animated: true)
+            self.alert(msg: "Unable to send blank message", title: "Error", actionTitle: "OK")
         } else {
             let sendObject = PFObject(className: "Message")
             sendObject["text"] = messageTextField.text ?? ""

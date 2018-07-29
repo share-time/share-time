@@ -2,7 +2,7 @@
 //  AddStudyGroupViewController.swift
 //  share-time
 //
-//  Created by Godwin Pang on 4/14/18.
+//  Created by Godwin Pang and Guanxin Li on 4/14/18.
 //  Copyright © 2018 share-time. All rights reserved.
 //
 
@@ -19,26 +19,13 @@ class AddStudyGroupViewController: UIViewController, UITableViewDelegate, UITabl
     @IBOutlet weak var tableView: UITableView!
     
     var searchController: UISearchController!
-    
     var users: [PFUser]!
     let currentUser = PFUser.current()!
-    
     var addedUsers: [PFUser] = [PFUser.current()!]
-    
-    let profTextFieldErrorAlertController = UIAlertController(title: "Professor Name Required", message: "Please enter name of professor", preferredStyle: .alert)
-    let studyGroupNameTextFieldErrorAlertController = UIAlertController(title: "Study Group Name Required", message: "Please enter name of study group", preferredStyle: .alert)
-    let studyGroupNameDuplicateErrorAlertController = UIAlertController(title: "Study Group with that name already exists!", message: "Please enter another name for your study group", preferredStyle: .alert)
-    let OKAction = UIAlertAction(title: "OK", style: .default) { (action) in
-        //does nothing -> dismisses alert view
-    }
-    
     var courseName: String!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        profTextFieldErrorAlertController.addAction(OKAction)
-        studyGroupNameTextFieldErrorAlertController.addAction(OKAction)
-        studyGroupNameDuplicateErrorAlertController.addAction(OKAction)
         courseLabel.text = courseName
         
         /*
@@ -55,7 +42,7 @@ class AddStudyGroupViewController: UIViewController, UITableViewDelegate, UITabl
         tableView.dataSource = self
         tableView.delegate = self
         tableView.allowsSelection = false
-        
+        tableView.backgroundColor = Color.lightMossGreen
         
         let query = PFUser.query()
         query?.whereKey("username", notEqualTo: currentUser["username"])
@@ -129,9 +116,9 @@ class AddStudyGroupViewController: UIViewController, UITableViewDelegate, UITabl
         let studyGroupName = studyGroupNameTextField.text ?? ""
         
         if(profTextField.text?.isEmpty)!{
-            present(profTextFieldErrorAlertController, animated: true)
+            self.alert(msg: "Please enter name of professor", title: "Professor Name Required", actionTitle: "OK")
         } else if (studyGroupNameTextField.text?.isEmpty)!{
-            present(studyGroupNameTextFieldErrorAlertController, animated: true)
+            self.alert(msg: "Please enter name of study group", title: "Study Group Name Required", actionTitle: "OK")
         } else {
             let query = PFQuery(className: "StudyGroup")
             query.whereKey("name", equalTo: studyGroupName)
@@ -139,7 +126,7 @@ class AddStudyGroupViewController: UIViewController, UITableViewDelegate, UITabl
                 if findStudyGroup!.count == 0 {
                     self.createStudyGroup(studyGroupName: studyGroupName, profName: profName)
                 } else {
-                    self.present(self.studyGroupNameDuplicateErrorAlertController, animated: true)
+                    self.alert(msg: "Please enter another name for your study group", title: "Study Group with that name already exists!", actionTitle: "OK")
                 }
             }
         }

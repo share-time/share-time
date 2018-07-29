@@ -28,15 +28,10 @@ class TabViewController: TabmanViewController, PageboyViewControllerDataSource, 
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
         self.dataSource = self
-                
         self.bar.items = [Item(title: "Course"),Item(title: "Group")]
-        
         bar.style = .buttonBar
-        
         bar.appearance = PresetAppearanceConfigs.forStyle(self.bar.style, currentAppearance: self.bar.appearance)
-        
         addBarButton()
         
         

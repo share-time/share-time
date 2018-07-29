@@ -18,10 +18,6 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var passwordField: SkyFloatingLabelTextField!
     var activeTextField : UITextField!
     
-    let loginUsernameErrorAlertController = UIAlertController(title: "Username Required", message: "Please enter username", preferredStyle: .alert)
-    let loginPasswordErrorAlertController = UIAlertController(title: "Password Required", message: "Please enter password", preferredStyle: .alert)
-    //let loginErrorAlertController = UIAlertController(title: "Login Failed", message: "\(error.localizedDescription)", preferredStyle: .alert)
-    
     let OKAction = UIAlertAction(title: "OK", style: .default) { (action) in
         //does nothing -> dismisses alert view
     }
@@ -55,9 +51,6 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         headerLabel.textColor = UIColor.white
         loginButton.layer.cornerRadius = 10
         loginButton.backgroundColor = Color.paleBlue
-        loginUsernameErrorAlertController.addAction(OKAction)
-        loginPasswordErrorAlertController.addAction(OKAction)
-        //loginErrorAlertController.addAction(self.OKAction)
         let center: NotificationCenter = NotificationCenter.default
         center.addObserver(self, selector: #selector(keyboardDidShow(notification:)), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
         center.addObserver(self, selector: #selector(keyboardWillHide(notification:)), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
@@ -127,16 +120,13 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         let password = passwordField.text ?? ""
         
         if(usernameField.text?.isEmpty)!{
-            present(loginUsernameErrorAlertController, animated: true)
+            self.alert(msg: "Please enter username", title: "Username Required", actionTitle: "OK")
         } else if(passwordField.text?.isEmpty)!{
-            present(loginPasswordErrorAlertController, animated: true)
+            self.alert(msg: "Please enter password", title: "Password Required", actionTitle: "OK")
         } else {
             PFUser.logInWithUsername(inBackground: username, password: password) { (user: PFUser?, error: Error?) in
                 if let error = error {
-                    print(error)
-                    let loginErrorAlertController = UIAlertController(title: "Login Failed", message: "\(error.localizedDescription)", preferredStyle: .alert)
-                    loginErrorAlertController.addAction(self.OKAction)
-                    self.present(loginErrorAlertController, animated: true)
+                    self.alert(msg: "\(error.localizedDescription)", title: "Login Failed", actionTitle: "OK")
                 } else {
                     BlobHP.setup() { success in
                         self.performSegue(withIdentifier: "loginSegue", sender: nil)
@@ -166,5 +156,12 @@ extension UIViewController {
     @objc func dismissKeyboard() {
         view.endEditing(true)
         self.navigationController?.parentPageboy?.navigationController?.view.endEditing(true)
+    }
+    
+    func alert(msg: String, title: String, actionTitle: String) {
+        let alertController = UIAlertController(title: title, message: msg, preferredStyle: .alert)
+        let OKAction = UIAlertAction(title: actionTitle, style: .default, handler: nil)
+        alertController.addAction(OKAction)
+        self.present(alertController, animated: true, completion: nil)
     }
 }

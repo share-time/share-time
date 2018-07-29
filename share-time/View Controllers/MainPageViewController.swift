@@ -2,7 +2,7 @@
 //  MainPageViewController.swift
 //  share-time
 //
-//  Created by Guanxin Li on 4/14/18.
+//  Created by Guanxin Li and Godwin Pang on 4/14/18.
 //  Copyright © 2018 share-time. All rights reserved.
 //
 

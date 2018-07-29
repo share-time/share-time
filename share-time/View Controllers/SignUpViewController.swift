@@ -11,13 +11,10 @@ import Parse
 import SkyFloatingLabelTextField
 
 class SignUpViewController: UIViewController, UITextFieldDelegate{
-    let signUpUsernameErrorAlertController = UIAlertController(title: "Username Required", message: "Please enter username", preferredStyle: .alert)
-    let signUpPasswordErrorAlertController = UIAlertController(title: "Password Required", message: "Please enter password", preferredStyle: .alert)
-    let signUpEmailErrorAlertController = UIAlertController(title: "Email Required", message: "Please enter email", preferredStyle: .alert)
-    let signUpConfirmErrorAlertController = UIAlertController(title: "Confirm Password Failed", message: "Please enter again", preferredStyle: .alert)
-    let OKAction = UIAlertAction(title: "OK", style: .default) { (action) in
-        //does nothing -> dismisses alert view
-    }
+    
+    
+    
+
     
     @IBOutlet var signUpButton: UIButton!
     @IBOutlet weak var emailField: SkyFloatingLabelTextField!
@@ -28,10 +25,6 @@ class SignUpViewController: UIViewController, UITextFieldDelegate{
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        signUpUsernameErrorAlertController.addAction(OKAction)
-        signUpPasswordErrorAlertController.addAction(OKAction)
-        signUpEmailErrorAlertController.addAction(OKAction)
-        signUpConfirmErrorAlertController.addAction(OKAction)
         emailField.delegate = self
         usernameField.delegate = self
         passwordField.delegate = self
@@ -139,19 +132,17 @@ class SignUpViewController: UIViewController, UITextFieldDelegate{
         let userIconBaseURLString = "http://api.adorable.io/avatars/285/"
         newUser["imgUrl"] = userIconBaseURLString+imgCode+".png"
         if (emailField.text?.isEmpty)!{
-            present(signUpEmailErrorAlertController, animated: true)
+            self.alert(msg: "Please enter email", title: "Email Required", actionTitle: "OK")
         } else if (usernameField.text?.isEmpty)!{
-            present(signUpUsernameErrorAlertController, animated: true)
+            self.alert(msg: "Please enter username", title: "Username Required", actionTitle: "OK")
         } else if (passwordField.text?.isEmpty)!{
-            present(signUpPasswordErrorAlertController, animated: true)
+            self.alert(msg: "Please enter password", title: "Password Required", actionTitle: "OK")
         } else if(passwordField.text != confirmField.text){
-            present(signUpConfirmErrorAlertController, animated: true)
+            self.alert(msg: "Please enter again", title: "Confirm Password Failed", actionTitle: "OK")
         } else {
             newUser.signUpInBackground { (success: Bool, error: Error?) in
                 if let error = error {
-                    let signUpErrorAlertController = UIAlertController(title: "Signup Failed", message: "\(error.localizedDescription)", preferredStyle: .alert)
-                    signUpErrorAlertController.addAction(self.OKAction)
-                    self.present(signUpErrorAlertController, animated: true)
+                    self.alert(msg: "\(error.localizedDescription)", title: "Signup Failed", actionTitle: "OK")
                 } else {
                     if let navController = self.navigationController {
                         navController.popViewController(animated: true)

@@ -15,11 +15,9 @@ class PresetAppearanceConfigs: Any {
         let appearance = currentAppearance ?? TabmanBar.Appearance.defaultAppearance
         
         appearance.style.background = .solid(color: Color.mediumGreen)
-        
         appearance.state.selectedColor = UIColor.white
         appearance.state.color = UIColor.white.withAlphaComponent(0.3)
         appearance.indicator.color = UIColor.white
-        
         appearance.indicator.bounces = true
         appearance.indicator.lineWeight = .normal
         appearance.layout.itemDistribution = .centered
