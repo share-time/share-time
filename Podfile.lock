@@ -13,6 +13,15 @@ PODS:
   - Parse/Core (1.17.1):
     - Bolts/Tasks (~> 1.9)
   - PKHUD (5.1.0)
+  - PromiseKit (6.3.4):
+    - PromiseKit/CorePromise (= 6.3.4)
+    - PromiseKit/Foundation (= 6.3.4)
+    - PromiseKit/UIKit (= 6.3.4)
+  - PromiseKit/CorePromise (6.3.4)
+  - PromiseKit/Foundation (6.3.4):
+    - PromiseKit/CorePromise
+  - PromiseKit/UIKit (6.3.4):
+    - PromiseKit/CorePromise
   - QRCode (2.0)
   - SkyFloatingLabelTextField (3.5.1)
   - SwiftGifOrigin (1.6.1)
@@ -28,6 +37,7 @@ DEPENDENCIES:
   - Pageboy (~> 2.0)
   - Parse
   - PKHUD (~> 5.0)
+  - PromiseKit (~> 6.0)
   - QRCode
   - SkyFloatingLabelTextField (~> 3.0)
   - SwiftGifOrigin (~> 1.6.1)
@@ -45,6 +55,7 @@ SPEC REPOS:
     - Pageboy
     - Parse
     - PKHUD
+    - PromiseKit
     - QRCode
     - SkyFloatingLabelTextField
     - SwiftGifOrigin
@@ -61,12 +72,13 @@ SPEC CHECKSUMS:
   Pageboy: 46d743783414a18f8b27a988485e0ed2ea219ff7
   Parse: d3edaf8c7c722cb33cb83ba7821d015ae32d362d
   PKHUD: 62ea46a1e88c4def1da784878d199bb54c841e3c
+  PromiseKit: e1425568123ec844a944c93f2bcb29d511d39cf5
   QRCode: f98a1886c8f37523704a7512a4c0cd45b34c18a4
   SkyFloatingLabelTextField: 4cbeece9c3aae97c6019d8fae511cb5b755874f7
   SwiftGifOrigin: d6679d3ebe9df2e049a84bc52582635107b581f6
   SwiftLint: f6b83e8d95ee1e91e11932d843af4fdcbf3fc764
   Tabman: e867a8e3fc72a30cc694aca51a2b331070f5e3ba
 
-PODFILE CHECKSUM: d979853747f77b4f99c8fe6f9201c741b688eb57
+PODFILE CHECKSUM: c5f01398a6f6ec525b2e2a955984dc481ae0c7ad
 
 COCOAPODS: 1.5.3

@@ -19,6 +19,7 @@ target 'share-time' do
   pod 'Tabman', '~> 1.0'
   pod 'SkyFloatingLabelTextField', '~> 3.0'
   pod 'SwiftLint'
+  pod 'PromiseKit', '~> 6.0'
 
   target 'share-timeTests' do
     inherit! :search_paths
