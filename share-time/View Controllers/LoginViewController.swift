@@ -9,6 +9,7 @@
 import UIKit
 import Parse
 import SkyFloatingLabelTextField
+import PromiseKit
 
 class LoginViewController: UIViewController, UITextFieldDelegate {
     
@@ -131,6 +132,20 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         } else if(passwordField.text?.isEmpty)!{
             present(loginPasswordErrorAlertController, animated: true)
         } else {
+            
+            firstly {
+                Network.loginUserWithBlock(username: username, password: password)
+            }.done { _ in
+                BlobHP.setup()
+            }.done { _ in
+                self.performSegue(withIdentifier: "loginSegue", sender: nil)
+            }.catch { error in
+                let loginErrorAlertController = UIAlertController(title: "Login Failed", message: "\(error.localizedDescription)", preferredStyle: .alert)
+                loginErrorAlertController.addAction(self.OKAction)
+                self.present(loginErrorAlertController, animated: true)
+            }
+            
+            /*
             PFUser.logInWithUsername(inBackground: username, password: password) { (user: PFUser?, error: Error?) in
                 if let error = error {
                     print(error)
@@ -143,6 +158,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
                     }
                 }
             }
+            */
         }
     }
     
